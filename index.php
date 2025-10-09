@@ -264,3 +264,132 @@
             </div>
         </div>
     </section>
+    <section class="bg-white" style="height: 42.125rem;">
+        <div style="margin-left: 6.375rem; padding-top: 3.513rem;">
+            <div class="d-flex justify-content-start align-items-center gap-4">
+                <div>
+                    <h1 style="font-size: 3.438rem;">Blog</h1>
+                </div>
+                <div style="width: 31.813rem; height: 4.5rem;">
+                    <p>Discover the best car rental services to suit your travel needs with our comprehensive blog. We
+                        provide tips, reviews, and insights on choosing the perfect vehicle, rental deals, and travel
+                        destinations to help you enjoy a seamless and hassle-free experience.</p>
+                </div>
+            </div>
+        </div>
+        <div>
+            <div class="d-flex justify-content-center align-items-center gap-5 mt-1">
+                <div style="width: 25rem;">
+                    <div class="card bg-danger mt-5" style="width: 25rem; height: 16.563rem; border-radius: 0.938rem;">
+                    </div>
+                    <h2 class="mt-2" style="font-size: 1.563rem">Seamless Journey: Hay Go’s Reliable, Excellent Service
+                    </h2>
+                    <p>Cebu has stunning hidden beaches like Hermit’s Cove and Lambug Beach, and one renter enjoyed
+                        exploring them by booking a sedan from Hay Go Car Rental Cebu for a flexible weekend trip.</p>
+                </div>
+                <div style="width: 25rem;">
+                    <div class="card bg-danger mt-5" style="width: 25rem; height: 16.563rem; border-radius: 0.938rem;">
+                    </div>
+                    <h2 class="mt-2" style="font-size: 1.563rem">Seamless Journey: Hay Go’s Reliable, Excellent Service
+                    </h2>
+                    <p>Cebu has stunning hidden beaches like Hermit’s Cove and Lambug Beach, and one renter enjoyed
+                        exploring them by booking a sedan from Hay Go Car Rental Cebu for a flexible weekend trip.</p>
+                </div>
+                <div style="width: 25rem;">
+                    <div class="card bg-danger mt-5" style="width: 25rem; height: 16.563rem; border-radius: 0.938rem;">
+                    </div>
+                    <h2 class="mt-2" style="font-size: 1.563rem">Seamless Journey: Hay Go’s Reliable, Excellent Service
+                    </h2>
+                    <p>Cebu has stunning hidden beaches like Hermit’s Cove and Lambug Beach, and one renter enjoyed
+                        exploring them by booking a sedan from Hay Go Car Rental Cebu for a flexible weekend trip.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+    <section class="bg-secondary" style="height: 48.313rem;">
+        <div>
+            <div>
+                <div class="text-center text-white" style="padding-top: 5rem;">
+                    <h1 style="font-size: 3.75rem">Frequently Asked Questions</h1>
+                    <p style="font-size: 1.375rem;">Everything you need to know before booking your ride.</p>
+                </div>
+            </div>
+            <div>
+                <div class="d-flex justify-content-center align-items-center" style="margin-top: 3.5rem;">
+                    <div class="bg-danger" style="width: 52.75rem; height: 27.75rem;">
+                        <div>
+                            <div>
+                                <h3 style="font-size: 1.5rem;">Booking & Reservations</h3>
+                            </div>
+                            <div class="d-flex justify-content-between align-items-center">
+                                <div>
+                                    <p style="font-size: 1.25rem;">How do I book a car?</p>
+                                </div>
+                                <div>
+                                    <i class="fa-solid fa-plus"></i>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="bg-white" style="width: 52.75rem; height: 0.05rem;"></div><div>
+                            <div>
+                                <h3 style="font-size: 1.5rem;">Booking & Reservations</h3>
+                            </div>
+                            <div class="d-flex justify-content-between align-items-center">
+                                <div>
+                                    <p style="font-size: 1.25rem;">How do I book a car?</p>
+                                </div>
+                                <div>
+                                    <i class="fa-solid fa-plus"></i>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="bg-white" style="width: 52.75rem; height: 0.05rem;"></div>
+                        <div>
+                            <div>
+                                <h3 style="font-size: 1.5rem;">Booking & Reservations</h3>
+                            </div>
+                            <div class="d-flex justify-content-between align-items-center">
+                                <div>
+                                    <p style="font-size: 1.25rem;">How do I book a car?</p>
+                                </div>
+                                <div>
+                                    <i class="fa-solid fa-plus"></i>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="bg-white" style="width: 52.75rem; height: 0.05rem;"></div>
+                        <div>
+                            <div>
+                                <h3 style="font-size: 1.5rem;">Booking & Reservations</h3>
+                            </div>
+                            <div class="d-flex justify-content-between align-items-center">
+                                <div>
+                                    <p style="font-size: 1.25rem;">How do I book a car?</p>
+                                </div>
+                                <div>
+                                    <i class="fa-solid fa-plus"></i>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="bg-white" style="width: 52.75rem; height: 0.05rem;"></div>
+                        <div>
+                            <div>
+                                <h3 style="font-size: 1.5rem;">Booking & Reservations</h3>
+                            </div>
+                            <div class="d-flex justify-content-between align-items-center">
+                                <div>
+                                    <p style="font-size: 1.25rem;">How do I book a car?</p>
+                                </div>
+                                <div>
+                                    <i class="fa-solid fa-plus"></i>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="bg-white" style="width: 52.75rem; height: 0.05rem;"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <?php include_once 'footer.php' ?>
