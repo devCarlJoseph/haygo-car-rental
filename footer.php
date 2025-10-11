@@ -9,7 +9,7 @@
                 </div>
             </div>
             <div class="d-flex justify-content-center align-items-center mt-3">
-                <ul class="d-flex gap-5 text-white list-unstyled">
+                <ul class="d-flex gap-4 text-white list-unstyled">
                     <li>Home</li>
                     <li>About</li>
                     <li>Our Fleet</li>

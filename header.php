@@ -30,7 +30,7 @@
                 </div>
                 <div>
                     <img src="src/assets/images/logo.png"
-                        style="width: 3.813rem; height: 2.438rem; margin-right: 20rem;">
+                        style="width: 3.813rem; height: 2.438rem; margin-right: 22.5rem;">
                 </div>
                 <div class="d-flex justify-content-center align-items-center gap-2">
                     <div class="bg-transparent d-flex justify-content-center align-items-center gap-1 rounded-5 border border-white text-white"
