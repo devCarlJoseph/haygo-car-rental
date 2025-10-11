@@ -43,7 +43,7 @@
                     </div>
                     <div class="bg-light d-flex justify-content-center align-items-center"
                         style="width: 2.188rem; height: 2.188rem; border-radius: 50%;">
-                        <i class="fa-regular fa-user" style="width: 1.25rem; height: 1.rem;"></i>
+                        <a href="../haygo/admin/log-in.php" style="color: #433F3F;"><i class="fa-regular fa-user" style="width: 1.25rem; height: 1.rem;"></i></a>
                     </div>
                 </div>
             </div>
