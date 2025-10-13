@@ -21,11 +21,20 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
 
 
-
+    <link rel="stylesheet" href="../src/assets/css/app.css">
     <link rel="stylesheet" href="../src/assets/css/style.css">
 
     <link href="../src/assets/css/admin.css" rel="stylesheet" />
     <script src="../src/assets/js/settings.js"></script>
+
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-Q3ZYEKLQ68"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag() { dataLayer.push(arguments); }
+        gtag('js', new Date());
+
+        gtag('config', 'G-Q3ZYEKLQ68');
+    </script>
 </head>
 
 <body class="inder-regular">
