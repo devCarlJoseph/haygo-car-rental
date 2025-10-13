@@ -74,7 +74,7 @@
 		<main class="content">
 			<div class="container-fluid p-0">
 
-				<h1 class="h3 mb-3">Calendar</h1>
+				<h1 class="h3 mb-3" style="color: #FFA77E">Calendar</h1>
 
 				<div class="card">
 					<div class="card-body">
