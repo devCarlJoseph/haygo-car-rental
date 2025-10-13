@@ -74,57 +74,41 @@
 		<main class="content">
 			<div class="container-fluid p-0">
 
-				<h1 class="h3 mb-3" style="color: #FFA77E">Vehicles</h1>
+				<h1 class="h3 mb-3">Transactions</h1>
 
 				<div class="card">
 					<div class="card-body">
 						<div class="row mb-3">
 							<div class="col-md-6 col-xl-4 mb-2 mb-md-0">
 								<div class="input-group input-group-search">
-									<input type="text" class="form-control" id="datatables-products-search"
-										placeholder="Search vehicle...">
+									<input type="text" class="form-control" id="datatables-orders-search"
+										placeholder="Search transactions…">
 									<button class="btn" type="button">
 										<i class="align-middle" data-lucide="search"></i>
 									</button>
 								</div>
 							</div>
-							<div class="col-md-6 col-xl-8">
-								<div class="text-sm-end">
-									<button type="button" class="btn text-white btn-lg" style="background: #FFA77E"><i data-lucide="plus"></i> New
-										Vehicle</button>
-								</div>
-							</div>
 						</div>
-						<table id="datatables-products" class="table w-100">
+						<table id="datatables-orders" class="table w-100">
 							<thead>
-								<tr>
-									<th class="align-middle" style="width: 5rem">Car ID</th>
-									<th class="align-middle" style="width: 20rem">Car Name</th>
-									<th class="align-middle text-center">Price</th>
-									<th class="align-middle text-center">Category</th>
-									<th class="align-middle text-center">Rating</th>
+								<tr>				
+									<th class="align-middle text-start" style="width: 8rem">Transaction ID</th>
+									<th class="align-middle text-start">Booking ID</th>
+									<th class="align-middle">Date</th>
+									<th class="align-middle">Total</th>
+									<th class="align-middle text-center">Payment Method</th>
+									<th class="align-middle text-center">Payment Status</th>
 									<th class="align-middle text-center">Actions</th>
 								</tr>
 							</thead>
 							<tbody>
 								<tr>
-									<td class="text-center">1</td>
-									<td class="d-flex align-items-center">
-										<div class="p-2 rounded d-flex justify-content-center align-items-center me-2 w-50px h-50px"
-											style="background: #FFE7DB">
-											<img src="img/products/product-9.png" class="mw-100 mh-100">
-										</div>
-										<p class="mb-0">
-											<strong>Car Name</strong><br />
-											<span class="text-muted">Brand</span>
-										</p>
-									</td>
-									<td class="text-center">$ 1,399.00</td>
-									<td class="text-center">Small Cars</td>
-									<td class="text-center">
-										<i class="fa-solid fa-star text-warning"></i> 4.6 <span class="text-muted">out
-											of 55 Reviews</span>
-									</td>
+									<td class="text-start"><strong>1</strong></td>
+									<td class="text-start">1</td>
+									<td>July 5, 2023</td>
+									<td>$350 USD</td>
+									<td class="text-center"><i class="fa-brands fa-cc-mastercard"></i> Pay at Pick-up</td>
+									<td class="text-center"><span class="badge badge-subtle-success">Paid</span></td>
 									<td class="text-center">
 										<button
 											style="width: 4rem; height: 1.8rem; border-radius: 0.5rem; border: none; background: #F3B193; color: white">Edit
@@ -141,6 +125,7 @@
 			</div>
 		</main>
 
+
 		<?php require_once 'footer.php'; ?>
 	</div>
 </div>
@@ -150,20 +135,20 @@
 
 <script>
 	document.addEventListener("DOMContentLoaded", function () {
-		$("#datatables-products").DataTable({
+		$("#datatables-orders").DataTable({
 			destroy: true,
 			responsive: true,
 			order: [
 				[1, "asc"]
 			],
-			pageLength: 6,
+			pageLength: 10,
 			columnDefs: [{
 				targets: 0,
 				orderable: false,
 				width: "18px"
 			},
 			{
-				targets: 5,
+				targets: 6,
 				orderable: false
 			}
 			],
@@ -174,9 +159,17 @@
 				bottomEnd: 'paging'
 			}
 		});
-		$("#datatables-products-search").keyup(function () {
-			$("#datatables-products").DataTable().search($(this).val()).draw();
+		$("#datatables-orders-check-all").click(function () {
+			if ($(this).prop("checked")) {
+				$("input[type='checkbox']").prop("checked", true);
+			} else {
+				$("input[type='checkbox']").prop("checked", false);
+			}
 		});
+		$("#datatables-orders-search").keyup(function () {
+			$("#datatables-orders").DataTable().search($(this).val()).draw();
+		});
+
 		const style = document.createElement("style");
 		style.innerHTML = `
 			/* Active page */
