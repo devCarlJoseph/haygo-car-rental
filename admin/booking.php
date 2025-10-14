@@ -150,43 +150,43 @@
 <script src="../src/assets/js/app.js"></script>
 
 <script>
-		document.addEventListener("DOMContentLoaded", function() {
-			$("#datatables-orders").DataTable({
-				destroy: true,
-				responsive: true,
-				order: [
-					[1, "asc"]
-				],
-				pageLength: 10,
-				columnDefs: [{
-						targets: 0,
-						orderable: false,
-						width: "18px"
-					},
-					{
-						targets: 6,
-						orderable: false
-					}
-				],
-				layout: {
-					topStart: null,
-					topEnd: null,
-					bottomStart: 'info',
-					bottomEnd: 'paging'
-				}
-			});
-			$("#datatables-orders-check-all").click(function() {
-				if ($(this).prop("checked")) {
-					$("input[type='checkbox']").prop("checked", true);
-				} else {
-					$("input[type='checkbox']").prop("checked", false);
-				}
-			});
-			$("#datatables-orders-search").keyup(function() {
-				$("#datatables-orders").DataTable().search($(this).val()).draw();
-			});
+	document.addEventListener("DOMContentLoaded", function () {
+		$("#datatables-orders").DataTable({
+			destroy: true,
+			responsive: true,
+			order: [
+				[1, "asc"]
+			],
+			pageLength: 10,
+			columnDefs: [{
+				targets: 0,
+				orderable: false,
+				width: "18px"
+			},
+			{
+				targets: 6,
+				orderable: false
+			}
+			],
+			layout: {
+				topStart: null,
+				topEnd: null,
+				bottomStart: 'info',
+				bottomEnd: 'paging'
+			}
+		});
+		$("#datatables-orders-check-all").click(function () {
+			if ($(this).prop("checked")) {
+				$("input[type='checkbox']").prop("checked", true);
+			} else {
+				$("input[type='checkbox']").prop("checked", false);
+			}
+		});
+		$("#datatables-orders-search").keyup(function () {
+			$("#datatables-orders").DataTable().search($(this).val()).draw();
+		});
 
-			const style = document.createElement("style");
+		const style = document.createElement("style");
 		style.innerHTML = `
 			/* Active page */
 			.page-item.active .page-link {
@@ -207,7 +207,8 @@
 			}
 		`;
 		document.head.appendChild(style);
-		});
-	</script>
-
+	});
 </script>
+
+</body>
+</html>

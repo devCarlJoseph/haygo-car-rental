@@ -95,35 +95,38 @@
 
 <script>
 	document.addEventListener("DOMContentLoaded", function () {
-    var calendarEl = document.getElementById('fullcalendar');
+		var calendarEl = document.getElementById('fullcalendar');
 
-    var calendar = new FullCalendar.Calendar(calendarEl, {
-        themeSystem: 'bootstrap',
-        initialView: 'dayGridMonth',
-        initialDate: '2024-01-01',
-        headerToolbar: {
-            left: 'prev,next today',
-            center: 'title',
-            right: 'dayGridMonth,timeGridWeek,timeGridDay'
-        },
+		var calendar = new FullCalendar.Calendar(calendarEl, {
+			themeSystem: 'bootstrap',
+			initialView: 'dayGridMonth',
+			initialDate: '2024-01-01',
+			headerToolbar: {
+				left: 'prev,next today',
+				center: 'title',
+				right: 'dayGridMonth,timeGridWeek,timeGridDay'
+			},
 
-        events: [
-            { title: 'All Day Event', start: '2024-01-01', color: '#4C9BFF', textColor: '#FFFFFF' },  // Low
-            { title: 'Long Event', start: '2024-01-07', end: '2024-01-10', color: '#FFBA9A', textColor: '#000000' }, // Medium
-            { groupId: '999', title: 'Repeating Event', start: '2024-01-09T16:00:00', color: '#FF4C4C', textColor: '#FFFFFF' }, // High
-            { groupId: '999', title: 'Repeating Event', start: '2024-01-16T16:00:00', color: '#FF4C4C', textColor: '#FFFFFF' }, // High
-            { title: 'Conference', start: '2024-01-11', end: '2024-01-13', color: '#FFBA9A', textColor: '#000000' }, // Medium
-            { title: 'Meeting', start: '2024-01-12T10:30:00', end: '2024-01-12T12:30:00', color: '#FF4C4C', textColor: '#FFFFFF' }, // High
-            { title: 'Lunch', start: '2024-01-12T12:00:00', color: '#4C9BFF', textColor: '#FFFFFF' }, // Low
-            { title: 'Meeting', start: '2024-01-12T14:30:00', color: '#FF4C4C', textColor: '#FFFFFF' }, // High
-            { title: 'Birthday Party', start: '2024-01-13T07:00:00', color: '#FFBA9A', textColor: '#000000' }, // Medium
-            { title: 'Click for Google', url: 'http://google.com/', start: '2024-01-28', color: '#4C9BFF', textColor: '#FFFFFF' } // Low
-        ]
-    });
+			events: [
+				{ title: 'All Day Event', start: '2024-01-01', color: '#4C9BFF', textColor: '#FFFFFF' },
+				{ title: 'Long Event', start: '2024-01-07', end: '2024-01-10', color: '#FFBA9A', textColor: '#000000' },
+				{ groupId: '999', title: 'Repeating Event', start: '2024-01-09T16:00:00', color: '#FF4C4C', textColor: '#FFFFFF' },
+				{ groupId: '999', title: 'Repeating Event', start: '2024-01-16T16:00:00', color: '#FF4C4C', textColor: '#FFFFFF' },
+				{ title: 'Conference', start: '2024-01-11', end: '2024-01-13', color: '#FFBA9A', textColor: '#000000' },
+				{ title: 'Meeting', start: '2024-01-12T10:30:00', end: '2024-01-12T12:30:00', color: '#FF4C4C', textColor: '#FFFFFF' },
+				{ title: 'Lunch', start: '2024-01-12T12:00:00', color: '#4C9BFF', textColor: '#FFFFFF' },
+				{ title: 'Meeting', start: '2024-01-12T14:30:00', color: '#FF4C4C', textColor: '#FFFFFF' },
+				{ title: 'Birthday Party', start: '2024-01-13T07:00:00', color: '#FFBA9A', textColor: '#000000' },
+				{ title: 'Click for Google', url: 'http://google.com/', start: '2024-01-28', color: '#4C9BFF', textColor: '#FFFFFF' }
+			]
+		});
 
-    setTimeout(function () {
-        calendar.render();
-    }, 250);
-});
+		setTimeout(function () {
+			calendar.render();
+		}, 250);
+	});
 
 </script>
+
+</body>
+</html>

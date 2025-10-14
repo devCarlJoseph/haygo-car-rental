@@ -71,157 +71,166 @@
 						Out</a></button>
 			</div>
 		</nav>
-			<main class="content">
-				<div class="container-fluid p-0">
+		<main class="content">
+			<div class="container-fluid p-0">
 
-					<h1 class="h3 mb-3" style="color: #FFA77E">Customers</h1>
+				<h1 class="h3 mb-3" style="color: #FFA77E">Customers</h1>
 
-					<div class="row">
-						<div class="col-xl-8">
-							<div class="card" style="width: 74rem;">
-								<div class="card-body">
-									<div class="row mb-3">
-										<div class="col-md-6 mb-2 mb-md-0">
-											<div class="input-group input-group-search">
-												<input type="text" class="form-control" id="datatables-customers-search"
-													placeholder="Search customers…">
-												<button class="btn" type="button">
-													<i class="align-middle" data-lucide="search"></i>
-												</button>
-											</div>
+				<div class="row">
+					<div class="col-xl-8">
+						<div class="card" style="width: 74rem;">
+							<div class="card-body">
+								<div class="row mb-3">
+									<div class="col-md-6 mb-2 mb-md-0">
+										<div class="input-group input-group-search">
+											<input type="text" class="form-control" id="datatables-customers-search"
+												placeholder="Search customers…">
+											<button class="btn" type="button">
+												<i class="align-middle" data-lucide="search"></i>
+											</button>
 										</div>
 									</div>
-									<table id="datatables-customers" class="table w-100" style="width: 8rem;">
-										<thead>
-											<tr>
-												<th class="text-start">Customer ID</th>
-												<th>First Name</th>
-												<th>Last Name</th>
-												<th class="text-center">Contact Number</th>
-												<th>Email Address</th>
-												<th class="text-start">Date of Birth</th>
-												<th class="text-center">Action</th>
-											</tr>
-										</thead>
-										<tbody>
-											<tr>
-												<td class="text-start">1</td>
-												<td>Benhard</td>
-												<td>Awanon</td>
-												<td class="text-start">0912 345 6789</td>
-												<td>bernardawanon@gmail.com</td>
-												<td class="text-start">10 BC</td>
-												<td class="text-center">
-													<button style="width: 4rem; height: 1.8rem; border-radius: 0.5rem; border: none; background: #F3B193; color: white">Delete</button>
-												</td>
-											</tr>
-											<tr>
-												<td class="text-start">1</td>
-												<td>Benhard</td>
-												<td>Awanon</td>
-												<td class="text-start">0912 345 6789</td>
-												<td>bernardawanon@gmail.com</td>
-												<td class="text-start">10 BC</td>
-												<td class="text-center">
-													
-													<button style="width: 4rem; height: 1.8rem; border-radius: 0.5rem; border: none; background: #F3B193; color: white">Delete</button>
-												</td>
-											</tr>
-											<tr>
-												<td class="text-start">1</td>
-												<td>Benhard</td>
-												<td>Awanon</td>
-												<td class="text-start">0912 345 6789</td>
-												<td>bernardawanon@gmail.com</td>
-												<td class="text-start">10 BC</td>
-												<td class="text-center">
-													
-													<button style="width: 4rem; height: 1.8rem; border-radius: 0.5rem; border: none; background: #F3B193; color: white">Delete</button>
-												</td>
-											</tr>
-											<tr>
-												<td class="text-start">1</td>
-												<td>Benhard</td>
-												<td>Awanon</td>
-												<td class="text-start">0912 345 6789</td>
-												<td>bernardawanon@gmail.com</td>
-												<td class="text-start">10 BC</td>
-												<td class="text-center">
-													
-													<button style="width: 4rem; height: 1.8rem; border-radius: 0.5rem; border: none; background: #F3B193; color: white">Delete</button>
-												</td>
-											</tr>
-											<tr>
-												<td class="text-start">1</td>
-												<td>Benhard</td>
-												<td>Awanon</td>
-												<td class="text-start">0912 345 6789</td>
-												<td>bernardawanon@gmail.com</td>
-												<td class="text-start">10 BC</td>
-												<td class="text-center">
-													
-													<button style="width: 4rem; height: 1.8rem; border-radius: 0.5rem; border: none; background: #F3B193; color: white">Delete</button>
-												</td>
-											</tr>
-											<tr>
-												<td class="text-start">1</td>
-												<td>Benhard</td>
-												<td>Awanon</td>
-												<td class="text-start">0912 345 6789</td>
-												<td>bernardawanon@gmail.com</td>
-												<td class="text-start">10 BC</td>
-												<td class="text-center">
-													
-													<button style="width: 4rem; height: 1.8rem; border-radius: 0.5rem; border: none; background: #F3B193; color: white">Delete</button>
-												</td>
-											</tr>
-											<tr>
-												<td class="text-start">1</td>
-												<td>Benhard</td>
-												<td>Awanon</td>
-												<td class="text-start">0912 345 6789</td>
-												<td>bernardawanon@gmail.com</td>
-												<td class="text-start">10 BC</td>
-												<td class="text-center">
-													
-													<button style="width: 4rem; height: 1.8rem; border-radius: 0.5rem; border: none; background: #F3B193; color: white">Delete</button>
-												</td>
-											</tr>
-											<tr>
-												<td class="text-start">1</td>
-												<td>Benhard</td>
-												<td>Awanon</td>
-												<td class="text-start">0912 345 6789</td>
-												<td>bernardawanon@gmail.com</td>
-												<td class="text-start">10 BC</td>
-												<td class="text-center">
-													
-													<button style="width: 4rem; height: 1.8rem; border-radius: 0.5rem; border: none; background: #F3B193; color: white">Delete</button>
-												</td>
-											</tr>
-											<tr>
-												<td class="text-start">1</td>
-												<td>Benhard</td>
-												<td>Awanon</td>
-												<td class="text-start">0912 345 6789</td>
-												<td>bernardawanon@gmail.com</td>
-												<td class="text-start">10 BC</td>
-												<td class="text-center">
-													
-													<button style="width: 4rem; height: 1.8rem; border-radius: 0.5rem; border: none; background: #F3B193; color: white">Delete</button>
-												</td>
-											</tr>
-										</tbody>
-									</table>
 								</div>
+								<table id="datatables-customers" class="table w-100" style="width: 8rem;">
+									<thead>
+										<tr>
+											<th class="text-start">Customer ID</th>
+											<th>First Name</th>
+											<th>Last Name</th>
+											<th class="text-center">Contact Number</th>
+											<th>Email Address</th>
+											<th class="text-start">Date of Birth</th>
+											<th class="text-center">Action</th>
+										</tr>
+									</thead>
+									<tbody>
+										<tr>
+											<td class="text-start">1</td>
+											<td>Benhard</td>
+											<td>Awanon</td>
+											<td class="text-start">0912 345 6789</td>
+											<td>bernardawanon@gmail.com</td>
+											<td class="text-start">10 BC</td>
+											<td class="text-center">
+												<button
+													style="width: 4rem; height: 1.8rem; border-radius: 0.5rem; border: none; background: #F3B193; color: white">Delete</button>
+											</td>
+										</tr>
+										<tr>
+											<td class="text-start">1</td>
+											<td>Benhard</td>
+											<td>Awanon</td>
+											<td class="text-start">0912 345 6789</td>
+											<td>bernardawanon@gmail.com</td>
+											<td class="text-start">10 BC</td>
+											<td class="text-center">
+
+												<button
+													style="width: 4rem; height: 1.8rem; border-radius: 0.5rem; border: none; background: #F3B193; color: white">Delete</button>
+											</td>
+										</tr>
+										<tr>
+											<td class="text-start">1</td>
+											<td>Benhard</td>
+											<td>Awanon</td>
+											<td class="text-start">0912 345 6789</td>
+											<td>bernardawanon@gmail.com</td>
+											<td class="text-start">10 BC</td>
+											<td class="text-center">
+
+												<button
+													style="width: 4rem; height: 1.8rem; border-radius: 0.5rem; border: none; background: #F3B193; color: white">Delete</button>
+											</td>
+										</tr>
+										<tr>
+											<td class="text-start">1</td>
+											<td>Benhard</td>
+											<td>Awanon</td>
+											<td class="text-start">0912 345 6789</td>
+											<td>bernardawanon@gmail.com</td>
+											<td class="text-start">10 BC</td>
+											<td class="text-center">
+
+												<button
+													style="width: 4rem; height: 1.8rem; border-radius: 0.5rem; border: none; background: #F3B193; color: white">Delete</button>
+											</td>
+										</tr>
+										<tr>
+											<td class="text-start">1</td>
+											<td>Benhard</td>
+											<td>Awanon</td>
+											<td class="text-start">0912 345 6789</td>
+											<td>bernardawanon@gmail.com</td>
+											<td class="text-start">10 BC</td>
+											<td class="text-center">
+
+												<button
+													style="width: 4rem; height: 1.8rem; border-radius: 0.5rem; border: none; background: #F3B193; color: white">Delete</button>
+											</td>
+										</tr>
+										<tr>
+											<td class="text-start">1</td>
+											<td>Benhard</td>
+											<td>Awanon</td>
+											<td class="text-start">0912 345 6789</td>
+											<td>bernardawanon@gmail.com</td>
+											<td class="text-start">10 BC</td>
+											<td class="text-center">
+
+												<button
+													style="width: 4rem; height: 1.8rem; border-radius: 0.5rem; border: none; background: #F3B193; color: white">Delete</button>
+											</td>
+										</tr>
+										<tr>
+											<td class="text-start">1</td>
+											<td>Benhard</td>
+											<td>Awanon</td>
+											<td class="text-start">0912 345 6789</td>
+											<td>bernardawanon@gmail.com</td>
+											<td class="text-start">10 BC</td>
+											<td class="text-center">
+
+												<button
+													style="width: 4rem; height: 1.8rem; border-radius: 0.5rem; border: none; background: #F3B193; color: white">Delete</button>
+											</td>
+										</tr>
+										<tr>
+											<td class="text-start">1</td>
+											<td>Benhard</td>
+											<td>Awanon</td>
+											<td class="text-start">0912 345 6789</td>
+											<td>bernardawanon@gmail.com</td>
+											<td class="text-start">10 BC</td>
+											<td class="text-center">
+
+												<button
+													style="width: 4rem; height: 1.8rem; border-radius: 0.5rem; border: none; background: #F3B193; color: white">Delete</button>
+											</td>
+										</tr>
+										<tr>
+											<td class="text-start">1</td>
+											<td>Benhard</td>
+											<td>Awanon</td>
+											<td class="text-start">0912 345 6789</td>
+											<td>bernardawanon@gmail.com</td>
+											<td class="text-start">10 BC</td>
+											<td class="text-center">
+
+												<button
+													style="width: 4rem; height: 1.8rem; border-radius: 0.5rem; border: none; background: #F3B193; color: white">Delete</button>
+											</td>
+										</tr>
+									</tbody>
+								</table>
 							</div>
 						</div>
 					</div>
-
 				</div>
-			</main>
 
-			<main class="content">
+			</div>
+		</main>
+
+		<main class="content">
 			<div class="container-fluid p-0">
 
 				<h1 class="h3 mb-3">Products</h1>
@@ -617,7 +626,7 @@
 			</div>
 		</main>
 
-			<?php require_once 'footer.php'; ?>
+		<?php require_once 'footer.php'; ?>
 	</div>
 </div>
 
@@ -626,35 +635,35 @@
 
 <script>
 	document.addEventListener("DOMContentLoaded", function () {
-  const table = $("#datatables-customers").DataTable({
-    destroy: true,
-    scrollX: true,
-    autoWidth: false,
-    responsive: true,
-    order: [[0, "asc"]],
-    columnDefs: [
-      { width: "7rem", targets: 0 },
-      { width: "8rem", targets: 1 },
-      { width: "8rem", targets: 2 },
-      { width: "10rem", targets: 3 },
-      { width: "15rem", targets: 4 },
-      { width: "8rem", targets: 5 },
-      { width: "10rem", targets: 6 }
-    ],
-    layout: {
-      topStart: null,
-      topEnd: null,
-      bottomStart: 'info',
-      bottomEnd: 'paging'
-    }
-  });
+		const table = $("#datatables-customers").DataTable({
+			destroy: true,
+			scrollX: true,
+			autoWidth: false,
+			responsive: true,
+			order: [[0, "asc"]],
+			columnDefs: [
+				{ width: "7rem", targets: 0 },
+				{ width: "8rem", targets: 1 },
+				{ width: "8rem", targets: 2 },
+				{ width: "10rem", targets: 3 },
+				{ width: "15rem", targets: 4 },
+				{ width: "8rem", targets: 5 },
+				{ width: "10rem", targets: 6 }
+			],
+			layout: {
+				topStart: null,
+				topEnd: null,
+				bottomStart: 'info',
+				bottomEnd: 'paging'
+			}
+		});
 
-  $("#datatables-customers-search").keyup(function () {
-    table.search($(this).val()).draw();
-  });
+		$("#datatables-customers-search").keyup(function () {
+			table.search($(this).val()).draw();
+		});
 
-  const style = document.createElement("style");
-  style.innerHTML = `
+		const style = document.createElement("style");
+		style.innerHTML = `
     /* Active page */
     .page-item.active .page-link {
       background-color: #E99670 !important;
@@ -673,7 +682,11 @@
       color: #AB8B7D !important;
     }
   `;
-  document.head.appendChild(style);
-});
+		document.head.appendChild(style);
+	});
 
 </script>
+
+</body>
+
+</html>

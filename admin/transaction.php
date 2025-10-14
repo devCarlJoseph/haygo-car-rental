@@ -91,7 +91,7 @@
 						</div>
 						<table id="datatables-orders" class="table w-100">
 							<thead>
-								<tr>				
+								<tr>
 									<th class="align-middle text-start" style="width: 8rem">Transaction ID</th>
 									<th class="align-middle text-start">Booking ID</th>
 									<th class="align-middle">Date</th>
@@ -107,7 +107,8 @@
 									<td class="text-start">1</td>
 									<td>July 5, 2023</td>
 									<td>$350 USD</td>
-									<td class="text-center"><i class="fa-brands fa-cc-mastercard"></i> Pay at Pick-up</td>
+									<td class="text-center"><i class="fa-brands fa-cc-mastercard"></i> Pay at Pick-up
+									</td>
 									<td class="text-center"><span class="badge badge-subtle-success">Paid</span></td>
 									<td class="text-center">
 										<button
@@ -195,3 +196,7 @@
 </script>
 
 </script>
+
+</body>
+
+</html>
