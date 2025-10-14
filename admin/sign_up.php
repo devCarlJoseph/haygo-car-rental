@@ -35,7 +35,7 @@
                         <h2 class="mt-4" style="font-size: 1.875rem; color: #FF884D;">Sign Up as Admin</h2>
                     </div>
                     <div>
-                        <form action="log-in.php" method="post">
+                        <form action="log_in.php" method="post">
                             <div class="d-flex flex-column gap-1 mt-3">
                                 <label style="font-size: 0.938rem; color: #363636;">Username</label>
                                 <input class="p-2 rounded-2" type="text" name="username" id="" placeholder="Enter Username" style="width: 21.188rem; height: 2.25rem; font-size: 0.938rem; color: #B5B5B5; border: 1px solid #F68A52;">

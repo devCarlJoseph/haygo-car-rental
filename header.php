@@ -22,9 +22,9 @@
                 <div class="d-flex justify-content-center align-items-center" style="width: 30.313rem; height: 2.5rem;">
                     <ul class="d-flex justify-content-between align-items-center gap-5 list-unstyled text-white"
                         style="font-size: 1.25rem;">
-                        <li>Home</li>
-                        <li>About</li>
-                        <li>Our Fleet</li>
+                        <a class="text-decoration-none text-white" href="index.php"><li>Home</li></a>
+                        <a class="text-decoration-none text-white" href="about.php"><li>About Us</li></a>
+                        <a class="text-decoration-none text-white" href="vehicles.php"><li>Vehicles</li></a>
                         <li>Contacts</li>
                     </ul>
                 </div>
@@ -43,7 +43,7 @@
                     </div>
                     <div class="bg-light d-flex justify-content-center align-items-center"
                         style="width: 2.188rem; height: 2.188rem; border-radius: 50%;">
-                        <a href="../haygo/admin/log-in.php" style="color: #433F3F;"><i class="fa-regular fa-user" style="width: 1.25rem; height: 1.rem;"></i></a>
+                        <a href="../haygo/admin/log_in.php" style="color: #433F3F;"><i class="fa-regular fa-user" style="width: 1.25rem; height: 1.rem;"></i></a>
                     </div>
                 </div>
             </div>

@@ -51,7 +51,7 @@
                                 <button class="border border-none text-white rounded-2" style="width: 21.188rem; height: 2.375rem; background: #E98C5E; font-size: 0.938rem;">Log In</button>
                             </div>
                             <div class="mt-2">
-                                <p style="color: #807D7D; font-size: 0.875rem;">Don’t have an account? <a href="sign-up.php" style="color: #D8AD97; cursor: pointer;"><span>Sign up</span></a></p>
+                                <p style="color: #807D7D; font-size: 0.875rem;">Don’t have an account? <a href="sign_up.php" style="color: #D8AD97; cursor: pointer;"><span>Sign up</span></a></p>
                             </div>
                         </form>
                     </div>

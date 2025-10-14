@@ -3,7 +3,7 @@
 ?>
 
 <div class="wrapper" style="background: #EBE7E4;">
-	<nav id="sidebar" class="sidebar">
+	<nav id="sidebar" class="sidebar" style="background: #AB8B7D">
 		<div class="sidebar-content js-simplebar" style="background: #AB8B7D">
 			<a class="sidebar-brand" href="/">
 				<img src="../src/assets/images/logodash.png" style="width: 3.813rem; height: 2.438rem;">
@@ -11,39 +11,51 @@
 
 			<ul class="sidebar-nav mt-3">
 				<li class="sidebar-item active">
-					<a href="dashboard.html" class="sidebar-link">
+					<a href="dashboard.php" class="sidebar-link">
 						<i class="align-middle" data-lucide="sliders"></i>
 						<span class="align-middle" style="color: #FDE9DF;">Dashboards</span>
 					</a>
 				</li>
 				<li class="sidebar-item">
-					<a href="customers.html" class="sidebar-link">
+					<a href="customer.php" class="sidebar-link">
 						<i class="align-middle" data-lucide="users"></i>
 						<span class="align-middle" style="color: #FDE9DF;">Customers</span>
 					</a>
 				</li>
 				<li class="sidebar-item">
-					<a href="products.html" class="sidebar-link">
+					<a href="fleets.php" class="sidebar-link">
 						<i class="align-middle" data-lucide="trello"></i>
 						<span class="align-middle" style="color: #FDE9DF;">Fleets</span>
 					</a>
 				</li>
 				<li class="sidebar-item">
-					<a href="products.html" class="sidebar-link">
+					<a href="booking.php" class="sidebar-link">
 						<i class="align-middle" data-lucide="trello"></i>
-						<span class="align-middle" style="color: #FDE9DF;">Fleets</span>
+						<span class="align-middle" style="color: #FDE9DF;">Bookings</span>
 					</a>
 				</li>
 				<li class="sidebar-item">
-					<a href="products.html" class="sidebar-link">
+					<a href="transaction.php" class="sidebar-link">
 						<i class="align-middle" data-lucide="trello"></i>
-						<span class="align-middle" style="color: #FDE9DF;">Fleets</span>
+						<span class="align-middle" style="color: #FDE9DF;">Transactions</span>
 					</a>
 				</li>
 				<li class="sidebar-item">
-					<a href="products.html" class="sidebar-link">
+					<a href="calendar.php" class="sidebar-link">
 						<i class="align-middle" data-lucide="trello"></i>
-						<span class="align-middle" style="color: #FDE9DF;">Fleets</span>
+						<span class="align-middle" style="color: #FDE9DF;">Calendar</span>
+					</a>
+				</li>
+				<li class="sidebar-item">
+					<a href="task.php" class="sidebar-link">
+						<i class="align-middle" data-lucide="trello"></i>
+						<span class="align-middle" style="color: #FDE9DF;">Task</span>
+					</a>
+				</li>
+				<li class="sidebar-item">
+					<a href="invoice.php" class="sidebar-link">
+						<i class="align-middle" data-lucide="trello"></i>
+						<span class="align-middle" style="color: #FDE9DF;">Invoice</span>
 					</a>
 				</li>
 			</ul>
@@ -51,26 +63,26 @@
 	</nav>
 	<div class="main">
 		<nav class="navbar navbar-expand navbar-bg" style="height: 4.188rem; backgroud: #FFFEFD;">
-			<a class="sidebar-toggle">
-				<i class="hamburger align-self-center"></i>
-			</a>
+            <a class="sidebar-toggle">
+                <i class="hamburger align-self-center"></i>
+            </a>
 
-			<div class="navbar-collapse collapse">
-				<ul class="navbar-nav navbar-align ">
-					<li class="nav-item dropdown">
-						<img src="../src/assets/images/admin_pp.jpg" class="img-fluid rounded-circle me-1 mt-n2 mb-n2"
-							width="40" height="40" />
-						<span style="margin-right: 1rem;">Admin Carl</span>
-					</li>
-				</ul>
-			</div>
-			<div>
-				<button class="border border-none text-white "
-					style=" margin-bottom: 0.2rem; width: 3.9rem; height: 1.7rem; font-size: 0.725rem; background: #E99670; border-radius: 5px;"><a
-						href="log-in.php" style="text-decoration: none; color: white;">Sign
-						Out</a></button>
-			</div>
-		</nav>
+            <div class="navbar-collapse collapse">
+                <ul class="navbar-nav navbar-align ">
+                    <li class="nav-item dropdown">
+                        <img src="../src/assets/images/admin_pp.jpg" class="img-fluid rounded-circle me-1 mt-n2 mb-n2"
+                            width="40" height="40" />
+                        <span style="margin-right: 1rem;">Admin Carl</span>
+                    </li>
+                </ul>
+            </div>
+            <div>
+                <button class="border border-none text-white "
+                    style=" margin-bottom: 0.2rem; width: 3.9rem; height: 1.7rem; font-size: 0.725rem; background: #E99670; border-radius: 5px;"><a
+                        href="../index.php" style="text-decoration: none; color: white;">Sign
+                        Out</a></button>
+            </div>
+        </nav>
 		<main class="content">
 			<div class="container-fluid p-0">
 

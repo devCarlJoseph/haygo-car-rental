@@ -3,7 +3,7 @@
 ?>
 
 <div class="wrapper" style="background: #EBE7E4;">
-    <nav id="sidebar" class="sidebar">
+    <nav id="sidebar" class="sidebar" style="background: #AB8B7D">
 		<div class="sidebar-content js-simplebar" style="background: #AB8B7D">
 			<a class="sidebar-brand" href="/">
 				<img src="../src/assets/images/logodash.png" style="width: 3.813rem; height: 2.438rem;">
@@ -11,38 +11,51 @@
 
 			<ul class="sidebar-nav mt-3">
 				<li class="sidebar-item active">
-					<a href="dashboard.html" class="sidebar-link">
+					<a href="dashboard.php" class="sidebar-link">
 						<i class="align-middle" data-lucide="sliders"></i>
 						<span class="align-middle" style="color: #FDE9DF;">Dashboards</span>
 					</a>
 				</li>
 				<li class="sidebar-item">
-					<a href="customers.html" class="sidebar-link">
+					<a href="customer.php" class="sidebar-link">
 						<i class="align-middle" data-lucide="users"></i>
 						<span class="align-middle" style="color: #FDE9DF;">Customers</span>
 					</a>
 				</li>
 				<li class="sidebar-item">
-					<a href="products.html" class="sidebar-link">
+					<a href="fleets.php" class="sidebar-link">
 						<i class="align-middle" data-lucide="trello"></i>
 						<span class="align-middle" style="color: #FDE9DF;">Fleets</span>
 					</a>
 				</li>
 				<li class="sidebar-item">
-					<a href="products.html" class="sidebar-link">
+					<a href="booking.php" class="sidebar-link">
 						<i class="align-middle" data-lucide="trello"></i>
-						<span class="align-middle" style="color: #FDE9DF;">Fleets</span>
+						<span class="align-middle" style="color: #FDE9DF;">Bookings</span>
 					</a>
 				</li>
 				<li class="sidebar-item">
-					<a href="products.html" class="sidebar-link">
+					<a href="transaction.php" class="sidebar-link">
 						<i class="align-middle" data-lucide="trello"></i>
-						<span class="align-middle" style="color: #FDE9DF;">Fleets</span>
+						<span class="align-middle" style="color: #FDE9DF;">Transactions</span>
 					</a>
-				</li><li class="sidebar-item">
-					<a href="products.html" class="sidebar-link">
+				</li>
+				<li class="sidebar-item">
+					<a href="calendar.php" class="sidebar-link">
 						<i class="align-middle" data-lucide="trello"></i>
-						<span class="align-middle" style="color: #FDE9DF;">Fleets</span>
+						<span class="align-middle" style="color: #FDE9DF;">Calendar</span>
+					</a>
+				</li>
+				<li class="sidebar-item">
+					<a href="task.php" class="sidebar-link">
+						<i class="align-middle" data-lucide="trello"></i>
+						<span class="align-middle" style="color: #FDE9DF;">Task</span>
+					</a>
+				</li>
+				<li class="sidebar-item">
+					<a href="invoice.php" class="sidebar-link">
+						<i class="align-middle" data-lucide="trello"></i>
+						<span class="align-middle" style="color: #FDE9DF;">Invoice</span>
 					</a>
 				</li>
 			</ul>
@@ -66,7 +79,7 @@
             <div>
                 <button class="border border-none text-white "
                     style=" margin-bottom: 0.2rem; width: 3.9rem; height: 1.7rem; font-size: 0.725rem; background: #E99670; border-radius: 5px;"><a
-                        href="log-in.php" style="text-decoration: none; color: white;">Sign
+                        href="../index.php" style="text-decoration: none; color: white;">Sign
                         Out</a></button>
             </div>
         </nav>
