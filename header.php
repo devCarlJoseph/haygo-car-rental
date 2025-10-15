@@ -25,7 +25,7 @@
                         <a class="text-decoration-none text-white" href="index.php"><li>Home</li></a>
                         <a class="text-decoration-none text-white" href="about.php"><li>About Us</li></a>
                         <a class="text-decoration-none text-white" href="vehicles.php"><li>Vehicles</li></a>
-                        <li>Contacts</li>
+                        <a class="text-decoration-none text-white" href="contact.php"><li>Contact Us</li></a>
                     </ul>
                 </div>
                 <div>
@@ -35,7 +35,7 @@
                 <div class="d-flex justify-content-center align-items-center gap-2">
                     <div class="bg-transparent d-flex justify-content-center align-items-center gap-1 rounded-5 border border-white text-white"
                         style="width: 4.95rem; height: 1.75rem; font-size: 0.938rem">
-                        Help
+                        <a class="text-decoration-none text-white" href="help.php">Help</a>
                         <div class="bg-transparent rounded-5 d-flex justify-content-center align-items-center border"
                             style="width: 1.125rem; height: 1.125rem">
                             <i class="fa-solid fa-info"></i>
