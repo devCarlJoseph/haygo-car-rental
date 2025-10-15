@@ -46,7 +46,7 @@ require_once 'header.php';
         </div>
         <div>
             <div class="d-flex justify-content-center align-items-center" style="margin-top: 3.5rem;">
-                <div class="bg-danger" style="width: 52.75rem; height: 27.75rem;">
+                <div class="text-white" style="width: 52.75rem; height: 27.75rem;">
                     <div>
                         <div>
                             <h3 style="font-size: 1.5rem;">Booking & Reservations</h3>

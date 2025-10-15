@@ -62,7 +62,7 @@
 		</div>
 	</nav>
 	<div class="main">
-		<nav class="navbar navbar-expand navbar-bg" style="height: 4.188rem; backgroud: #FFFEFD;">
+		<nav class="navbar navbar-expand navbar-bg" style="height: 4.188rem; background: #FFFEFD;">
             <a class="sidebar-toggle">
                 <i class="hamburger align-self-center"></i>
             </a>
