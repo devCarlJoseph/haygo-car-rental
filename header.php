@@ -22,10 +22,18 @@
                 <div class="d-flex justify-content-center align-items-center" style="width: 30.313rem; height: 2.5rem;">
                     <ul class="d-flex justify-content-between align-items-center gap-5 list-unstyled text-white"
                         style="font-size: 1.25rem;">
-                        <a class="text-decoration-none text-white" href="index.php"><li>Home</li></a>
-                        <a class="text-decoration-none text-white" href="about.php"><li>About Us</li></a>
-                        <a class="text-decoration-none text-white" href="vehicles.php"><li>Vehicles</li></a>
-                        <a class="text-decoration-none text-white" href="contact.php"><li>Contact Us</li></a>
+                        <a class="text-decoration-none text-white" href="index.php">
+                            <li>Home</li>
+                        </a>
+                        <a class="text-decoration-none text-white" href="about.php">
+                            <li>About Us</li>
+                        </a>
+                        <a class="text-decoration-none text-white" href="vehicles.php">
+                            <li>Vehicles</li>
+                        </a>
+                        <a class="text-decoration-none text-white" href="contact.php">
+                            <li>Contact Us</li>
+                        </a>
                     </ul>
                 </div>
                 <div>

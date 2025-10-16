@@ -31,24 +31,28 @@ require_once 'header.php';
             </div>
         </div>
         <div class="d-flex justify-content-center align-items-center">
-            <div class="bg-light d-flex justify-content-center align-items-center"
-                style="width: 77.75rem; height: 6.875rem; margin-top: 1.5rem; border-radius: 1.875rem; gap: 2.9rem;">
-                <div class="bg-danger" style="width: 14.375rem; height: 4rem;">
-
+            <div class="bg-light d-flex justify-content-between align-items-center"
+                style="width: 77.75rem; height: 6.875rem; margin-top: 1.5rem; border-radius: 1.875rem; gap: 2rem;">
+                <div class="mt-2" style="width: 14.375rem; height: 4rem; margin-left: 2rem">
+                    <h4 style="color: #8F8C8C; font-size: 1.125rem">Pick Up Address</h4>
+                    <p style="color: #615F5F; font-size: 0.875rem; margin-top: -0.5rem">United State of Made in China, ...</p>
                 </div>
                 <div style="width: 1px; height: 4rem; background: #B9B4B4;"></div>
-                <div class="bg-danger" style="width: 14.375rem; height: 4rem;">
-
+                <div class="mt-2" style="width: 14.375rem; height: 4rem;">
+                    <h4 style="color: #8F8C8C; font-size: 1.125rem">Pick Up Address</h4>
+                    <p style="color: #615F5F; font-size: 0.875rem; margin-top: -0.5rem">United State of Made in China, ...</p>
                 </div>
                 <div style="width: 1px; height: 4rem; background: #B9B4B4;"></div>
-                <div class="bg-danger" style="width: 8.25rem; height: 4rem;">
-
+                <div class="r" style="width: 8.25rem; height: 4rem;">
+                    <h4 style="color: #8F8C8C; font-size: 1.125rem">Pick Up Date</h4>
                 </div>
+
                 <div style="width: 1px; height: 4rem; background: #B9B4B4;"></div>
-                <div class="bg-danger" style="width: 8.25rem; height: 4rem;">
-
+                <div class="r" style="width: 8.25rem; height: 4rem;">
+                    <h4 style="color: #8F8C8C; font-size: 1.125rem">Drop Off Date</h4>
                 </div>
-                <div style="width: 10.375rem; height: 5.625rem; background-color: #D9BBAC; border-radius: 1.25rem;">
+
+                <div style="width: 10.375rem; height: 5.625rem; background-color: #D9BBAC; border-radius: 1.25rem; margin-right: 1rem">
                 </div>
             </div>
         </div>
