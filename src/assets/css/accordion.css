@@ -1,34 +1,24 @@
-/* 1. Base Styles for the Content */
+.accordion-item{
+    background-color: transparent;
+    border: none;
+}
+
 .accordion-content {
-  /* Start hidden by setting max-height to 0 */
-  max-height: 0;
-  overflow: hidden;
-  padding: 0 15px;
-  /* Add a transition for smooth opening/closing animation */
-  transition: max-height 0.3s ease-in-out, padding 0.3s ease-in-out; 
-}
+    color: #fff;
+    max-height: 0;
+    overflow: hidden;
+    margin: 0;
+    padding: 0 10px;
+    transition: max-height 0.3s ease-in-out, padding 0.3s ease-in-out; 
+    }
 
-/* 2. Style when the content is open */
-/* The max-height property is dynamically set by the JavaScript */
-
-/* 3. Optional: Styles for the header */
 .accordion-header {
-  background-color: #f7f7f7;
-  color: #444;
-  cursor: pointer;
-  padding: 5px 18px;
-  width: 100%;
-  border: none;
-  text-align: left;
-  outline: none;
-  transition: 0.3s;
-}
-
-.accordion-header:hover {
-  background-color: #ddd;
-}
-
-/* Optional: Change style for the currently active header */
-.accordion-header.active {
-  background-color: #ccc;
+    color: #fff;
+    cursor: pointer;
+    padding: 5px 10px;
+    width: 100%;
+    border: none;
+    text-align: left;
+    outline: none;
+    transition: 0.3s;
 }

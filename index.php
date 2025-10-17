@@ -168,6 +168,7 @@ require_once 'header.php';
             </div>
         </div>
     </div>
+    <!-- Popular Cars -->
     <div>
         <div class="d-flex justify-content-center align-items-center gap-5" style="margin-top: 5rem;">
             <div class="d-flex flex-column align-items-start gap-2" style="width: 18.125rem; height: 25.125rem;">
@@ -178,371 +179,378 @@ require_once 'header.php';
                     Fleet</button>
             </div>
 
-            <!-- Popular Cars -->
-            <div class="" style="width: 57.438rem; height: 25.125rem;">
-                <div class="slides d-flex gap-4" style="height: 21rem; overflow: hidden;">
-                    <!-- Slide 1 -->
-                    <div class="d-flex justify-content-center align-items-center" style="gap: 2rem;" id="slide-1">
-                        <div class="card"
-                            style="width: 17.813rem; height: 20.313rem; border: none; border-radius: 1.25rem; background: #FFF7F3;">
-                            <div>
-                                <h1 class="p-3" style="font-size: 1.5rem;">Honda Cr V</h1>
-                            </div>
-                            <div class="d-flex justify-content-center align-items-center">
-                                <img src="src/assets/images/Blueprint/Large Cars/Honda CR V.png"
-                                    style="width: 16.75rem; height: 8.75rem;">
-                            </div>
-                            <div class="d-flex justify-content-center align-items-center mt-2">
-                                <div style="width: 15.813rem; height: 2.813rem; background: #F5E9E3;">
-                                    <div class="d-flex justify-content-evenly align-items-center mt-2">
-                                        <div class="d-flex flex-column align-items-center">
-                                            <i class="fa-solid fa-gauge" style="font-size: 1.25rem; color: #d6a78eff"></i>
-                                            <p style="font-size: 0.625rem; color: #473d36ff">52,754 miles</p>
+            <div class="d-flex flex-column" style="width: 57.438rem; height: 25.125rem;">
+                    <div id="imageCarousel" class="carousel slide border rounded-3" data-bs-ride="carousel">
+                        <!-- Slides -->
+                        <div class="carousel-inner gap-4">
+                            <div class="carousel-item active">
+                            <!-- Slide 1 -->
+                            <div class="d-flex justify-content-center align-items-center" style="gap: 2rem;" id="slide-1">
+                                <div class="card"
+                                    style="width: 17.813rem; height: 20.313rem; border: none; border-radius: 1.25rem; background: #FFF7F3;">
+                                    <div>
+                                        <h1 class="p-3" style="font-size: 1.5rem;">Honda Cr V</h1>
+                                    </div>
+                                    <div class="d-flex justify-content-center align-items-center">
+                                        <img src="src/assets/images/Blueprint/Large Cars/Honda CR V.png"
+                                            style="width: 16.75rem; height: 8.75rem;">
+                                    </div>
+                                    <div class="d-flex justify-content-center align-items-center mt-2">
+                                        <div style="width: 15.813rem; height: 2.813rem; background: #F5E9E3;">
+                                            <div class="d-flex justify-content-evenly align-items-center mt-2">
+                                                <div class="d-flex flex-column align-items-center">
+                                                    <i class="fa-solid fa-gauge" style="font-size: 1.25rem; color: #d6a78eff"></i>
+                                                    <p style="font-size: 0.625rem; color: #473d36ff">52,754 miles</p>
+                                                </div>
+                                                <div class="d-flex flex-column align-items-center">
+                                                    <i class="fa-solid fa-gas-pump" style="font-size: 1.25rem; color: #d6a78eff"></i>
+                                                    <p style="font-size: 0.625rem; color: #473d36ff">Petrol</p>
+                                                </div>
+                                                <div class="d-flex flex-column align-items-center">
+                                                    <i class="fa-solid fa-gear" style="font-size: 1.25rem; color: #d6a78eff"></i>
+                                                    <p style="font-size: 0.625rem; color: #473d36ff">Automatic</p>
+                                                </div>
+                                            </div>
                                         </div>
-                                        <div class="d-flex flex-column align-items-center">
-                                            <i class="fa-solid fa-gas-pump" style="font-size: 1.25rem; color: #d6a78eff"></i>
-                                            <p style="font-size: 0.625rem; color: #473d36ff">Petrol</p>
+                                    </div>
+                                    <div class="d-flex justify-content-between align-items-center mt-3">
+                                        <div style="margin-left: 1.2rem;">
+                                            <h1 style="font-size: 1.188rem;">$450/<span style="font-size: 0.75rem;">day</span>
+                                            </h1>
                                         </div>
-                                        <div class="d-flex flex-column align-items-center">
-                                            <i class="fa-solid fa-gear" style="font-size: 1.25rem; color: #d6a78eff"></i>
-                                            <p style="font-size: 0.625rem; color: #473d36ff">Automatic</p>
+                                        <button class="rounded-4"
+                                            style="margin-right: 1.2rem; width: 4.938rem; height: 1.688rem; font-size: 0.688rem; background: #D9BBAC; border: none; color: #FFF3ED;">Book
+                                            Now</button>
+                                    </div>
+                                </div>
+                                <div class="card"
+                                    style="width: 17.813rem; height: 20.313rem; border: none; border-radius: 1.25rem; background: #FFF7F3;">
+                                    <div>
+                                        <h1 class="p-3" style="font-size: 1.5rem;">Honda Cr V</h1>
+                                    </div>
+                                    <div class="d-flex justify-content-center align-items-center">
+                                        <img src="src/assets/images/Blueprint/Large Cars/Honda CR V.png"
+                                            style="width: 16.75rem; height: 8.75rem;">
+                                    </div>
+                                    <div class="d-flex justify-content-center align-items-center mt-2">
+                                        <div style="width: 15.813rem; height: 2.813rem; background: #F5E9E3;">
+                                            <div class="d-flex justify-content-evenly align-items-center mt-2">
+                                                <div class="d-flex flex-column align-items-center">
+                                                    <i class="fa-solid fa-gauge" style="font-size: 1.25rem; color: #d6a78eff"></i>
+                                                    <p style="font-size: 0.625rem; color: #473d36ff">52,754 miles</p>
+                                                </div>
+                                                <div class="d-flex flex-column align-items-center">
+                                                    <i class="fa-solid fa-gas-pump" style="font-size: 1.25rem; color: #d6a78eff"></i>
+                                                    <p style="font-size: 0.625rem; color: #473d36ff">Petrol</p>
+                                                </div>
+                                                <div class="d-flex flex-column align-items-center">
+                                                    <i class="fa-solid fa-gear" style="font-size: 1.25rem; color: #d6a78eff"></i>
+                                                    <p style="font-size: 0.625rem; color: #473d36ff">Automatic</p>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="d-flex justify-content-between align-items-center mt-3">
+                                        <div style="margin-left: 1.2rem;">
+                                            <h1 style="font-size: 1.188rem;">$450/<span style="font-size: 0.75rem;">day</span>
+                                            </h1>
+                                        </div>
+                                        <button class="rounded-4"
+                                            style="margin-right: 1.2rem; width: 4.938rem; height: 1.688rem; font-size: 0.688rem; background: #D9BBAC; border: none; color: #FFF3ED;">Book
+                                            Now</button>
+                                    </div>
+                                </div>
+                                <div class="card"
+                                    style="width: 17.813rem; height: 20.313rem; border: none; border-radius: 1.25rem; background: #FFF7F3;">
+                                    <div>
+                                        <h1 class="p-3" style="font-size: 1.5rem;">Honda Cr V</h1>
+                                    </div>
+                                    <div class="d-flex justify-content-center align-items-center">
+                                        <img src="src/assets/images/Blueprint/Large Cars/Honda CR V.png"
+                                            style="width: 16.75rem; height: 8.75rem;">
+                                    </div>
+                                    <div class="d-flex justify-content-center align-items-center mt-2">
+                                        <div style="width: 15.813rem; height: 2.813rem; background: #F5E9E3;">
+                                            <div class="d-flex justify-content-evenly align-items-center mt-2">
+                                                <div class="d-flex flex-column align-items-center">
+                                                    <i class="fa-solid fa-gauge" style="font-size: 1.25rem; color: #d6a78eff"></i>
+                                                    <p style="font-size: 0.625rem; color: #473d36ff">52,754 miles</p>
+                                                </div>
+                                                <div class="d-flex flex-column align-items-center">
+                                                    <i class="fa-solid fa-gas-pump" style="font-size: 1.25rem; color: #d6a78eff"></i>
+                                                    <p style="font-size: 0.625rem; color: #473d36ff">Petrol</p>
+                                                </div>
+                                                <div class="d-flex flex-column align-items-center">
+                                                    <i class="fa-solid fa-gear" style="font-size: 1.25rem; color: #d6a78eff"></i>
+                                                    <p style="font-size: 0.625rem; color: #473d36ff">Automatic</p>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="d-flex justify-content-between align-items-center mt-3">
+                                        <div style="margin-left: 1.2rem;">
+                                            <h1 style="font-size: 1.188rem;">$450/<span style="font-size: 0.75rem;">day</span>
+                                            </h1>
+                                        </div>
+                                        <button class="rounded-4"
+                                            style="margin-right: 1.2rem; width: 4.938rem; height: 1.688rem; font-size: 0.688rem; background: #D9BBAC; border: none; color: #FFF3ED;">Book
+                                            Now</button>
+                                    </div>
+                                </div>
+                            </div>
+                            </div>
+                            <div class="carousel-item">
+                            <!-- Slide 2 -->
+                            <div class="d-flex justify-content-center align-items-center" style="gap: 2rem;"id="slide-2">
+                                <div class="card"
+                                    style="width: 17.813rem; height: 20.313rem; border: none; border-radius: 1.25rem; background: #FFF7F3;">
+                                    <div>
+                                        <h1 class="p-3" style="font-size: 1.5rem;">Honda Cr V</h1>
+                                    </div>
+                                    <div class="d-flex justify-content-center align-items-center">
+                                        <img src="src/assets/images/Blueprint/Large Cars/Jeep Compass.png"
+                                            style="width: 16.75rem; height: 8.75rem;">
+                                    </div>
+                                    <div class="d-flex justify-content-center align-items-center mt-2">
+                                        <div style="width: 15.813rem; height: 2.813rem; background: #F5E9E3;">
+                                            <div class="d-flex justify-content-evenly align-items-center mt-2">
+                                                <div class="d-flex flex-column align-items-center">
+                                                    <i class="fa-solid fa-gauge" style="font-size: 1.25rem; color: #d6a78eff"></i>
+                                                    <p style="font-size: 0.625rem; color: #473d36ff">52,754 miles</p>
+                                                </div>
+                                                <div class="d-flex flex-column align-items-center">
+                                                    <i class="fa-solid fa-gas-pump" style="font-size: 1.25rem; color: #d6a78eff"></i>
+                                                    <p style="font-size: 0.625rem; color: #473d36ff">Petrol</p>
+                                                </div>
+                                                <div class="d-flex flex-column align-items-center">
+                                                    <i class="fa-solid fa-gear" style="font-size: 1.25rem; color: #d6a78eff"></i>
+                                                    <p style="font-size: 0.625rem; color: #473d36ff">Automatic</p>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="d-flex justify-content-between align-items-center mt-3">
+                                        <div style="margin-left: 1.2rem;">
+                                            <h1 style="font-size: 1.188rem;">$450/<span style="font-size: 0.75rem;">day</span>
+                                            </h1>
+                                        </div>
+                                        <button class="rounded-4"
+                                            style="margin-right: 1.2rem; width: 4.938rem; height: 1.688rem; font-size: 0.688rem; background: #D9BBAC; border: none; color: #FFF3ED;">Book
+                                            Now</button>
+                                    </div>
+                                </div>
+                                <div class="card"
+                                    style="width: 17.813rem; height: 20.313rem; border: none; border-radius: 1.25rem; background: #FFF7F3;">
+                                    <div>
+                                        <h1 class="p-3" style="font-size: 1.5rem;">Honda Cr V</h1>
+                                    </div>
+                                    <div class="d-flex justify-content-center align-items-center">
+                                        <img src="src/assets/images/Blueprint/Large Cars/Jeep Compass.png"
+                                            style="width: 16.75rem; height: 8.75rem;">
+                                    </div>
+                                    <div class="d-flex justify-content-center align-items-center mt-2">
+                                        <div style="width: 15.813rem; height: 2.813rem; background: #F5E9E3;">
+                                            <div class="d-flex justify-content-evenly align-items-center mt-2">
+                                                <div class="d-flex flex-column align-items-center">
+                                                    <i class="fa-solid fa-gauge" style="font-size: 1.25rem; color: #d6a78eff"></i>
+                                                    <p style="font-size: 0.625rem; color: #473d36ff">52,754 miles</p>
+                                                </div>
+                                                <div class="d-flex flex-column align-items-center">
+                                                    <i class="fa-solid fa-gas-pump" style="font-size: 1.25rem; color: #d6a78eff"></i>
+                                                    <p style="font-size: 0.625rem; color: #473d36ff">Petrol</p>
+                                                </div>
+                                                <div class="d-flex flex-column align-items-center">
+                                                    <i class="fa-solid fa-gear" style="font-size: 1.25rem; color: #d6a78eff"></i>
+                                                    <p style="font-size: 0.625rem; color: #473d36ff">Automatic</p>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="d-flex justify-content-between align-items-center mt-3">
+                                        <div style="margin-left: 1.2rem;">
+                                            <h1 style="font-size: 1.188rem;">$450/<span style="font-size: 0.75rem;">day</span>
+                                            </h1>
+                                        </div>
+                                        <button class="rounded-4"
+                                            style="margin-right: 1.2rem; width: 4.938rem; height: 1.688rem; font-size: 0.688rem; background: #D9BBAC; border: none; color: #FFF3ED;">Book
+                                            Now</button>
+                                    </div>
+                                </div>
+                                <div class="card"
+                                    style="width: 17.813rem; height: 20.313rem; border: none; border-radius: 1.25rem; background: #FFF7F3;">
+                                    <div>
+                                        <h1 class="p-3" style="font-size: 1.5rem;">Honda Cr V</h1>
+                                    </div>
+                                    <div class="d-flex justify-content-center align-items-center">
+                                        <img src="src/assets/images/Blueprint/Large Cars/Jeep Compass.png"
+                                            style="width: 16.75rem; height: 8.75rem;">
+                                    </div>
+                                    <div class="d-flex justify-content-center align-items-center mt-2">
+                                        <div style="width: 15.813rem; height: 2.813rem; background: #F5E9E3;">
+                                            <div class="d-flex justify-content-evenly align-items-center mt-2">
+                                                <div class="d-flex flex-column align-items-center">
+                                                    <i class="fa-solid fa-gauge" style="font-size: 1.25rem; color: #d6a78eff"></i>
+                                                    <p style="font-size: 0.625rem; color: #473d36ff">52,754 miles</p>
+                                                </div>
+                                                <div class="d-flex flex-column align-items-center">
+                                                    <i class="fa-solid fa-gas-pump" style="font-size: 1.25rem; color: #d6a78eff"></i>
+                                                    <p style="font-size: 0.625rem; color: #473d36ff">Petrol</p>
+                                                </div>
+                                                <div class="d-flex flex-column align-items-center">
+                                                    <i class="fa-solid fa-gear" style="font-size: 1.25rem; color: #d6a78eff"></i>
+                                                    <p style="font-size: 0.625rem; color: #473d36ff">Automatic</p>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="d-flex justify-content-between align-items-center mt-3">
+                                        <div style="margin-left: 1.2rem;">
+                                            <h1 style="font-size: 1.188rem;">$450/<span style="font-size: 0.75rem;">day</span>
+                                            </h1>
+                                        </div>
+                                        <button class="rounded-4"
+                                            style="margin-right: 1.2rem; width: 4.938rem; height: 1.688rem; font-size: 0.688rem; background: #D9BBAC; border: none; color: #FFF3ED;">Book
+                                            Now</button>
+                                    </div>
+                                </div>
+                            </div>
+                            </div>
+                            <div class="carousel-item">
+                            <!-- Slide 3 -->
+                            <div class="d-flex justify-content-center align-items-center" style="gap: 2rem;"id="slide-3">
+                                    <div class="card"
+                                        style="width: 17.813rem; height: 20.313rem; border: none; border-radius: 1.25rem; background: #FFF7F3;">
+                                        <div>
+                                            <h1 class="p-3" style="font-size: 1.5rem;">Honda Cr V</h1>
+                                        </div>
+                                        <div class="d-flex justify-content-center align-items-center">
+                                            <img src="src/assets/images/Blueprint/Large Cars/Kia Carnival.png"
+                                                style="width: 16.75rem; height: 8.75rem;">
+                                        </div>
+                                        <div class="d-flex justify-content-center align-items-center mt-2">
+                                            <div style="width: 15.813rem; height: 2.813rem; background: #F5E9E3;">
+                                                <div class="d-flex justify-content-evenly align-items-center mt-2">
+                                                    <div class="d-flex flex-column align-items-center">
+                                                        <i class="fa-solid fa-gauge" style="font-size: 1.25rem; color: #d6a78eff"></i>
+                                                        <p style="font-size: 0.625rem; color: #473d36ff">52,754 miles</p>
+                                                    </div>
+                                                    <div class="d-flex flex-column align-items-center">
+                                                        <i class="fa-solid fa-gas-pump" style="font-size: 1.25rem; color: #d6a78eff"></i>
+                                                        <p style="font-size: 0.625rem; color: #473d36ff">Petrol</p>
+                                                    </div>
+                                                    <div class="d-flex flex-column align-items-center">
+                                                        <i class="fa-solid fa-gear" style="font-size: 1.25rem; color: #d6a78eff"></i>
+                                                        <p style="font-size: 0.625rem; color: #473d36ff">Automatic</p>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="d-flex justify-content-between align-items-center mt-3">
+                                            <div style="margin-left: 1.2rem;">
+                                                <h1 style="font-size: 1.188rem;">$450/<span style="font-size: 0.75rem;">day</span>
+                                                </h1>
+                                            </div>
+                                            <button class="rounded-4"
+                                                style="margin-right: 1.2rem; width: 4.938rem; height: 1.688rem; font-size: 0.688rem; background: #D9BBAC; border: none; color: #FFF3ED;">Book
+                                                Now</button>
+                                        </div>
+                                    </div>
+                                    <div class="card"
+                                        style="width: 17.813rem; height: 20.313rem; border: none; border-radius: 1.25rem; background: #FFF7F3;">
+                                        <div>
+                                            <h1 class="p-3" style="font-size: 1.5rem;">Honda Cr V</h1>
+                                        </div>
+                                        <div class="d-flex justify-content-center align-items-center">
+                                            <img src="src/assets/images/Blueprint/Large Cars/Kia Carnival.png"
+                                                style="width: 16.75rem; height: 8.75rem;">
+                                        </div>
+                                        <div class="d-flex justify-content-center align-items-center mt-2">
+                                            <div style="width: 15.813rem; height: 2.813rem; background: #F5E9E3;">
+                                                <div class="d-flex justify-content-evenly align-items-center mt-2">
+                                                    <div class="d-flex flex-column align-items-center">
+                                                        <i class="fa-solid fa-gauge" style="font-size: 1.25rem; color: #d6a78eff"></i>
+                                                        <p style="font-size: 0.625rem; color: #473d36ff">52,754 miles</p>
+                                                    </div>
+                                                    <div class="d-flex flex-column align-items-center">
+                                                        <i class="fa-solid fa-gas-pump" style="font-size: 1.25rem; color: #d6a78eff"></i>
+                                                        <p style="font-size: 0.625rem; color: #473d36ff">Petrol</p>
+                                                    </div>
+                                                    <div class="d-flex flex-column align-items-center">
+                                                        <i class="fa-solid fa-gear" style="font-size: 1.25rem; color: #d6a78eff"></i>
+                                                        <p style="font-size: 0.625rem; color: #473d36ff">Automatic</p>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="d-flex justify-content-between align-items-center mt-3">
+                                            <div style="margin-left: 1.2rem;">
+                                                <h1 style="font-size: 1.188rem;">$450/<span style="font-size: 0.75rem;">day</span>
+                                                </h1>
+                                            </div>
+                                            <button class="rounded-4"
+                                                style="margin-right: 1.2rem; width: 4.938rem; height: 1.688rem; font-size: 0.688rem; background: #D9BBAC; border: none; color: #FFF3ED;">Book
+                                                Now</button>
+                                        </div>
+                                    </div>
+                                    <div class="card"
+                                        style="width: 17.813rem; height: 20.313rem; border: none; border-radius: 1.25rem; background: #FFF7F3;">
+                                        <div>
+                                            <h1 class="p-3" style="font-size: 1.5rem;">Honda Cr V</h1>
+                                        </div>
+                                        <div class="d-flex justify-content-center align-items-center">
+                                            <img src="src/assets/images/Blueprint/Large Cars/Kia Carnival.png"
+                                                style="width: 16.75rem; height: 8.75rem;">
+                                        </div>
+                                        <div class="d-flex justify-content-center align-items-center mt-2">
+                                            <div style="width: 15.813rem; height: 2.813rem; background: #F5E9E3;">
+                                                <div class="d-flex justify-content-evenly align-items-center mt-2">
+                                                    <div class="d-flex flex-column align-items-center">
+                                                        <i class="fa-solid fa-gauge" style="font-size: 1.25rem; color: #d6a78eff"></i>
+                                                        <p style="font-size: 0.625rem; color: #473d36ff">52,754 miles</p>
+                                                    </div>
+                                                    <div class="d-flex flex-column align-items-center">
+                                                        <i class="fa-solid fa-gas-pump" style="font-size: 1.25rem; color: #d6a78eff"></i>
+                                                        <p style="font-size: 0.625rem; color: #473d36ff">Petrol</p>
+                                                    </div>
+                                                    <div class="d-flex flex-column align-items-center">
+                                                        <i class="fa-solid fa-gear" style="font-size: 1.25rem; color: #d6a78eff"></i>
+                                                        <p style="font-size: 0.625rem; color: #473d36ff">Automatic</p>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="d-flex justify-content-between align-items-center mt-3">
+                                            <div style="margin-left: 1.2rem;">
+                                                <h1 style="font-size: 1.188rem;">$450/<span style="font-size: 0.75rem;">day</span>
+                                                </h1>
+                                            </div>
+                                            <button class="rounded-4"
+                                                style="margin-right: 1.2rem; width: 4.938rem; height: 1.688rem; font-size: 0.688rem; background: #D9BBAC; border: none; color: #FFF3ED;">Book
+                                                Now</button>
                                         </div>
                                     </div>
                                 </div>
                             </div>
-                            <div class="d-flex justify-content-between align-items-center mt-3">
-                                <div style="margin-left: 1.2rem;">
-                                    <h1 style="font-size: 1.188rem;">$450/<span style="font-size: 0.75rem;">day</span>
-                                    </h1>
-                                </div>
-                                <button class="rounded-4"
-                                    style="margin-right: 1.2rem; width: 4.938rem; height: 1.688rem; font-size: 0.688rem; background: #D9BBAC; border: none; color: #FFF3ED;">Book
-                                    Now</button>
-                            </div>
                         </div>
-                        <div class="card"
-                            style="width: 17.813rem; height: 20.313rem; border: none; border-radius: 1.25rem; background: #FFF7F3;">
-                            <div>
-                                <h1 class="p-3" style="font-size: 1.5rem;">Honda Cr V</h1>
-                            </div>
-                            <div class="d-flex justify-content-center align-items-center">
-                                <img src="src/assets/images/Blueprint/Large Cars/Honda CR V.png"
-                                    style="width: 16.75rem; height: 8.75rem;">
-                            </div>
-                            <div class="d-flex justify-content-center align-items-center mt-2">
-                                <div style="width: 15.813rem; height: 2.813rem; background: #F5E9E3;">
-                                    <div class="d-flex justify-content-evenly align-items-center mt-2">
-                                        <div class="d-flex flex-column align-items-center">
-                                            <i class="fa-solid fa-gauge" style="font-size: 1.25rem; color: #d6a78eff"></i>
-                                            <p style="font-size: 0.625rem; color: #473d36ff">52,754 miles</p>
-                                        </div>
-                                        <div class="d-flex flex-column align-items-center">
-                                            <i class="fa-solid fa-gas-pump" style="font-size: 1.25rem; color: #d6a78eff"></i>
-                                            <p style="font-size: 0.625rem; color: #473d36ff">Petrol</p>
-                                        </div>
-                                        <div class="d-flex flex-column align-items-center">
-                                            <i class="fa-solid fa-gear" style="font-size: 1.25rem; color: #d6a78eff"></i>
-                                            <p style="font-size: 0.625rem; color: #473d36ff">Automatic</p>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="d-flex justify-content-between align-items-center mt-3">
-                                <div style="margin-left: 1.2rem;">
-                                    <h1 style="font-size: 1.188rem;">$450/<span style="font-size: 0.75rem;">day</span>
-                                    </h1>
-                                </div>
-                                <button class="rounded-4"
-                                    style="margin-right: 1.2rem; width: 4.938rem; height: 1.688rem; font-size: 0.688rem; background: #D9BBAC; border: none; color: #FFF3ED;">Book
-                                    Now</button>
-                            </div>
-                        </div>
-                        <div class="card"
-                            style="width: 17.813rem; height: 20.313rem; border: none; border-radius: 1.25rem; background: #FFF7F3;">
-                            <div>
-                                <h1 class="p-3" style="font-size: 1.5rem;">Honda Cr V</h1>
-                            </div>
-                            <div class="d-flex justify-content-center align-items-center">
-                                <img src="src/assets/images/Blueprint/Large Cars/Honda CR V.png"
-                                    style="width: 16.75rem; height: 8.75rem;">
-                            </div>
-                            <div class="d-flex justify-content-center align-items-center mt-2">
-                                <div style="width: 15.813rem; height: 2.813rem; background: #F5E9E3;">
-                                    <div class="d-flex justify-content-evenly align-items-center mt-2">
-                                        <div class="d-flex flex-column align-items-center">
-                                            <i class="fa-solid fa-gauge" style="font-size: 1.25rem; color: #d6a78eff"></i>
-                                            <p style="font-size: 0.625rem; color: #473d36ff">52,754 miles</p>
-                                        </div>
-                                        <div class="d-flex flex-column align-items-center">
-                                            <i class="fa-solid fa-gas-pump" style="font-size: 1.25rem; color: #d6a78eff"></i>
-                                            <p style="font-size: 0.625rem; color: #473d36ff">Petrol</p>
-                                        </div>
-                                        <div class="d-flex flex-column align-items-center">
-                                            <i class="fa-solid fa-gear" style="font-size: 1.25rem; color: #d6a78eff"></i>
-                                            <p style="font-size: 0.625rem; color: #473d36ff">Automatic</p>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="d-flex justify-content-between align-items-center mt-3">
-                                <div style="margin-left: 1.2rem;">
-                                    <h1 style="font-size: 1.188rem;">$450/<span style="font-size: 0.75rem;">day</span>
-                                    </h1>
-                                </div>
-                                <button class="rounded-4"
-                                    style="margin-right: 1.2rem; width: 4.938rem; height: 1.688rem; font-size: 0.688rem; background: #D9BBAC; border: none; color: #FFF3ED;">Book
-                                    Now</button>
-                            </div>
-                        </div>
-                    </div>
 
-                    <!-- Slide 2 -->
-                    <div class="d-flex justify-content-center align-items-center" style="gap: 2rem;"id="slide-2">
-                        <div class="card"
-                            style="width: 17.813rem; height: 20.313rem; border: none; border-radius: 1.25rem; background: #FFF7F3;">
-                            <div>
-                                <h1 class="p-3" style="font-size: 1.5rem;">Honda Cr V</h1>
+                        <div class="d-flex flex-column align-items-center justify-content-center">
+                            <div class="d-flex gap-1" style="border: none; margin-top: 1rem;">
+                                <button type="button" data-bs-target="#imageCarousel" data-bs-slide-to="0" class="progress active" aria-current="true" style="height: 0.5rem; width: 2.563rem; border: none; border-radius: 4px; background-color: #4b3d3dff"></button>
+                                <button type="button" data-bs-target="#imageCarousel" data-bs-slide-to="1" class="progress" style="height: 0.5rem; width: 2.563rem; border: none; border-radius: 4px; background-color: #fff"></button>
+                                <button type="button" data-bs-target="#imageCarousel" data-bs-slide-to="2" class="progress" style="height: 0.5rem; width: 2.563rem; border: none; border-radius: 4px; background-color: #fff"></button>
                             </div>
-                            <div class="d-flex justify-content-center align-items-center">
-                                <img src="src/assets/images/Blueprint/Large Cars/Jeep Compass.png"
-                                    style="width: 16.75rem; height: 8.75rem;">
-                            </div>
-                            <div class="d-flex justify-content-center align-items-center mt-2">
-                                <div style="width: 15.813rem; height: 2.813rem; background: #F5E9E3;">
-                                    <div class="d-flex justify-content-evenly align-items-center mt-2">
-                                        <div class="d-flex flex-column align-items-center">
-                                            <i class="fa-solid fa-gauge" style="font-size: 1.25rem; color: #d6a78eff"></i>
-                                            <p style="font-size: 0.625rem; color: #473d36ff">52,754 miles</p>
-                                        </div>
-                                        <div class="d-flex flex-column align-items-center">
-                                            <i class="fa-solid fa-gas-pump" style="font-size: 1.25rem; color: #d6a78eff"></i>
-                                            <p style="font-size: 0.625rem; color: #473d36ff">Petrol</p>
-                                        </div>
-                                        <div class="d-flex flex-column align-items-center">
-                                            <i class="fa-solid fa-gear" style="font-size: 1.25rem; color: #d6a78eff"></i>
-                                            <p style="font-size: 0.625rem; color: #473d36ff">Automatic</p>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="d-flex justify-content-between align-items-center mt-3">
-                                <div style="margin-left: 1.2rem;">
-                                    <h1 style="font-size: 1.188rem;">$450/<span style="font-size: 0.75rem;">day</span>
-                                    </h1>
-                                </div>
-                                <button class="rounded-4"
-                                    style="margin-right: 1.2rem; width: 4.938rem; height: 1.688rem; font-size: 0.688rem; background: #D9BBAC; border: none; color: #FFF3ED;">Book
-                                    Now</button>
-                            </div>
-                        </div>
-                        <div class="card"
-                            style="width: 17.813rem; height: 20.313rem; border: none; border-radius: 1.25rem; background: #FFF7F3;">
-                            <div>
-                                <h1 class="p-3" style="font-size: 1.5rem;">Honda Cr V</h1>
-                            </div>
-                            <div class="d-flex justify-content-center align-items-center">
-                                <img src="src/assets/images/Blueprint/Large Cars/Jeep Compass.png"
-                                    style="width: 16.75rem; height: 8.75rem;">
-                            </div>
-                            <div class="d-flex justify-content-center align-items-center mt-2">
-                                <div style="width: 15.813rem; height: 2.813rem; background: #F5E9E3;">
-                                    <div class="d-flex justify-content-evenly align-items-center mt-2">
-                                        <div class="d-flex flex-column align-items-center">
-                                            <i class="fa-solid fa-gauge" style="font-size: 1.25rem; color: #d6a78eff"></i>
-                                            <p style="font-size: 0.625rem; color: #473d36ff">52,754 miles</p>
-                                        </div>
-                                        <div class="d-flex flex-column align-items-center">
-                                            <i class="fa-solid fa-gas-pump" style="font-size: 1.25rem; color: #d6a78eff"></i>
-                                            <p style="font-size: 0.625rem; color: #473d36ff">Petrol</p>
-                                        </div>
-                                        <div class="d-flex flex-column align-items-center">
-                                            <i class="fa-solid fa-gear" style="font-size: 1.25rem; color: #d6a78eff"></i>
-                                            <p style="font-size: 0.625rem; color: #473d36ff">Automatic</p>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="d-flex justify-content-between align-items-center mt-3">
-                                <div style="margin-left: 1.2rem;">
-                                    <h1 style="font-size: 1.188rem;">$450/<span style="font-size: 0.75rem;">day</span>
-                                    </h1>
-                                </div>
-                                <button class="rounded-4"
-                                    style="margin-right: 1.2rem; width: 4.938rem; height: 1.688rem; font-size: 0.688rem; background: #D9BBAC; border: none; color: #FFF3ED;">Book
-                                    Now</button>
-                            </div>
-                        </div>
-                        <div class="card"
-                            style="width: 17.813rem; height: 20.313rem; border: none; border-radius: 1.25rem; background: #FFF7F3;">
-                            <div>
-                                <h1 class="p-3" style="font-size: 1.5rem;">Honda Cr V</h1>
-                            </div>
-                            <div class="d-flex justify-content-center align-items-center">
-                                <img src="src/assets/images/Blueprint/Large Cars/Jeep Compass.png"
-                                    style="width: 16.75rem; height: 8.75rem;">
-                            </div>
-                            <div class="d-flex justify-content-center align-items-center mt-2">
-                                <div style="width: 15.813rem; height: 2.813rem; background: #F5E9E3;">
-                                    <div class="d-flex justify-content-evenly align-items-center mt-2">
-                                        <div class="d-flex flex-column align-items-center">
-                                            <i class="fa-solid fa-gauge" style="font-size: 1.25rem; color: #d6a78eff"></i>
-                                            <p style="font-size: 0.625rem; color: #473d36ff">52,754 miles</p>
-                                        </div>
-                                        <div class="d-flex flex-column align-items-center">
-                                            <i class="fa-solid fa-gas-pump" style="font-size: 1.25rem; color: #d6a78eff"></i>
-                                            <p style="font-size: 0.625rem; color: #473d36ff">Petrol</p>
-                                        </div>
-                                        <div class="d-flex flex-column align-items-center">
-                                            <i class="fa-solid fa-gear" style="font-size: 1.25rem; color: #d6a78eff"></i>
-                                            <p style="font-size: 0.625rem; color: #473d36ff">Automatic</p>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="d-flex justify-content-between align-items-center mt-3">
-                                <div style="margin-left: 1.2rem;">
-                                    <h1 style="font-size: 1.188rem;">$450/<span style="font-size: 0.75rem;">day</span>
-                                    </h1>
-                                </div>
-                                <button class="rounded-4"
-                                    style="margin-right: 1.2rem; width: 4.938rem; height: 1.688rem; font-size: 0.688rem; background: #D9BBAC; border: none; color: #FFF3ED;">Book
-                                    Now</button>
-                            </div>
-                        </div>
-                    </div>
 
-                <!-- Slide 3 -->
-                <div class="d-flex justify-content-center align-items-center" style="gap: 2rem;"id="slide-3">
-                        <div class="card"
-                            style="width: 17.813rem; height: 20.313rem; border: none; border-radius: 1.25rem; background: #FFF7F3;">
-                            <div>
-                                <h1 class="p-3" style="font-size: 1.5rem;">Honda Cr V</h1>
-                            </div>
-                            <div class="d-flex justify-content-center align-items-center">
-                                <img src="src/assets/images/Blueprint/Large Cars/Kia Carnival.png"
-                                    style="width: 16.75rem; height: 8.75rem;">
-                            </div>
-                            <div class="d-flex justify-content-center align-items-center mt-2">
-                                <div style="width: 15.813rem; height: 2.813rem; background: #F5E9E3;">
-                                    <div class="d-flex justify-content-evenly align-items-center mt-2">
-                                        <div class="d-flex flex-column align-items-center">
-                                            <i class="fa-solid fa-gauge" style="font-size: 1.25rem; color: #d6a78eff"></i>
-                                            <p style="font-size: 0.625rem; color: #473d36ff">52,754 miles</p>
-                                        </div>
-                                        <div class="d-flex flex-column align-items-center">
-                                            <i class="fa-solid fa-gas-pump" style="font-size: 1.25rem; color: #d6a78eff"></i>
-                                            <p style="font-size: 0.625rem; color: #473d36ff">Petrol</p>
-                                        </div>
-                                        <div class="d-flex flex-column align-items-center">
-                                            <i class="fa-solid fa-gear" style="font-size: 1.25rem; color: #d6a78eff"></i>
-                                            <p style="font-size: 0.625rem; color: #473d36ff">Automatic</p>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="d-flex justify-content-between align-items-center mt-3">
-                                <div style="margin-left: 1.2rem;">
-                                    <h1 style="font-size: 1.188rem;">$450/<span style="font-size: 0.75rem;">day</span>
-                                    </h1>
-                                </div>
-                                <button class="rounded-4"
-                                    style="margin-right: 1.2rem; width: 4.938rem; height: 1.688rem; font-size: 0.688rem; background: #D9BBAC; border: none; color: #FFF3ED;">Book
-                                    Now</button>
-                            </div>
-                        </div>
-                        <div class="card"
-                            style="width: 17.813rem; height: 20.313rem; border: none; border-radius: 1.25rem; background: #FFF7F3;">
-                            <div>
-                                <h1 class="p-3" style="font-size: 1.5rem;">Honda Cr V</h1>
-                            </div>
-                            <div class="d-flex justify-content-center align-items-center">
-                                <img src="src/assets/images/Blueprint/Large Cars/Kia Carnival.png"
-                                    style="width: 16.75rem; height: 8.75rem;">
-                            </div>
-                            <div class="d-flex justify-content-center align-items-center mt-2">
-                                <div style="width: 15.813rem; height: 2.813rem; background: #F5E9E3;">
-                                    <div class="d-flex justify-content-evenly align-items-center mt-2">
-                                        <div class="d-flex flex-column align-items-center">
-                                            <i class="fa-solid fa-gauge" style="font-size: 1.25rem; color: #d6a78eff"></i>
-                                            <p style="font-size: 0.625rem; color: #473d36ff">52,754 miles</p>
-                                        </div>
-                                        <div class="d-flex flex-column align-items-center">
-                                            <i class="fa-solid fa-gas-pump" style="font-size: 1.25rem; color: #d6a78eff"></i>
-                                            <p style="font-size: 0.625rem; color: #473d36ff">Petrol</p>
-                                        </div>
-                                        <div class="d-flex flex-column align-items-center">
-                                            <i class="fa-solid fa-gear" style="font-size: 1.25rem; color: #d6a78eff"></i>
-                                            <p style="font-size: 0.625rem; color: #473d36ff">Automatic</p>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="d-flex justify-content-between align-items-center mt-3">
-                                <div style="margin-left: 1.2rem;">
-                                    <h1 style="font-size: 1.188rem;">$450/<span style="font-size: 0.75rem;">day</span>
-                                    </h1>
-                                </div>
-                                <button class="rounded-4"
-                                    style="margin-right: 1.2rem; width: 4.938rem; height: 1.688rem; font-size: 0.688rem; background: #D9BBAC; border: none; color: #FFF3ED;">Book
-                                    Now</button>
-                            </div>
-                        </div>
-                        <div class="card"
-                            style="width: 17.813rem; height: 20.313rem; border: none; border-radius: 1.25rem; background: #FFF7F3;">
-                            <div>
-                                <h1 class="p-3" style="font-size: 1.5rem;">Honda Cr V</h1>
-                            </div>
-                            <div class="d-flex justify-content-center align-items-center">
-                                <img src="src/assets/images/Blueprint/Large Cars/Kia Carnival.png"
-                                    style="width: 16.75rem; height: 8.75rem;">
-                            </div>
-                            <div class="d-flex justify-content-center align-items-center mt-2">
-                                <div style="width: 15.813rem; height: 2.813rem; background: #F5E9E3;">
-                                    <div class="d-flex justify-content-evenly align-items-center mt-2">
-                                        <div class="d-flex flex-column align-items-center">
-                                            <i class="fa-solid fa-gauge" style="font-size: 1.25rem; color: #d6a78eff"></i>
-                                            <p style="font-size: 0.625rem; color: #473d36ff">52,754 miles</p>
-                                        </div>
-                                        <div class="d-flex flex-column align-items-center">
-                                            <i class="fa-solid fa-gas-pump" style="font-size: 1.25rem; color: #d6a78eff"></i>
-                                            <p style="font-size: 0.625rem; color: #473d36ff">Petrol</p>
-                                        </div>
-                                        <div class="d-flex flex-column align-items-center">
-                                            <i class="fa-solid fa-gear" style="font-size: 1.25rem; color: #d6a78eff"></i>
-                                            <p style="font-size: 0.625rem; color: #473d36ff">Automatic</p>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="d-flex justify-content-between align-items-center mt-3">
-                                <div style="margin-left: 1.2rem;">
-                                    <h1 style="font-size: 1.188rem;">$450/<span style="font-size: 0.75rem;">day</span>
-                                    </h1>
-                                </div>
-                                <button class="rounded-4"
-                                    style="margin-right: 1.2rem; width: 4.938rem; height: 1.688rem; font-size: 0.688rem; background: #D9BBAC; border: none; color: #FFF3ED;">Book
-                                    Now</button>
+                            <div class="d-flex gap-1" style="margin-top: 0.5rem;">
+                                <button style="border-radius: 5rem; border: none; background-color: #4d3c3cff; width: 2.5rem;" data-bs-target="#imageCarousel" data-bs-slide="prev">
+                                    <i class="fa-solid fa-arrow-left" style="color: #fff;"></i>
+                                </button>
+
+                                <button style="border-radius: 5rem; border: 2px solid #797474ff; background-color: #cbcbcbff; width: 2.5rem;" data-bs-target="#imageCarousel" data-bs-slide="next">
+                                    <i class="fa-solid fa-arrow-right" style=" color: #fff;"></i>
+                                </button>`
                             </div>
                         </div>
                     </div>
-                </div>
-                <!-- slider -->
-                <div class="d-flex justify-content-center align-items-center gap-2 mt-3">
-                    <a href="#slide-1"><div class="rounded-5" style="width: 2.188rem; height: 0.438rem; background: #B9B4B4;" id="sldier-1"></div></a>
-                    <a href="#slide-2"><div class="bg-white rounded-5" style="width: 1.563rem; height: 0.438rem;" id="sldier-2"></div></a>
-                    <a href="#slide-3"><div class="bg-white rounded-5" style="width: 1.563rem; height: 0.438rem;" id="sldier-3"></div></a>
-                </div>
-                <!-- Button -->
-                <div class="d-flex justify-content-center align-items-center mt-3 gap-1">
-                    <div class="d-flex justify-content-center align-items-center rounded-4"
-                        style="width: 2.5rem; height: 1.375rem; background: #484848;">
-                        <i class="fa-solid fa-arrow-left text-white"></i>
-                    </div>
-                    <div class="bg-transparent d-flex justify-content-center align-items-center rounded-4"
-                        style="width: 2.5rem; height: 1.375rem; border: 1.5px solid #484848;">
-                        <i class="fa-solid fa-arrow-right" style="color: #484848;"></i>
-                    </div>
-                </div>
             </div>
         </div>
     </div>
@@ -600,10 +608,10 @@ require_once 'header.php';
             </div>
         </div>
         <!-- Accordion -->
-        <div>
+        <div >
             <div class="d-flex justify-content-center align-items-center" style="margin-top: 3.5rem;">
-                <div class="bg-danger" style="width: 52.75rem; height: 27.75rem;">
-                    <div class="accordion-item">
+                <div class="accordion" style="width: 52.75rem; height: 27.75rem;">
+                    <div class="accordion-item" >
                         <div class="accordion-header">
                             <div>
                                 <h3 style="font-size: 1.5rem;">Booking & Reservations</h3>
@@ -617,28 +625,77 @@ require_once 'header.php';
                                 </div>
                             </div>
                         </div>
-                        <p class="accorddion-content"> Booking a car is simple just browse the available vehicles, choose the one that suits your needs, and select your preferred rental dates. Once you fill in your details, you’ll receive confirmation of your booking.</p>
+                        <p class="accordion-content"> Booking a car is simple just browse the available vehicles, choose the one that suits your needs, and select your preferred rental dates. Once you fill in your details, you’ll receive confirmation of your booking.</p>
                     </div>
                     <div class="bg-white" style="width: 52.75rem; height: 0.05rem;"></div>
-                
-
-
+                    <div class="accordion-item" >
+                        <div class="accordion-header">
+                            <div>
+                                <h3 style="font-size: 1.5rem;">Booking & Reservations</h3>
+                            </div>
+                            <div class="d-flex justify-content-between align-items-center">
+                                <div>
+                                    <p style="font-size: 1.25rem;">How do I book a car?</p>
+                                </div>
+                                <div>
+                                    <i class="fa-solid fa-plus"></i>
+                                </div>
+                            </div>
+                        </div>
+                        <p class="accordion-content"> Booking a car is simple just browse the available vehicles, choose the one that suits your needs, and select your preferred rental dates. Once you fill in your details, you’ll receive confirmation of your booking.</p>
+                    </div>
                     <div class="bg-white" style="width: 52.75rem; height: 0.05rem;"></div>
-                    <div class="accordion">
-                    <div class="accordion-item">
-                        <button class="accordion-header">What is an accordion?</button>
-                        <div class="accordion-content">
-                            <p>It's a vertical stacking of content that toggles between showing and hiding sections in a limited space.</p>
+                    <div class="accordion-item" >
+                        <div class="accordion-header">
+                            <div>
+                                <h3 style="font-size: 1.5rem;">Booking & Reservations</h3>
+                            </div>
+                            <div class="d-flex justify-content-between align-items-center">
+                                <div>
+                                    <p style="font-size: 1.25rem;">How do I book a car?</p>
+                                </div>
+                                <div>
+                                    <i class="fa-solid fa-plus"></i>
+                                </div>
+                            </div>
                         </div>
+                        <p class="accordion-content"> Booking a car is simple just browse the available vehicles, choose the one that suits your needs, and select your preferred rental dates. Once you fill in your details, you’ll receive confirmation of your booking.</p>
                     </div>
-
-                    <div class="accordion-item">
-                        <button class="accordion-header">How does the function work?</button>
-                        <div class="accordion-content">
-                            <p>The JavaScript toggles a class on the header, and CSS uses that class to set the content's max-height from 0 to its full height, creating a slide effect.</p>
+                    <div class="bg-white" style="width: 52.75rem; height: 0.05rem;"></div>
+                    <div class="accordion-item" >
+                        <div class="accordion-header">
+                            <div>
+                                <h3 style="font-size: 1.5rem;">Booking & Reservations</h3>
+                            </div>
+                            <div class="d-flex justify-content-between align-items-center">
+                                <div>
+                                    <p style="font-size: 1.25rem;">How do I book a car?</p>
+                                </div>
+                                <div>
+                                    <i class="fa-solid fa-plus"></i>
+                                </div>
+                            </div>
                         </div>
+                        <p class="accordion-content"> Booking a car is simple just browse the available vehicles, choose the one that suits your needs, and select your preferred rental dates. Once you fill in your details, you’ll receive confirmation of your booking.</p>
                     </div>
+                    <div class="bg-white" style="width: 52.75rem; height: 0.05rem;"></div>
+                    <div class="accordion-item" >
+                        <div class="accordion-header">
+                            <div>
+                                <h3 style="font-size: 1.5rem;">Booking & Reservations</h3>
+                            </div>
+                            <div class="d-flex justify-content-between align-items-center">
+                                <div>
+                                    <p style="font-size: 1.25rem;">How do I book a car?</p>
+                                </div>
+                                <div>
+                                    <i class="fa-solid fa-plus"></i>
+                                </div>
+                            </div>
+                        </div>
+                        <p class="accordion-content"> Booking a car is simple just browse the available vehicles, choose the one that suits your needs, and select your preferred rental dates. Once you fill in your details, you’ll receive confirmation of your booking.</p>
                     </div>
+                    <div class="bg-white" style="width: 52.75rem; height: 0.05rem;"></div>
                 </div>
             </div>
         </div>

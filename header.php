@@ -17,7 +17,7 @@
     <script src="src/assets/js/j_query.js"></script>
     <script src="src/assets/js/moment.js"></script>
     <script src="src/assets/js/datepick.js"></script>
-    <script src="src/assets/controller/slider.js"></script>
+    <script src="src/assets/controller/accordion.js"></script>
 </head>
 
 <body class="inder-regular">

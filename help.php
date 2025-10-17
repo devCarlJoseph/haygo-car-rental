@@ -46,75 +46,90 @@ require_once 'header.php';
         </div>
         <div>
             <div class="d-flex justify-content-center align-items-center" style="margin-top: 3.5rem;">
-                <div class="text-white" style="width: 52.75rem; height: 27.75rem;">
-                    <div>
-                        <div>
-                            <h3 style="font-size: 1.5rem;">Booking & Reservations</h3>
-                        </div>
-                        <div class="d-flex justify-content-between align-items-center">
+                <div class="accordion" style="width: 52.75rem; height: 27.75rem;">
+                    <div class="accordion-item" >
+                        <div class="accordion-header">
                             <div>
-                                <p style="font-size: 1.25rem;">How do I book a car?</p>
+                                <h3 style="font-size: 1.5rem;">Booking & Reservations</h3>
                             </div>
-                            <div>
-                                <i class="fa-solid fa-plus"></i>
+                            <div class="d-flex justify-content-between align-items-center">
+                                <div>
+                                    <p style="font-size: 1.25rem;">How do I book a car?</p>
+                                </div>
+                                <div>
+                                    <i class="fa-solid fa-plus"></i>
+                                </div>
                             </div>
                         </div>
+                        <p class="accordion-content"> Booking a car is simple just browse the available vehicles, choose the one that suits your needs, and select your preferred rental dates. Once you fill in your details, you’ll receive confirmation of your booking.</p>
                     </div>
                     <div class="bg-white" style="width: 52.75rem; height: 0.05rem;"></div>
-                    <div>
-                        <div>
-                            <h3 style="font-size: 1.5rem;">Booking & Reservations</h3>
-                        </div>
-                        <div class="d-flex justify-content-between align-items-center">
+                    <div class="accordion-item" >
+                        <div class="accordion-header">
                             <div>
-                                <p style="font-size: 1.25rem;">How do I book a car?</p>
+                                <h3 style="font-size: 1.5rem;">Booking & Reservations</h3>
                             </div>
-                            <div>
-                                <i class="fa-solid fa-plus"></i>
+                            <div class="d-flex justify-content-between align-items-center">
+                                <div>
+                                    <p style="font-size: 1.25rem;">How do I book a car?</p>
+                                </div>
+                                <div>
+                                    <i class="fa-solid fa-plus"></i>
+                                </div>
                             </div>
                         </div>
+                        <p class="accordion-content"> Booking a car is simple just browse the available vehicles, choose the one that suits your needs, and select your preferred rental dates. Once you fill in your details, you’ll receive confirmation of your booking.</p>
                     </div>
                     <div class="bg-white" style="width: 52.75rem; height: 0.05rem;"></div>
-                    <div>
-                        <div>
-                            <h3 style="font-size: 1.5rem;">Booking & Reservations</h3>
-                        </div>
-                        <div class="d-flex justify-content-between align-items-center">
+                    <div class="accordion-item" >
+                        <div class="accordion-header">
                             <div>
-                                <p style="font-size: 1.25rem;">How do I book a car?</p>
+                                <h3 style="font-size: 1.5rem;">Booking & Reservations</h3>
                             </div>
-                            <div>
-                                <i class="fa-solid fa-plus"></i>
+                            <div class="d-flex justify-content-between align-items-center">
+                                <div>
+                                    <p style="font-size: 1.25rem;">How do I book a car?</p>
+                                </div>
+                                <div>
+                                    <i class="fa-solid fa-plus"></i>
+                                </div>
                             </div>
                         </div>
+                        <p class="accordion-content"> Booking a car is simple just browse the available vehicles, choose the one that suits your needs, and select your preferred rental dates. Once you fill in your details, you’ll receive confirmation of your booking.</p>
                     </div>
                     <div class="bg-white" style="width: 52.75rem; height: 0.05rem;"></div>
-                    <div>
-                        <div>
-                            <h3 style="font-size: 1.5rem;">Booking & Reservations</h3>
-                        </div>
-                        <div class="d-flex justify-content-between align-items-center">
+                    <div class="accordion-item" >
+                        <div class="accordion-header">
                             <div>
-                                <p style="font-size: 1.25rem;">How do I book a car?</p>
+                                <h3 style="font-size: 1.5rem;">Booking & Reservations</h3>
                             </div>
-                            <div>
-                                <i class="fa-solid fa-plus"></i>
+                            <div class="d-flex justify-content-between align-items-center">
+                                <div>
+                                    <p style="font-size: 1.25rem;">How do I book a car?</p>
+                                </div>
+                                <div>
+                                    <i class="fa-solid fa-plus"></i>
+                                </div>
                             </div>
                         </div>
+                        <p class="accordion-content"> Booking a car is simple just browse the available vehicles, choose the one that suits your needs, and select your preferred rental dates. Once you fill in your details, you’ll receive confirmation of your booking.</p>
                     </div>
                     <div class="bg-white" style="width: 52.75rem; height: 0.05rem;"></div>
-                    <div>
-                        <div>
-                            <h3 style="font-size: 1.5rem;">Booking & Reservations</h3>
-                        </div>
-                        <div class="d-flex justify-content-between align-items-center">
+                    <div class="accordion-item" >
+                        <div class="accordion-header">
                             <div>
-                                <p style="font-size: 1.25rem;">How do I book a car?</p>
+                                <h3 style="font-size: 1.5rem;">Booking & Reservations</h3>
                             </div>
-                            <div>
-                                <i class="fa-solid fa-plus"></i>
+                            <div class="d-flex justify-content-between align-items-center">
+                                <div>
+                                    <p style="font-size: 1.25rem;">How do I book a car?</p>
+                                </div>
+                                <div>
+                                    <i class="fa-solid fa-plus"></i>
+                                </div>
                             </div>
                         </div>
+                        <p class="accordion-content"> Booking a car is simple just browse the available vehicles, choose the one that suits your needs, and select your preferred rental dates. Once you fill in your details, you’ll receive confirmation of your booking.</p>
                     </div>
                     <div class="bg-white" style="width: 52.75rem; height: 0.05rem;"></div>
                 </div>
