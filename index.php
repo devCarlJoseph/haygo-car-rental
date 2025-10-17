@@ -43,13 +43,16 @@ require_once 'header.php';
                     <p style="color: #615F5F; font-size: 0.875rem; margin-top: -0.5rem">United State of Made in China, ...</p>
                 </div>
                 <div style="width: 1px; height: 4rem; background: #B9B4B4;"></div>
-                <div class="r" style="width: 8.25rem; height: 4rem;">
+                <div class="" style="width: 8.25rem; height: 4rem;">
                     <h4 style="color: #8F8C8C; font-size: 1.125rem">Pick Up Date</h4>
+                    <input type="text" name="daterange" value="01/01/2018 - 01/15/2018" />
                 </div>
 
                 <div style="width: 1px; height: 4rem; background: #B9B4B4;"></div>
-                <div class="r" style="width: 8.25rem; height: 4rem;">
+
+                <div class="" style="width: 8.25rem; height: 4rem;">
                     <h4 style="color: #8F8C8C; font-size: 1.125rem">Drop Off Date</h4>
+                    <input type="text" name="daterange" value="01/01/2018 - 01/15/2018" />
                 </div>
 
                 <div style="width: 10.375rem; height: 5.625rem; background-color: #D9BBAC; border-radius: 1.25rem; margin-right: 1rem">
