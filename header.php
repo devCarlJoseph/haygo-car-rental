@@ -10,9 +10,12 @@
         integrity="sha512-2SwdPD6INVrV/lHTZbO2nodKhrnDdJK9/kg2XD1r9uGqPo1cUbujc+IYdlYdEErWNu69gVcYgdxlmVmzTWnetw=="
         crossorigin="anonymous" referrerpolicy="no-referrer" />
     <link rel="stylesheet" href="src/assets/css/style.css">
+    <link rel="stylesheet" href="src/assets/css/datepicker.css">
 
     <script src="src/assets/js/bootstrap.js"></script>
     <script src="src/assets/js/j_query.js"></script>
+    <script type="text/javascript" src="src/assets/js/moment.js"></script>
+    <script type="text/javascript" src="src/assets/js/datepicker.js"></script>
 </head>
 
 <body class="inder-regular">
