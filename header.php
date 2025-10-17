@@ -14,8 +14,6 @@
 
     <script src="src/assets/js/bootstrap.js"></script>
     <script src="src/assets/js/j_query.js"></script>
-    <script type="text/javascript" src="src/assets/js/moment.js"></script>
-    <script type="text/javascript" src="src/assets/js/datepicker.js"></script>
 </head>
 
 <body class="inder-regular">
