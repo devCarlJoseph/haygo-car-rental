@@ -10,14 +10,17 @@
         integrity="sha512-2SwdPD6INVrV/lHTZbO2nodKhrnDdJK9/kg2XD1r9uGqPo1cUbujc+IYdlYdEErWNu69gVcYgdxlmVmzTWnetw=="
         crossorigin="anonymous" referrerpolicy="no-referrer" />
     <link rel="stylesheet" href="src/assets/css/style.css">
-    <link rel="stylesheet" href="src/assets/css/datepicker.css">
     <link rel="stylesheet" href="src/assets/css/accordion.css">
 
     <script src="src/assets/js/bootstrap.js"></script>
     <script src="src/assets/js/j_query.js"></script>
+<<<<<<< HEAD
     <script src="src/assets/js/moment.js"></script>
     <script src="src/assets/js/datepick.js"></script>
     <script src="src/assets/controller/accordion.js"></script>
+=======
+    <script src="src/assets/controller/slider.js"></script>
+>>>>>>> 13db6fd405cac44be3d74a36808204bc4adbeb97
 </head>
 
 <body class="inder-regular">
