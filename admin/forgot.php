@@ -35,18 +35,21 @@
                         <h2 class="mt-4" style="font-size: 1.875rem; color: #FF884D;">Forgot Password</h2>
                     </div>
                     <div>
-                        <form action="log_in.php" method="post">
+                        <form action="../actions/forgot_pass.php" method="post">
                             <div class="d-flex flex-column gap-1 mt-3">
                                 <label style="font-size: 0.938rem; color: #363636;">Username</label>
                                 <input class="p-2 rounded-2" type="text" name="username" id="" placeholder="Enter Username" style="width: 21.188rem; height: 2.25rem; font-size: 0.938rem; color: #B5B5B5; border: 1px solid #F68A52;">
                             </div>
                             <div class="d-flex flex-column gap-1 mt-2">
                                 <label style="font-size: 0.938rem; color: #363636;">New Password</label>
-                                <input class="p-2 rounded-2" type="text" name="username" id="" placeholder="Enter New Password" style="width: 21.188rem; height: 2.25rem; font-size: 0.938rem; color: #B5B5B5; border: 1px solid #F68A52;">
-                            </div>                   
+                                <input class="p-2 rounded-2" type="text" name="newPass" id="" placeholder="Enter New Password" style="width: 21.188rem; height: 2.25rem; font-size: 0.938rem; color: #B5B5B5; border: 1px solid #F68A52;">
+                            </div>
                             <div class="mt-4">
                                 <button class="border border-none text-white rounded-2" style="width: 21.188rem; height: 2.375rem; background: #E98C5E; font-size: 0.938rem;">Log In</button>
-                            </div>                          
+                            </div>
+                            <div class="text-center pt-2">
+                                <p style="color: #807D7D; font-size: 0.875rem;">Already have an account? <a href="log_in.php" style="color: #D8AD97; cursor: pointer;"><span>Log in</span></a></p>
+                            </div>
                         </form>
                     </div>
                 </div>
