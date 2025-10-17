@@ -540,7 +540,7 @@ require_once 'header.php';
                     </div>
                     <div class="bg-transparent d-flex justify-content-center align-items-center rounded-4"
                         style="width: 2.5rem; height: 1.375rem; border: 1.5px solid #484848;">
-                        <i class="fa-solid fa-arrow-right" style="color: #484848; "></i>
+                        <i class="fa-solid fa-arrow-right" style="color: #484848;"></i>
                     </div>
                 </div>
             </div>
@@ -599,79 +599,46 @@ require_once 'header.php';
                 <p style="font-size: 1.375rem;">Everything you need to know before booking your ride.</p>
             </div>
         </div>
+        <!-- Accordion -->
         <div>
             <div class="d-flex justify-content-center align-items-center" style="margin-top: 3.5rem;">
                 <div class="bg-danger" style="width: 52.75rem; height: 27.75rem;">
-                    <div>
-                        <div>
-                            <h3 style="font-size: 1.5rem;">Booking & Reservations</h3>
-                        </div>
-                        <div class="d-flex justify-content-between align-items-center">
+                    <div class="accordion-item">
+                        <div class="accordion-header">
                             <div>
-                                <p style="font-size: 1.25rem;">How do I book a car?</p>
+                                <h3 style="font-size: 1.5rem;">Booking & Reservations</h3>
                             </div>
-                            <div>
-                                <i class="fa-solid fa-plus"></i>
+                            <div class="d-flex justify-content-between align-items-center">
+                                <div>
+                                    <p style="font-size: 1.25rem;">How do I book a car?</p>
+                                </div>
+                                <div>
+                                    <i class="fa-solid fa-plus"></i>
+                                </div>
                             </div>
                         </div>
+                        <p class="accorddion-content"> Booking a car is simple just browse the available vehicles, choose the one that suits your needs, and select your preferred rental dates. Once you fill in your details, you’ll receive confirmation of your booking.</p>
                     </div>
                     <div class="bg-white" style="width: 52.75rem; height: 0.05rem;"></div>
-                    <div>
-                        <div>
-                            <h3 style="font-size: 1.5rem;">Booking & Reservations</h3>
-                        </div>
-                        <div class="d-flex justify-content-between align-items-center">
-                            <div>
-                                <p style="font-size: 1.25rem;">How do I book a car?</p>
-                            </div>
-                            <div>
-                                <i class="fa-solid fa-plus"></i>
-                            </div>
+                
+
+
+                    <div class="bg-white" style="width: 52.75rem; height: 0.05rem;"></div>
+                    <div class="accordion">
+                    <div class="accordion-item">
+                        <button class="accordion-header">What is an accordion?</button>
+                        <div class="accordion-content">
+                            <p>It's a vertical stacking of content that toggles between showing and hiding sections in a limited space.</p>
                         </div>
                     </div>
-                    <div class="bg-white" style="width: 52.75rem; height: 0.05rem;"></div>
-                    <div>
-                        <div>
-                            <h3 style="font-size: 1.5rem;">Booking & Reservations</h3>
-                        </div>
-                        <div class="d-flex justify-content-between align-items-center">
-                            <div>
-                                <p style="font-size: 1.25rem;">How do I book a car?</p>
-                            </div>
-                            <div>
-                                <i class="fa-solid fa-plus"></i>
-                            </div>
+
+                    <div class="accordion-item">
+                        <button class="accordion-header">How does the function work?</button>
+                        <div class="accordion-content">
+                            <p>The JavaScript toggles a class on the header, and CSS uses that class to set the content's max-height from 0 to its full height, creating a slide effect.</p>
                         </div>
                     </div>
-                    <div class="bg-white" style="width: 52.75rem; height: 0.05rem;"></div>
-                    <div>
-                        <div>
-                            <h3 style="font-size: 1.5rem;">Booking & Reservations</h3>
-                        </div>
-                        <div class="d-flex justify-content-between align-items-center">
-                            <div>
-                                <p style="font-size: 1.25rem;">How do I book a car?</p>
-                            </div>
-                            <div>
-                                <i class="fa-solid fa-plus"></i>
-                            </div>
-                        </div>
                     </div>
-                    <div class="bg-white" style="width: 52.75rem; height: 0.05rem;"></div>
-                    <div>
-                        <div>
-                            <h3 style="font-size: 1.5rem;">Booking & Reservations</h3>
-                        </div>
-                        <div class="d-flex justify-content-between align-items-center">
-                            <div>
-                                <p style="font-size: 1.25rem;">How do I book a car?</p>
-                            </div>
-                            <div>
-                                <i class="fa-solid fa-plus"></i>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="bg-white" style="width: 52.75rem; height: 0.05rem;"></div>
                 </div>
             </div>
         </div>

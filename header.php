@@ -11,11 +11,13 @@
         crossorigin="anonymous" referrerpolicy="no-referrer" />
     <link rel="stylesheet" href="src/assets/css/style.css">
     <link rel="stylesheet" href="src/assets/css/datepicker.css">
+    <link rel="stylesheet" href="src/assets/css/accordion.css">
 
     <script src="src/assets/js/bootstrap.js"></script>
     <script src="src/assets/js/j_query.js"></script>
     <script src="src/assets/js/moment.js"></script>
     <script src="src/assets/js/datepick.js"></script>
+    <script src="src/assets/controller/slider.js"></script>
 </head>
 
 <body class="inder-regular">
