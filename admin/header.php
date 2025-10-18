@@ -19,18 +19,25 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500&display=swap" rel="stylesheet" />
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+    <link rel="stylesheet" href="../src/assets/css/file.css">
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
 
 
-    <link rel="stylesheet" href="../src/assets/css/app.css">
+
+    <link rel="stylesheet" href="../src/assets/css/app.css">        
     <link rel="stylesheet" href="../src/assets/css/style.css">
 
     <link href="../src/assets/css/admin.css" rel="stylesheet" />
     <script src="../src/assets/js/settings.js"></script>
+    <script src="../src/assets/controller/file.js"></script>
 
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-Q3ZYEKLQ68"></script>
     <script>
         window.dataLayer = window.dataLayer || [];
-        function gtag() { dataLayer.push(arguments); }
+
+        function gtag() {
+            dataLayer.push(arguments);
+        }
         gtag('js', new Date());
 
         gtag('config', 'G-Q3ZYEKLQ68');

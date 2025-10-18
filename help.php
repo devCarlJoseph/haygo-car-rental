@@ -6,7 +6,7 @@ require_once 'header.php';
     style="background-image: url('src/assets/images/hero.jpg'); background-size: cover; background-repeat: no-repeat; background-position: top; height: 20.563rem; margin-top: -5rem;">
     <div class="d-flex flex-column align-items-center" style="margin-top: 2.5rem">
         <h1 style="font-size: 3.125rem">How can we help you today?</h1>
-        <button class="text-white" style="width: 8.25rem; height: 2.5rem; font-size: 1.25rem; border-radius: 20rem; background: #D8AD97">Chat Now</button>
+        <button style="width: 8.25rem; height: 2.5rem; font-size: 1.25rem; border-radius: 20rem; background: #D8AD97"><a class="text-decoration-none text-white" href="chat.php">Chat Now</a></button>
     </div>
 </section>
 <div style="background-color: #242B25; height: 3rem; width: 100%; "></div>

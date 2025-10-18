@@ -12,8 +12,8 @@
 <div style="background-color: #242B25; height: 3rem; width: 100%; "></div>
 <section style="background: #EBE7E4">
     <div>
-        <div class="d-flex justify-content-center align-items-center gap-4" style="padding-top: 3.438rem">
-            <div class="d-flex flex-column align-items-center rounded-5" style="width: 14.75rem; height: 13.375rem; background: #DAC2B7;">
+        <div id="car-category" class="d-flex justify-content-center align-items-center gap-4" style="padding-top: 3.438rem">
+            <div class="category d-flex flex-column align-items-center rounded-5" data-category="small" style="width: 14.75rem; height: 13.375rem; background: #DAC2B7; cursor:pointer;">
                 <h3 style="font-size: 1.5rem; margin-top: 1.238rem">Small Cars</h3>
                 <div class="d-flex justify-content-center gap-1">
                     <i class="fa-solid fa-car" style="font-size: 1.563rem"></i>
@@ -24,7 +24,7 @@
                                 style="width: 13.813rem; height: 9.125rem">
                 </div>
             </div>
-             <div class="d-flex flex-column align-items-center rounded-5" style="width: 14.75rem; height: 13.375rem; background: #DAC2B7;">
+             <div class="category d-flex flex-column align-items-center rounded-5" data-category="medium" style="width: 14.75rem; height: 13.375rem; background: #DAC2B7; cursor: pointer;">
                 <h3 style="font-size: 1.5rem; margin-top: 1.238rem">Medium Cars</h3>
                 <div class="d-flex justify-content-center gap-1">
                     <i class="fa-solid fa-car" style="font-size: 1.563rem"></i>
@@ -35,7 +35,7 @@
                                 style="width: 13.813rem; height: 9.125rem">
                 </div>
             </div>
-             <div class="d-flex flex-column align-items-center rounded-5" style="width: 14.75rem; height: 13.375rem; background: #DAC2B7;">
+             <div class="category d-flex flex-column align-items-center rounded-5" data-category="large" style="width: 14.75rem; height: 13.375rem; background: #DAC2B7; cursor: pointer;">
                 <h3 style="font-size: 1.5rem; margin-top: 1.238rem">Large Cars</h3>
                 <div class="d-flex justify-content-center gap-1">
                     <i class="fa-solid fa-car" style="font-size: 1.563rem"></i>
@@ -46,7 +46,7 @@
                                 style="width: 13.813rem; height: 9.125rem">
                 </div>
             </div>
-             <div class="d-flex flex-column align-items-center rounded-5" style="width: 14.75rem; height: 13.375rem; background: #DAC2B7;">
+             <div class="category d-flex flex-column align-items-center rounded-5" data-category="suvs" style="width: 14.75rem; height: 13.375rem; background: #DAC2B7; cursor: pointer;">
                 <h3 style="font-size: 1.5rem; margin-top: 1.238rem">SUVs</h3>
                 <div class="d-flex justify-content-center gap-1">
                     <i class="fa-solid fa-car" style="font-size: 1.563rem"></i>
@@ -57,7 +57,7 @@
                                 style="width: 13.813rem; height: 9.125rem">
                 </div>
             </div>
-             <div class="d-flex flex-column align-items-center rounded-5" style="width: 14.75rem; height: 13.375rem; background: #DAC2B7;">
+             <div class="category d-flex flex-column align-items-center rounded-5" data-category="vans" style="width: 14.75rem; height: 13.375rem; background: #DAC2B7; cursor: pointer;">
                 <h3 style="font-size: 1.5rem; margin-top: 1.238rem">Vans</h3>
                 <div class="d-flex justify-content-center gap-1">
                     <i class="fa-solid fa-car" style="font-size: 1.563rem"></i>
@@ -73,7 +73,7 @@
 </section>
 <section style="background: #EBE7E4">
     <div>
-        <div class="d-flex flex-column align-items-center gap-4" style="padding-top: 7.5rem; padding-bottom: 7.5rem">
+        <div id="car-container" class="d-flex flex-column align-items-center gap-4" style="padding-top: 7.5rem; padding-bottom: 7.5rem">
             <!-- First Group -->
             <div class="d-flex justify-content-center align-items-center gap-4">
                 <div class="rounded-4" style="width: 17.813rem; height: 20.313rem; background: #FFF7F3;">

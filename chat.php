@@ -10,40 +10,56 @@
         integrity="sha512-2SwdPD6INVrV/lHTZbO2nodKhrnDdJK9/kg2XD1r9uGqPo1cUbujc+IYdlYdEErWNu69gVcYgdxlmVmzTWnetw=="
         crossorigin="anonymous" referrerpolicy="no-referrer" />
     <link rel="stylesheet" href="src/assets/css/style.css">
+    <link rel="stylesheet" href="src/assets/css/chat.css">
+
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
 
     <script src="src/assets/js/bootstrap.js"></script>
-    <script src="src/assets/js/j_query.js"></script>
+    <script src="src/assets/controller/chat.js"></script>
 </head>
 
 <body class="inder-regular">
     <main>
-        <section style="width: 100vw; height: 100vh; background: #605651">
-            <div>
-                <div style="padding-top: 5rem">
-                    <h1 style="font-size: 5rem; color: #F9CBB3; margin-left: 11rem">Hello There</h1>
-                    <h3 style="font-size: 3.125rem; color: #F9CBB3; margin-left: 11rem; margin-top: -1.2rem">How can I help you today?</h3>
+        <section>
+            <div class="d-flex justify-content-between">
+                <button id="backBtn" class="d-flex justify-content-start align-items-center" style="width: 2.275rem; height: 2.275rem; background: #3a2114ff; border-radius: 10rem; margin: 0.6rem">
+                    <i class="fa-solid fa-arrow-left" style="font-size: 1.25rem; color: #EFC6B1"></i>
+                </button>
+                <div class="text-end" style="margin-right: 1rem; padding-top: 1rem">
+                    <a href="help.php"><i class="fa-solid fa-x" style="color: #DDAD95;"></i></a>
                 </div>
-                <div class="d-flex justify-content-center align-items-center gap-4" style="margin-top: 3.5rem;">
-                    <div class="rounded-3" style="width: 17.188rem; height: 13.188rem; background: #DFC7BB">
+            </div>
+            <div id="greeting" style="padding-top: 5rem; text-align: left; margin-left: 11rem;">
+                <h1 style="font-size: 5rem; color: #F9CBB3;">Hello There</h1>
+                <h3 style="font-size: 3.125rem; color: #F9CBB3; margin-top: -1.2rem;">How can I help you today?</h3>
+            </div>
 
-                    </div>
-                    <div class="rounded-3" style="width: 17.188rem; height: 13.188rem; background: #DFC7BB">
-
-                    </div>
-                    <div class="rounded-3" style="width: 17.188rem; height: 13.188rem; background: #DFC7BB">
-
-                    </div>
-                    <div class="rounded-3" style="width: 17.188rem; height: 13.188rem; background: #DFC7BB">
-
-                    </div>
+            <!-- Question Cards -->
+            <div class="question-container">
+                <div class="question-card">
+                    <h2 style="font-size: 1.438rem; color: #605956">What is Hay Go Car Rental?</h2>
                 </div>
-                <div class="d-flex justify-content-center align-items-center gap-5" style="margin-top: 6.5rem;">
-                    <div style="width: 59.625rem; height: 4.188rem; border-radius: 3.125rem; background: #DFC7BB;"></div>
-                    <div class="d-flex gap-4">
-                        <div style="width: 4.188rem; height: 4.188rem; border-radius: 50%; background: #DFC7BB"></div>
-                        <div style="width: 4.188rem; height: 4.188rem; border-radius: 50%; background: #DFC7BB"></div>
-                    </div>
+                <div class="question-card">
+                    <h2 style="font-size: 1.438rem; color: #605956">What are your office hours?</h2>
                 </div>
+                <div class="question-card">
+                    <h2 style="font-size: 1.438rem; color: #605956">Can I modify or cancel my booking?</h2>
+                </div>
+                <div class="question-card">
+                    <h2 style="font-size: 1.438rem; color: #605956">What are the requirements to rent a car?</h2>
+                </div>
+            </div>
+
+            <!-- Chat Section -->
+            <div class="chat-container active" id="chatContainer">
+                <div class="chat-pair">
+                </div>
+            </div>
+
+            <!-- Input -->
+            <div class="input-area" style="position: fixed; left: 19rem">
+                <input type="text" id="userInput" placeholder="Ask Hay Go Chat Bot" />
+                <button id="sendBtn"><i class="fa-solid fa-arrow-up"></i></button>
             </div>
         </section>
     </main>

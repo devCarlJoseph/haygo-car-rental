@@ -12,15 +12,13 @@
     <link rel="stylesheet" href="src/assets/css/style.css">
     <link rel="stylesheet" href="src/assets/css/accordion.css">
 
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+
     <script src="src/assets/js/bootstrap.js"></script>
-    <script src="src/assets/js/j_query.js"></script>
-<<<<<<< HEAD
     <script src="src/assets/js/moment.js"></script>
     <script src="src/assets/js/datepick.js"></script>
     <script src="src/assets/controller/accordion.js"></script>
-=======
-    <script src="src/assets/controller/slider.js"></script>
->>>>>>> 13db6fd405cac44be3d74a36808204bc4adbeb97
+    <script src="src/assets/controller/car.js"></script>
 </head>
 
 <body class="inder-regular">

@@ -1,5 +1,5 @@
-<?php 
-    require_once 'header.php';
+<?php
+require_once 'header.php';
 ?>
 
 <div class="wrapper" style="background: #EBE7E4;">
@@ -62,27 +62,27 @@
 		</div>
 	</nav>
 	<div class="main">
-		<nav class="navbar navbar-expand navbar-bg" style="height: 4.188rem; backgroud: #FFFEFD;">
-            <a class="sidebar-toggle">
-                <i class="hamburger align-self-center"></i>
-            </a>
+		<nav class="navbar navbar-expand navbar-bg" style="height: 4.188rem; background: #FFFEFD;">
+			<a class="sidebar-toggle">
+				<i class="hamburger align-self-center"></i>
+			</a>
 
-            <div class="navbar-collapse collapse">
-                <ul class="navbar-nav navbar-align ">
-                    <li class="nav-item dropdown">
-                        <img src="../src/assets/images/admin_pp.jpg" class="img-fluid rounded-circle me-1 mt-n2 mb-n2"
-                            width="40" height="40" />
-                        <span style="margin-right: 1rem;">Admin Carl</span>
-                    </li>
-                </ul>
-            </div>
-            <div>
-                <button class="border border-none text-white "
-                    style=" margin-bottom: 0.2rem; width: 3.9rem; height: 1.7rem; font-size: 0.725rem; background: #E99670; border-radius: 5px;"><a
-                        href="../index.php" style="text-decoration: none; color: white;">Sign
-                        Out</a></button>
-            </div>
-        </nav>
+			<div class="navbar-collapse collapse">
+				<ul class="navbar-nav navbar-align ">
+					<li class="nav-item dropdown">
+						<img src="../src/assets/images/admin_pp.jpg" class="img-fluid rounded-circle me-1 mt-n2 mb-n2"
+							width="40" height="40" />
+						<span style="margin-right: 1rem;">Admin Carl</span>
+					</li>
+				</ul>
+			</div>
+			<div>
+				<button class="border border-none text-white "
+					style=" margin-bottom: 0.2rem; width: 3.9rem; height: 1.7rem; font-size: 0.725rem; background: #E99670; border-radius: 5px;"><a
+						href="../index.php" style="text-decoration: none; color: white;">Sign
+						Out</a></button>
+			</div>
+		</nav>
 		<main class="content">
 			<div class="container-fluid p-0">
 
@@ -102,8 +102,44 @@
 							</div>
 							<div class="col-md-6 col-xl-8">
 								<div class="text-sm-end">
-									<button type="button" class="btn text-white btn-lg" style="background: #FFA77E"><i data-lucide="plus"></i> New
+									<button type="button" id="newVehicleBtn" class="btn text-white btn-lg" style="background: #FFA77E"><i data-lucide="plus"></i> New
 										Vehicle</button>
+								</div>
+							</div>
+						</div>
+
+						<div id="overlay"></div>
+
+
+						<div class="container-fluid p-0" id="car-file" style="display: none;">
+							<div class="row">
+								<div class="col-12">
+									<div class="card">
+										<div class="card-body">
+											<form id="validation-form">
+												<div class="mb-3 error-placeholder">
+													<label class="form-label">Car Name</label>
+													<input type="text" class="form-control" name="car-name" placeholder="Enter Car Name">
+												</div>
+												<div class="mb-3 error-placeholder">
+													<label class="form-label">Price</label>
+													<input type="text" class="form-control" name="car-rate" placeholder="Price">
+												</div>
+												<div class="mb-3 error-placeholder">
+													<label class="form-label">Category</label>
+													<input type="text" class="form-control" name="car-category" placeholder="Ex. Small Car">
+												</div>
+												<div class="mb-3 error-placeholder">
+													<label class="form-label">File</label>
+													<div>
+														<input type="file" class="validation-file" name="validation-file">
+													</div>
+												</div>
+
+												<button type="submit" id="addCarBtn" class="btn text-white" style="background: #FFA77E;">Add Car</button>
+											</form>
+										</div>
+									</div>
 								</div>
 							</div>
 						</div>
@@ -161,7 +197,7 @@
 <script src="../src/assets/js/app.js"></script>
 
 <script>
-	document.addEventListener("DOMContentLoaded", function () {
+	document.addEventListener("DOMContentLoaded", function() {
 		$("#datatables-products").DataTable({
 			destroy: true,
 			responsive: true,
@@ -170,14 +206,14 @@
 			],
 			pageLength: 6,
 			columnDefs: [{
-				targets: 0,
-				orderable: false,
-				width: "18px"
-			},
-			{
-				targets: 5,
-				orderable: false
-			}
+					targets: 0,
+					orderable: false,
+					width: "18px"
+				},
+				{
+					targets: 5,
+					orderable: false
+				}
 			],
 			layout: {
 				topStart: null,
@@ -186,7 +222,7 @@
 				bottomEnd: 'paging'
 			}
 		});
-		$("#datatables-products-search").keyup(function () {
+		$("#datatables-products-search").keyup(function() {
 			$("#datatables-products").DataTable().search($(this).val()).draw();
 		});
 		const style = document.createElement("style");
@@ -216,4 +252,5 @@
 </script>
 
 </body>
+
 </html>
