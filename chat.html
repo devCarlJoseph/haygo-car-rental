@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Hay Go Chat Bot</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background: #f9fafb;
+      padding: 40px;
+    }
+    #chatContainer {
+      width: 400px;
+      max-height: 500px;
+      overflow-y: auto;
+      background: white;
+      border: 1px solid #ddd;
+      border-radius: 10px;
+      padding: 15px;
+      margin-bottom: 20px;
+    }
+    .message {
+      margin-bottom: 10px;
+      padding: 8px 12px;
+      border-radius: 10px;
+      max-width: 80%;
+    }
+    .message.user {
+      background: #d1e7dd;
+      align-self: flex-end;
+      margin-left: auto;
+    }
+    .message.bot {
+      background: #e9ecef;
+      color: #333;
+    }
+    .message.typing {
+      font-style: italic;
+      color: #888;
+    }
+    .input-area {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+    .input-area input {
+      flex: 1;
+      padding: 10px;
+      border: 1px solid #ccc;
+      border-radius: 8px;
+    }
+    .input-area button {
+      width: 45px;
+      height: 45px;
+      border: none;
+      border-radius: 8px;
+      background-color: #007bff;
+      color: white;
+      cursor: pointer;
+      font-size: 18px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      transition: background 0.3s;
+    }
+    .input-area button.stop {
+      background-color: #dc3545;
+    }
+  </style>
+</head>
+<body>
+
+  <div id="chatContainer"></div>
+
+  <div class="input-area">
+    <input type="text" id="userInput" placeholder="Ask Hay Go Chat Bot">
+    <button id="sendBtn"><i class="fa-solid fa-arrow-up"></i></button>
+  </div>
+
+  <script>
+    $(function () {
+      const botReplies = {
+        "hi": "Hello! How can I assist you today?",
+        "what is hay go car rental?": "Hay Go Car Rental is a trusted service that provides affordable and reliable car rentals.",
+        "thanks": "You're welcome! 😊"
+      };
+
+      let typingTimeout = null;
+      let botStopped = false;
+
+      function sendMessage(msg) {
+        if (!msg) return;
+
+        $("#chatContainer").append(`<div class='message user'>${msg}</div>`);
+        $("#userInput").val("");
+
+        const typingIndicator = $("<div class='message typing'>Hay Go Bot is typing...</div>");
+        $("#chatContainer").append(typingIndicator);
+        $("#chatContainer").scrollTop($("#chatContainer")[0].scrollHeight);
+
+        // Change icon to stop
+        $("#sendBtn i").removeClass("fa-arrow-up").addClass("fa-stop");
+        $("#sendBtn").addClass("stop");
+        botStopped = false;
+
+        typingTimeout = setTimeout(() => {
+          if (botStopped) return;
+          typingIndicator.remove();
+          const reply = botReplies[msg.toLowerCase()] || "I'm sorry, I don't have information about that yet.";
+          $("#chatContainer").append(`<div class='message bot'>${reply}</div>`);
+          $("#chatContainer").scrollTop($("#chatContainer")[0].scrollHeight);
+
+          // Restore icon
+          $("#sendBtn i").removeClass("fa-stop").addClass("fa-arrow-up");
+          $("#sendBtn").removeClass("stop");
+        }, 1500);
+      }
+
+      // Send / Stop button
+      $("#sendBtn").on("click", function () {
+        const icon = $(this).find("i");
+        const msg = $("#userInput").val().trim();
+
+        // If currently showing stop icon
+        if (icon.hasClass("fa-stop")) {
+          botStopped = true;
+          clearTimeout(typingTimeout);
+          $(".typing").remove();
+          icon.removeClass("fa-stop").addClass("fa-arrow-up");
+          $("#sendBtn").removeClass("stop");
+          return;
+        }
+
+        // Normal send
+        if (msg !== "") {
+          sendMessage(msg);
+        }
+      });
+
+      // Enter key to send
+      $("#userInput").on("keypress", function (e) {
+        if (e.key === "Enter") {
+          e.preventDefault();
+          const msg = $(this).val().trim();
+          if (msg !== "") {
+            sendMessage(msg);
+          }
+        }
+      });
+    });
+  </script>
+</body>
+</html>

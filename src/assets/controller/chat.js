@@ -6,7 +6,6 @@ $(function () {
         "what are the requirements to rent a car?": "You need a valid driver’s license, a valid ID, and a security deposit.",
         "thanks": "You're welcome! If you have any more questions, feel free to ask.",
         "thank you": "You're welcome! If you have any more questions, feel free to ask.",
-        "hi": "Hello! How can I assist you today?",
         "what is the best car in your fleet?" : "All our cars are well maintained, but the best choice depends on your needs. Let me know what you're looking for.",
         "i'm looking for a family car. any suggestions?" : "For families, we recommend our SUVs and minivans which offer ample space and comfort.",
         "what is the fuel policy?" : "Our fuel policy requires you to return the car with the same fuel level as when you picked it up.",
