@@ -3,7 +3,8 @@ CREATE DATABASE haygo;
 CREATE TABLE if NOT EXISTS haygo_admins (
     id INT AUTO_INCREMENT PRIMARY KEY,
     admin_username VARCHAR(255) UNIQUE NOT NULL,
-    admin_pwd VARCHAR(255) NOT NULL
+    admin_pwd VARCHAR(255) NOT NULL,
+    adminProfile VARCHAR(255) NOT NULL
 );
 
 CREATE TABLE if NOT EXISTS customers (

@@ -6,6 +6,7 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
     $username = $_POST['username'];
     $password = $_POST['password'];
     $adminkey = $_POST['adminkey'];
+    $adminProfile = $_POST['adminProfile'];
     $passHashed = password_hash($password, PASSWORD_DEFAULT);
 
     $key = "T0NY0_4DM1N_K3Y";

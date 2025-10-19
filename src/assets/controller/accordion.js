@@ -22,3 +22,23 @@ window.onload = function () {
         });
     });
 };
+
+
+$(document).ready(function () {
+    // Open chat fullscreen
+    $('#chatNowBtn').on('click', function () {
+        $('#helpContent').hide(); // hide help section
+        $('.header-container').hide();
+        $('footer').hide();
+        $('#chatSection').fadeIn().css('display', 'flex');
+    });
+
+    // Close or go back
+    $('#closeChatBtn').on('click', function () {
+        $('#chatSection').fadeOut(function () {
+            $('#helpContent').show();
+            $('.header-container').show();
+            $('footer').show();
+        });
+    });
+});

@@ -11,18 +11,18 @@
         crossorigin="anonymous" referrerpolicy="no-referrer" />
     <link rel="stylesheet" href="src/assets/css/style.css">
     <link rel="stylesheet" href="src/assets/css/accordion.css">
+    <link rel="stylesheet" href="src/assets/css/chat.css">
 
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
 
+    <script src="src/assets/controller/chat.js"></script>
     <script src="src/assets/js/bootstrap.js"></script>
-    <script src="src/assets/js/moment.js"></script>
-    <script src="src/assets/js/datepick.js"></script>
     <script src="src/assets/controller/accordion.js"></script>
     <script src="src/assets/controller/car.js"></script>
 </head>
 
 <body class="inder-regular">
-    <div class="container-fluid p-0 m-0 d-flex justify-content-center align-items-center" style="z-index: 1;">
+    <div class="header-container container-fluid p-0 m-0 d-flex justify-content-center align-items-center" style="z-index: 1;">
         <header class="bg-transparent d-flex justify-content-center align-items-center" style="margin-top: 0.5rem; ">
             <div class="d-flex justify-content-between align-items-center" style="width: 85.5rem; height: 4.375rem;">
                 <div class="d-flex justify-content-center align-items-center" style="width: 30.313rem; height: 2.5rem;">

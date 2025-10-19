@@ -25,11 +25,11 @@
             </div>
             <div class="bg-white" style="width: 26.5rem; height: 37.313rem;">
                 <div class="d-flex justify-content-end" style="margin-top: 0.875rem; margin-right: 0.875rem; cursor: pointer; color: #D8AD97;">
-                    <a href="../index.php" style="color: #D8AD97;"><i class="fa-solid fa-xmark"></i></a>
+                    <a href="../actions/sign_up.php" style="color: #D8AD97;"><i class="fa-solid fa-xmark"></i></a>
                 </div>
                 <div class="d-flex flex-column justify-content-center align-items-center">
                     <div>
-                        <img src="../src/assets/images/admin_logo.png" style="width: 4.75rem; height: 3.063rem; margin-top: 3.063rem;">
+                        <img src="../src/assets/images/admin_logo.png" style="width: 4.75rem; height: 3.063rem; margin-top: 2.063rem;">
                     </div>
                     <div>
                         <h2 class="mt-4" style="font-size: 1.875rem; color: #FF884D;">Sign Up as Admin</h2>
@@ -47,7 +47,8 @@
                             <div class="d-flex flex-column gap-1 mt-2">
                                 <label style="font-size: 0.938rem; color: #363636;">Admin Key</label>
                                 <input class="p-2 rounded-2" type="text" name="adminkey" id="" placeholder="Enter Admin Key" style="width: 21.188rem; height: 2.25rem; font-size: 0.938rem; color: #B5B5B5; border: 1px solid #F68A52;">
-                            </div>                    
+                            </div>       
+                            <input type="file" name="adminProfile" class="mt-3 form-control" style="cursor: pointer; width: 21.188rem ">             
                             <div class="mt-4">
                                 <button class="border border-none text-white rounded-2" style="width: 21.188rem; height: 2.375rem; background: #E98C5E; font-size: 0.938rem;">Sign Up</button>
                             </div> 

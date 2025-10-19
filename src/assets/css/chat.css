@@ -3,13 +3,17 @@ body {
     font-family: 'Poppins', sans-serif;
 }
 
-section {
-    width: 100vw;
-    height: 100vh;
-    background: #605651;
-    overflow-y: auto;
+#chatSection {
+  display: none;
+  position: fixed; /* important */
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background: #605651;
+  overflow-y: auto;
+  z-index: 99999; /* ensures it stays above everything */
 }
-
 
 .chat-container {
     width: 60%;
@@ -140,7 +144,7 @@ button {
     cursor: pointer;
 }
 
-i {
+#sendBtn i {
     color: #605956;
     font-size: 1.6rem;
 }
