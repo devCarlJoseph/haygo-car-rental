@@ -1,0 +1,275 @@
+:root {
+    --haygo-primary: #D9BBAC;
+    /* Vibrant Lime Green (Action Color) */
+    --haygo-accent: #d69364;
+    /* Bright Orange/Coral (Secondary Accent) */
+
+    /* NEW: Very Light Lime for backgrounds, used in 'How It Works' */
+
+    /* Standard Bootstrap Overrides */
+    --bs-light-bg: #F9F9F9;
+}
+
+.l-button {
+    border: 1px solid var(--haygo-primary);
+    background-color: none;
+    color: var(--haygo-dark) !important;
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.l-button:hover {
+    background-color: #ab7255;
+    /* Darker Lime */
+    color: #ffffff !important;
+}
+
+.about {
+    background: #b4b4b44a;
+}
+
+.c-round {
+    background-color: var(--haygo-primary);
+}
+
+.testing {
+    color: var(--haygo-accent) !important;
+}
+
+/* Custom Color Classes */
+.text-haygo-dark {
+    color: var(--haygo-dark) !important;
+}
+
+.text-haygo-primary {
+    color: var(--haygo-primary) !important;
+}
+
+.text-haygo-accent {
+    color: var(--haygo-accent) !important;
+}
+
+.bg-haygo-dark {
+    background-color: var(--haygo-dark) !important;
+}
+
+.bg-haygo-light {
+    background-color: var(--haygo-light) !important;
+}
+
+/* Custom Button Styling */
+.btn-haygo-primary {
+    background-color: var(--haygo-primary);
+    border-color: var(--haygo-primary);
+    color: var(--haygo-dark) !important;
+    transition: all 0.2s ease;
+}
+
+.btn-haygo-primary:hover {
+    background-color: #ab7255;
+    /* Darker Lime */
+    border-color: #ab7255;
+    color: #e6e6e6 !important;
+}
+
+body {
+    font-family: 'Inter', sans-serif;
+    background-color: var(--bs-light-bg);
+    color: var(--bs-body-color);
+}
+
+/* Hero Section Styling - Adjusted for new colors */
+#hero-section {
+    /* Very light lime */
+    background-image: url('../images/hero.jpg');
+    background-size: cover;
+    background-position: center;
+    height: 33rem;
+    padding-top: 5rem;
+    padding-bottom: 8rem;
+    color: #fdeada;
+}
+
+/* Floating Search Card */
+.search-module {
+    background: white;
+    border-radius: 1.5rem;
+    box-shadow: 0 15px 50px rgba(0, 0, 0, 0.15);
+    position: relative;
+    margin-top: 4rem;
+    z-index: 10;
+}
+
+/* Large Form Control Styling */
+.form-control-lg,
+.form-select-lg {
+    padding: 0.8rem 1.2rem;
+    font-size: 1.1rem;
+}
+
+/* Feature Box Styling - Adjusted for new palette */
+.step-icon-v3 {
+    font-size: 2.5rem;
+    color: var(--haygo-dark);
+    background-color: var(--haygo-primary);
+    padding: 0.75rem;
+    border-radius: 50%;
+    display: inline-flex;
+    margin-bottom: 1rem;
+}
+
+.feature-box {
+    border: 1px solid #eee;
+    transition: all 0.3s ease;
+}
+
+.feature-box:hover {
+    border-color: var(--haygo-accent);
+    background-color: #fcfcfc;
+    transform: translateY(-3px);
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+}
+
+/* --- CALENDAR STYLES START --- */
+#calendar-container {
+    user-select: none;
+}
+
+.calendar-header {
+    border-bottom: 1px solid #f0f0f0;
+}
+
+.calendar-grid {
+    display: grid;
+    grid-template-columns: repeat(7, 1fr);
+    gap: 2px;
+}
+
+.day-label {
+    font-size: 0.75rem;
+    font-weight: 600;
+    color: #64748B;
+    /* Slate Gray */
+    text-align: center;
+    padding: 0.5rem 0.25rem;
+}
+
+.day-cell {
+    width: 100%;
+    aspect-ratio: 1 / 1;
+    /* Make cells square */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 0.9rem;
+    cursor: pointer;
+    position: relative;
+    z-index: 1;
+    padding: 0;
+    margin: 0;
+    color: var(--haygo-dark);
+    transition: color 0.2s, background-color 0.2s;
+}
+
+.day-number {
+    width: 90%;
+    height: 90%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 50%;
+    z-index: 2;
+}
+
+/* Styling for days outside the current month */
+.day-cell.outside-month {
+    color: #CBD5E1;
+    /* Light Gray */
+    cursor: default;
+}
+
+/* Day is past today */
+.day-cell.disabled {
+    color: #CBD5E1;
+    cursor: not-allowed;
+}
+
+/* Hover effect */
+.day-cell:not(.disabled):not(.selected-start):not(.selected-end):not(.in-range):hover .day-number {
+    background-color: #fbeae2;
+    /* Very light lime for hover */
+    color: var(--haygo-dark);
+}
+
+/* Range background (Applies to day-cell container, not number) */
+.day-cell.in-range {
+    background-color: #fbeae2;
+    /* Lightest lime background */
+    color: var(--haygo-dark);
+    border-radius: 0;
+}
+
+/* Start/End Point Styling */
+.day-cell.selected-start,
+.day-cell.selected-end {
+    background-color: var(--haygo-primary) !important;
+    /* Solid Lime background on cell */
+    color: var(--haygo-dark) !important;
+    font-weight: 600;
+    z-index: 3;
+}
+
+/* Ensure specific rounding for start/end points */
+.day-cell.selected-start {
+    border-top-left-radius: 50%;
+    border-bottom-left-radius: 50%;
+}
+
+.day-cell.selected-end {
+    border-top-right-radius: 50%;
+    border-bottom-right-radius: 50%;
+}
+
+/* Special range effects for visual continuity */
+.day-cell.selected-start:not(.selected-end) {
+    border-top-right-radius: 0;
+    border-bottom-right-radius: 0;
+}
+
+.day-cell.selected-end:not(.selected-start) {
+    border-top-left-radius: 0;
+    border-bottom-left-radius: 0;
+}
+
+/* If start and end are the same day */
+.day-cell.selected-start.selected-end {
+    border-radius: 50% !important;
+}
+
+/* Special case: first day of range in new month */
+.day-cell.in-range:first-child {
+    border-top-left-radius: 0;
+    border-bottom-left-radius: 0;
+}
+
+/* Responsive adjustments for two months */
+@media (min-width: 768px) {
+    #calendar-months-wrapper {
+        display: flex;
+        gap: 1rem;
+    }
+
+    .calendar-month {
+        flex: 1;
+    }
+}
+
+
+#pickupDateDisplay:focus {
+    border-color: #fbd7b0;
+    box-shadow: 0 0 0 0.25rem #fbd7b0;
+}
+
+.form-control:focus {
+    border-color: #fbd7b0 !important;
+    box-shadow: 0 0 0 0.25rem #fbd7b0 !important;
+}

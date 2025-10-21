@@ -2,705 +2,497 @@
 require_once 'header.php';
 ?>
 
-<section class="text-white d-flex align-items-center justify-content-center"
-    style="background-image: url('src/assets/images/hero.jpg'); background-size: contain; background-repeat: no-repeat; background-position: center; height: 70.125rem; margin-top: -13rem;">
-    <div>
-        <div style="margin-top: 3.5rem;">
-            <div class="d-flex justify-content-between align-items-center" style="gap: 22.5rem;">
-                <div>
-                    <p class="" style="font-size: 4.688rem;">The Best Platform <br> for Car Rental</p>
-                    <p style="font-size: 1.25rem; margin-top: -2rem;">“Hay Go - Your Journey, Your Rules”</p>
+<!-- Hero Section (Clean Banner) -->
+<section id="hero-section">
+    <div class="container text-center">
+        <h2 class="display-5 fw-bolder mb-3">
+            Your Road Trip Starts in Cebu.
+        </h2>
+        <p class="lead mb-0 fs-5">
+            Search, book, and drive away with confidence across the Visayas.
+        </p>
+    </div>
+
+    <div class="container mb-5">
+        <div class="row justify-content-center">
+            <div class="col-lg-12">
+                <!-- Search Module Container -->
+                <div class="search-module p-4 p-md-5 mx-auto" style="max-width: 1000px;">
+                    <h2 class="fs-4 fw-bold mb-4 text-center text-haygo-dark">Find Your Cebu Ride</h2>
+                    <form id="rentalSearchForm" class="row g-3 g-lg-4 align-items-end">
+
+                        <!-- Location Input -->
+                        <div class="col-12 col-md-5 col-lg-4">
+                            <label for="pickupLocation" class="form-label fw-semibold text-secondary mb-1">
+                                <i class="bi bi-geo-alt text-haygo-accent me-1"></i> Location
+                            </label>
+                            <input type="text" id="pickupLocation" name="pickupLocation"
+                                value="Mactan-Cebu International Airport (CEB)" required
+                                class="form-control form-control-lg rounded-3" placeholder="City, airport, or address">
+                        </div>
+
+                        <!-- Pick-up Date Input (Trigger for Calendar Modal) -->
+                        <div class="col-6 col-md-3 col-lg-3">
+                            <label for="pickupDateDisplay" class="form-label fw-semibold text-secondary mb-1">
+                                <i class="bi bi-calendar-check text-haygo-accent me-1"></i> Pick-up
+                            </label>
+                            <input type="text" id="pickupDateDisplay" class="form-control form-control-lg rounded-3"
+                                readonly value="" placeholder="Select Date" data-bs-toggle="modal"
+                                data-bs-target="#calendarModal" required>
+                            <input type="hidden" id="pickupDate" name="pickupDate">
+                        </div>
+
+                        <!-- Drop-off Date Input (Trigger for Calendar Modal) -->
+                        <div class="col-6 col-md-4 col-lg-3">
+                            <label for="dropoffDateDisplay" class="form-label fw-semibold text-secondary mb-1">
+                                <i class="bi bi-calendar-x text-haygo-accent me-1"></i> Drop-off
+                            </label>
+                            <input type="text" id="dropoffDateDisplay" class="form-control form-control-lg rounded-3"
+                                readonly value="" placeholder="Select Date" data-bs-toggle="modal"
+                                data-bs-target="#calendarModal" required>
+                            <input type="hidden" id="dropoffDate" name="dropoffDate">
+                        </div>
+
+                        <!-- Search Button (Primary Lime) -->
+                        <div class="col-12 col-lg-2">
+                            <button type="submit"
+                                class="btn btn-haygo-primary btn-lg w-100 fw-semibold rounded-3 shadow-sm">
+                                Search
+                            </button>
+                        </div>
+
+                        <div class="col-12 mt-3">
+                            <p id="form-message" class="text-center small mb-0"></p>
+                        </div>
+                    </form>
+                </div>
+                <!-- End Search Module Container -->
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Booking Form Widget -->
+
+<section id="about-us" class="about py-5 py-md-5">
+    <div class="container py-5">
+        <div class="row justify-content-center text-center mb-5">
+            <div class="col-lg-8">
+                <h3 class="testing text-uppercase fs-6 fw-bold mb-2 letter-spacing-wide">Why Choose Hay go?</h3>
+                <h2 class="display-6 fw-bolder text-haygo-dark mb-4">
+                    Your Cebu Adventure Starts with Our <span class="testing">Commitment</span>
+                </h2>
+                <p class="lead text-secondary">
+                    Founded in Cebu, we are dedicated to simplifying island travel. Our mission is to provide more
+                    than just a car—we deliver reliability, local knowledge, and transparent service so you can
+                    focus on the journey.
+                </p>
+            </div>
+        </div>
+
+        <div class="row g-5 text-center">
+
+            <!-- Commitment Pillar 1: Local Expertise -->
+            <div class="col-md-4">
+                <div class="c-round icon-box rounded-circle mx-auto mb-4 d-flex align-items-center justify-content-center text-white shadow-lg"
+                    style="width: 80px; height: 80px;">
+                    <i class="fas fa-map-marked-alt fs-3"></i>
+                </div>
+                <h4 class="fs-5 fw-bold text-haygo-dark mb-2">Deep Local Expertise</h4>
+                <p class="text-secondary">
+                    We're based in the Visayas, so we know the best routes, the local roads, and the hidden gems.
+                    Your trip planner and navigator, all in one.
+                </p>
+            </div>
+
+            <!-- Commitment Pillar 2: Reliability & Safety -->
+            <div class="col-md-4">
+                <div class="c-round icon-box rounded-circle mx-auto mb-4 d-flex align-items-center justify-content-center text-white shadow-lg"
+                    style="width: 80px; height: 80px;">
+                    <i class="fas fa-shield-alt fs-3"></i>
+                </div>
+                <h4 class="fs-5 fw-bold text-haygo-dark mb-2">Guaranteed Reliability</h4>
+                <p class="text-secondary">
+                    Our entire fleet is regularly inspected and maintained above industry standards to ensure
+                    maximum safety and zero breakdowns on your adventure.
+                </p>
+            </div>
+
+            <!-- Commitment Pillar 3: Transparent Pricing -->
+            <div class="col-md-4">
+                <div class="c-round icon-box rounded-circle mx-auto mb-4 d-flex align-items-center justify-content-center text-white shadow-lg"
+                    style="width: 80px; height: 80px;">
+                    <i class="fas fa-tags fs-3"></i>
+                </div>
+                <h4 class="fs-5 fw-bold text-haygo-dark mb-2">Transparent Pricing</h4>
+                <p class="text-secondary">
+                    What you see is what you pay. We offer straightforward, competitive rates with no hidden fees or
+                    surprise charges upon return.
+                </p>
+            </div>
+        </div>
+
+        <div class="text-center mt-5 pt-4">
+            <a href="#" class="l-button btn btn-lg fw-bold px-5 py-3 rounded-3">Learn More About Our
+                Team</a>
+        </div>
+
+    </div>
+</section>
+
+<!-- NEW: HOW IT WORKS SECTION -->
+<section id="how-it-works" class="py-5 bg-white pt-5">
+    <div class="container container-xl py-5 text-center">
+        <h2 class="fs-2 fw-bold text-haygo-dark mb-3">Your Journey Simplified</h2>
+        <p class="fs-5 text-secondary mb-5">From booking to driving, we make it effortless.</p>
+
+        <div class="row g-5 justify-content-center">
+            <!-- Step 1 (Search) -->
+            <div class="col-12 col-md-4">
+                <div class="icon-box rounded-circle d-inline-flex align-items-center justify-content-center bg-haygo-light text-haygo-accent fw-bold mb-4"
+                    style="width: 80px; height: 80px;">
+                    <i class="bi bi-search fs-3"></i>
+                </div>
+                <h3 class="fs-5 fw-semibold text-haygo-dark mb-2">1. Find Your Vehicle</h3>
+                <p class="text-secondary">Explore thousands of options tailored to your needs and location.</p>
+            </div>
+
+            <!-- Step 2 (Secure Booking) -->
+            <div class="col-12 col-md-4">
+                <div class="icon-box rounded-circle d-inline-flex align-items-center justify-content-center bg-haygo-light text-haygo-accent fw-bold mb-4"
+                    style="width: 80px; height: 80px;">
+                    <i class="bi bi-credit-card-2-back fs-3"></i>
+                </div>
+                <h3 class="fs-5 fw-semibold text-haygo-dark mb-2">2. Secure Your Booking</h3>
+                <p class="text-secondary">Confirm with our secure payment gateway for immediate confirmation.</p>
+            </div>
+
+            <!-- Step 3 (Pick Up Keys) -->
+            <div class="col-12 col-md-4">
+                <div class="icon-box rounded-circle d-inline-flex align-items-center justify-content-center bg-haygo-light text-haygo-accent fw-bold mb-4"
+                    style="width: 80px; height: 80px;">
+                    <i class="bi bi-key fs-3"></i>
+                </div>
+                <h3 class="fs-5 fw-semibold text-haygo-dark mb-2">3. Grab the Keys</h3>
+                <p class="text-secondary">Pick up your sanitized car and enjoy your journey worry-free.</p>
+            </div>
+        </div>
+    </div>
+</section>
+<!-- END NEW SECTION -->
+
+<!-- CALENDAR MODAL (The requested output design) -->
+<div class="modal fade" id="calendarModal" tabindex="-1" aria-hidden="true">
+    <div class="modal-dialog modal-lg modal-dialog-centered">
+        <div class="modal-content rounded-4 shadow-lg p-3">
+            <div class="modal-header border-0 pb-2">
+                <h5 class="modal-title fw-bold text-haygo-dark">Select Your Rental Dates</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+
+            <div class="modal-body pt-0" id="calendar-container">
+
+                <!-- Current Selection Display -->
+                <div class="d-flex justify-content-between align-items-center mb-3 p-3 bg-light rounded-3 border">
                     <div>
-                        <button class="rounded-5"
-                            style="width: 4.938rem; height: 1.688rem; font-size: 0.7rem; color: #474040; background-color: #D9BBAC; border: none;">Rent
-                            Now</button>
+                        <span class="small text-muted d-block">Pick-up</span>
+                        <strong id="selected-pickup-display" class="fs-5 text-haygo-dark">- -</strong>
+                    </div>
+                    <i class="bi bi-arrow-right text-haygo-accent fs-4 mx-3"></i>
+                    <div>
+                        <span class="small text-muted d-block">Drop-off</span>
+                        <strong id="selected-dropoff-display" class="fs-5 text-haygo-dark">- -</strong>
+                    </div>
+                    <button id="clearDatesButton"
+                        class="btn btn-sm btn-outline-secondary ms-4 rounded-pill">Clear</button>
+                </div>
+
+                <!-- Month Navigation -->
+                <div class="d-flex justify-content-between align-items-center mb-3">
+                    <button id="prevMonth" class="btn btn-outline-dark rounded-circle me-2"><i
+                            class="bi bi-chevron-left"></i></button>
+                    <button id="nextMonth" class="btn btn-outline-dark rounded-circle ms-2"><i
+                            class="bi bi-chevron-right"></i></button>
+                </div>
+
+                <!-- Calendar Grid Wrapper (Two Months for Desktop/Tablet) -->
+                <div id="calendar-months-wrapper">
+                    <!-- Calendar 1 will be rendered here -->
+                </div>
+            </div>
+
+            <div class="modal-footer border-0 pt-0">
+                <button id="confirmDatesButton" type="button"
+                    class="btn btn-haygo-primary btn-lg rounded-pill w-100" disabled data-bs-dismiss="modal">
+                    Confirm Dates
+                </button>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- END CALENDAR MODAL -->
+
+<section id="categories" class="py-5 about">
+    <div class="container container-xl py-5">
+        <h2 class="fs-2 fw-bold text-haygo-dark mb-3 text-center">Our Cebu Fleet: Designed for Island Exploration
+        </h2>
+        <p class="fs-5 text-secondary mb-5 text-center">Navigate Cebu City and the provinces with the perfect
+            vehicle for every road.</p>
+
+        <div class="row g-4">
+            <!-- Category 1: The Metro Commuter (Small/Hatchback) -->
+            <div class="col-12 col-sm-6 col-lg-3">
+                <div class="card shadow-sm border-0 category-card h-100 rounded-3">
+                    <div class="card-body p-4 text-center">
+                        <!-- Icon: Car Front (Lime Accent) -->
+                        <div class="icon-box rounded-circle mx-auto mb-3 bg-haygo-light text-haygo-accent"
+                            style="width: 70px; height: 70px; line-height: 70px;">
+                            <i class="bi bi-car-front-fill fs-3"></i>
+                        </div>
+                        <h3 class="fs-5 fw-bold mb-1 text-haygo-dark">The Metro Commuter</h3>
+                        <p class="text-secondary small">Fuel-efficient hatchbacks, ideal for tight Mandaue and Cebu
+                            City traffic.</p>
+                        <a href="#"
+                            class="l-button btn text-haygo-primary border-haygo-primary mt-2">View
+                            Economy Fleet</a>
                     </div>
                 </div>
-                <div class="bg-light rounded-5" style="width: 18.563rem; height: 12.688rem;">
-
+            </div>
+            <!-- Category 2: The Island Voyager (Mid-size SUV) -->
+            <div class="col-12 col-sm-6 col-lg-3">
+                <div class="card shadow-sm border-0 category-card h-100 rounded-3">
+                    <div class="card-body p-4 text-center">
+                        <!-- Icon: SUV/Jeep (Lime Accent) -->
+                        <div class="icon-box rounded-circle mx-auto mb-3 bg-haygo-light text-haygo-accent"
+                            style="width: 70px; height: 70px; line-height: 70px;">
+                            <i class="bi bi-truck-flatbed fs-3"></i>
+                        </div>
+                        <h3 class="fs-5 fw-bold mb-1 text-haygo-dark">The Island Voyager</h3>
+                        <p class="text-secondary small">Comfortable, sturdy mid-size SUVs for exploring Moalboal,
+                            Oslob, and the mountains.</p>
+                        <a href="#"
+                            class="l-button btn text-haygo-primary border-haygo-primary mt-2">View
+                            SUV Fleet</a>
+                    </div>
                 </div>
             </div>
-        </div>
-        <div>
-            <div class="d-flex justify-content-end align-items-center">
-                <p style="width: 18.375rem; font-size: 0.813rem; margin-top: 1rem;">Together, we navigate the
-                    roads of life, forging stories under the sun and stars, one ride at
-                    a time. Each journey becomes more than just distance traveled—it becomes a memory shared.
-                    Along the way, we find connections, laughter, and moments that stay with us forever. In
-                    every ride, we discover not just new places, but new stories waiting to unfold.</p>
+            <!-- Category 3: The Barkada Hauler (AUVs/Vans) -->
+            <div class="col-12 col-sm-6 col-lg-3">
+                <div class="card shadow-sm border-0 category-card h-100 rounded-3">
+                    <div class="card-body p-4 text-center">
+                        <!-- Icon: Van (Lime Accent) -->
+                        <div class="icon-box rounded-circle mx-auto mb-3 bg-haygo-light text-haygo-accent"
+                            style="width: 70px; height: 70px; line-height: 70px;">
+                            <i class="bi bi-bus-front fs-3"></i>
+                        </div>
+                        <h3 class="fs-5 fw-bold mb-1 text-haygo-dark">The Barkada Hauler</h3>
+                        <p class="text-secondary small">7-seater AUVs and vans perfect for family outings, airport
+                            transfers, and group tours (barkada).</p>
+                        <a href="#"
+                            class="l-button btn text-haygo-primary border-haygo-primary mt-2">View
+                            Family Vans</a>
+                    </div>
+                </div>
             </div>
-        </div>
-        <div class="d-flex justify-content-center align-items-center">
-            <div class="bg-light d-flex justify-content-between align-items-center"
-                style="width: 77.75rem; height: 6.875rem; margin-top: 1.5rem; border-radius: 1.875rem; gap: 2rem;">
-                <div class="mt-2" style="width: 14.375rem; height: 4rem; margin-left: 2rem">
-                    <h4 style="color: #8F8C8C; font-size: 1.125rem">Pick Up Address</h4>
-                    <p style="color: #615F5F; font-size: 0.875rem; margin-top: -0.5rem">United State of Made in China, ...</p>
-                </div>
-                <div style="width: 1px; height: 4rem; background: #B9B4B4;"></div>
-                <div class="mt-2" style="width: 14.375rem; height: 4rem;">
-                    <h4 style="color: #8F8C8C; font-size: 1.125rem">Pick Up Address</h4>
-                    <p style="color: #615F5F; font-size: 0.875rem; margin-top: -0.5rem">United State of Made in China, ...</p>
-                </div>
-                <div style="width: 1px; height: 4rem; background: #B9B4B4;"></div>
-                <div class="" style="width: 8.25rem; height: 4rem;">
-                    <h4 style="color: #8F8C8C; font-size: 1.125rem">Pick Up Date</h4>
-                    <input type="text" name="daterange" value="01/01/2018 - 01/15/2018" />
-                </div>
-
-                <div style="width: 1px; height: 4rem; background: #B9B4B4;"></div>
-
-                <div class="" style="width: 8.25rem; height: 4rem;">
-                    <h4 style="color: #8F8C8C; font-size: 1.125rem">Drop Off Date</h4>
-                    <input type="text" name="daterange" value="01/01/2018 - 01/15/2018" />
-                </div>
-
-                <div style="width: 10.375rem; height: 5.625rem; background-color: #D9BBAC; border-radius: 1.25rem; margin-right: 1rem">
+            <!-- Category 4: The Executive Ride (Premium/Luxury) -->
+            <div class="col-12 col-sm-6 col-lg-3">
+                <div class="card shadow-sm border-0 category-card h-100 rounded-3">
+                    <div class="card-body p-4 text-center">
+                        <!-- Icon: VIP (Lime Accent) -->
+                        <div class="icon-box rounded-circle mx-auto mb-3 bg-haygo-light text-haygo-accent"
+                            style="width: 70px; height: 70px; line-height: 70px;">
+                            <i class="bi bi-person-workspace fs-3"></i>
+                        </div>
+                        <h3 class="fs-5 fw-bold mb-1 text-haygo-dark">The Executive Ride</h3>
+                        <p class="text-secondary small">High-end sedans and premium SUVs for business travel and
+                            luxury resort hopping.</p>
+                        <a href="#"
+                            class="l-button btn text-haygo-primary border-haygo-primary mt-2">View
+                            Premium Models</a>
+                    </div>
                 </div>
             </div>
         </div>
     </div>
 </section>
-<section style="height: 30.5rem; margin-top: -7.6rem;">
-    <div style="padding-top: 4.5rem;">
-        <div class="d-flex justify-content-center align-items-center gap-5">
-            <div>
-                <h1 class="text" style="font-size: 4.063rem;">About Us</h1>
-                <div style="width: 24.813rem; height: 15.75rem; font-size: 0.906rem;">
-                    <p>A service-based corporation aiming to lessen the hassle of rental processes allowing the
-                        customer to rent through this platform. We offer various types of vehicles with an
-                        exceptional customer services making your travel a stress and wander-free.
+
+<section id="reviews" class="py-5 bg-white">
+    <div class="container container-xl py-5">
+        <div class="row align-items-center">
+            <div class="col-lg-6 mb-4 mb-lg-0">
+                <h2 class="fs-2 fw-bold text-haygo-dark mb-3">Our 4.9/5 Trust Score</h2>
+                <p class="fs-5 text-secondary mb-4">We prioritize your experience. See why thousands choose Hay Go.
+                </p>
+
+                <div class="d-flex flex-wrap gap-4">
+                    <!-- Trust Metric 1 (Lime accent) -->
+                    <div class="text-center">
+                        <span class="display-6 fw-bold text-haygo-accent d-block">99%</span>
+                        <span class="text-secondary small">Cleanliness Rating</span>
+                    </div>
+                    <!-- Trust Metric 2 (Lime accent) -->
+                    <div class="text-center">
+                        <span class="display-6 fw-bold text-haygo-accent d-block">24/7</span>
+                        <span class="text-secondary small">Roadside Assistance</span>
+                    </div>
+                    <!-- Trust Metric 3 (Lime accent) -->
+                    <div class="text-center">
+                        <span class="display-6 fw-bold text-haygo-accent d-block">100+</span>
+                        <span class="text-secondary small">Global Locations</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Testimonial Card (Primary Blue Border) -->
+            <div class="col-lg-6">
+                <div class="card shadow-lg border-top border-5 border-haygo-primary h-100 p-3 rounded-4">
+                    <div class="card-body">
+                        <p class="fs-5 fst-italic text-haygo-dark">
+                            "Fast, reliable, and straightforward. The app made check-in a breeze. I had the keys in
+                            hand within minutes, ready to start my vacation. This is how renting a car should be."
+                        </p>
+                        <div class="mt-4">
+                            <div class="text-warning mb-1">
+                                <!-- Using Bootstrap default yellow warning for stars -->
+                                <i class="bi bi-star-fill"></i>
+                                <i class="bi bi-star-fill"></i>
+                                <i class="bi bi-star-fill"></i>
+                                <i class="bi bi-star-fill"></i>
+                                <i class="bi bi-star-half"></i>
+                            </div>
+                            <p class="fw-bold mb-0 text-haygo-dark">Jessica M., Frequent Traveler</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Frequently Asked Questions Section (Light Gray-Blue Background) -->
+<section id="faq" class="py-5 about">
+    <div class="container container-xl py-5">
+        <h2 class="fs-2 fw-bold text-haygo-dark mb-3 text-center">Common Questions</h2>
+        <p class="fs-5 text-secondary mb-5 text-center">Need more details? We're here to help.</p>
+
+        <div class="row justify-content-center">
+            <div class="col-lg-8">
+                <div class="accordion" id="faqAccordion">
+
+                    <!-- FAQ Item 1 (Uses new collapse and focus styles) -->
+                    <div class="accordion-item rounded-3 mb-3 shadow-sm border">
+                        <h2 class="accordion-header" id="headingOne">
+                            <button class="accordion-button fw-semibold text-haygo-dark" type="button"
+                                data-bs-toggle="collapse" data-bs-target="#collapseOne" aria-expanded="true"
+                                aria-controls="collapseOne">
+                                Do I need to pay a deposit for the rental?
+                            </button>
+                        </h2>
+                        <div id="collapseOne" class="accordion-collapse collapse show" aria-labelledby="headingOne"
+                            data-bs-parent="#faqAccordion">
+                            <div class="accordion-body text-secondary">
+                                Yes, a security deposit is pre-authorized on your credit card at pickup. The amount
+                                depends on the vehicle class and insurance options chosen, and it is released once
+                                the car is returned undamaged.
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- FAQ Item 2 -->
+                    <div class="accordion-item rounded-3 mb-3 shadow-sm border">
+                        <h2 class="accordion-header" id="headingTwo">
+                            <button class="accordion-button collapsed fw-semibold text-haygo-dark" type="button"
+                                data-bs-toggle="collapse" data-bs-target="#collapseTwo" aria-expanded="false"
+                                aria-controls="collapseTwo">
+                                Are additional drivers allowed?
+                            </button>
+                        </h2>
+                        <div id="collapseTwo" class="accordion-collapse collapse" aria-labelledby="headingTwo"
+                            data-bs-parent="#faqAccordion">
+                            <div class="accordion-body text-secondary">
+                                Additional drivers are permitted, but they must be registered on the rental
+                                agreement at the time of pickup, meet all age requirements, and present a valid
+                                driver's license. A small daily fee may apply.
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- FAQ Item 3 -->
+                    <div class="accordion-item rounded-3 mb-3 shadow-sm border">
+                        <h2 class="accordion-header" id="headingThree">
+                            <button class="accordion-button collapsed fw-semibold text-haygo-dark" type="button"
+                                data-bs-toggle="collapse" data-bs-target="#collapseThree" aria-expanded="false"
+                                aria-controls="collapseThree">
+                                What happens if I return the car late?
+                            </button>
+                        </h2>
+                        <div id="collapseThree" class="accordion-collapse collapse" aria-labelledby="headingThree"
+                            data-bs-parent="#faqAccordion">
+                            <div class="accordion-body text-secondary">
+                                Late returns are subject to an hourly charge up to a full day's rental rate. If you
+                                anticipate a delay, please contact the rental location immediately to discuss
+                                extension options.
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- FEATURED DEAL SECTION (Matches System/Vehicle Focus) -->
+<section class="py-5 bg-white">
+    <div class="container container-xl py-5">
+        <div class="card shadow-lg border-0 bg-haygo-light rounded-4 overflow-hidden">
+            <div class="row g-0 align-items-center">
+                <!-- Text Content (Ocean Blue) -->
+                <div class="col-lg-6 p-4 p-md-5">
+                    <h3 class="fs-6 fw-bold text-uppercase text-haygo-accent mb-2">LIMITED TIME OFFER</h3>
+                    <h2 class="display-5 fw-bolder text-haygo-dark mb-4">
+                        Weekend Special: <span class="text-haygo-primary">Mid-Size SUV</span>
+                    </h2>
+                    <p class="fs-5 text-secondary mb-4">
+                        Take on the islands with extra space and comfort. Book for 3 days and get the 4th day free!
+                        Perfect for a trip to Oslob or Bantayan Island.
                     </p>
-                    <p>With our help, we assure you to have an exquisite travel-free; hopping in with the dream
-                        car that you aspire to ride, and an extraordinary experience to feel as you wander.
-                        Wherever your adventure takes you, the Hay Go Car Rental will provide the perfect ride
-                        and an exceptional support. Ready, HAY. GO!
-                    </p>
+                    <ul class="list-unstyled mb-4 text-haygo-dark">
+                        <li class="mb-2"><i class="bi bi-check-circle-fill text-haygo-accent me-2"></i> Free 4th day
+                            rental</li>
+                        <li class="mb-2"><i class="bi bi-check-circle-fill text-haygo-accent me-2"></i> Unlimited
+                            mileage included</li>
+                        <li class="mb-2"><i class="bi bi-check-circle-fill text-haygo-accent me-2"></i> Seats 5
+                            comfortably with baggage</li>
+                    </ul>
+                    <!-- Button is Lime Accent, contrasting with the dark card content -->
+                    <button class="btn btn-haygo-primary btn-lg fw-bold px-5 rounded-3 shadow-md">
+                        See Deal & Reserve
+                    </button>
                 </div>
-            </div>
-            <div class="bg-danger" style="width: 24.813rem; height: 21.75rem; border-radius: 0.938rem;">
 
-            </div>
-            <div class="d-flex flex-column align-items-center" style="gap: 1.2rem">
-                <div class="d-flex flex-column align-items-center"
-                    style="width: 22.188rem; height: 8.188rem; background: #242B25; border-radius: 0.938rem;">
-                    <h1 class="text-white mt-4">6+ Years</h1>
-                    <p style="color: #B9B7B7; font-size: 1.25rem; margin-top: -0.9rem;">Experience</p>
-                </div>
-                <div class="bg-danger" style="width: 22.188rem; height: 12.438rem; border-radius: 0.938rem;"></div>
-            </div>
-        </div>
-    </div>
-</section>
-<section>
-    <div style="height: 25.438rem; background: #242B25;">
-        <div>
-            <div class="" style="margin-left: 6.375rem; padding-top: 2.625rem;">
-                <h1 class="text-white" style="font-size: 4.063rem;">Our Services</h1>
-            </div>
-            <div class="d-flex justify-content-center align-items-center"
-                style="margin-top: 2.5rem; gap: 4.063rem;">
-                <div class="bg-light" style="width: 17.3rem; height: 11.3rem;"></div>
-                <div class="bg-light" style="width: 17.3rem; height: 11.3rem;"></div>
-                <div class="bg-light" style="width: 17.3rem; height: 11.3rem;"></div>
-                <div class="bg-light" style="width: 17.3rem; height: 11.3rem;"></div>
-            </div>
-        </div>
-    </div>
-</section>
-<section style="height: 76rem; background: #EBE7E4;">
-    <div class="position-relative">
-        <div class="text-center" style="padding-top: 6.563rem;">
-            <h1 style="font-size: 5rem; color: #484848;">How It Works</h1>
-            <p style="font-size: 1.25rem; color: #5D5D5D; margin-top: -0.5rem;">Effortlessly rent your dream car
-                with Hay Go Car Rental</p>
-        </div>
-        <div class="position-absolute" style="top: 18.063rem; left: 50%; transform: translateX(-50%); z-index: 1;">
-            <img src="src/assets/images/arrow.png" style="width: 52.563rem; height: 10.375rem;">
-        </div>
-
-        <div class="" style="z-index: 2; position: relative;">
-            <div class="d-flex justify-content-between align-items-center">
-                <div style="width: 17.188rem; height: 12.313rem; margin-left: 10rem;">
-                    <div class="d-flex justify-content-center align-items-center">
-                        <div class="rounded-4 d-flex justify-content-center align-items-center"
-                            style="width: 6.25rem; height: 6.25rem; background: white;">
-                            <i class="fa-solid fa-calendar-days" style="font-size: 3.25rem; color: #484848;"></i>
-                        </div>
-                    </div>
-                    <div class="text-center">
-                        <h1 class="mt-2" style="font-size: 1.563rem; color: #484848;">Pick-Up Date</h1>
-                        <p style="font-size: 0.813rem; margin-top: -0.3rem; color: #484848;">Select your date, and
-                            unlock the world to possibilities. With your preference time to hop in the ride; the
-                            choice is yours.</p>
-                    </div>
-                </div>
-                <div class="" style="width: 17.188rem; height: 13.063rem; margin-right: 9.5rem;">
-                    <div class="d-flex justify-content-center align-items-center">
-                        <div class="rounded-4 d-flex justify-content-center align-items-center"
-                            style="width: 6.25rem; height: 6.25rem; background: white;">
-                            <i class="fa-solid fa-calendar-check" style="font-size: 3.25rem; color: #484848;"></i>
-                        </div>
-                    </div>
-                    <div class="text-center">
-                        <h1 class="mt-2" style="font-size: 1.563rem; color: #484848;">Book Your Car</h1>
-                        <p style="font-size: 0.813rem; margin-top: -0.3rem; color: #484848;">Grab the chance, book
-                            your car, fuel your freedom, and let the unknown guide you to new horizons where every
-                            mile holds a story; a path revealing each dreams.</p>
-                    </div>
-                </div>
-            </div>
-            <div class="d-flex justify-content-center align-items-center">
-                <div class="" style="width: 17.188rem; height: 13.313rem;">
-                    <div class="d-flex justify-content-center align-items-center">
-                        <div class="rounded-4 d-flex justify-content-center align-items-center"
-                            style="width: 6.25rem; height: 6.25rem; background: white;">
-                            <i class="fa-solid fa-car" style="font-size: 3.25rem; color: #484848;"></i>
-                        </div>
-                    </div>
-                    <div class="text-center">
-                        <h1 class="mt-2" style="font-size: 1.563rem; color: #484848;">Choose Your Car</h1>
-                        <p style="font-size: 0.813rem; margin-top: -0.3rem; color: #484848;">With your favorite car,
-                            you can steer the world; maneuvering every rides. Pick your dream car, and unleash the
-                            thrill of the open road.</p>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-    <!-- Popular Cars -->
-    <div>
-        <div class="d-flex justify-content-center align-items-center gap-5" style="margin-top: 5rem;">
-            <div class="d-flex flex-column align-items-start gap-2" style="width: 18.125rem; height: 25.125rem;">
-                <h1 class="mt-5" style="color: #484848;">Popular<br>Cars</h1>
-                <p style="color: #858585;">Unravel the world, and let your ride reign supreme. Let’s go, Hay GO!</p>
-                <button class="rounded-5"
-                    style="width: 5.625rem; height: 2rem; background: #D8AD97; font-size: 0.75rem; border: none ; color: #FFF3ED;">Open
-                    Fleet</button>
-            </div>
-
-            <div class="d-flex flex-column" style="width: 57.438rem; height: 25.125rem;">
-                    <div id="imageCarousel" class="carousel slide border rounded-3" data-bs-ride="carousel">
-                        <!-- Slides -->
-                        <div class="carousel-inner gap-4">
-                            <div class="carousel-item active">
-                            <!-- Slide 1 -->
-                            <div class="d-flex justify-content-center align-items-center" style="gap: 2rem;" id="slide-1">
-                                <div class="card"
-                                    style="width: 17.813rem; height: 20.313rem; border: none; border-radius: 1.25rem; background: #FFF7F3;">
-                                    <div>
-                                        <h1 class="p-3" style="font-size: 1.5rem;">Honda Cr V</h1>
-                                    </div>
-                                    <div class="d-flex justify-content-center align-items-center">
-                                        <img src="src/assets/images/Blueprint/Large Cars/Honda CR V.png"
-                                            style="width: 16.75rem; height: 8.75rem;">
-                                    </div>
-                                    <div class="d-flex justify-content-center align-items-center mt-2">
-                                        <div style="width: 15.813rem; height: 2.813rem; background: #F5E9E3;">
-                                            <div class="d-flex justify-content-evenly align-items-center mt-2">
-                                                <div class="d-flex flex-column align-items-center">
-                                                    <i class="fa-solid fa-gauge" style="font-size: 1.25rem; color: #d6a78eff"></i>
-                                                    <p style="font-size: 0.625rem; color: #473d36ff">52,754 miles</p>
-                                                </div>
-                                                <div class="d-flex flex-column align-items-center">
-                                                    <i class="fa-solid fa-gas-pump" style="font-size: 1.25rem; color: #d6a78eff"></i>
-                                                    <p style="font-size: 0.625rem; color: #473d36ff">Petrol</p>
-                                                </div>
-                                                <div class="d-flex flex-column align-items-center">
-                                                    <i class="fa-solid fa-gear" style="font-size: 1.25rem; color: #d6a78eff"></i>
-                                                    <p style="font-size: 0.625rem; color: #473d36ff">Automatic</p>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="d-flex justify-content-between align-items-center mt-3">
-                                        <div style="margin-left: 1.2rem;">
-                                            <h1 style="font-size: 1.188rem;">$450/<span style="font-size: 0.75rem;">day</span>
-                                            </h1>
-                                        </div>
-                                        <button class="rounded-4"
-                                            style="margin-right: 1.2rem; width: 4.938rem; height: 1.688rem; font-size: 0.688rem; background: #D9BBAC; border: none; color: #FFF3ED;">Book
-                                            Now</button>
-                                    </div>
-                                </div>
-                                <div class="card"
-                                    style="width: 17.813rem; height: 20.313rem; border: none; border-radius: 1.25rem; background: #FFF7F3;">
-                                    <div>
-                                        <h1 class="p-3" style="font-size: 1.5rem;">Honda Cr V</h1>
-                                    </div>
-                                    <div class="d-flex justify-content-center align-items-center">
-                                        <img src="src/assets/images/Blueprint/Large Cars/Honda CR V.png"
-                                            style="width: 16.75rem; height: 8.75rem;">
-                                    </div>
-                                    <div class="d-flex justify-content-center align-items-center mt-2">
-                                        <div style="width: 15.813rem; height: 2.813rem; background: #F5E9E3;">
-                                            <div class="d-flex justify-content-evenly align-items-center mt-2">
-                                                <div class="d-flex flex-column align-items-center">
-                                                    <i class="fa-solid fa-gauge" style="font-size: 1.25rem; color: #d6a78eff"></i>
-                                                    <p style="font-size: 0.625rem; color: #473d36ff">52,754 miles</p>
-                                                </div>
-                                                <div class="d-flex flex-column align-items-center">
-                                                    <i class="fa-solid fa-gas-pump" style="font-size: 1.25rem; color: #d6a78eff"></i>
-                                                    <p style="font-size: 0.625rem; color: #473d36ff">Petrol</p>
-                                                </div>
-                                                <div class="d-flex flex-column align-items-center">
-                                                    <i class="fa-solid fa-gear" style="font-size: 1.25rem; color: #d6a78eff"></i>
-                                                    <p style="font-size: 0.625rem; color: #473d36ff">Automatic</p>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="d-flex justify-content-between align-items-center mt-3">
-                                        <div style="margin-left: 1.2rem;">
-                                            <h1 style="font-size: 1.188rem;">$450/<span style="font-size: 0.75rem;">day</span>
-                                            </h1>
-                                        </div>
-                                        <button class="rounded-4"
-                                            style="margin-right: 1.2rem; width: 4.938rem; height: 1.688rem; font-size: 0.688rem; background: #D9BBAC; border: none; color: #FFF3ED;">Book
-                                            Now</button>
-                                    </div>
-                                </div>
-                                <div class="card"
-                                    style="width: 17.813rem; height: 20.313rem; border: none; border-radius: 1.25rem; background: #FFF7F3;">
-                                    <div>
-                                        <h1 class="p-3" style="font-size: 1.5rem;">Honda Cr V</h1>
-                                    </div>
-                                    <div class="d-flex justify-content-center align-items-center">
-                                        <img src="src/assets/images/Blueprint/Large Cars/Honda CR V.png"
-                                            style="width: 16.75rem; height: 8.75rem;">
-                                    </div>
-                                    <div class="d-flex justify-content-center align-items-center mt-2">
-                                        <div style="width: 15.813rem; height: 2.813rem; background: #F5E9E3;">
-                                            <div class="d-flex justify-content-evenly align-items-center mt-2">
-                                                <div class="d-flex flex-column align-items-center">
-                                                    <i class="fa-solid fa-gauge" style="font-size: 1.25rem; color: #d6a78eff"></i>
-                                                    <p style="font-size: 0.625rem; color: #473d36ff">52,754 miles</p>
-                                                </div>
-                                                <div class="d-flex flex-column align-items-center">
-                                                    <i class="fa-solid fa-gas-pump" style="font-size: 1.25rem; color: #d6a78eff"></i>
-                                                    <p style="font-size: 0.625rem; color: #473d36ff">Petrol</p>
-                                                </div>
-                                                <div class="d-flex flex-column align-items-center">
-                                                    <i class="fa-solid fa-gear" style="font-size: 1.25rem; color: #d6a78eff"></i>
-                                                    <p style="font-size: 0.625rem; color: #473d36ff">Automatic</p>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="d-flex justify-content-between align-items-center mt-3">
-                                        <div style="margin-left: 1.2rem;">
-                                            <h1 style="font-size: 1.188rem;">$450/<span style="font-size: 0.75rem;">day</span>
-                                            </h1>
-                                        </div>
-                                        <button class="rounded-4"
-                                            style="margin-right: 1.2rem; width: 4.938rem; height: 1.688rem; font-size: 0.688rem; background: #D9BBAC; border: none; color: #FFF3ED;">Book
-                                            Now</button>
-                                    </div>
-                                </div>
-                            </div>
-                            </div>
-                            <div class="carousel-item">
-                            <!-- Slide 2 -->
-                            <div class="d-flex justify-content-center align-items-center" style="gap: 2rem;"id="slide-2">
-                                <div class="card"
-                                    style="width: 17.813rem; height: 20.313rem; border: none; border-radius: 1.25rem; background: #FFF7F3;">
-                                    <div>
-                                        <h1 class="p-3" style="font-size: 1.5rem;">Honda Cr V</h1>
-                                    </div>
-                                    <div class="d-flex justify-content-center align-items-center">
-                                        <img src="src/assets/images/Blueprint/Large Cars/Jeep Compass.png"
-                                            style="width: 16.75rem; height: 8.75rem;">
-                                    </div>
-                                    <div class="d-flex justify-content-center align-items-center mt-2">
-                                        <div style="width: 15.813rem; height: 2.813rem; background: #F5E9E3;">
-                                            <div class="d-flex justify-content-evenly align-items-center mt-2">
-                                                <div class="d-flex flex-column align-items-center">
-                                                    <i class="fa-solid fa-gauge" style="font-size: 1.25rem; color: #d6a78eff"></i>
-                                                    <p style="font-size: 0.625rem; color: #473d36ff">52,754 miles</p>
-                                                </div>
-                                                <div class="d-flex flex-column align-items-center">
-                                                    <i class="fa-solid fa-gas-pump" style="font-size: 1.25rem; color: #d6a78eff"></i>
-                                                    <p style="font-size: 0.625rem; color: #473d36ff">Petrol</p>
-                                                </div>
-                                                <div class="d-flex flex-column align-items-center">
-                                                    <i class="fa-solid fa-gear" style="font-size: 1.25rem; color: #d6a78eff"></i>
-                                                    <p style="font-size: 0.625rem; color: #473d36ff">Automatic</p>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="d-flex justify-content-between align-items-center mt-3">
-                                        <div style="margin-left: 1.2rem;">
-                                            <h1 style="font-size: 1.188rem;">$450/<span style="font-size: 0.75rem;">day</span>
-                                            </h1>
-                                        </div>
-                                        <button class="rounded-4"
-                                            style="margin-right: 1.2rem; width: 4.938rem; height: 1.688rem; font-size: 0.688rem; background: #D9BBAC; border: none; color: #FFF3ED;">Book
-                                            Now</button>
-                                    </div>
-                                </div>
-                                <div class="card"
-                                    style="width: 17.813rem; height: 20.313rem; border: none; border-radius: 1.25rem; background: #FFF7F3;">
-                                    <div>
-                                        <h1 class="p-3" style="font-size: 1.5rem;">Honda Cr V</h1>
-                                    </div>
-                                    <div class="d-flex justify-content-center align-items-center">
-                                        <img src="src/assets/images/Blueprint/Large Cars/Jeep Compass.png"
-                                            style="width: 16.75rem; height: 8.75rem;">
-                                    </div>
-                                    <div class="d-flex justify-content-center align-items-center mt-2">
-                                        <div style="width: 15.813rem; height: 2.813rem; background: #F5E9E3;">
-                                            <div class="d-flex justify-content-evenly align-items-center mt-2">
-                                                <div class="d-flex flex-column align-items-center">
-                                                    <i class="fa-solid fa-gauge" style="font-size: 1.25rem; color: #d6a78eff"></i>
-                                                    <p style="font-size: 0.625rem; color: #473d36ff">52,754 miles</p>
-                                                </div>
-                                                <div class="d-flex flex-column align-items-center">
-                                                    <i class="fa-solid fa-gas-pump" style="font-size: 1.25rem; color: #d6a78eff"></i>
-                                                    <p style="font-size: 0.625rem; color: #473d36ff">Petrol</p>
-                                                </div>
-                                                <div class="d-flex flex-column align-items-center">
-                                                    <i class="fa-solid fa-gear" style="font-size: 1.25rem; color: #d6a78eff"></i>
-                                                    <p style="font-size: 0.625rem; color: #473d36ff">Automatic</p>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="d-flex justify-content-between align-items-center mt-3">
-                                        <div style="margin-left: 1.2rem;">
-                                            <h1 style="font-size: 1.188rem;">$450/<span style="font-size: 0.75rem;">day</span>
-                                            </h1>
-                                        </div>
-                                        <button class="rounded-4"
-                                            style="margin-right: 1.2rem; width: 4.938rem; height: 1.688rem; font-size: 0.688rem; background: #D9BBAC; border: none; color: #FFF3ED;">Book
-                                            Now</button>
-                                    </div>
-                                </div>
-                                <div class="card"
-                                    style="width: 17.813rem; height: 20.313rem; border: none; border-radius: 1.25rem; background: #FFF7F3;">
-                                    <div>
-                                        <h1 class="p-3" style="font-size: 1.5rem;">Honda Cr V</h1>
-                                    </div>
-                                    <div class="d-flex justify-content-center align-items-center">
-                                        <img src="src/assets/images/Blueprint/Large Cars/Jeep Compass.png"
-                                            style="width: 16.75rem; height: 8.75rem;">
-                                    </div>
-                                    <div class="d-flex justify-content-center align-items-center mt-2">
-                                        <div style="width: 15.813rem; height: 2.813rem; background: #F5E9E3;">
-                                            <div class="d-flex justify-content-evenly align-items-center mt-2">
-                                                <div class="d-flex flex-column align-items-center">
-                                                    <i class="fa-solid fa-gauge" style="font-size: 1.25rem; color: #d6a78eff"></i>
-                                                    <p style="font-size: 0.625rem; color: #473d36ff">52,754 miles</p>
-                                                </div>
-                                                <div class="d-flex flex-column align-items-center">
-                                                    <i class="fa-solid fa-gas-pump" style="font-size: 1.25rem; color: #d6a78eff"></i>
-                                                    <p style="font-size: 0.625rem; color: #473d36ff">Petrol</p>
-                                                </div>
-                                                <div class="d-flex flex-column align-items-center">
-                                                    <i class="fa-solid fa-gear" style="font-size: 1.25rem; color: #d6a78eff"></i>
-                                                    <p style="font-size: 0.625rem; color: #473d36ff">Automatic</p>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="d-flex justify-content-between align-items-center mt-3">
-                                        <div style="margin-left: 1.2rem;">
-                                            <h1 style="font-size: 1.188rem;">$450/<span style="font-size: 0.75rem;">day</span>
-                                            </h1>
-                                        </div>
-                                        <button class="rounded-4"
-                                            style="margin-right: 1.2rem; width: 4.938rem; height: 1.688rem; font-size: 0.688rem; background: #D9BBAC; border: none; color: #FFF3ED;">Book
-                                            Now</button>
-                                    </div>
-                                </div>
-                            </div>
-                            </div>
-                            <div class="carousel-item">
-                            <!-- Slide 3 -->
-                            <div class="d-flex justify-content-center align-items-center" style="gap: 2rem;"id="slide-3">
-                                    <div class="card"
-                                        style="width: 17.813rem; height: 20.313rem; border: none; border-radius: 1.25rem; background: #FFF7F3;">
-                                        <div>
-                                            <h1 class="p-3" style="font-size: 1.5rem;">Honda Cr V</h1>
-                                        </div>
-                                        <div class="d-flex justify-content-center align-items-center">
-                                            <img src="src/assets/images/Blueprint/Large Cars/Kia Carnival.png"
-                                                style="width: 16.75rem; height: 8.75rem;">
-                                        </div>
-                                        <div class="d-flex justify-content-center align-items-center mt-2">
-                                            <div style="width: 15.813rem; height: 2.813rem; background: #F5E9E3;">
-                                                <div class="d-flex justify-content-evenly align-items-center mt-2">
-                                                    <div class="d-flex flex-column align-items-center">
-                                                        <i class="fa-solid fa-gauge" style="font-size: 1.25rem; color: #d6a78eff"></i>
-                                                        <p style="font-size: 0.625rem; color: #473d36ff">52,754 miles</p>
-                                                    </div>
-                                                    <div class="d-flex flex-column align-items-center">
-                                                        <i class="fa-solid fa-gas-pump" style="font-size: 1.25rem; color: #d6a78eff"></i>
-                                                        <p style="font-size: 0.625rem; color: #473d36ff">Petrol</p>
-                                                    </div>
-                                                    <div class="d-flex flex-column align-items-center">
-                                                        <i class="fa-solid fa-gear" style="font-size: 1.25rem; color: #d6a78eff"></i>
-                                                        <p style="font-size: 0.625rem; color: #473d36ff">Automatic</p>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                        <div class="d-flex justify-content-between align-items-center mt-3">
-                                            <div style="margin-left: 1.2rem;">
-                                                <h1 style="font-size: 1.188rem;">$450/<span style="font-size: 0.75rem;">day</span>
-                                                </h1>
-                                            </div>
-                                            <button class="rounded-4"
-                                                style="margin-right: 1.2rem; width: 4.938rem; height: 1.688rem; font-size: 0.688rem; background: #D9BBAC; border: none; color: #FFF3ED;">Book
-                                                Now</button>
-                                        </div>
-                                    </div>
-                                    <div class="card"
-                                        style="width: 17.813rem; height: 20.313rem; border: none; border-radius: 1.25rem; background: #FFF7F3;">
-                                        <div>
-                                            <h1 class="p-3" style="font-size: 1.5rem;">Honda Cr V</h1>
-                                        </div>
-                                        <div class="d-flex justify-content-center align-items-center">
-                                            <img src="src/assets/images/Blueprint/Large Cars/Kia Carnival.png"
-                                                style="width: 16.75rem; height: 8.75rem;">
-                                        </div>
-                                        <div class="d-flex justify-content-center align-items-center mt-2">
-                                            <div style="width: 15.813rem; height: 2.813rem; background: #F5E9E3;">
-                                                <div class="d-flex justify-content-evenly align-items-center mt-2">
-                                                    <div class="d-flex flex-column align-items-center">
-                                                        <i class="fa-solid fa-gauge" style="font-size: 1.25rem; color: #d6a78eff"></i>
-                                                        <p style="font-size: 0.625rem; color: #473d36ff">52,754 miles</p>
-                                                    </div>
-                                                    <div class="d-flex flex-column align-items-center">
-                                                        <i class="fa-solid fa-gas-pump" style="font-size: 1.25rem; color: #d6a78eff"></i>
-                                                        <p style="font-size: 0.625rem; color: #473d36ff">Petrol</p>
-                                                    </div>
-                                                    <div class="d-flex flex-column align-items-center">
-                                                        <i class="fa-solid fa-gear" style="font-size: 1.25rem; color: #d6a78eff"></i>
-                                                        <p style="font-size: 0.625rem; color: #473d36ff">Automatic</p>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                        <div class="d-flex justify-content-between align-items-center mt-3">
-                                            <div style="margin-left: 1.2rem;">
-                                                <h1 style="font-size: 1.188rem;">$450/<span style="font-size: 0.75rem;">day</span>
-                                                </h1>
-                                            </div>
-                                            <button class="rounded-4"
-                                                style="margin-right: 1.2rem; width: 4.938rem; height: 1.688rem; font-size: 0.688rem; background: #D9BBAC; border: none; color: #FFF3ED;">Book
-                                                Now</button>
-                                        </div>
-                                    </div>
-                                    <div class="card"
-                                        style="width: 17.813rem; height: 20.313rem; border: none; border-radius: 1.25rem; background: #FFF7F3;">
-                                        <div>
-                                            <h1 class="p-3" style="font-size: 1.5rem;">Honda Cr V</h1>
-                                        </div>
-                                        <div class="d-flex justify-content-center align-items-center">
-                                            <img src="src/assets/images/Blueprint/Large Cars/Kia Carnival.png"
-                                                style="width: 16.75rem; height: 8.75rem;">
-                                        </div>
-                                        <div class="d-flex justify-content-center align-items-center mt-2">
-                                            <div style="width: 15.813rem; height: 2.813rem; background: #F5E9E3;">
-                                                <div class="d-flex justify-content-evenly align-items-center mt-2">
-                                                    <div class="d-flex flex-column align-items-center">
-                                                        <i class="fa-solid fa-gauge" style="font-size: 1.25rem; color: #d6a78eff"></i>
-                                                        <p style="font-size: 0.625rem; color: #473d36ff">52,754 miles</p>
-                                                    </div>
-                                                    <div class="d-flex flex-column align-items-center">
-                                                        <i class="fa-solid fa-gas-pump" style="font-size: 1.25rem; color: #d6a78eff"></i>
-                                                        <p style="font-size: 0.625rem; color: #473d36ff">Petrol</p>
-                                                    </div>
-                                                    <div class="d-flex flex-column align-items-center">
-                                                        <i class="fa-solid fa-gear" style="font-size: 1.25rem; color: #d6a78eff"></i>
-                                                        <p style="font-size: 0.625rem; color: #473d36ff">Automatic</p>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                        <div class="d-flex justify-content-between align-items-center mt-3">
-                                            <div style="margin-left: 1.2rem;">
-                                                <h1 style="font-size: 1.188rem;">$450/<span style="font-size: 0.75rem;">day</span>
-                                                </h1>
-                                            </div>
-                                            <button class="rounded-4"
-                                                style="margin-right: 1.2rem; width: 4.938rem; height: 1.688rem; font-size: 0.688rem; background: #D9BBAC; border: none; color: #FFF3ED;">Book
-                                                Now</button>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-
-                        <div class="d-flex flex-column align-items-center justify-content-center">
-                            <div class="d-flex gap-1" style="border: none; margin-top: 1rem;">
-                                <button type="button" data-bs-target="#imageCarousel" data-bs-slide-to="0" class="progress active" aria-current="true" style="height: 0.5rem; width: 2.563rem; border: none; border-radius: 4px; background-color: #4b3d3dff"></button>
-                                <button type="button" data-bs-target="#imageCarousel" data-bs-slide-to="1" class="progress" style="height: 0.5rem; width: 2.563rem; border: none; border-radius: 4px; background-color: #fff"></button>
-                                <button type="button" data-bs-target="#imageCarousel" data-bs-slide-to="2" class="progress" style="height: 0.5rem; width: 2.563rem; border: none; border-radius: 4px; background-color: #fff"></button>
-                            </div>
-
-                            <div class="d-flex gap-1" style="margin-top: 0.5rem;">
-                                <button style="border-radius: 5rem; border: none; background-color: #4d3c3cff; width: 2.5rem;" data-bs-target="#imageCarousel" data-bs-slide="prev">
-                                    <i class="fa-solid fa-arrow-left" style="color: #fff;"></i>
-                                </button>
-
-                                <button style="border-radius: 5rem; border: 2px solid #797474ff; background-color: #cbcbcbff; width: 2.5rem;" data-bs-target="#imageCarousel" data-bs-slide="next">
-                                    <i class="fa-solid fa-arrow-right" style=" color: #fff;"></i>
-                                </button>`
-                            </div>
-                        </div>
-                    </div>
-            </div>
-        </div>
-    </div>
-</section>
-<section class="bg-white" style="height: 42.125rem;">
-    <div style="margin-left: 6.375rem; padding-top: 3.513rem;">
-        <div class="d-flex justify-content-start align-items-center gap-4">
-            <div>
-                <h1 style="font-size: 3.438rem;">Blog</h1>
-            </div>
-            <div style="width: 31.813rem; height: 4.5rem;">
-                <p>Discover the best car rental services to suit your travel needs with our comprehensive blog. We
-                    provide tips, reviews, and insights on choosing the perfect vehicle, rental deals, and travel
-                    destinations to help you enjoy a seamless and hassle-free experience.</p>
-            </div>
-        </div>
-    </div>
-    <div>
-        <div class="d-flex justify-content-center align-items-center gap-5 mt-1">
-            <div style="width: 25rem;">
-                <div class="card bg-danger mt-5" style="width: 25rem; height: 16.563rem; border-radius: 0.938rem;">
-                </div>
-                <h2 class="mt-2" style="font-size: 1.563rem">Seamless Journey: Hay Go’s Reliable, Excellent Service
-                </h2>
-                <p>Cebu has stunning hidden beaches like Hermit’s Cove and Lambug Beach, and one renter enjoyed
-                    exploring them by booking a sedan from Hay Go Car Rental Cebu for a flexible weekend trip.</p>
-            </div>
-            <div style="width: 25rem;">
-                <div class="card bg-danger mt-5" style="width: 25rem; height: 16.563rem; border-radius: 0.938rem;">
-                </div>
-                <h2 class="mt-2" style="font-size: 1.563rem">Seamless Journey: Hay Go’s Reliable, Excellent Service
-                </h2>
-                <p>Cebu has stunning hidden beaches like Hermit’s Cove and Lambug Beach, and one renter enjoyed
-                    exploring them by booking a sedan from Hay Go Car Rental Cebu for a flexible weekend trip.</p>
-            </div>
-            <div style="width: 25rem;">
-                <div class="card bg-danger mt-5" style="width: 25rem; height: 16.563rem; border-radius: 0.938rem;">
-                </div>
-                <h2 class="mt-2" style="font-size: 1.563rem">Seamless Journey: Hay Go’s Reliable, Excellent Service
-                </h2>
-                <p>Cebu has stunning hidden beaches like Hermit’s Cove and Lambug Beach, and one renter enjoyed
-                    exploring them by booking a sedan from Hay Go Car Rental Cebu for a flexible weekend trip.</p>
-            </div>
-        </div>
-    </div>
-</section>
-
-<!-- Faq's -->
-<section class="bg-secondary" style="height: 48.313rem;">
-    <div>
-        <div>
-            <div class="text-center text-white" style="padding-top: 5rem;">
-                <h1 style="font-size: 3.75rem">Frequently Asked Questions</h1>
-                <p style="font-size: 1.375rem;">Everything you need to know before booking your ride.</p>
-            </div>
-        </div>
-        <!-- Accordion -->
-        <div >
-            <div class="d-flex justify-content-center align-items-center" style="margin-top: 3.5rem;">
-                <div class="accordion" style="width: 52.75rem; height: 27.75rem;">
-                    <div class="accordion-item" >
-                        <div class="accordion-header">
-                            <div>
-                                <h3 style="font-size: 1.5rem;">Booking & Reservations</h3>
-                            </div>
-                            <div class="d-flex justify-content-between align-items-center">
-                                <div>
-                                    <p style="font-size: 1.25rem;">How do I book a car?</p>
-                                </div>
-                                <div>
-                                    <i class="fa-solid fa-plus"></i>
-                                </div>
-                            </div>
-                        </div>
-                        <p class="accordion-content"> Booking a car is simple just browse the available vehicles, choose the one that suits your needs, and select your preferred rental dates. Once you fill in your details, you’ll receive confirmation of your booking.</p>
-                    </div>
-                    <div class="bg-white" style="width: 52.75rem; height: 0.05rem;"></div>
-                    <div class="accordion-item" >
-                        <div class="accordion-header">
-                            <div>
-                                <h3 style="font-size: 1.5rem;">Booking & Reservations</h3>
-                            </div>
-                            <div class="d-flex justify-content-between align-items-center">
-                                <div>
-                                    <p style="font-size: 1.25rem;">How do I book a car?</p>
-                                </div>
-                                <div>
-                                    <i class="fa-solid fa-plus"></i>
-                                </div>
-                            </div>
-                        </div>
-                        <p class="accordion-content"> Booking a car is simple just browse the available vehicles, choose the one that suits your needs, and select your preferred rental dates. Once you fill in your details, you’ll receive confirmation of your booking.</p>
-                    </div>
-                    <div class="bg-white" style="width: 52.75rem; height: 0.05rem;"></div>
-                    <div class="accordion-item" >
-                        <div class="accordion-header">
-                            <div>
-                                <h3 style="font-size: 1.5rem;">Booking & Reservations</h3>
-                            </div>
-                            <div class="d-flex justify-content-between align-items-center">
-                                <div>
-                                    <p style="font-size: 1.25rem;">How do I book a car?</p>
-                                </div>
-                                <div>
-                                    <i class="fa-solid fa-plus"></i>
-                                </div>
-                            </div>
-                        </div>
-                        <p class="accordion-content"> Booking a car is simple just browse the available vehicles, choose the one that suits your needs, and select your preferred rental dates. Once you fill in your details, you’ll receive confirmation of your booking.</p>
-                    </div>
-                    <div class="bg-white" style="width: 52.75rem; height: 0.05rem;"></div>
-                    <div class="accordion-item" >
-                        <div class="accordion-header">
-                            <div>
-                                <h3 style="font-size: 1.5rem;">Booking & Reservations</h3>
-                            </div>
-                            <div class="d-flex justify-content-between align-items-center">
-                                <div>
-                                    <p style="font-size: 1.25rem;">How do I book a car?</p>
-                                </div>
-                                <div>
-                                    <i class="fa-solid fa-plus"></i>
-                                </div>
-                            </div>
-                        </div>
-                        <p class="accordion-content"> Booking a car is simple just browse the available vehicles, choose the one that suits your needs, and select your preferred rental dates. Once you fill in your details, you’ll receive confirmation of your booking.</p>
-                    </div>
-                    <div class="bg-white" style="width: 52.75rem; height: 0.05rem;"></div>
-                    <div class="accordion-item" >
-                        <div class="accordion-header">
-                            <div>
-                                <h3 style="font-size: 1.5rem;">Booking & Reservations</h3>
-                            </div>
-                            <div class="d-flex justify-content-between align-items-center">
-                                <div>
-                                    <p style="font-size: 1.25rem;">How do I book a car?</p>
-                                </div>
-                                <div>
-                                    <i class="fa-solid fa-plus"></i>
-                                </div>
-                            </div>
-                        </div>
-                        <p class="accordion-content"> Booking a car is simple just browse the available vehicles, choose the one that suits your needs, and select your preferred rental dates. Once you fill in your details, you’ll receive confirmation of your booking.</p>
-                    </div>
-                    <div class="bg-white" style="width: 52.75rem; height: 0.05rem;"></div>
+                <!-- Image Placeholder (Deep Blue for contrast) -->
+                <div class="col-lg-6 d-none d-lg-block">
+                    <!-- Image uses the primary brand color for consistency -->
+                    <img src="src/assets/images/hero-suv.jpg"
+                        alt="Image of a mid-size SUV on special offer" class="img-fluid mr-5"
+                        style="object-fit: cover; width: 100%; height: 100%;">
                 </div>
             </div>
         </div>
     </div>
 </section>
 
+<!-- CTA Section -->
+<section class="bg-haygo-dark py-5 mt-5">
+    <div class="container text-center text-white">
+        <h3 class="fw-bold mb-3">Ready to Start Your Cebu Adventure?</h3>
+        <p class="lead mb-4 opacity-75">Secure your perfect vehicle now and pay nothing until pick-up.</p>
+        <button class="btn btn-lg btn-haygo-primary text-haygo-dark fw-bold px-5 rounded-pill shadow-lg">
+            <i class="bi bi-search me-2"></i> Search Now
+        </button>
+    </div>
+</section>
 
-<?php include_once 'footer.php' ?>
+<?php
+require_once 'footer.php';
+?>

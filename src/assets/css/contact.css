@@ -1,0 +1,69 @@
+:root {
+    --haygo-teal: #00A38C;
+    /* Energetic Teal (Primary Background/Headers) */
+    --haygo-coral: #FF6B6B;
+    /* Soft Coral (Accent/Buttons) */
+    --haygo-dark: #34495E;
+    /* Dark Blue-Grey for high contrast text */
+    --bs-body-bg: #FFFFFF;
+    /* Clean White Background */
+}
+
+body {
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+    background-color: var(--bs-body-bg);
+}
+
+.navbar-custom {
+    background-color: var(--haygo-teal) !important;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+.header-bg {
+    background-color: var(--haygo-teal);
+    color: white;
+    /* ADJUSTED: Increased padding for added height */
+    padding-top: 8rem;
+    padding-bottom: 8rem;
+    border-bottom-left-radius: 40px;
+    border-bottom-right-radius: 40px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+}
+
+.contact-card {
+    margin-top: -3rem;
+    border-radius: 1rem;
+    box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.15) !important;
+    padding: 2rem;
+}
+
+.btn-submit,
+.btn-accent {
+    background-color: var(--haygo-coral);
+    border-color: var(--haygo-coral);
+    transition: all 0.2s;
+    font-weight: 600;
+}
+
+.btn-submit:hover,
+.btn-accent:hover {
+    background-color: #e55c5c;
+    /* Darker coral */
+    border-color: #e55c5c;
+    transform: translateY(-1px);
+}
+
+.btn-accent {
+    color: white;
+}
+
+.form-control:focus {
+    border-color: var(--haygo-teal);
+    box-shadow: 0 0 0 0.25rem rgba(0, 163, 140, 0.25);
+}
+
+.nav-link.active {
+    font-weight: bold;
+    color: var(--haygo-coral) !important;
+    border-bottom: 2px solid var(--haygo-coral);
+}

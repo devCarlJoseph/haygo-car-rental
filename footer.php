@@ -1,50 +1,43 @@
-<footer style="height: 23.25rem; background: #0F0F0F;">
-    <div>
-        <div class="d-flex justify-content-center align-items-center" style="padding-top: 3.188rem;">
-            <div class="text-center">
-                <img src="src/assets/images/logo.png" style="width: 3.75rem; height: 2.5rem;">
-                <div class="text-white">
-                    <h1 style="font-size: 2.813rem;">Hay Go</h1>
-                </div>
-            </div>
+<footer class="bg-haygo-dark text-white">
+    <div class="container text-center">
+
+        <!-- Logo -->
+        <h5 class="fs-3 fw-bolder text-white mb-4">
+            Hay Go <span class="text-primary">Rentals</span>
+        </h5>
+
+        <!-- Navigation Links -->
+        <ul class="list-unstyled d-flex flex-wrap justify-content-center gap-3 gap-md-4 mb-4 pb-3">
+            <li><a href="index.php" class="footer-link text-decoration-none text-white">Home</a></li>
+            <li><a href="about.php" class="footer-link text-decoration-none text-white">About Us</a></li>
+            <li><a href="fleet.php" class="footer-link text-decoration-none text-white">Fleet</a></li>
+            <li><a href="contact.php" class="footer-link text-decoration-none text-white">Contact Us</a></li>
+            <li><a href="help.php" class="footer-link text-decoration-none text-white">Help</a></li>
+            <li><a href="blog.php" class="footer-link text-decoration-none text-white">Our Blog</a></li>
+        </ul>
+
+        <!-- Social Media Icons (Optional, but good practice) -->
+        <div class="d-flex justify-content-center my-3">
+            <a href="#" class="text-white me-3 fs-5 footer-link"><i class="fab fa-facebook-f"></i></a>
+            <a href="#" class="text-white me-3 fs-5 footer-link"><i class="fab fa-instagram"></i></a>
+            <a href="#" class="text-white me-3 fs-5 footer-link"><i class="fab fa-twitter"></i></a>
         </div>
-        <div class="d-flex justify-content-center align-items-center mt-3">
-            <ul class="d-flex gap-4 text-white list-unstyled">
-                <a class="text-decoration-none text-white" href="index.php">
-                    <li>Home</li>
-                </a>
-                <a class="text-decoration-none text-white" href="about.php">
-                    <li>About Us</li>
-                </a>
-                <a class="text-decoration-none text-white" href="vehicles.php">
-                    <li>Vehicles</li>
-                </a>
-                <a class="text-decoration-none text-white" href="contact.php">
-                    <li>Contact Us</li>
-                </a>
-                <a class="text-decoration-none text-white" href="help.php">
-                    <li>Help</li>
-                </a>
-                <a class="text-decoration-none text-white" href="blog.php">
-                    <li>Blog</li>
-                </a>
-            </ul>
-        </div>
-        <div class="d-flex justify-content-center align-items-center gap-3">
-            <div class="bg-danger" style="width: 1.875rem; height: 1.875rem;"></div>
-            <div class="bg-danger" style="width: 1.875rem; height: 1.875rem;"></div>
-            <div class="bg-danger" style="width: 1.875rem; height: 1.875rem;"></div>
-            <div class="bg-danger" style="width: 1.875rem; height: 1.875rem;"></div>
-            <div class="bg-danger" style="width: 1.875rem; height: 1.875rem;"></div>
-        </div>
-        <div class="d-flex justify-content-center align-items-center mt-4">
-            <div class="bg-primary" style="width: 7.563rem; height: 3.25rem;"></div>
-        </div>
-        <div class="text-center text-white mt-3">
-            <p>2025 HAYGO All Rights Reserved.</p>
+
+        <!-- Copyright Section -->
+        <div class="border-top border-secondary border-opacity-25 py-3">
+            <p class="mb-0 small text-secondary">
+                &copy; 2024 Haygo Car Rentals. All rights reserved.
+            </p>
         </div>
     </div>
 </footer>
+
+<script src="src/assets/js/bootstrap.js"></script>
+<script src="src/assets/controller/hero.js"></script>
+<script src="src/assets/controller/fleet.js"></script>
+<script src="src/assets/controller/help.js"></script>
+<script src="src/assets/controller/blog.js"></script>
+
 </body>
 
 </html>

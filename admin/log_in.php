@@ -1,21 +1,6 @@
-<!DOCTYPE html>
-<html lang="en">
-
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>HayGo Car Rental</title>
-    <link rel="stylesheet" href="../src/assets/css/bootstrap.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css"
-        integrity="sha512-2SwdPD6INVrV/lHTZbO2nodKhrnDdJK9/kg2XD1r9uGqPo1cUbujc+IYdlYdEErWNu69gVcYgdxlmVmzTWnetw=="
-        crossorigin="anonymous" referrerpolicy="no-referrer" />
-    <link rel="stylesheet" href="../src/assets/css/style.css">
-
-    <script src="../src/assets/js/bootstrap.js"></script>
-    <script src="../src/assets/js/j_query.js"></script>
-</head>
-
-<body class="inder-regular">
+<?php 
+    require_once 'header.php';
+?>
     <section class="container-fluid p-0 m-0 d-flex justify-content-center align-items-center"
         style="height: 100vh; background: #FFF1E6;">
         <div class="d-flex justify-content-between align-items-center"
@@ -59,8 +44,3 @@
             </div>
         </div>
     </section>
-
-
-</body>
-
-</html>

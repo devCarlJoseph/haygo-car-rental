@@ -1,7 +1,10 @@
-@import url('https://fonts.googleapis.com/css2?family=Calligraffitti&family=DM+Sans:ital,opsz,wght@0,9..40,100..1000;1,9..40,100..1000&family=Inder&display=swap');
-
-.inder-regular {
-  font-family: "Inder", sans-serif;
-  font-weight: 400;
-  font-style: normal;
+.navbar-logo {
+    width: 4em; /* Or whatever fixed size you prefer */
+    height: auto; /* To maintain the aspect ratio */
+    margin-right: 0.5em; /* Space between logo and brand name */
 }
+
+.heads {
+    background-color: #ffffff;
+}
+  

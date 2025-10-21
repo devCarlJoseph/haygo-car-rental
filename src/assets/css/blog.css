@@ -1,0 +1,82 @@
+:root {
+    --bs-blue: #1F7A8C;
+    /* Deep Ocean Blue (Primary) */
+    --bs-green: #A9F044;
+    /* Electric Lime Green (Accent) */
+    --bs-body-color: #2C3E50;
+    /* Dark Text */
+}
+
+/* Overriding Bootstrap Primary and Accent colors */
+.btn-primary,
+.bg-primary,
+.text-primary {
+    --bs-btn-bg: var(--bs-blue);
+    --bs-btn-border-color: var(--bs-blue);
+    --bs-btn-hover-bg: #176575;
+    --bs-btn-hover-border-color: #176575;
+    --bs-btn-active-bg: #10505a;
+    --bs-btn-active-border-color: #10505a;
+}
+
+.bg-accent {
+    background-color: var(--bs-green);
+}
+
+.text-accent {
+    color: var(--bs-green) !important;
+}
+
+body {
+    font-family: 'Inter', sans-serif;
+    background-color: #f8f8f8;
+    color: var(--bs-body-color);
+}
+
+.post-card {
+    transition: all 0.3s ease;
+    border: 1px solid #e5e7eb;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.04);
+}
+
+.post-card:hover {
+    border-color: var(--bs-blue);
+    transform: translateY(-2px);
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.08);
+}
+
+.filter-btn-active {
+    background-color: var(--bs-blue) !important;
+    color: white !important;
+    border-color: var(--bs-blue) !important;
+}
+
+.btn-primary.shadow-lg {
+    box-shadow: 0 0.5rem 1rem rgba(31, 122, 140, 0.4) !important;
+}
+
+.btn-primary.shadow-lg:hover {
+    box-shadow: 0 0.8rem 1.2rem rgba(31, 122, 140, 0.6) !important;
+}
+
+/* Custom styles for the Carousel */
+.carousel-item-custom {
+    height: 65vh;
+    /* UPDATED: Set a more significant height for the carousel */
+    min-height: 450px;
+    /* UPDATED: Increased min-height for desktop view */
+    background-position: center;
+    background-size: cover;
+}
+
+.carousel-caption {
+    background: rgba(0, 0, 0, 0.4);
+    padding: 1rem 2rem;
+    border-radius: .5rem;
+    bottom: 20%;
+    /* Position caption higher */
+    left: 50%;
+    transform: translateX(-50%);
+    width: fit-content;
+    max-width: 90%;
+}
