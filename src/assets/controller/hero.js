@@ -304,8 +304,8 @@ $searchForm.on('submit', (e) => { // jQuery form submission
 
     // Mock submission success message
     $messageEl.text('Searching for available vehicles in Cebu...')
-              .removeClass('text-danger')
-              .addClass('text-success');
+              .removeClass('haygo-error')
+              .addClass('haygo-success');
 
     // Simulate navigation/search process
     const pickupLocation = $('#pickupLocation').val();

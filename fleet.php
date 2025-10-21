@@ -6,8 +6,8 @@
         <!-- Fleet Hero Section -->
         <section class="hero-fleet">
             <div class="container text-center">
-                <h1 class="display-4 fw-bolder mb-3 text-white">Our Modern & Reliable Fleet</h1>
-                <p class="lead text-light opacity-75">
+                <h1 class="display-4 fw-bolder mb-3 haygo-primary-text pt-5">Our Modern & Reliable Fleet</h1>
+                <p class="lead haygo-primary-text">
                     Showing cars available from <span id="displayStartDate"></span> to <span id="displayEndDate"></span>.
                 </p>
             </div>
@@ -39,7 +39,7 @@
                             </div>
 
                             <!-- Reset Button -->
-                            <button class="btn btn-sm btn-outline-secondary rounded-pill mt-2" onclick="resetFilters()">Reset Filters</button>
+                            <button class="btn btn-sm f-button rounded-pill mt-2" onclick="resetFilters()">Reset Filters</button>
                         </div>
                     </div>
                     
@@ -49,11 +49,11 @@
                         <!-- Quick Filter Row (Primary way to filter by type) -->
                         <div class="d-flex flex-wrap gap-2 mb-4">
                             <!-- Note: 'active' class is added/removed by JS -->
-                            <button class="btn btn-outline-secondary btn-sm filter-quick-btn" data-type="All" onclick="quickFilter('All')">All Types</button>
-                            <button class="btn btn-outline-secondary btn-sm filter-quick-btn" data-type="Sedan" onclick="quickFilter('Sedan')">Sedan</button>
-                            <button class="btn btn-outline-secondary btn-sm filter-quick-btn" data-type="SUV" onclick="quickFilter('SUV')">SUV / Crossover</button>
-                            <button class="btn btn-outline-secondary btn-sm filter-quick-btn" data-type="Van" onclick="quickFilter('Van')">Van / MPV</button>
-                            <button class="btn btn-outline-secondary btn-sm filter-quick-btn" data-type="Hatchback" onclick="quickFilter('Hatchback')">Hatchback</button>
+                            <button class="btn f-button btn-sm filter-quick-btn" data-type="All" onclick="quickFilter('All')">All Types</button>
+                            <button class="btn f-button btn-sm filter-quick-btn" data-type="Sedan" onclick="quickFilter('Sedan')">Sedan</button>
+                            <button class="btn f-button btn-sm filter-quick-btn" data-type="SUV" onclick="quickFilter('SUV')">SUV / Crossover</button>
+                            <button class="btn f-button btn-sm filter-quick-btn" data-type="Van" onclick="quickFilter('Van')">Van / MPV</button>
+                            <button class="btn f-button btn-sm filter-quick-btn" data-type="Hatchback" onclick="quickFilter('Hatchback')">Hatchback</button>
                         </div>
 
                         <!-- Car count display -->
@@ -68,7 +68,7 @@
                         <div id="no-results-message" class="text-center py-5" style="display: none;">
                             <i class="ri-alert-line display-4 text-secondary mb-3"></i>
                             <p class="lead text-secondary">No vehicles match your current filter criteria.</p>
-                            <button class="btn btn-sm btn-outline-secondary rounded-pill" onclick="resetFilters()">Clear Filters</button>
+                            <button class="btn btn-sm f-button rounded-pill" onclick="resetFilters()">Clear Filters</button>
                         </div>
                     </div>
                 </div>

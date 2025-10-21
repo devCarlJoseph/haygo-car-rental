@@ -1,10 +1,115 @@
 .navbar-logo {
-    width: 4em; /* Or whatever fixed size you prefer */
-    height: auto; /* To maintain the aspect ratio */
-    margin-right: 0.5em; /* Space between logo and brand name */
+    width: 4em;
+    /* Or whatever fixed size you prefer */
+    height: auto;
+    /* To maintain the aspect ratio */
+    margin-right: 0.5em;
+    /* Space between logo and brand name */
 }
 
-.heads {
-    background-color: #ffffff;
+:root {
+    --haygo-primary: #FDEADA;
+    /* Soft Peach — approachable, elegant */
+    --haygo-secondary: #A97155;
+    /* Warm Mocha — grounded, premium feel */
+    --haygo-light-bg: #FFF9F5;
+    /* Blush White — subtle and clean background */
+    --haygo-dark: #3B2F2F;
+    /* Deep Cocoa — rich, for contrast or footer */
+    --haygo-light: #FFFFFF;
+    /* White — text on dark */
+    --haygo-primary-text: #8B5E3C;
+    /* Warm Brown — headers or emphasis */
+    --haygo-normal-text: #4A3F3F;
+    /* Dark Taupe — body text, easy on the eyes */
+    --haygo-accent: #E6B07C;
+    /* Soft Caramel — for highlights or CTAs */
+    --haygo-success: #88B04B;
+    /* Muted Green — success messages */
+    --haygo-warning: #E1A800;
+    /* Rich Gold — for alerts or availability */
+    --haygo-error: #C94C4C;
+    /* Dusty Rose Red — soft but noticeable errors */
+    --haygo-hover: #F7D1B9;
+    /* Slightly deeper peach for hovers */
+    /* Slightly lighter blue hover */
+    --haygo-about: #fdf2eb;
+
 }
-  
+
+.haygo-about {
+    color: var(--haygo-about);
+}
+
+.haygo-primary-bg {
+    background-color: var(--haygo-primary);
+}
+
+.haygo-secondary-bg {
+    background-color: var(--haygo-secondary);
+}
+
+.haygo-primary {
+    color: var(--haygo-primary);
+}
+
+.haygo-secondary {
+    color: var(--haygo-secondary);
+}
+
+.haygo-accent {
+    color: var(--haygo-accent);
+}
+
+.haygo-dark-text {
+    color: var(--haygo-dark);
+}
+
+.haygo-light {
+    color: var(--haygo-light);
+}
+
+.haygo-light-bg {
+    background-color: var(--haygo-light-bg);
+}
+
+.haygo-primary-text {
+    color: var(--haygo-primary-text);
+}
+
+.haygo-normal-text {
+    color: var(--haygo-normal-text);
+}
+
+.haygo-warning {
+    color: var(--haygo-warning);
+}
+
+.haygo-error {
+    color: var(--haygo-error);
+}
+
+.haygo-hover {
+    color: var(--haygo-hover);
+}
+
+.haygo-success {
+    color: var(--haygo-success);
+}
+
+.h-button {
+    background-color: var(--haygo-primary);
+    color: var(--haygo-dark);
+    border: 2px solid var(--haygo-secondary);
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.h-button:hover {
+    background-color: var(--haygo-hover);
+    color: var(--haygo-light);
+    border: 2px solid var(--haygo-secondary);
+}
+
+.h-color:hover {
+    color: var(--haygo-accent) !important;
+}

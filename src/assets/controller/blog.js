@@ -1,11 +1,10 @@
-
 // --- Configuration and State ---
 const userId = 'user-' + Math.random().toString(16).slice(2, 10);
 const userName = 'Community Member';
-const MAX_FILE_SIZE_BYTES = 1000000; // 1MB limit for Base64 storage
-let posts = []; // In-memory storage for all posts
+const MAX_FILE_SIZE_BYTES = 1000000;
+let posts = [];
 
-// Hardcoded initial editorial content (UPDATED)
+// Hardcoded initial posts
 const initialPosts = [
     {
         id: 1,
@@ -54,71 +53,65 @@ const initialPosts = [
     },
 ];
 
-document.getElementById('user-id-display').textContent = userId.substring(0, 8) + '...';
-
 // --- Utility Functions ---
 
 function fileToBase64(file) {
     return new Promise((resolve, reject) => {
         const reader = new FileReader();
-        reader.readAsDataURL(file);
         reader.onload = () => resolve(reader.result);
         reader.onerror = error => reject(error);
+        reader.readAsDataURL(file);
     });
 }
 
 function createPostCard(post) {
     const date = new Date(post.timestamp);
-    const formattedDate = date.toLocaleDateString('en-US', { month: 'long', day: 'numeric', year: 'numeric' });
+    const formattedDate = date.toLocaleDateString('en-US', {
+        month: 'long',
+        day: 'numeric',
+        year: 'numeric',
+    });
 
     const categoryText = post.category.charAt(0).toUpperCase() + post.category.slice(1);
-    const primaryColorClass = post.category === 'guides' || post.category === 'vehicles' ? 'text-accent' : 'text-primary';
+    const primaryColorClass = ['guides', 'vehicles'].includes(post.category) ? 'text-accent' : 'text-primary';
     const fallbackText = post.authorName === userName ? 'Community Image' : 'Image Missing';
-    const authorDisplay = post.authorName === userName ?
-        `${userName} (${post.authorId.substring(0, 4)}...)` :
-        post.authorName;
+    const authorDisplay = post.authorName === userName
+        ? `${userName} (${post.authorId?.substring(0, 4)}...)`
+        : post.authorName;
 
-    const cardHtml = `
-                <div class="col post-card-item" data-category="${post.category}">
-                    <article class="card h-100 rounded-4 post-card">
-                        <div class="ratio ratio-4x3 bg-light rounded-top-4 overflow-hidden">
-                            <img src="${post.imageUrl}" class="card-img-top object-fit-cover opacity-75" alt="${post.title}" 
-                                 onerror="this.onerror=null;this.src='https://placehold.co/600x400/94A3B8/ffffff?text=${fallbackText}'">
-                        </div>
-                        <div class="card-body p-4">
-                            <small class="${primaryColorClass} fw-bold text-uppercase d-block mb-2">${categoryText}</small>
-                            <h3 class="card-title fs-4 fw-bold mb-3 lh-sm" style="color: var(--bs-body-color);">
-                                <a href="#" class="text-decoration-none text-reset">${post.title}</a>
-                            </h3>
-                            <p class="card-text text-muted mb-4" style="--bs-line-clamp: 3; display: -webkit-box; -webkit-line-clamp: 3; -webkit-box-orient: vertical; overflow: hidden;">
-                                ${post.contentSnippet}
-                            </p>
-                            <div class="card-footer bg-white border-0 p-0">
-                                <span class="small text-secondary">
-                                    ${formattedDate} | By ${authorDisplay}
-                                </span>
-                            </div>
-                        </div>
-                    </article>
+    return `
+        <div class="col post-card-item" data-category="${post.category}">
+            <article class="card h-100 rounded-4 post-card">
+                <div class="ratio ratio-4x3 bg-light rounded-top-4 overflow-hidden">
+                    <img src="${post.imageUrl}" class="card-img-top object-fit-cover opacity-75" alt="${post.title}" 
+                         onerror="this.onerror=null;this.src='https://placehold.co/600x400/94A3B8/ffffff?text=${fallbackText}'">
                 </div>
-            `;
-    return cardHtml;
+                <div class="card-body p-4">
+                    <small class="${primaryColorClass} fw-bold text-uppercase d-block mb-2">${categoryText}</small>
+                    <h3 class="card-title fs-4 fw-bold mb-3 lh-sm">
+                        <a href="#" class="text-decoration-none text-reset">${post.title}</a>
+                    </h3>
+                    <p class="card-text text-muted mb-4" style="--bs-line-clamp: 3; display: -webkit-box; -webkit-line-clamp: 3; -webkit-box-orient: vertical; overflow: hidden;">
+                        ${post.contentSnippet}
+                    </p>
+                    <div class="card-footer bg-white border-0 p-0">
+                        <span class="small text-secondary">
+                            ${formattedDate} | By ${authorDisplay}
+                        </span>
+                    </div>
+                </div>
+            </article>
+        </div>
+    `;
 }
 
 function renderPosts() {
     const grid = document.getElementById('post-grid');
     const loadingIndicator = document.getElementById('loading-indicator');
-
-    // Check if loadingIndicator exists before manipulating it (fixes the previous error)
-    if (loadingIndicator) {
-        loadingIndicator.classList.remove('d-flex');
-        loadingIndicator.style.display = 'none';
-    }
+    if (loadingIndicator) loadingIndicator.style.display = 'none';
 
     // Sort posts by timestamp (newest first)
     posts.sort((a, b) => new Date(b.timestamp) - new Date(a.timestamp));
-
-    grid.innerHTML = ''; // Clear existing posts
 
     let postsHtml = '';
     posts.forEach(post => {
@@ -127,26 +120,26 @@ function renderPosts() {
 
     grid.innerHTML = postsHtml;
 
-    // Apply current filter after rendering
-    const activeBtn = document.querySelector('.filter-btn-active');
-    const currentCategory = activeBtn ? activeBtn.dataset.category : 'all';
-    filterPosts(currentCategory);
+    // Delay to ensure DOM is updated before filtering
+    setTimeout(() => {
+        const activeBtn = document.querySelector('.filter-btn-active');
+        const currentCategory = activeBtn ? activeBtn.dataset.category : 'all';
+        filterPosts(currentCategory);
+    }, 0);
 }
 
 function filterPosts(category) {
     const postCards = document.querySelectorAll('.post-card-item');
 
     postCards.forEach(card => {
-        const cardCategory = card.dataset.category;
-        const cardAuthor = card.querySelector('.card-footer span').textContent;
-
+        const cardCategory = card.dataset.category || '';
+        const cardAuthorText = card.querySelector('.card-footer span')?.textContent || '';
         let show = false;
 
         if (category === 'all') {
             show = true;
         } else if (category === 'community') {
-            // Show only posts created by the generic "Community Member" user
-            show = cardAuthor.includes(userName);
+            show = cardAuthorText.includes(userName);
         } else {
             show = cardCategory === category;
         }
@@ -155,16 +148,13 @@ function filterPosts(category) {
     });
 }
 
-
 // --- Event Handlers ---
 
-// 1. Initial Load
 document.addEventListener('DOMContentLoaded', () => {
     posts = initialPosts;
     renderPosts();
 });
 
-// 2. File Input Preview
 document.getElementById('post-file').addEventListener('change', function (event) {
     const file = event.target.files[0];
     const previewContainer = document.getElementById('image-preview');
@@ -174,7 +164,7 @@ document.getElementById('post-file').addEventListener('change', function (event)
     if (file) {
         if (file.size > MAX_FILE_SIZE_BYTES) {
             messageEl.textContent = 'Error: Image file is too large (must be < 1MB).';
-            event.target.value = ''; // Clear the input
+            event.target.value = '';
             previewContainer.classList.add('d-none');
             return;
         }
@@ -191,7 +181,6 @@ document.getElementById('post-file').addEventListener('change', function (event)
     }
 });
 
-// 3. Form Submission
 document.getElementById('new-post-form').addEventListener('submit', async (e) => {
     e.preventDefault();
     const form = e.target;
@@ -204,13 +193,13 @@ document.getElementById('new-post-form').addEventListener('submit', async (e) =>
     submitBtn.innerHTML = '<i class="ri-loader-4-line ri-spin me-2"></i> Publishing...';
     messageEl.textContent = '';
 
-    let postImageUrl = null;
+    let postImageUrl = '';
     if (imageFile) {
         try {
             postImageUrl = await fileToBase64(imageFile);
         } catch (error) {
-            console.error("Error converting file to Base64: ", error);
-            messageEl.textContent = 'Error processing image file.';
+            console.error("Error converting file:", error);
+            messageEl.textContent = 'Error processing image.';
             submitBtn.disabled = false;
             submitBtn.innerHTML = '<i class="ri-send-plane-line me-2"></i> Publish Contribution';
             return;
@@ -222,19 +211,18 @@ document.getElementById('new-post-form').addEventListener('submit', async (e) =>
     }
 
     const newPost = {
-        id: posts.length + 1, // Simple ID generation
+        id: posts.length + 1,
         title: form['post-title'].value.trim(),
         category: form['post-category'].value,
-        contentSnippet: form['post-snippet'].value.trim(),
+        contentSnippet: form['post-snippet'].value.trim(), // ✅ FIXED
         imageUrl: postImageUrl,
         timestamp: new Date().toISOString(),
         authorId: userId,
         authorName: userName,
     };
 
-    // Add new post to in-memory array
     posts.push(newPost);
-    renderPosts(); // Re-render the grid
+    renderPosts();
 
     messageEl.textContent = 'Post published successfully!';
     messageEl.classList.remove('text-danger');
@@ -250,14 +238,14 @@ document.getElementById('new-post-form').addEventListener('submit', async (e) =>
     submitBtn.innerHTML = '<i class="ri-send-plane-line me-2"></i> Publish Contribution';
 });
 
-// 4. Filtering
+
 document.getElementById('filter-bar').addEventListener('click', (event) => {
     const button = event.target.closest('.filter-btn');
     if (!button) return;
 
-    const filterButtons = document.querySelectorAll('.filter-btn');
-    filterButtons.forEach(btn => btn.classList.remove('filter-btn-active'));
-
+    document.querySelectorAll('.filter-btn').forEach(btn => {
+        btn.classList.remove('filter-btn-active');
+    });
     button.classList.add('filter-btn-active');
 
     const category = button.dataset.category;

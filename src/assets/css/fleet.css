@@ -1,77 +1,8 @@
-/* Custom Brand Colors and Styles */
-:root {
-    --haygo-blue: #1F7A8C;
-    /* Primary (Deep Ocean Blue) */
-    --haygo-lime: #A9F044;
-    /* Accent (Electric Lime Green) */
-    --haygo-dark: #2C3E50;
-    /* Dark Text (Navy) */
-    --haygo-light: #F8F8FF;
-    /* Light Background */
-}
-
-body {
-    background-color: var(--haygo-light);
-    font-family: 'Inter', sans-serif;
-    color: #4a5568;
-    min-height: 100vh;
-}
-
-/* Custom Color Utilities */
-.text-haygo-dark {
-    color: var(--haygo-dark) !important;
-}
-
-.text-haygo-lime {
-    color: var(--haygo-lime) !important;
-}
-
-.text-haygo-blue {
-    color: var(--haygo-blue) !important;
-}
-
-.bg-haygo-light {
-    background-color: var(--haygo-light) !important;
-}
-
-.bg-haygo-blue {
-    background-color: var(--haygo-blue) !important;
-}
-
-.bg-haygo-lime {
-    background-color: var(--haygo-lime) !important;
-}
-
-.btn-lime {
-    background-color: var(--haygo-lime);
-    color: var(--haygo-dark);
-    font-weight: bold;
-    border: none;
-    transition: all 0.3s ease;
-    box-shadow: 0 5px 15px rgba(169, 240, 68, 0.4);
-}
-
-.btn-lime:hover {
-    background-color: var(--haygo-blue);
-    color: white;
-    transform: scale(1.02);
-    box-shadow: 0 5px 15px rgba(31, 122, 140, 0.4);
-}
-
-.btn-lime:active {
-    background-color: var(--haygo-dark) !important;
-    color: white !important;
-}
-
-.btn-lime:focus {
-    box-shadow: 0 0 0 0.25rem rgba(169, 240, 68, 0.5);
-}
-
-
 .hero-fleet {
-    background-color: var(--haygo-blue);
-    /* UPDATED: Increased padding for more height */
-    padding: 120px 0;
+    background-image: url('../images/test\ fleet.avif');
+    background-size: cover;
+    background-position: center;
+    height: 18rem;
     color: white;
     border-bottom-left-radius: 30px;
     border-bottom-right-radius: 30px;
@@ -120,4 +51,36 @@ body {
 /* Progress bar color */
 .progress-bar {
     background-color: var(--haygo-lime) !important;
+}
+
+.f-button {
+    border: 2px solid var(--haygo-accent);
+    color: var(--haygo-normal-text);
+    font-weight: bold;
+    transition: all 0.3s ease;
+}
+
+.f-button:hover {
+    background-color: var(--haygo-accent);
+    color: white;
+    border: 2px solid var(--haygo-accent);
+}
+
+.f-button.active {
+    background-color: var(--haygo-secondary);
+    color: white;
+    border: 2px solid var(--haygo-normal-text);
+}
+
+.fleet-button {
+    background-color: var(--haygo-primary);
+    color: var(--haygo-dark);
+    font-weight: bold;
+    border: none;
+    transition: all 0.3s ease;
+}
+
+.fleet-button:hover {
+    background-color: var(--haygo-hover);
+    color: white;
 }

@@ -1,15 +1,4 @@
-:root {
-    --hg-blue: #1F7A8C;
-    /* Deep Ocean Blue (Primary) */
-    --hg-lime: #A9F044;
-    /* Electric Lime Green (Accent) */
-    --hg-dark: #2C3E50;
-    /* Navy Dark Text */
-    --hg-chat-user: #E0F7FA;
-    /* Light Blue for user message */
-    --hg-chat-bot: #FFFFFF;
-    /* White for bot message */
-}
+
 
 body {
     font-family: 'Inter', sans-serif;

@@ -1,13 +1,13 @@
-<footer class="bg-haygo-dark text-white">
+<footer class="text-white pt-5" style="background: #3B2F2F">
     <div class="container text-center">
 
         <!-- Logo -->
         <h5 class="fs-3 fw-bolder text-white mb-4">
-            Hay Go <span class="text-primary">Rentals</span>
+            Hay Go <span class="haygo-primary-text">Rentals</span>
         </h5>
 
         <!-- Navigation Links -->
-        <ul class="list-unstyled d-flex flex-wrap justify-content-center gap-3 gap-md-4 mb-4 pb-3">
+        <ul class="list-unstyled d-flex flex-column flex-sm-row flex-wrap justify-content-center gap-2 gap-md-4 mb-4 pb-3">
             <li><a href="index.php" class="footer-link text-decoration-none text-white">Home</a></li>
             <li><a href="about.php" class="footer-link text-decoration-none text-white">About Us</a></li>
             <li><a href="fleet.php" class="footer-link text-decoration-none text-white">Fleet</a></li>
@@ -16,21 +16,22 @@
             <li><a href="blog.php" class="footer-link text-decoration-none text-white">Our Blog</a></li>
         </ul>
 
-        <!-- Social Media Icons (Optional, but good practice) -->
-        <div class="d-flex justify-content-center my-3">
-            <a href="#" class="text-white me-3 fs-5 footer-link"><i class="fab fa-facebook-f"></i></a>
-            <a href="#" class="text-white me-3 fs-5 footer-link"><i class="fab fa-instagram"></i></a>
-            <a href="#" class="text-white me-3 fs-5 footer-link"><i class="fab fa-twitter"></i></a>
+        <!-- Social Media Icons -->
+        <div class="d-flex justify-content-center mb-4 flex-wrap gap-3">
+            <a href="#" class="text-white fs-5 footer-link"><i class="fab fa-facebook-f"></i></a>
+            <a href="#" class="text-white fs-5 footer-link"><i class="fab fa-instagram"></i></a>
+            <a href="#" class="text-white fs-5 footer-link"><i class="fab fa-twitter"></i></a>
         </div>
 
-        <!-- Copyright Section -->
+        <!-- Copyright -->
         <div class="border-top border-secondary border-opacity-25 py-3">
-            <p class="mb-0 small text-secondary">
+            <p class="mb-0 small haygo-primarys">
                 &copy; 2024 Haygo Car Rentals. All rights reserved.
             </p>
         </div>
     </div>
 </footer>
+
 
 <script src="src/assets/js/bootstrap.js"></script>
 <script src="src/assets/controller/hero.js"></script>

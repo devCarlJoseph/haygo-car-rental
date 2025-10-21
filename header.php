@@ -14,6 +14,7 @@
     <link rel="stylesheet" href="src/assets/css/help.css">
     <link rel="stylesheet" href="src/assets/css/blog.css">
     <link rel="stylesheet" href="src/assets/css/fleet.css">
+    <link rel="stylesheet" href="src/assets/css/footer.css">
     
     
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
@@ -33,7 +34,7 @@
             <nav class="navbar navbar-expand-lg navbar-light py-2">
                 <!-- Logo -->
                  <img src="src/assets/images/logo.png" class="navbar-logo">
-                <a href="#" class="navbar-brand fs-3 fw-bolder text-haygo-dark">
+                <a href="#" class="navbar-brand fs-3 fw-bolder haygo-primary-text">
                     Hay Go
                 </a>
 
@@ -48,19 +49,19 @@
                     <ul class="navbar-nav ms-auto mb-2 mb-lg-0 align-items-lg-center">
                         <!-- Navigation Links -->
                         <li class="nav-item"><a href="index.php"
-                                class="nav-link text-secondary fw-semibold mx-2">Home</a></li>
+                                class="h-color nav-link text-secondary fw-semibold mx-2">Home</a></li>
                         <li class="nav-item"><a href="about.php"
-                                class="nav-link text-secondary fw-semibold mx-2">About Us</a></li>
+                                class="h-color nav-link text-secondary fw-semibold mx-2">About Us</a></li>
                         <li class="nav-item"><a href="fleet.php"
-                                class="nav-link text-secondary fw-semibold mx-2">Fleet</a></li>
+                                class="h-color nav-link text-secondary fw-semibold mx-2">Fleet</a></li>
                         <li class="nav-item"><a href="contact.php"
-                                class="nav-link text-secondary fw-semibold mx-2">Contact Us</a></li>
-                        <li class="nav-item"><a href="help.php" class="nav-link text-secondary fw-semibold mx-2">Help</a>
+                                class="h-color nav-link text-secondary fw-semibold mx-2">Contact Us</a></li>
+                        <li class="nav-item"><a href="help.php" class="h-color nav-link text-secondary fw-semibold mx-2">Help</a>
                         </li>
 
                         <!-- Login/Signup Buttons -->
                         <li class="nav-item ms-lg-4 mt-2 mt-lg-0">
-                            <a href="log-in.html" class="btn btn-outline-primary fw-bold px-3 py-1 rounded-pill me-2">
+                            <a href="log-in.html" class="h-button btn fw-bold px-3 py-1 rounded-pill me-2">
                                 Log In
                             </a>
                         </li>

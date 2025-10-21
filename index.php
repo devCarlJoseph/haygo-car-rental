@@ -5,10 +5,10 @@ require_once 'header.php';
 <!-- Hero Section (Clean Banner) -->
 <section id="hero-section">
     <div class="container text-center">
-        <h2 class="display-5 fw-bolder mb-3">
+        <h2 class="display-5 fw-bolder mb-3 haygo-accent">
             Your Road Trip Starts in Cebu.
         </h2>
-        <p class="lead mb-0 fs-5">
+        <p class="lead mb-0 fs-5 haygo-primary">
             Search, book, and drive away with confidence across the Visayas.
         </p>
     </div>
@@ -18,7 +18,7 @@ require_once 'header.php';
             <div class="col-lg-12">
                 <!-- Search Module Container -->
                 <div class="search-module p-4 p-md-5 mx-auto" style="max-width: 1000px;">
-                    <h2 class="fs-4 fw-bold mb-4 text-center text-haygo-dark">Find Your Cebu Ride</h2>
+                    <h2 class="fs-4 fw-bold mb-4 text-center haygo-primary-text">Find Your Cebu Ride</h2>
                     <form id="rentalSearchForm" class="row g-3 g-lg-4 align-items-end">
 
                         <!-- Location Input -->
@@ -26,8 +26,9 @@ require_once 'header.php';
                             <label for="pickupLocation" class="form-label fw-semibold text-secondary mb-1">
                                 <i class="bi bi-geo-alt text-haygo-accent me-1"></i> Location
                             </label>
+
                             <input type="text" id="pickupLocation" name="pickupLocation"
-                                value="Mactan-Cebu International Airport (CEB)" required
+                                value="Poblacion Cordova Cebu" readonly
                                 class="form-control form-control-lg rounded-3" placeholder="City, airport, or address">
                         </div>
 
@@ -74,15 +75,15 @@ require_once 'header.php';
 
 <!-- Booking Form Widget -->
 
-<section id="about-us" class="about py-5 py-md-5">
+<section id="about-us" class="about py-5 py-md-5 haygo-light-bg">
     <div class="container py-5">
         <div class="row justify-content-center text-center mb-5">
             <div class="col-lg-8">
-                <h3 class="testing text-uppercase fs-6 fw-bold mb-2 letter-spacing-wide">Why Choose Hay go?</h3>
-                <h2 class="display-6 fw-bolder text-haygo-dark mb-4">
+                <h3 class="haygo-primary-text text-uppercase fs-6 fw-bold mb-2 letter-spacing-wide">Why Choose Hay go?</h3>
+                <h2 class="display-6 fw-bolder haygo-secondary mb-4">
                     Your Cebu Adventure Starts with Our <span class="testing">Commitment</span>
                 </h2>
-                <p class="lead text-secondary">
+                <p class="lead haygo-normal-text">
                     Founded in Cebu, we are dedicated to simplifying island travel. Our mission is to provide more
                     than just a car—we deliver reliability, local knowledge, and transparent service so you can
                     focus on the journey.
@@ -94,12 +95,12 @@ require_once 'header.php';
 
             <!-- Commitment Pillar 1: Local Expertise -->
             <div class="col-md-4">
-                <div class="c-round icon-box rounded-circle mx-auto mb-4 d-flex align-items-center justify-content-center text-white shadow-lg"
+                <div class="c-round icon-box rounded-circle mx-auto mb-4 d-flex align-items-center justify-content-center haygo-accent shadow-lg"
                     style="width: 80px; height: 80px;">
                     <i class="fas fa-map-marked-alt fs-3"></i>
                 </div>
-                <h4 class="fs-5 fw-bold text-haygo-dark mb-2">Deep Local Expertise</h4>
-                <p class="text-secondary">
+                <h4 class="fs-5 fw-bold haygo-primary-text mb-2">Deep Local Expertise</h4>
+                <p class="haygo-normal-text">
                     We're based in the Visayas, so we know the best routes, the local roads, and the hidden gems.
                     Your trip planner and navigator, all in one.
                 </p>
@@ -107,12 +108,12 @@ require_once 'header.php';
 
             <!-- Commitment Pillar 2: Reliability & Safety -->
             <div class="col-md-4">
-                <div class="c-round icon-box rounded-circle mx-auto mb-4 d-flex align-items-center justify-content-center text-white shadow-lg"
+                <div class="c-round icon-box rounded-circle mx-auto mb-4 d-flex align-items-center justify-content-center haygo-accent shadow-lg"
                     style="width: 80px; height: 80px;">
                     <i class="fas fa-shield-alt fs-3"></i>
                 </div>
-                <h4 class="fs-5 fw-bold text-haygo-dark mb-2">Guaranteed Reliability</h4>
-                <p class="text-secondary">
+                <h4 class="fs-5 fw-bold haygo-primary-text mb-2">Guaranteed Reliability</h4>
+                <p class="haygo-normal-text">
                     Our entire fleet is regularly inspected and maintained above industry standards to ensure
                     maximum safety and zero breakdowns on your adventure.
                 </p>
@@ -120,12 +121,12 @@ require_once 'header.php';
 
             <!-- Commitment Pillar 3: Transparent Pricing -->
             <div class="col-md-4">
-                <div class="c-round icon-box rounded-circle mx-auto mb-4 d-flex align-items-center justify-content-center text-white shadow-lg"
+                <div class="c-round icon-box rounded-circle mx-auto mb-4 d-flex align-items-center justify-content-center haygo-accent shadow-lg"
                     style="width: 80px; height: 80px;">
                     <i class="fas fa-tags fs-3"></i>
                 </div>
-                <h4 class="fs-5 fw-bold text-haygo-dark mb-2">Transparent Pricing</h4>
-                <p class="text-secondary">
+                <h4 class="fs-5 fw-bold haygo-primary-text mb-2">Transparent Pricing</h4>
+                <p class="haygo-normal-text">
                     What you see is what you pay. We offer straightforward, competitive rates with no hidden fees or
                     surprise charges upon return.
                 </p>
@@ -143,8 +144,8 @@ require_once 'header.php';
 <!-- NEW: HOW IT WORKS SECTION -->
 <section id="how-it-works" class="py-5 bg-white pt-5">
     <div class="container container-xl py-5 text-center">
-        <h2 class="fs-2 fw-bold text-haygo-dark mb-3">Your Journey Simplified</h2>
-        <p class="fs-5 text-secondary mb-5">From booking to driving, we make it effortless.</p>
+        <h2 class="fs-2 fw-bold mb-3 haygo-secondary">Your Journey Simplified</h2>
+        <p class="fs-5 mb-5">From booking to driving, we make it effortless.</p>
 
         <div class="row g-5 justify-content-center">
             <!-- Step 1 (Search) -->
@@ -153,7 +154,7 @@ require_once 'header.php';
                     style="width: 80px; height: 80px;">
                     <i class="bi bi-search fs-3"></i>
                 </div>
-                <h3 class="fs-5 fw-semibold text-haygo-dark mb-2">1. Find Your Vehicle</h3>
+                <h3 class="fs-5 fw-semibold haygo-primary-text mb-2">1. Find Your Vehicle</h3>
                 <p class="text-secondary">Explore thousands of options tailored to your needs and location.</p>
             </div>
 
@@ -163,7 +164,7 @@ require_once 'header.php';
                     style="width: 80px; height: 80px;">
                     <i class="bi bi-credit-card-2-back fs-3"></i>
                 </div>
-                <h3 class="fs-5 fw-semibold text-haygo-dark mb-2">2. Secure Your Booking</h3>
+                <h3 class="fs-5 fw-semibold haygo-primary-text mb-2">2. Secure Your Booking</h3>
                 <p class="text-secondary">Confirm with our secure payment gateway for immediate confirmation.</p>
             </div>
 
@@ -173,7 +174,7 @@ require_once 'header.php';
                     style="width: 80px; height: 80px;">
                     <i class="bi bi-key fs-3"></i>
                 </div>
-                <h3 class="fs-5 fw-semibold text-haygo-dark mb-2">3. Grab the Keys</h3>
+                <h3 class="fs-5 fw-semibold haygo-primary-text mb-2">3. Grab the Keys</h3>
                 <p class="text-secondary">Pick up your sanitized car and enjoy your journey worry-free.</p>
             </div>
         </div>
@@ -232,9 +233,9 @@ require_once 'header.php';
 </div>
 <!-- END CALENDAR MODAL -->
 
-<section id="categories" class="py-5 about">
+<section id="categories" class="py-5 about haygo-light-bg">
     <div class="container container-xl py-5">
-        <h2 class="fs-2 fw-bold text-haygo-dark mb-3 text-center">Our Cebu Fleet: Designed for Island Exploration
+        <h2 class="fs-2 fw-bold haygo-primary-text mb-3 text-center">Our Cebu Fleet: Designed for Island Exploration
         </h2>
         <p class="fs-5 text-secondary mb-5 text-center">Navigate Cebu City and the provinces with the perfect
             vehicle for every road.</p>
@@ -316,63 +317,142 @@ require_once 'header.php';
     </div>
 </section>
 
-<section id="reviews" class="py-5 bg-white">
-    <div class="container container-xl py-5">
+<section id="reviews" class="py-5 py-md-5 bg-white">
+    <!-- Using standard Bootstrap container-xl for wide, centered layout -->
+    <div class="container-xl">
         <div class="row align-items-center">
-            <div class="col-lg-6 mb-4 mb-lg-0">
-                <h2 class="fs-2 fw-bold text-haygo-dark mb-3">Our 4.9/5 Trust Score</h2>
-                <p class="fs-5 text-secondary mb-4">We prioritize your experience. See why thousands choose Hay Go.
-                </p>
 
-                <div class="d-flex flex-wrap gap-4">
+            <!-- Left Column: Trust Metrics & Header -->
+            <div class="col-lg-6 mb-5 mb-lg-0">
+                <h2 class="display-5 fw-bolder text-haygo-dark mb-4">Our 4.9/5 Trust Score</h2>
+                <p class="fs-5 text-secondary mb-5">We prioritize your experience. See why thousands choose Hay Go.</p>
+
+                <div class="d-flex flex-wrap gap-4 justify-content-start">
                     <!-- Trust Metric 1 (Lime accent) -->
                     <div class="text-center">
-                        <span class="display-6 fw-bold text-haygo-accent d-block">99%</span>
+                        <span class="metric-value fw-bold text-haygo-accent d-block">99%</span>
                         <span class="text-secondary small">Cleanliness Rating</span>
                     </div>
                     <!-- Trust Metric 2 (Lime accent) -->
                     <div class="text-center">
-                        <span class="display-6 fw-bold text-haygo-accent d-block">24/7</span>
+                        <span class="metric-value fw-bold text-haygo-accent d-block">24/7</span>
                         <span class="text-secondary small">Roadside Assistance</span>
                     </div>
                     <!-- Trust Metric 3 (Lime accent) -->
                     <div class="text-center">
-                        <span class="display-6 fw-bold text-haygo-accent d-block">100+</span>
+                        <span class="metric-value fw-bold text-haygo-accent d-block">100+</span>
                         <span class="text-secondary small">Global Locations</span>
                     </div>
                 </div>
             </div>
 
-            <!-- Testimonial Card (Primary Blue Border) -->
+            <!-- Right Column: Testimonial Carousel (4 Contents) -->
             <div class="col-lg-6">
-                <div class="card shadow-lg border-top border-5 border-haygo-primary h-100 p-3 rounded-4">
-                    <div class="card-body">
-                        <p class="fs-5 fst-italic text-haygo-dark">
-                            "Fast, reliable, and straightforward. The app made check-in a breeze. I had the keys in
-                            hand within minutes, ready to start my vacation. This is how renting a car should be."
-                        </p>
-                        <div class="mt-4">
-                            <div class="text-warning mb-1">
-                                <!-- Using Bootstrap default yellow warning for stars -->
-                                <i class="bi bi-star-fill"></i>
-                                <i class="bi bi-star-fill"></i>
-                                <i class="bi bi-star-fill"></i>
-                                <i class="bi bi-star-fill"></i>
-                                <i class="bi bi-star-half"></i>
-                            </div>
-                            <p class="fw-bold mb-0 text-haygo-dark">Jessica M., Frequent Traveler</p>
-                        </div>
+                <!-- Bootstrap Carousel Structure -->
+                <!-- Use 'data-bs-ride="carousel"' for auto-cycling -->
+                <div id="testimonialCarousel" class="carousel slide shadow-lg rounded-4 overflow-hidden" data-bs-ride="carousel" data-bs-interval="6000">
+
+                    <!-- Carousel Indicators -->
+                    <div class="carousel-indicators mb-3">
+                        <button type="button" data-bs-target="#testimonialCarousel" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
+                        <button type="button" data-bs-target="#testimonialCarousel" data-bs-slide-to="1" aria-label="Slide 2"></button>
+                        <button type="button" data-bs-target="#testimonialCarousel" data-bs-slide-to="2" aria-label="Slide 3"></button>
+                        <button type="button" data-bs-target="#testimonialCarousel" data-bs-slide-to="3" aria-label="Slide 4"></button>
                     </div>
+
+                    <div class="carousel-inner">
+
+                        <!-- Testimonial 1 (Active) -->
+                        <div class="carousel-item active">
+                            <div class="card card-testimonial border-0 shadow-sm">
+                                <div class="card-body p-4 p-md-5">
+                                    <p class="fs-5 fst-italic text-haygo-dark">
+                                        "Fast, reliable, and straightforward. The app made check-in a breeze. I had the keys in
+                                        hand within minutes, ready to start my vacation. This is how renting a car should be."
+                                    </p>
+                                    <div class="mt-4">
+                                        <div class="text-warning mb-1">
+                                            <i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-half"></i>
+                                        </div>
+                                        <p class="fw-bold mb-0 text-haygo-dark">Jessica M., Frequent Traveler</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Testimonial 2 -->
+                        <div class="carousel-item">
+                            <div class="card card-testimonial border-0 shadow-sm">
+                                <div class="card-body p-4 p-md-5">
+                                    <p class="fs-5 fst-italic text-haygo-dark">
+                                        "The vehicle was spotless and exactly as described online. Pickup was smooth, and the drop-off process was even faster. Hay Go has earned a loyal customer in me!"
+                                    </p>
+                                    <div class="mt-4">
+                                        <div class="text-warning mb-1">
+                                            <i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i>
+                                        </div>
+                                        <p class="fw-bold mb-0 text-haygo-dark">Robert P., Business Trip</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Testimonial 3 -->
+                        <div class="carousel-item">
+                            <div class="card card-testimonial border-0 shadow-sm">
+                                <div class="card-body p-4 p-md-5">
+                                    <p class="fs-5 fst-italic text-haygo-dark">
+                                        "I needed a last-minute rental at the airport, and Hay Go's pricing beat everyone else. No hidden fees and excellent customer support when I called to extend my booking."
+                                    </p>
+                                    <div class="mt-4">
+                                        <div class="text-warning mb-1">
+                                            <i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-half"></i>
+                                        </div>
+                                        <p class="fw-bold mb-0 text-haygo-dark">Sarah K., Last-Minute Booker</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Testimonial 4 -->
+                        <div class="carousel-item">
+                            <div class="card card-testimonial border-0 shadow-sm">
+                                <div class="card-body p-4 p-md-5">
+                                    <p class="fs-5 fst-italic text-haygo-dark">
+                                        "I've used many rental companies, but the 24/7 roadside assistance gave me great peace of mind on my cross-country drive. Truly the most worry-free rental experience yet."
+                                    </p>
+                                    <div class="mt-4">
+                                        <div class="text-warning mb-1">
+                                            <i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i>
+                                        </div>
+                                        <p class="fw-bold mb-0 text-haygo-dark">David L., Road Tripper</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
+
+                    <!-- Carousel Controls -->
+                    <button class="carousel-control-prev" type="button" data-bs-target="#testimonialCarousel" data-bs-slide="prev">
+                        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                        <span class="visually-hidden">Previous</span>
+                    </button>
+                    <button class="carousel-control-next" type="button" data-bs-target="#testimonialCarousel" data-bs-slide="next">
+                        <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                        <span class="visually-hidden">Next</span>
+                    </button>
                 </div>
             </div>
+
         </div>
     </div>
 </section>
 
 <!-- Frequently Asked Questions Section (Light Gray-Blue Background) -->
-<section id="faq" class="py-5 about">
+<section id="faq" class="py-5 about haygo-light-bg">
     <div class="container container-xl py-5">
-        <h2 class="fs-2 fw-bold text-haygo-dark mb-3 text-center">Common Questions</h2>
+        <h2 class="fs-2 fw-bold haygo-primary-text mb-3 text-center">Common Questions</h2>
         <p class="fs-5 text-secondary mb-5 text-center">Need more details? We're here to help.</p>
 
         <div class="row justify-content-center">
@@ -479,17 +559,6 @@ require_once 'header.php';
                 </div>
             </div>
         </div>
-    </div>
-</section>
-
-<!-- CTA Section -->
-<section class="bg-haygo-dark py-5 mt-5">
-    <div class="container text-center text-white">
-        <h3 class="fw-bold mb-3">Ready to Start Your Cebu Adventure?</h3>
-        <p class="lead mb-4 opacity-75">Secure your perfect vehicle now and pay nothing until pick-up.</p>
-        <button class="btn btn-lg btn-haygo-primary text-haygo-dark fw-bold px-5 rounded-pill shadow-lg">
-            <i class="bi bi-search me-2"></i> Search Now
-        </button>
     </div>
 </section>
 

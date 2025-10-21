@@ -1,11 +1,3 @@
-:root {
-    --bs-blue: #1F7A8C;
-    /* Deep Ocean Blue (Primary) */
-    --bs-green: #A9F044;
-    /* Electric Lime Green (Accent) */
-    --bs-body-color: #2C3E50;
-    /* Dark Text */
-}
 
 /* Overriding Bootstrap Primary and Accent colors */
 .btn-primary,
