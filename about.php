@@ -227,7 +227,7 @@ require_once 'header.php';
                         <img src="src/assets/images/nancy.jpg"
                             class="rounded-circle mx-auto mb-3" style="width: 120px; height: 120px; object-fit: cover; border: 4px solid var(--haygo-primary);">
                         <h4 class="fs-5 fw-bold text-haygo-dark mb-1">Documentation Specialist</h4>
-                        <p class="small haygo-primary-text fw-semibold mb-2">Head of Marketing & Community</p>
+                        <p class="small haygo-primary-text fw-semibold mb-2">Documentation Specialist</p>
                         <p class="small text-secondary mb-0">Nancy is in charge of preparing and maintaining all project-related documentation. She creates clear and comprehensive reports, user manuals, and technical documents that detail the system’s features, functionality, and development process. Her work ensures that the project is well-documented for future reference and usability.</p>
                     </div>
                 </div>
@@ -247,7 +247,7 @@ require_once 'header.php';
     </section>
 
     <!-- CTA Section -->
-    <section id="faq" class="py-5 about">
+    <section id="faq" class="py-5 haygo-light-bg">
         <div class="container container-xl py-5">
             <h2 class="fs-2 fw-bold text-haygo-dark mb-3 text-center">Common Questions</h2>
             <p class="fs-5 text-secondary mb-5 text-center">Need more details? We're here to help.</p>

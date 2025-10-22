@@ -14,7 +14,6 @@
     overflow: hidden;
     border: 1px solid rgba(0, 0, 0, 0.05);
     height: 100%;
-    /* Ensure all cards are same height */
 }
 
 .car-card:hover {
@@ -29,28 +28,14 @@
 }
 
 .filter-options {
-    /* Sticky filter bar for larger screens */
     position: sticky;
     top: 100px;
     align-self: flex-start;
 }
 
-/* Style for the active quick filter button */
-.filter-quick-btn.active {
-    background-color: var(--haygo-blue);
-    color: white;
-    border-color: var(--haygo-blue);
-}
-
-/* Ensure navigation links are styled for fleet */
-.navbar-nav .nav-link.active-fleet {
-    color: var(--haygo-blue) !important;
-    font-weight: 700;
-}
-
 /* Progress bar color */
 .progress-bar {
-    background-color: var(--haygo-lime) !important;
+    background-color: var(--haygo-accent) !important;
 }
 
 .f-button {
@@ -82,5 +67,31 @@
 
 .fleet-button:hover {
     background-color: var(--haygo-hover);
+    color: white;
+}
+
+.pro-btn {
+    background-color: var(--haygo-accent);
+    color: white;
+    font-weight: bold;
+    border: none;
+    transition: all 0.3s ease;
+}
+
+.pro-btn:hover {
+    background-color: var(--haygo-hover);
+    color: white;
+}
+
+.c-btn {
+    background-color: var(--haygo-secondary);
+    color: var(--haygo-normal-text);
+    font-weight: bold;
+    border: none;
+    transition: all 0.3s ease;
+}
+
+.c-btn:hover {
+    background-color: var(--haygo-dark);
     color: white;
 }

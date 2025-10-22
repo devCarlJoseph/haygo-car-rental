@@ -33,7 +33,7 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
         } else {
             echo "<script>
             alert('Username not found');
-            window.location.href = '../admin/forgot.php';
+            window.location.href = '../log_in.php';
         </script>";
             exit();
         }

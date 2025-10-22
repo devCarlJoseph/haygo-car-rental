@@ -1,75 +1,28 @@
-
-
-body {
-    font-family: 'Inter', sans-serif;
-    background-color: #f0f4f8;
-    /* Light background */
-    color: var(--hg-dark);
-}
-
-/* Custom Bootstrap Variable Overrides (Used in hero and main headings) */
-.bg-hg-blue {
-    background-color: var(--hg-blue) !important;
-}
-
-.text-hg-blue {
-    color: var(--hg-blue) !important;
-}
-
-.bg-hg-lime {
-    background-color: var(--hg-lime) !important;
-}
-
-.text-hg-dark {
-    color: var(--hg-dark) !important;
-}
-
-.btn-hg-lime {
-    background-color: var(--hg-lime);
-    color: var(--hg-dark);
-    font-weight: 800;
-    border: none;
-    transition: all 0.3s ease;
-}
-
-.btn-hg-lime:hover {
-    background-color: #9cd43f;
-    /* Slightly darker lime on hover */
-    color: var(--hg-dark);
-    box-shadow: 0 4px 10px rgba(169, 240, 68, 0.4);
-    transform: translateY(-1px);
-}
-
-.form-control:focus {
-    border-color: var(--hg-lime);
-    box-shadow: 0 0 0 0.25rem rgba(169, 240, 68, 0.4);
-}
-
-/* Hero Styling (Bootstrap Jumbotron look) */
 .hero-section {
+    background-image: url('../images/test.jpeg');
+    background-size: cover;
+    background-position: center;
     padding: 5rem 0;
     margin-bottom: 2rem;
     border-radius: 0 0 1rem 1rem;
     box-shadow: 0 5px 20px rgba(0, 0, 0, 0.1);
 }
 
-/* === 1. Custom Width for FAQ Content (70% of available space, centered) === */
 .faq-container {
     max-width: 900px;
-    /* Optional: Set a hard limit on very large screens */
     width: 70%;
     margin-left: auto;
     margin-right: auto;
 }
 
-/* Adjust for smaller screens where 70% might be too narrow */
+
 @media (max-width: 992px) {
     .faq-container {
         width: 90%;
     }
 }
 
-/* FAQ Accordion Styling */
+
 .accordion-button:not(.collapsed) {
     color: var(--hg-dark);
     background-color: #f8f9fa;
@@ -97,16 +50,13 @@ body {
     color: #6c757d;
 }
 
-/* === 2. Chatbot Modal Styling (60% Width) === */
 #chatModal .modal-dialog {
-    /* Set max-width to 60% of viewport width (vw) */
     max-width: 60vw;
     width: 100%;
 }
 
 @media (max-width: 768px) {
     #chatModal .modal-dialog {
-        /* Make it almost full width on mobile */
         max-width: 90vw;
     }
 }
@@ -117,23 +67,20 @@ body {
     height: 80vh;
     max-height: 600px;
     width: 100%;
-    /* Removed fixed pixel max-width to respect the new modal-dialog size */
 }
 
 #chatModal .modal-header {
-    background-color: var(--hg-blue);
+    background-color: var(--haygo-secondary);
     color: white;
     border-bottom: none;
 }
 
-/* === 3. Chat Messages Scrolling (Verified) === */
 .chat-messages {
     flex-grow: 1;
     padding: 1rem;
     overflow-y: auto;
-    /* Confirms scrolling */
     scroll-behavior: smooth;
-    background-color: #f0f4f8;
+    background-color: var(--haygo-light-bg);
 }
 
 .message-bubble {
@@ -159,7 +106,19 @@ body {
 }
 
 .chat-input-area {
-    background-color: white;
+    background-color: var(--haygo-accent);
     padding: 1rem;
     border-top: 1px solid #e5e7eb;
+}
+
+.form-control {
+    background-color: var(--haygo-light-bg);
+}
+
+.form-control:hover {
+    background-color: var(--haygo-hover);
+}
+
+.form-control:focus {
+    border-color: var(--haygo-hover);
 }

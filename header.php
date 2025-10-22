@@ -61,7 +61,7 @@
 
                         <!-- Login/Signup Buttons -->
                         <li class="nav-item ms-lg-4 mt-2 mt-lg-0">
-                            <a href="log-in.html" class="h-button btn fw-bold px-3 py-1 rounded-pill me-2">
+                            <a href="log_in.php" class="h-button btn fw-bold px-3 py-1 rounded-pill me-2">
                                 Log In
                             </a>
                         </li>

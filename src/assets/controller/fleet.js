@@ -485,9 +485,9 @@ window.submitBooking = function () {
 
     // Show success message, confirming document upload
     showModalMessage('Booking Confirmed!',
-        `Your reservation for the **${currentBookingData.carName}** is confirmed! We have your details and **uploaded license image**. You'll pay the total of 
+        `Your reservation for the ${currentBookingData.carName}is confirmed! We have your details and uploaded license image. You'll pay the total of 
                 <span class="text-haygo-blue fw-bold">₱ ${formattedTotal}</span> upon pick-up.
-                <br><br>Booking ID: **${bookingId}** (Simulated).<br>We sent the details to: **${currentBookingData.customer.email}**.`,
+                <br><br>Booking ID: ${bookingId}.<br>We sent the details to: ${currentBookingData.customer.email}.`,
         'success');
 }
 

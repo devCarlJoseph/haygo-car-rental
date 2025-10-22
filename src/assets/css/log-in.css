@@ -1,0 +1,84 @@
+:root {
+    --haygo-primary: #FDEADA;
+    /* Soft Peach — approachable, elegant */
+    --haygo-secondary: #A97155;
+    /* Warm Mocha — grounded, premium feel */
+    --haygo-light-bg: #FFF9F5;
+    /* Blush White — subtle and clean background */
+    --haygo-dark: #3B2F2F;
+    /* Deep Cocoa — rich, for contrast or footer */
+    --haygo-light: #FFFFFF;
+    /* White — text on dark */
+    --haygo-primary-text: #8B5E3C;
+    /* Warm Brown — headers or emphasis */
+    --haygo-normal-text: #4A3F3F;
+    /* Dark Taupe — body text, easy on the eyes */
+    --haygo-accent: #E6B07C;
+    /* Soft Caramel — for highlights or CTAs */
+    --haygo-success: #88B04B;
+    /* Muted Green — success messages */
+    --haygo-warning: #E1A800;
+    /* Rich Gold — for alerts or availability */
+    --haygo-error: #C94C4C;
+    /* Dusty Rose Red — soft but noticeable errors */
+    --haygo-hover: #F7D1B9;
+    /* Slightly deeper peach for hovers */
+    /* Slightly lighter blue hover */
+    --haygo-about: #fdf2eb;
+
+}
+
+body {
+    font-family: 'Inter', sans-serif;
+    background-color: #f7f6f4;
+}
+
+.nav-link.auth-tab {
+    color: #718096;
+    border-bottom: 2px solid transparent;
+    cursor: pointer;
+    transition: all 0.2s ease-in-out;
+    font-weight: 600;
+}
+
+.nav-link.auth-tab:hover,
+.nav-link.auth-tab:focus {
+    border-color: transparent;
+    color: #718096;
+}
+
+.nav-link.auth-tab.active {
+    font-weight: 700;
+    background-color: transparent;
+    border-color: var(--haygo-primary);
+}
+
+.auth-content {
+    display: none;
+}
+
+.auth-content.active {
+    display: block;
+}
+
+.auth-card {
+    border-radius: 1.5rem !important;
+    max-width: 450px;
+    background-color: var(--haygo-light-bg) !important;
+}
+
+.nav-tabs {
+    border-bottom: 1px solid #dee2e6;
+    margin-bottom: -1px;
+}
+
+
+.reset-btn, .sign-btn {
+    background: var(--haygo-secondary);
+    color: white;
+}
+
+.reset-btn:hover, .sign-btn:hover {
+    background: var(--haygo-accent);
+    color: white;
+}

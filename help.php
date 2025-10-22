@@ -12,13 +12,13 @@
                 Find quick answers and support for your car rental needs.
             </p>
 
-            <!-- Search Bar (Placeholder Functionality) -->
+            <!-- Search Bar -->
             <div class="row justify-content-center">
                 <div class="col-lg-8 col-md-10">
                     <div class="input-group">
-                        <span class="input-group-text bg-white border-0 rounded-start-pill ps-4 pe-0" id="search-addon"><i class="ri-search-line text-muted"></i></span>
+                    
                         <input type="text" id="searchFaq" placeholder="Search FAQs, bookings, or policies..."
-                            class="form-control rounded-end-pill py-3 search-input" aria-label="Search" aria-describedby="search-addon">
+                            class="form-control rounded-5 py-3 px-4 search-input" aria-label="Search" aria-describedby="search-addon">
                     </div>
                 </div>
             </div>
@@ -37,7 +37,7 @@
 
                 <!-- 1. BOOKING & RESERVATION -->
                 <div class="card bg-light p-3 mb-3 rounded-4 border-0 shadow-sm">
-                    <h3 class="h5 mb-0 text-hg-blue fw-bold"><i class="ri-book-open-line me-2"></i> 1. Booking & Reservation</h3>
+                    <h3 class="h5 mb-0 text-hg-blue fw-bold"><i class="ri-book-open-line me-2 haygo-accent"></i> 1. Booking & Reservation</h3>
                 </div>
 
                 <div class="accordion-item faq-item">
@@ -68,7 +68,7 @@
 
                 <!-- 2. PICKUP & DROP-OFF -->
                 <div class="card bg-light p-3 mt-4 mb-3 rounded-4 border-0 shadow-sm">
-                    <h3 class="h5 mb-0 text-hg-blue fw-bold"><i class="ri-car-line me-2"></i> 2. Pickup & Drop-off</h3>
+                    <h3 class="h5 mb-0 text-hg-blue fw-bold"><i class="ri-car-line me-2 haygo-accent"></i> 2. Pickup & Drop-off</h3>
                 </div>
 
                 <div class="accordion-item faq-item">
@@ -99,7 +99,7 @@
 
                 <!-- 3. PAYMENTS & FEES -->
                 <div class="card bg-light p-3 mt-4 mb-3 rounded-4 border-0 shadow-sm">
-                    <h3 class="h5 mb-0 text-hg-blue fw-bold"><i class="ri-wallet-3-line me-2"></i> 3. Payments & Fees</h3>
+                    <h3 class="h5 mb-0 text-hg-blue fw-bold"><i class="ri-wallet-3-line me-2 haygo-accent"></i> 3. Payments & Fees</h3>
                 </div>
 
                 <div class="accordion-item faq-item">
@@ -130,7 +130,7 @@
 
                 <!-- 4. VEHICLE & USAGE -->
                 <div class="card bg-light p-3 mt-4 mb-3 rounded-4 border-0 shadow-sm">
-                    <h3 class="h5 mb-0 text-hg-blue fw-bold"><i class="ri-road-map-line me-2"></i> 4. Vehicle & Usage</h3>
+                    <h3 class="h5 mb-0 text-hg-blue fw-bold"><i class="ri-road-map-line me-2 haygo-accent"></i> 4. Vehicle & Usage</h3>
                 </div>
 
                 <div class="accordion-item faq-item">
@@ -161,7 +161,7 @@
 
             </div>
 
-            <!-- Contact Section (Call to Action) -->
+            <!-- Contact Section -->
             <div class="text-center mt-5 p-4 p-md-5 rounded-4 shadow-lg"
                 style="background: linear-gradient(135deg, #EBF8FF 0%, #FFFFFF 100%); border: 1px solid #D1E8F4;">
                 <h3 class="h2 fw-bolder mb-3 text-hg-blue">Need Immediate Help?</h3>
@@ -169,23 +169,22 @@
                     If our FAQs didn't cover it, our 24/7 Hay Go support team is standing by. Start a live chat now!
                 </p>
                 <button type="button" class="btn btn-lg btn-hg-lime" data-bs-toggle="modal" data-bs-target="#chatModal">
-                    <i class="ri-chat-3-line me-2"></i> Chat with a Support Bot
+                    <i class="ri-chat-3-line me-2 haygo-accent"></i> Chat with a Support Bot
                 </button>
             </div>
         </div>
     </main>
 
 
-    <!-- --- CHATBOT MODAL HTML (Bootstrap Modal Component) --- -->
+    <!-- --- Chatbot ----->
     <div class="modal fade" id="chatModal" tabindex="-1" aria-labelledby="chatModalLabel" aria-hidden="true" data-bs-backdrop="static" data-bs-keyboard="false">
-        <!-- The modal-dialog width is now controlled by the custom CSS targeting #chatModal .modal-dialog -->
         <div class="modal-dialog modal-dialog-centered">
             <div class="modal-content">
 
                 <!-- Header -->
                 <div class="modal-header">
                     <h5 class="modal-title fs-5" id="chatModalLabel">
-                        <i class="ri-robot-2-line me-2"></i> Hay Go Support Bot
+                        <i class="ri-robot-2-line me-2 haygo-accent"></i> Hay Go Support Bot
                     </h5>
                     <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal" aria-label="Close"></button>
                 </div>
@@ -201,8 +200,8 @@
                 <div class="chat-input-area">
                     <form id="chatForm" class="d-flex">
                         <input type="text" id="chatInput" placeholder="Type your query here..."
-                            class="form-control rounded-start-pill border-2 me-2" style="border-color: #d1d5db;">
-                        <button type="submit" class="btn btn-hg-lime rounded-end-pill px-4" title="Send">
+                            class="form-control rounded-start-pill border-2 me-2">
+                        <button type="submit" class="btn  rounded-end-pill px-4 haygo-light-bg" title="Send">
                             <i class="ri-send-plane-fill"></i>
                         </button>
                     </form>
@@ -210,7 +209,7 @@
             </div>
         </div>
     </div>
-    <!-- --- END CHATBOT MODAL HTML --- -->
+
     <?php
     require_once 'footer.php';
     ?>

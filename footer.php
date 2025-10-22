@@ -3,7 +3,7 @@
 
         <!-- Logo -->
         <h5 class="fs-3 fw-bolder text-white mb-4">
-            Hay Go <span class="haygo-primary-text">Rentals</span>
+            Hay Go
         </h5>
 
         <!-- Navigation Links -->
@@ -38,6 +38,7 @@
 <script src="src/assets/controller/fleet.js"></script>
 <script src="src/assets/controller/help.js"></script>
 <script src="src/assets/controller/blog.js"></script>
+<script src="src/assets/controller/contact.js"></script>
 
 </body>
 

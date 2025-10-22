@@ -163,7 +163,7 @@
                                 <div class="invalid-feedback">A license image is required for verification.</div>
                             </div>
                             
-                            <p class="small text-muted mb-2">Image Preview (Simulated Upload):</p>
+                            <p class="small text-muted mb-2">Image Preview:</p>
                             <div class="border rounded-lg p-2 text-center bg-light">
                                 <img id="licenseImagePreview" src="" alt="License Image Preview" 
                                     style="display:none; max-width: 100%; height: 200px; object-fit: contain;">
@@ -172,8 +172,6 @@
                                     No image selected.
                                 </p>
                             </div>
-
-                            <p class="small text-muted mt-3 mb-0">* All fields are mandatory to proceed.</p>
                         </div>
 
                         <!-- Step 3: Confirmation & Payment (Moved from Step 4) -->
@@ -197,15 +195,15 @@
                                 </dl>
                             </div>
                             
-                            <h5 class="fw-bold mb-3 text-haygo-dark">Payment Instruction (Simulated)</h5>
+                            <h5 class="fw-bold mb-3 text-haygo-dark">Payment Instruction</h5>
                             <div class="alert alert-warning small">
                                 <i class="ri-alert-line me-2"></i>
-                                **NOTE:** This is a simulation. You will pay the full amount upon pick-up. By clicking 'Complete Booking', you confirm this reservation.
+                                  You will pay the full amount upon pick-up. By clicking 'Complete Booking', you confirm this reservation.
                             </div>
                             <div class="form-check">
                                 <input class="form-check-input" type="checkbox" value="acknowledged" id="paymentInstruction" required>
                                 <label class="form-check-label small" for="paymentInstruction">
-                                    I acknowledge that the **₱ <span id="reviewTotalSmall"></span>** will be settled at the time of vehicle collection.
+                                    I acknowledge that the ₱<span id="reviewTotalSmall"></span> will be settled at the time of vehicle collection.
                                 </label>
                             </div>
                         </div>
@@ -215,17 +213,17 @@
                 
                 <!-- Footer and Navigation Buttons -->
                 <div class="modal-footer justify-content-between">
-                    <button type="button" class="btn btn-outline-secondary rounded-pill" id="prevStepBtn" style="display:none;" onclick="prevStep()">
+                    <button type="button" class="btn p-btn rounded-pill" id="prevStepBtn" style="display:none;" onclick="prevStep()">
                         <i class="ri-arrow-left-line me-1"></i> Previous
                     </button>
-                    <button type="button" class="btn btn-outline-secondary rounded-pill" data-bs-dismiss="modal" id="cancelBtn">Cancel</button>
-                    <button type="button" class="btn btn-lime rounded-pill" id="nextStepBtn" onclick="nextStep()">Proceed to Details & Upload <i class="ri-arrow-right-line ms-1"></i></button>
+                    <button type="button" class="btn c-btn rounded-pill" data-bs-dismiss="modal" id="cancelBtn">Cancel</button>
+                    <button type="button" class="btn pro-btn " id="nextStepBtn" onclick="nextStep()">Proceed to Details & Upload <i class="ri-arrow-right-line ms-1"></i></button>
                 </div>
             </div>
         </div>
     </div>
 
-    <!-- Generic Message Modal (for success/error messages) -->
+    <!-- Generic Message Modal -->
     <div class="modal fade" id="messageModal" tabindex="-1" aria-labelledby="messageModalLabel" aria-hidden="true">
         <div class="modal-dialog modal-dialog-centered">
             <div class="modal-content rounded-xl">
