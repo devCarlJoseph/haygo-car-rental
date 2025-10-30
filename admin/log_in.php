@@ -6,12 +6,12 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Hay Go - Sign In or Register (Bootstrap)</title>
 
-    <link rel="stylesheet" href="src/assets/css/bootstrap.css"
+    <link rel="stylesheet" href="../src/assets/css/bootstrap.css"
         xintegrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&display=swap" rel="stylesheet">
     <link href="https://cdn.jsdelivr.net/npm/remixicon@4.3.0/fonts/remixicon.css" rel="stylesheet">
 
-    <link rel="stylesheet" href="src/assets/css/log-in.css">
+    <link rel="stylesheet" href="../src/assets/css/log-in.css">
 
 
 </head>
@@ -54,26 +54,26 @@
             <div id="content-signin" class="auth-content active">
                 <h2 class="h4 fw-bold mb-4 text-center" style="color: var(--dark-text);">Welcome Back!</h2>
 
-                <form action="actions/log_in.php" id="signInForm" class="row g-4" method="post">
+                <form action="../actions/log_in.php" id="signInForm" class="row g-4" method="post">
                     <div class="col-12">
                         <label for="signin-username" class="form-label mb-1 text-secondary">Username</label>
-                        <input type="text" id="signin-username" required placeholder="Juan Dela Cruz"
+                        <input type="text" id="signin-username" name="l-username" placeholder="Juan Dela Cruz"
                             class="form-control form-control-lg">
                     </div>
 
                     <div class="col-12">
                         <label for="signin-password" class="form-label mb-1 text-secondary">Password</label>
-                        <input type="password" id="signin-password" required placeholder="••••••••"
+                        <input type="password" id="signin-password" name="l-password" placeholder="••••••••"
                             class="form-control form-control-lg">
                     </div>
 
-                    <div class="col-12 text-end">
+                    <div class="col-12 text-center">
                         <a href="#" class="small fw-medium text-decoration-none" style="color: var(--haygo-primary-text)"
                             onclick="event.preventDefault(); setAuthMode('forgot')">Forgot Password?</a>
                     </div>
 
                     <div class="col-12">
-                        <button type="submit" class="btn sign-btn w-100 fw-bold fs-5">
+                        <button type="submit" name="login" class="btn sign-btn w-100 fw-bold fs-5">
                             Sign In <i class="ri-arrow-right-line ms-2"></i>
                         </button>
                     </div>
@@ -83,21 +83,28 @@
             <div id="content-signup" class="auth-content">
                 <h2 class="h4 fw-bold mb-4 text-center" style="color: var(--dark-text);">Create Your Account</h2>
 
-                <form action="actions/sign_up.php" id="signUpForm" class="row g-4" method="post">
+                <form action="../actions/sign_up.php" class="row g-4" method="post" enctype="multipart/form-data">
                     <div class="col-12">
                         <label for="signup-name" class="form-label mb-1 text-secondary">Username</label>
-                        <input type="text" name="username" id="signup-name" required placeholder="Juan Dela Cruz"
-                            class="form-control form-control-lg">
+                        <input type="text" name="username" id="signup-name" placeholder="Juan Dela Cruz"
+                            class="form-control form-control-lg" required>
                     </div>
+
                     <div class="col-12">
-                        <label for="signup-email" class="form-label mb-1 text-secondary">Password</label>
-                        <input type="pass" name="password" id="signup-password" required placeholder="••••••••"
-                            class="form-control form-control-lg">
+                        <label for="signup-password" class="form-label mb-1 text-secondary">Password</label>
+                        <input type="password" name="password" id="signup-password" placeholder="Admin Pass"
+                            class="form-control form-control-lg" required>
                     </div>
+
                     <div class="col-12">
-                        <label for="signup-password" class="form-label mb-1 text-secondary">Choose Image</label>
-                        <input type="file" required name="adminProfile"
-                            class="form-control form-control-lg">
+                        <label for="signup-key" class="form-label mb-1 text-secondary">Admin Key</label>
+                        <input type="text" name="adminkey" id="signup-key" placeholder="Admin Key"
+                            class="form-control form-control-lg" required>
+                    </div>
+
+                    <div class="col-12">
+                        <label for="signup-image" class="form-label mb-1 text-secondary">Choose Image</label>
+                        <input type="file" name="adminProfile" id="signup-image" class="form-control form-control-lg">
                     </div>
 
                     <div class="col-12">
@@ -105,12 +112,8 @@
                             Sign Up <i class="ri-user-add-line ms-2"></i>
                         </button>
                     </div>
-
-                    <div class="col-12 text-center small text-muted mt-4">
-                        Already have an account? <a href="#" class="fw-medium text-decoration-none"
-                            onclick="event.preventDefault(); setAuthMode('signin')">Sign In</a>
-                    </div>
                 </form>
+
             </div>
 
             <div id="content-forgot" class="auth-content">
@@ -119,7 +122,7 @@
                     Enter your username and a new password to reset your account.
                 </p>
 
-                <form action="actions/forgot_pass.php" id="forgotForm" class="row g-4" method="post">
+                <form action="../actions/forgot_pass.php" id="forgotForm" class="row g-4" method="post">
                     <div class="col-12">
                         <label for="forgot-username" class="form-label mb-1 text-secondary">Username / Account
                             ID</label>
@@ -151,8 +154,8 @@
         </div>
     </div>
 
-    <script src="src/assets/js/bootstrap.js"></script>
-    <script src="src/assets/controller/log-in.js"></script>
+    <script src="../src/assets/js/bootstrap.js"></script>
+    <script src="../src/assets/controller/log-in.js"></script>
 </body>
 
 </html>

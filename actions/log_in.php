@@ -1,10 +1,10 @@
-<?php 
+<?php
 
 require_once '../config/config.php';
 
-if (isset($_POST['login'])) {
-    $username = $_POST['username'];
-    $password = $_POST['password'];
+if ($_SERVER["REQUEST_METHOD"] === "POST") {
+    $username = $_POST['l-username'];
+    $password = $_POST['l-password'];
 
     $check = "SELECT admin_pwd FROM haygo_admins WHERE admin_username = ?";
     $stmt = mysqli_prepare($conn, $check);
@@ -27,8 +27,6 @@ if (isset($_POST['login'])) {
             header('Location: ../admin/dashboard.php');
             exit();
         } else {
-            mysqli_stmt_close($stmt);
-            mysqli_close($conn);
             echo "<script>
                 alert('Invalid username or password');
                 window.location.href = '../admin/log_in.php';
@@ -36,8 +34,6 @@ if (isset($_POST['login'])) {
             exit();
         }
     } else {
-        mysqli_stmt_close($stmt);
-        mysqli_close($conn);
         echo "<script>
             alert('Invalid username or password');
             window.location.href = '../admin/log_in.php';
@@ -45,4 +41,3 @@ if (isset($_POST['login'])) {
         exit();
     }
 }
-

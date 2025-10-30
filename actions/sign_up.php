@@ -6,7 +6,7 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
     $username = $_POST['username'];
     $password = $_POST['password'];
     $adminkey = $_POST['adminkey'];
-    $adminProfile = $_POST['adminProfile'];
+    $adminProfile = $_FILES['adminProfile'];
     $passHashed = password_hash($password, PASSWORD_DEFAULT);
 
     $key = "T0NY0_4DM1N_K3Y";
@@ -21,6 +21,17 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
 
     if (!$checkStmt) {
         die("Prepare failed: " . mysqli_error($conn));
+    }
+
+    if (isset($_FILES['adminProfile']) && $_FILES['adminProfile']['error'] === 0) {
+        $targetDir = "../uploads/";
+        $fileName = basename($_FILES["adminProfile"]["name"]);
+        $targetFilePath = $targetDir . $fileName;
+
+        if (move_uploaded_file($_FILES["adminProfile"]["tmp_name"], $targetFilePath)) {
+        } else {
+            echo "File upload failed.";
+        }
     }
 
     $checkStmt->bind_param("s", $username);
@@ -59,8 +70,7 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
 
     mysqli_stmt_close($stmt);
     mysqli_close($conn);
-}
-else {
-    header('Location: ../admin/sign_up.php');
+} else {
+    header('Location: ../admin/log_in.php');
     exit();
 }
