@@ -2,7 +2,7 @@
 
 require_once '../config/config.php';
 
-if ($_SERVER["REQUEST_METHOD"] === "POST") {
+if (isset($_POST['sign_btn'])) {
     $username = $_POST['username'];
     $password = $_POST['password'];
     $adminkey = $_POST['adminkey'];
@@ -15,6 +15,7 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
         header('Location: ../index.php');
         exit();
     }
+
 
     $checkQuery = "SELECT * FROM haygo_admins WHERE admin_username = ?";
     $checkStmt = mysqli_prepare($conn, $checkQuery);

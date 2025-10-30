@@ -475,6 +475,33 @@ window.submitBooking = function () {
         return;
     }
 
+    const form = document.getElementById('bookingForm');
+
+    // ✅ Create hidden input for PHP detection
+    const stepInput = document.createElement('input');
+    stepInput.type = 'hidden';
+    stepInput.name = 'confirm_booking';
+    stepInput.value = '3';
+    form.appendChild(stepInput);
+
+    // ✅ Optionally include other dynamic values if needed (example only)
+    if (typeof currentBookingData !== 'undefined') {
+        const carNameInput = document.createElement('input');
+        carNameInput.type = 'hidden';
+        carNameInput.name = 'carName';
+        carNameInput.value = currentBookingData.carName;
+        form.appendChild(carNameInput);
+
+        const totalPriceInput = document.createElement('input');
+        totalPriceInput.type = 'hidden';
+        totalPriceInput.name = 'totalPrice';
+        totalPriceInput.value = currentBookingData.totalPrice;
+        form.appendChild(totalPriceInput);
+    }
+
+    // ✅ Submit form to PHP
+    form.submit();
+
     // Simulate successful submission with a random ID
     const bookingId = Math.random().toString(36).substring(2, 15).toUpperCase();
     const formattedTotal = new Intl.NumberFormat().format(currentBookingData.totalPrice);

@@ -2,14 +2,14 @@
 
 require_once '../config/config.php';
 
-if ($_SERVER["REQUEST_METHOD"] === "POST") {
-    $username = trim($_POST['username'] ?? '');
-    $newPass = $_POST['newPass'] ?? '';
+if (isset($_POST['forgot_btn'])) {
+    $username = trim($_POST['forgot_username'] ?? '');
+    $newPass = $_POST['forgot_password'] ?? '';
 
     if ($username === '' || $newPass === '') {
         echo "<script>
             alert('Please fill in all fields');
-            window.location.href = '../admin/forgot.php';
+            window.location.href = '../admin/log_in.php';
         </script>";
         exit();
     }
@@ -33,7 +33,7 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
         } else {
             echo "<script>
             alert('Username not found');
-            window.location.href = '../log_in.php';
+            window.location.href = '../admin/log_in.php';
         </script>";
             exit();
         }

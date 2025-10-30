@@ -20,7 +20,7 @@
 
     <div class="w-100 auth-card bg-white shadow-lg overflow-hidden position-relative">
 
-        <button onclick="window.location.href='index.php'" class="btn position-absolute top-0 end-0 m-3 text-secondary"
+        <button onclick="window.location.href='../index.php'" class="btn position-absolute top-0 end-0 m-3 text-secondary"
             aria-label="Close">
             <i class="ri-close-line fs-4" style="color: white"></i>
         </button>
@@ -92,7 +92,7 @@
 
                     <div class="col-12">
                         <label for="signup-password" class="form-label mb-1 text-secondary">Password</label>
-                        <input type="password" name="password" id="signup-password" placeholder="Admin Pass"
+                        <input type="password" name="password" id="signup-password" placeholder="Password"
                             class="form-control form-control-lg" required>
                     </div>
 
@@ -108,7 +108,7 @@
                     </div>
 
                     <div class="col-12">
-                        <button type="submit" class="btn sign-btn w-100 fw-bold fs-5">
+                        <button type="submit" name="sign_btn" class="btn sign-btn w-100 fw-bold fs-5">
                             Sign Up <i class="ri-user-add-line ms-2"></i>
                         </button>
                     </div>
@@ -126,18 +126,18 @@
                     <div class="col-12">
                         <label for="forgot-username" class="form-label mb-1 text-secondary">Username / Account
                             ID</label>
-                        <input type="text" id="forgot-username" required placeholder="e.g., haygo_user123"
+                        <input type="text" name="forgot_username" placeholder="e.g., haygo_user123"
                             class="form-control form-control-lg">
                     </div>
 
                     <div class="col-12">
                         <label for="forgot-password" class="form-label mb-1 text-secondary">New Password</label>
-                        <input type="password" id="forgot-password" required placeholder="Enter new strong password"
+                        <input type="password" name="forgot_password" placeholder="Enter new strong password"
                             class="form-control form-control-lg">
                     </div>
 
                     <div class="col-12">
-                        <button type="submit" class="btn reset-btn haygo-dark w-100 fw-bold fs-5">
+                        <button type="submit" name="forgot_btn" class="btn reset-btn haygo-dark w-100 fw-bold fs-5">
                             Reset Password <i class="ri-lock-line ms-2"></i>
                         </button>
                     </div>

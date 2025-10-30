@@ -2,7 +2,7 @@
 
 require_once '../config/config.php';
 
-if ($_SERVER["REQUEST_METHOD"] === "POST") {
+if (isset($_POST['login'])) {
     $username = $_POST['l-username'];
     $password = $_POST['l-password'];
 

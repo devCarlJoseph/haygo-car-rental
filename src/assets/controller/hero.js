@@ -342,7 +342,7 @@ function showCustomModal(content) {
                                 ${contentHtml}
                             </div>
                             <div class="modal-footer border-0 pt-0">
-                                <button type="button" class="btn btn-haygo-primary text-haygo-dark rounded-pill w-100" data-bs-dismiss="modal">OK</button>
+                                <button type="button" class="btn btn-haygo-primary text-haygo-dark rounded-pill w-100" data-bs-dismiss="modal"><a class="text-decoration-none text-black" href="fleet.php">OK</a></button>
                             </div>
                         </div>
                     </div>

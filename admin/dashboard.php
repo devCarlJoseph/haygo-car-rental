@@ -1,66 +1,67 @@
-<?php 
-    require_once 'header.php';
+<?php
+require_once 'header.php';
 ?>
 
 <div class="wrapper" style="background: #EBE7E4;">
     <nav id="sidebar" class="sidebar" style="background: #AB8B7D">
-		<div class="sidebar-content js-simplebar" style="background: #AB8B7D">
-			<a class="sidebar-brand" href="/">
-				<img src="../src/assets/images/logodash.png" style="width: 3.813rem; height: 2.438rem;">
-			</a>
+        <div class="sidebar-content js-simplebar" style="background: #AB8B7D">
 
-			<ul class="sidebar-nav mt-3">
-				<li class="sidebar-item active">
-					<a href="dashboard.php" class="sidebar-link">
-						<i class="align-middle" data-lucide="sliders"></i>
-						<span class="align-middle" style="color: #FDE9DF;">Dashboards</span>
-					</a>
-				</li>
-				<li class="sidebar-item">
-					<a href="customer.php" class="sidebar-link">
-						<i class="align-middle" data-lucide="users"></i>
-						<span class="align-middle" style="color: #FDE9DF;">Customers</span>
-					</a>
-				</li>
-				<li class="sidebar-item">
-					<a href="fleets.php" class="sidebar-link">
-						<i class="align-middle" data-lucide="trello"></i>
-						<span class="align-middle" style="color: #FDE9DF;">Fleets</span>
-					</a>
-				</li>
-				<li class="sidebar-item">
-					<a href="booking.php" class="sidebar-link">
-						<i class="align-middle" data-lucide="trello"></i>
-						<span class="align-middle" style="color: #FDE9DF;">Bookings</span>
-					</a>
-				</li>
-				<li class="sidebar-item">
-					<a href="transaction.php" class="sidebar-link">
-						<i class="align-middle" data-lucide="trello"></i>
-						<span class="align-middle" style="color: #FDE9DF;">Transactions</span>
-					</a>
-				</li>
-				<li class="sidebar-item">
-					<a href="calendar.php" class="sidebar-link">
-						<i class="align-middle" data-lucide="trello"></i>
-						<span class="align-middle" style="color: #FDE9DF;">Calendar</span>
-					</a>
-				</li>
-				<li class="sidebar-item">
-					<a href="task.php" class="sidebar-link">
-						<i class="align-middle" data-lucide="trello"></i>
-						<span class="align-middle" style="color: #FDE9DF;">Task</span>
-					</a>
-				</li>
-				<li class="sidebar-item">
-					<a href="invoice.php" class="sidebar-link">
-						<i class="align-middle" data-lucide="trello"></i>
-						<span class="align-middle" style="color: #FDE9DF;">Invoice</span>
-					</a>
-				</li>
-			</ul>
-		</div>
-	</nav>
+            <div class="d-flex justify-content-center align-items-center mt-4">
+                <img src="../src/assets/images/logo.png" style="width: 4.813rem; height: 3.813rem;">
+            </div>
+
+            <ul class="sidebar-nav mt-3">
+                <li class="sidebar-item active">
+                    <a href="dashboard.php" class="sidebar-link">
+                        <i class="align-middle" data-lucide="sliders"></i>
+                        <span class="align-middle" style="color: #FDE9DF;">Dashboards</span>
+                    </a>
+                </li>
+                <li class="sidebar-item">
+                    <a href="customer.php" class="sidebar-link">
+                        <i class="align-middle" data-lucide="users"></i>
+                        <span class="align-middle" style="color: #FDE9DF;">Customers</span>
+                    </a>
+                </li>
+                <li class="sidebar-item">
+                    <a href="fleets.php" class="sidebar-link">
+                        <i class="align-middle" data-lucide="trello"></i>
+                        <span class="align-middle" style="color: #FDE9DF;">Fleets</span>
+                    </a>
+                </li>
+                <li class="sidebar-item">
+                    <a href="booking.php" class="sidebar-link">
+                        <i class="align-middle" data-lucide="trello"></i>
+                        <span class="align-middle" style="color: #FDE9DF;">Bookings</span>
+                    </a>
+                </li>
+                <li class="sidebar-item">
+                    <a href="transaction.php" class="sidebar-link">
+                        <i class="align-middle" data-lucide="trello"></i>
+                        <span class="align-middle" style="color: #FDE9DF;">Transactions</span>
+                    </a>
+                </li>
+                <li class="sidebar-item">
+                    <a href="calendar.php" class="sidebar-link">
+                        <i class="align-middle" data-lucide="trello"></i>
+                        <span class="align-middle" style="color: #FDE9DF;">Calendar</span>
+                    </a>
+                </li>
+                <li class="sidebar-item">
+                    <a href="task.php" class="sidebar-link">
+                        <i class="align-middle" data-lucide="trello"></i>
+                        <span class="align-middle" style="color: #FDE9DF;">Task</span>
+                    </a>
+                </li>
+                <li class="sidebar-item">
+                    <a href="invoice.php" class="sidebar-link">
+                        <i class="align-middle" data-lucide="trello"></i>
+                        <span class="align-middle" style="color: #FDE9DF;">Invoice</span>
+                    </a>
+                </li>
+            </ul>
+        </div>
+    </nav>
     <div class="main">
         <nav class="navbar navbar-expand navbar-bg" style="height: 4.188rem; backgroud: #FFFEFD;">
             <a class="sidebar-toggle">
@@ -79,7 +80,7 @@
             <div>
                 <button class="border border-none text-white "
                     style=" margin-bottom: 0.2rem; width: 3.9rem; height: 1.7rem; font-size: 0.725rem; background: #E99670; border-radius: 5px;"><a
-                        href="../index.php" style="text-decoration: none; color: white;">Sign
+                        href="log_in.php" style="text-decoration: none; color: white;">Sign
                         Out</a></button>
             </div>
         </nav>
@@ -387,7 +388,7 @@
 </div>
 <script src="../src/assets/js/admin.js"></script>
 <script>
-    document.addEventListener("DOMContentLoaded", function () {
+    document.addEventListener("DOMContentLoaded", function() {
         // Bar chart
         new Chart(document.getElementById("chartjs-dashboard-bar"), {
             type: "bar",
@@ -406,8 +407,7 @@
                     "Nov",
                     "Dec",
                 ],
-                datasets: [
-                    {
+                datasets: [{
                         label: "Last year",
                         backgroundColor: "#FD690080",
                         borderColor: "#FD690080",
@@ -436,25 +436,21 @@
                     display: false,
                 },
                 scales: {
-                    yAxes: [
-                        {
-                            gridLines: {
-                                display: false,
-                            },
-                            ticks: {
-                                stepSize: 20,
-                            },
-                            stacked: true,
+                    yAxes: [{
+                        gridLines: {
+                            display: false,
                         },
-                    ],
-                    xAxes: [
-                        {
-                            gridLines: {
-                                color: "transparent",
-                            },
-                            stacked: true,
+                        ticks: {
+                            stepSize: 20,
                         },
-                    ],
+                        stacked: true,
+                    }, ],
+                    xAxes: [{
+                        gridLines: {
+                            color: "transparent",
+                        },
+                        stacked: true,
+                    }, ],
                 },
             },
         });
@@ -463,14 +459,13 @@
 <script>
     // Workaround for theme switch re-initialization issue
     var isTempusDominusInitialized = false;
-    document.addEventListener("DOMContentLoaded", function () {
+    document.addEventListener("DOMContentLoaded", function() {
         if (isTempusDominusInitialized) {
             return;
         }
         isTempusDominusInitialized = true;
         new tempusDominus.TempusDominus(
-            document.getElementById("calendar-dashboard"),
-            {
+            document.getElementById("calendar-dashboard"), {
                 display: {
                     inline: true,
                     components: {
@@ -484,23 +479,21 @@
     });
 </script>
 <script>
-    document.addEventListener("DOMContentLoaded", function () {
+    document.addEventListener("DOMContentLoaded", function() {
         // Pie chart
         new Chart(document.getElementById("chartjs-dashboard-pie"), {
             type: "pie",
             data: {
                 labels: ["Direct", "Affiliate", "E-mail", "Other"],
-                datasets: [
-                    {
-                        data: [2602, 1253, 541, 1465],
-                        backgroundColor: [
-                            window.cssVariables.primary,
-                            window.cssVariables.warning,
-                            window.cssVariables.danger,
-                            "#E8EAED",
-                        ],
-                    },
-                ],
+                datasets: [{
+                    data: [2602, 1253, 541, 1465],
+                    backgroundColor: [
+                        window.cssVariables.primary,
+                        window.cssVariables.warning,
+                        window.cssVariables.danger,
+                        "#E8EAED",
+                    ],
+                }, ],
             },
             options: {
                 responsive: !window.MSInputMethodContext,
@@ -520,7 +513,7 @@
     });
 </script>
 <script>
-    document.addEventListener("DOMContentLoaded", function () {
+    document.addEventListener("DOMContentLoaded", function() {
         $("#datatables-dashboard-projects").DataTable({
             destroy: true,
             pageLength: 6,

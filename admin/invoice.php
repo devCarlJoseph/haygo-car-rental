@@ -7,9 +7,9 @@
 <div class="wrapper" style="background: #EBE7E4;">
 	<nav id="sidebar" class="sidebar" style="background: #AB8B7D">
 		<div class="sidebar-content js-simplebar" style="background: #AB8B7D">
-			<a class="sidebar-brand" href="/">
-				<img src="../src/assets/images/logodash.png" style="width: 3.813rem; height: 2.438rem;">
-			</a>
+			<div class="d-flex justify-content-center align-items-center mt-4">
+                <img src="../src/assets/images/logo.png" style="width: 4.813rem; height: 3.813rem;">
+            </div>
 
 			<ul class="sidebar-nav mt-3">
 				<li class="sidebar-item active">
@@ -81,7 +81,7 @@
             <div>
                 <button class="border border-none text-white "
                     style=" margin-bottom: 0.2rem; width: 3.9rem; height: 1.7rem; font-size: 0.725rem; background: #E99670; border-radius: 5px;"><a
-                        href="../index.php" style="text-decoration: none; color: white;">Sign
+                        href="log_in.php" style="text-decoration: none; color: white;">Sign
                         Out</a></button>
             </div>
         </nav>

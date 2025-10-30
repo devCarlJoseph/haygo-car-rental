@@ -50,34 +50,3 @@ function displayMessage(message, type) {
     messageArea.classList.remove('d-none'); // Show the message area
 }
 
-// --- Mock Form Submission Handlers ---
-
-document.getElementById('signInForm').addEventListener('submit', function (e) {
-    e.preventDefault();
-    const email = document.getElementById('signin-email').value;
-    displayMessage(`Signing in user: ${email}... (Simulated Success!)`, 'success');
-});
-
-document.getElementById('signUpForm').addEventListener('submit', function (e) {
-    e.preventDefault();
-    const email = document.getElementById('signup-email').value;
-    displayMessage(`Registering new user: ${email}... (Simulated Success!)`, 'success');
-});
-
-document.getElementById('forgotForm').addEventListener('submit', function (e) {
-    e.preventDefault();
-    const username = document.getElementById('forgot-username').value;
-    const newPassword = document.getElementById('forgot-password').value;
-
-    // Check for simple client-side validation
-    if (!username || newPassword.length < 6) {
-        displayMessage(`Error: Please enter a username and a password of at least 6 characters.`, 'error');
-        return;
-    }
-
-    // Simulated Success Message
-    displayMessage(`Password for user '${username}' has been updated. (Simulated Success!)`, 'success');
-});
-
-// Set initial mode on load
-setAuthMode('signin');
