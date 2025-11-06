@@ -60,8 +60,33 @@ require_once 'header.php';
                     <h2 class="fs-4 fw-bold text-haygo-dark mb-4">Showing <span id="carCountDisplay">0</span> Available Vehicles</h2>
 
                     <!-- Listing container where cars will be injected -->
-                    <div class="row g-4" id="car-listings">
-                        <!-- Car cards will be injected here by JavaScript -->
+                    <div class="row g-4">
+                        <div class="col-sm-6 col-lg-4">
+                            <div class="card car-card shadow-sm h-100">
+                                <div class="text-center d-flex align-items-center justify-content-center"
+                                    style="background-image: <?php echo "test123"; ?>; background-size: cover; background-position: center; height: 200px;">
+                                </div>
+                                <div class="card-body p-4">
+                                    <h5 class="card-title fw-bold text-haygo-dark mb-1">Car Name</h5>
+                                    <p class="small text-secondary mb-3">Car Description</p>
+
+                                    <div class="d-flex justify-content-between small mb-3">
+                                        <span class="text-nowrap"><i class="ri-user-3-line haygo-accent me-1"></i> Car Seats</span>
+                                        <span class="text-nowrap"><i class="ri-briefcase-line haygo-accent me-1"></i> Car Bags</span>
+                                        <span class="text-nowrap"><i class="ri-gas-station-line haygo-accent me-1"></i> Car Transmission</span>
+                                    </div>
+
+                                    <div class="text-center mt-3">
+                                        <p class="small fw-normal text-secondary mb-0">Total Price for  Days</p>
+                                        <p class="fs-3 fw-bolder text-haygo-blue mb-0">
+                                            Total Car Price
+                                        </p>
+                                        <button class="btn fleet-button rounded-pill w-100 mt-2" onclick="openBookingModal(${car.id})"
+                                            data-bs-toggle="modal" data-bs-target="#bookingModal">Select Car</button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
                     </div>
 
                     <!-- No results message -->
@@ -150,6 +175,11 @@ require_once 'header.php';
                                     <label for="licenseNumber" class="form-label small fw-semibold">Driver's License / ID Number *</label>
                                     <input type="text" name="lic_id" class="form-control rounded" id="licenseNumber" placeholder="DL-XXX-XXX">
                                     <div class="invalid-feedback">License/ID number is required.</div>
+                                </div>
+                                <div class="col-md-6">
+                                    <label for="date" class="form-label small fw-semibold">Date of Birth *</label>
+                                    <input type="date" name="birth" class="form-control rounded" id="dateOfBirth">
+                                    <div class="invalid-feedback">Date of Birth is required.</div>
                                 </div>
                             </div>
 

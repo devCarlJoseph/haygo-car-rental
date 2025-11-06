@@ -2,703 +2,303 @@
     require_once 'header.php';
 ?>
 
-<div class="wrapper" style="background: #EBE7E4;">
-	<nav id="sidebar" class="sidebar" style="background: #AB8B7D">
-		<div class="sidebar-content js-simplebar" style="background: #AB8B7D">
-			<div class="d-flex justify-content-center align-items-center mt-4">
-                <img src="../src/assets/images/logo.png" style="width: 4.813rem; height: 3.813rem;">
-            </div>
+    <!-- Mobile Menu Toggle Button (Visible on Small Screens) -->
+    <button class="d-lg-none position-fixed top-0 end-0 mt-3 me-3 z-3 btn bg-rental-primary text-white shadow-lg p-2 rounded-3"
+        type="button" data-bs-toggle="offcanvas" data-bs-target="#sidebar-offcanvas" aria-controls="sidebar-offcanvas">
+        <i class="bi bi-list fs-4"></i>
+    </button>
 
-			<ul class="sidebar-nav mt-3">
-				<li class="sidebar-item active">
-					<a href="dashboard.php" class="sidebar-link">
-						<i class="align-middle" data-lucide="sliders"></i>
-						<span class="align-middle" style="color: #FDE9DF;">Dashboards</span>
-					</a>
-				</li>
-				<li class="sidebar-item">
-					<a href="customer.php" class="sidebar-link">
-						<i class="align-middle" data-lucide="users"></i>
-						<span class="align-middle" style="color: #FDE9DF;">Customers</span>
-					</a>
-				</li>
-				<li class="sidebar-item">
-					<a href="fleets.php" class="sidebar-link">
-						<i class="align-middle" data-lucide="trello"></i>
-						<span class="align-middle" style="color: #FDE9DF;">Fleets</span>
-					</a>
-				</li>
-				<li class="sidebar-item">
-					<a href="booking.php" class="sidebar-link">
-						<i class="align-middle" data-lucide="trello"></i>
-						<span class="align-middle" style="color: #FDE9DF;">Bookings</span>
-					</a>
-				</li>
-				<li class="sidebar-item">
-					<a href="transaction.php" class="sidebar-link">
-						<i class="align-middle" data-lucide="trello"></i>
-						<span class="align-middle" style="color: #FDE9DF;">Transactions</span>
-					</a>
-				</li>
-				<li class="sidebar-item">
-					<a href="calendar.php" class="sidebar-link">
-						<i class="align-middle" data-lucide="trello"></i>
-						<span class="align-middle" style="color: #FDE9DF;">Calendar</span>
-					</a>
-				</li>
-				<li class="sidebar-item">
-					<a href="task.php" class="sidebar-link">
-						<i class="align-middle" data-lucide="trello"></i>
-						<span class="align-middle" style="color: #FDE9DF;">Task</span>
-					</a>
-				</li>
-				<li class="sidebar-item">
-					<a href="invoice.php" class="sidebar-link">
-						<i class="align-middle" data-lucide="trello"></i>
-						<span class="align-middle" style="color: #FDE9DF;">Invoice</span>
-					</a>
-				</li>
-			</ul>
-		</div>
-	</nav>
-	<div class="main">
-		<nav class="navbar navbar-expand navbar-bg" style="height: 4.188rem; background: #FFFEFD;">
-            <a class="sidebar-toggle">
-                <i class="hamburger align-self-center"></i>
-            </a>
+    <!-- Sidebar / Navigation (Bootstrap Offcanvas) -->
+    <aside class="offcanvas offcanvas-start bg-dark text-white p-4 d-flex flex-column shadow-lg" tabindex="-1"
+        id="sidebar-offcanvas" aria-labelledby="offcanvasLabel" data-bs-scroll="true">
 
-            <div class="navbar-collapse collapse">
-                <ul class="navbar-nav navbar-align ">
-                    <li class="nav-item dropdown">
-                        <img src="../src/assets/images/admin_pp.jpg" class="img-fluid rounded-circle me-1 mt-n2 mb-n2"
-                            width="40" height="40" />
-                        <span style="margin-right: 1rem;">Admin Carl</span>
-                    </li>
-                </ul>
-            </div>
-            <div>
-                <button class="border border-none text-white "
-                    style=" margin-bottom: 0.2rem; width: 3.9rem; height: 1.7rem; font-size: 0.725rem; background: #E99670; border-radius: 5px;"><a
-                        href="log_in.php" style="text-decoration: none; color: white;">Sign
-                        Out</a></button>
-            </div>
+        <!-- Offcanvas Header (Mobile only) -->
+        <div class="offcanvas-header d-lg-none p-0 pb-3 mb-4 border-bottom border-secondary-subtle">
+            <h5 class="offcanvas-title fs-4 fw-bolder text-rental-primary" id="offcanvasLabel">CAR<span
+                    class="text-white">RENT</span></h5>
+            <button type="button" class="btn-close btn-close-white text-reset" data-bs-dismiss="offcanvas"
+                aria-label="Close"></button>
+        </div>
+
+        <div class="mb-5 p-2 d-none d-lg-block">
+            <h1 class="fs-4 fw-bolder tracking-tight text-rental-primary">CAR<span class="text-white">RENT</span></h1>
+            <p class="text-sm text-secondary mb-0">Management Suite</p>
+        </div>
+
+        <nav class="flex-grow-1">
+            <ul class="nav flex-column space-y-2">
+                <li class="nav-item mb-2">
+                    <a href="dashboard.php"
+                        class="nav-link d-flex align-items-center gap-3 p-3 rounded-3 text-white transition hover-bg-rental-dark">
+                        <i class="bi bi-speedometer2 fs-5"></i>
+                        <span>Dashboard</span>
+                    </a>
+                </li>
+                <li class="nav-item mb-2">
+                    <a href="fleet.php"
+                        class="nav-link d-flex align-items-center gap-3 p-3 rounded-3 text-white transition hover-bg-rental-dark">
+                        <i class="bi bi-car-front-fill fs-5"></i>
+                        <span>Vehicle Catalog</span>
+                    </a>
+                </li>
+                <li class="nav-item mb-2">
+                    <a href="bookings.php"
+                        class="nav-link d-flex align-items-center gap-3 p-3 rounded-3 text-white transition hover-bg-rental-dark">
+                        <i class="bi bi-calendar-check fs-5"></i>
+                        <span>Bookings</span>
+                        <span class="ms-auto badge rounded-pill text-bg-success">12 New</span>
+                    </a>
+                </li>
+                <li class="nav-item mb-2">
+                    <a href="customer.php"
+                        class="nav-link d-flex align-items-center gap-3 p-3 rounded-3 bg-rental-primary text-white fw-semibold shadow-sm active-nav">
+                        <i class="bi bi-people-fill fs-5"></i>
+                        <span>Customers</span>
+                    </a>
+                </li>
+                <li class="nav-item mb-2">
+                    <a href="reports.php"
+                        class="nav-link d-flex align-items-center gap-3 p-3 rounded-3 text-white transition hover-bg-rental-dark">
+                        <i class="bi bi-graph-up fs-5"></i>
+                        <span>Reports & Analytics</span>
+                    </a>
+                </li>
+            </ul>
         </nav>
-		<main class="content">
-			<div class="container-fluid p-0">
 
-				<h1 class="h3 mb-3" style="color: #FFA77E">Customers</h1>
-
-				<div class="row">
-					<div class="col-xl-8">
-						<div class="card" style="width: 74rem;">
-							<div class="card-body">
-								<div class="row mb-3">
-									<div class="col-md-6 mb-2 mb-md-0">
-										<div class="input-group input-group-search">
-											<input type="text" class="form-control" id="datatables-customers-search"
-												placeholder="Search customers…">
-											<button class="btn" type="button">
-												<i class="align-middle" data-lucide="search"></i>
-											</button>
-										</div>
-									</div>
-								</div>
-								<table id="datatables-customers" class="table w-100" style="width: 8rem;">
-									<thead>
-										<tr>
-											<th class="text-start">Customer ID</th>
-											<th>First Name</th>
-											<th>Last Name</th>
-											<th class="text-center">Contact Number</th>
-											<th>Email Address</th>
-											<th class="text-start">Date of Birth</th>
-											<th class="text-center">Action</th>
-										</tr>
-									</thead>
-									<tbody>
-										<tr>
-											<td class="text-start">1</td>
-											<td>Benhard</td>
-											<td>Awanon</td>
-											<td class="text-start">0912 345 6789</td>
-											<td>bernardawanon@gmail.com</td>
-											<td class="text-start">10 BC</td>
-											<td class="text-center">
-												<button
-													style="width: 4rem; height: 1.8rem; border-radius: 0.5rem; border: none; background: #F3B193; color: white">Delete</button>
-											</td>
-										</tr>
-										<tr>
-											<td class="text-start">1</td>
-											<td>Benhard</td>
-											<td>Awanon</td>
-											<td class="text-start">0912 345 6789</td>
-											<td>bernardawanon@gmail.com</td>
-											<td class="text-start">10 BC</td>
-											<td class="text-center">
-
-												<button
-													style="width: 4rem; height: 1.8rem; border-radius: 0.5rem; border: none; background: #F3B193; color: white">Delete</button>
-											</td>
-										</tr>
-										<tr>
-											<td class="text-start">1</td>
-											<td>Benhard</td>
-											<td>Awanon</td>
-											<td class="text-start">0912 345 6789</td>
-											<td>bernardawanon@gmail.com</td>
-											<td class="text-start">10 BC</td>
-											<td class="text-center">
-
-												<button
-													style="width: 4rem; height: 1.8rem; border-radius: 0.5rem; border: none; background: #F3B193; color: white">Delete</button>
-											</td>
-										</tr>
-										<tr>
-											<td class="text-start">1</td>
-											<td>Benhard</td>
-											<td>Awanon</td>
-											<td class="text-start">0912 345 6789</td>
-											<td>bernardawanon@gmail.com</td>
-											<td class="text-start">10 BC</td>
-											<td class="text-center">
-
-												<button
-													style="width: 4rem; height: 1.8rem; border-radius: 0.5rem; border: none; background: #F3B193; color: white">Delete</button>
-											</td>
-										</tr>
-										<tr>
-											<td class="text-start">1</td>
-											<td>Benhard</td>
-											<td>Awanon</td>
-											<td class="text-start">0912 345 6789</td>
-											<td>bernardawanon@gmail.com</td>
-											<td class="text-start">10 BC</td>
-											<td class="text-center">
-
-												<button
-													style="width: 4rem; height: 1.8rem; border-radius: 0.5rem; border: none; background: #F3B193; color: white">Delete</button>
-											</td>
-										</tr>
-										<tr>
-											<td class="text-start">1</td>
-											<td>Benhard</td>
-											<td>Awanon</td>
-											<td class="text-start">0912 345 6789</td>
-											<td>bernardawanon@gmail.com</td>
-											<td class="text-start">10 BC</td>
-											<td class="text-center">
-
-												<button
-													style="width: 4rem; height: 1.8rem; border-radius: 0.5rem; border: none; background: #F3B193; color: white">Delete</button>
-											</td>
-										</tr>
-										<tr>
-											<td class="text-start">1</td>
-											<td>Benhard</td>
-											<td>Awanon</td>
-											<td class="text-start">0912 345 6789</td>
-											<td>bernardawanon@gmail.com</td>
-											<td class="text-start">10 BC</td>
-											<td class="text-center">
-
-												<button
-													style="width: 4rem; height: 1.8rem; border-radius: 0.5rem; border: none; background: #F3B193; color: white">Delete</button>
-											</td>
-										</tr>
-										<tr>
-											<td class="text-start">1</td>
-											<td>Benhard</td>
-											<td>Awanon</td>
-											<td class="text-start">0912 345 6789</td>
-											<td>bernardawanon@gmail.com</td>
-											<td class="text-start">10 BC</td>
-											<td class="text-center">
-
-												<button
-													style="width: 4rem; height: 1.8rem; border-radius: 0.5rem; border: none; background: #F3B193; color: white">Delete</button>
-											</td>
-										</tr>
-										<tr>
-											<td class="text-start">1</td>
-											<td>Benhard</td>
-											<td>Awanon</td>
-											<td class="text-start">0912 345 6789</td>
-											<td>bernardawanon@gmail.com</td>
-											<td class="text-start">10 BC</td>
-											<td class="text-center">
-
-												<button
-													style="width: 4rem; height: 1.8rem; border-radius: 0.5rem; border: none; background: #F3B193; color: white">Delete</button>
-											</td>
-										</tr>
-									</tbody>
-								</table>
-							</div>
-						</div>
-					</div>
-				</div>
-
-			</div>
-		</main>
-
-		<main class="content">
-			<div class="container-fluid p-0">
-
-				<h1 class="h3 mb-3">Products</h1>
-
-				<div class="card">
-					<div class="card-body">
-						<div class="row mb-3">
-							<div class="col-md-6 col-xl-4 mb-2 mb-md-0">
-								<div class="input-group input-group-search">
-									<input type="text" class="form-control" id="datatables-products-search"
-										placeholder="Search products…">
-									<button class="btn" type="button">
-										<i class="align-middle" data-lucide="search"></i>
-									</button>
-								</div>
-							</div>
-							<div class="col-md-6 col-xl-8">
-								<div class="text-sm-end">
-									<button type="button" class="btn btn-light btn-lg me-2"><i
-											data-lucide="download"></i> Export</button>
-									<button type="button" class="btn btn-primary btn-lg"><i data-lucide="plus"></i> New
-										Product</button>
-								</div>
-							</div>
-						</div>
-						<table id="datatables-products" class="table w-100">
-							<thead>
-								<tr>
-									<th class="align-middle">
-										Car ID
-									</th>
-									<th class="align-middle">Item Name</th>
-									<th class="align-middle">Price</th>
-									<th class="align-middle">Stock</th>
-									<th class="align-middle">Category</th>
-									<th class="align-middle" class="align-middle">Rating</th>
-									<th class="align-middle text-end">Actions</th>
-								</tr>
-							</thead>
-							<tbody>
-								<tr>
-									<td>
-										<div class="form-check fs-4">
-											<input class="form-check-input" type="checkbox">
-											<label class="form-check-label"></label>
-										</div>
-									</td>
-									<td class="d-flex align-items-center">
-										<div
-											class="p-2 rounded bg-body-tertiary d-flex justify-content-center align-items-center me-2 w-50px h-50px">
-											<img src="img/products/product-9.png" class="mw-100 mh-100"
-												alt="Apple iPad Pro">
-										</div>
-										<p class="mb-0">
-											<strong>Apple iPad Pro</strong><br />
-											<span class="text-muted">Silver</span>
-										</p>
-									</td>
-									<td>$ 1,399.00</td>
-									<td>48</td>
-									<td>Tablets</td>
-									<td>
-										<i class="fa-solid fa-star text-warning"></i> 4.6 <span class="text-muted">out
-											of 55 Reviews</span>
-									</td>
-									<td class="text-end">
-										<button type="button" class="btn btn-light">View</button>
-									</td>
-								</tr>
-								<tr>
-									<td>
-										<div class="form-check fs-4">
-											<input class="form-check-input" type="checkbox">
-											<label class="form-check-label"></label>
-										</div>
-									</td>
-									<td class="d-flex align-items-center">
-										<div
-											class="p-2 rounded bg-body-tertiary d-flex justify-content-center align-items-center me-2 w-50px h-50px">
-											<img src="img/products/product-8.png" class="mw-100 mh-100"
-												alt="Apple iPad Pro">
-										</div>
-										<p class="d-inline-block mb-0">
-											<strong>Apple iPad Pro</strong><br />
-											<span class="text-muted">Space Gray</span>
-										</p>
-									</td>
-									<td>$ 1,399.00</td>
-									<td>48</td>
-									<td>Tablets</td>
-									<td>
-										<i class="fa-solid fa-star text-warning"></i> 4.3 <span class="text-muted">out
-											of 25 Reviews</span>
-									</td>
-									<td class="text-end">
-										<button type="button" class="btn btn-light">View</button>
-									</td>
-								</tr>
-								<tr>
-									<td>
-										<div class="form-check fs-4">
-											<input class="form-check-input" type="checkbox">
-											<label class="form-check-label"></label>
-										</div>
-									</td>
-									<td class="d-flex align-items-center">
-										<div
-											class="p-2 rounded bg-body-tertiary d-flex justify-content-center align-items-center me-2 w-50px h-50px">
-											<img src="img/products/product-4.png" class="mw-100 mh-100"
-												alt="Apple iPhone 15 Pro Max">
-										</div>
-										<p class="d-inline-block mb-0">
-											<strong>Apple iPhone 15 Pro Max</strong><br />
-											<span class="text-muted">Blue Titanium</span>
-										</p>
-									</td>
-									<td>$ 1499.00</td>
-									<td>38</td>
-									<td>Smartphones</td>
-									<td>
-										<i class="fa-solid fa-star text-warning"></i> 4.6 <span class="text-muted">out
-											of 40 Reviews</span>
-									</td>
-									<td class="text-end">
-										<button type="button" class="btn btn-light">View</button>
-									</td>
-								</tr>
-								<tr>
-									<td>
-										<div class="form-check fs-4">
-											<input class="form-check-input" type="checkbox">
-											<label class="form-check-label"></label>
-										</div>
-									</td>
-									<td class="d-flex align-items-center">
-										<div
-											class="p-2 rounded bg-body-tertiary d-flex justify-content-center align-items-center me-2 w-50px h-50px">
-											<img src="img/products/product-3.png" class="mw-100 mh-100"
-												alt="Apple iPhone 15 Pro Max">
-										</div>
-										<p class="d-inline-block mb-0">
-											<strong>Apple iPhone 15 Pro Max</strong><br />
-											<span class="text-muted">Natural Titanium</span>
-										</p>
-									</td>
-									<td>$ 1499.00</td>
-									<td>30</td>
-									<td>Smartphones</td>
-									<td>
-										<i class="fa-solid fa-star text-warning"></i> 4.8 <span class="text-muted">out
-											of 50 Reviews</span>
-									</td>
-									<td class="text-end">
-										<button type="button" class="btn btn-light">View</button>
-									</td>
-								</tr>
-								<tr>
-									<td>
-										<div class="form-check fs-4">
-											<input class="form-check-input" type="checkbox">
-											<label class="form-check-label"></label>
-										</div>
-									</td>
-									<td class="d-flex align-items-center">
-										<div
-											class="p-2 rounded bg-body-tertiary d-flex justify-content-center align-items-center me-2 w-50px h-50px">
-											<img src="img/products/product-5.png" class="mw-100 mh-100"
-												alt="Apple iPhone 15 Pro Max">
-										</div>
-										<p class="d-inline-block mb-0">
-											<strong>Apple iPhone 15 Pro Max</strong><br />
-											<span class="text-muted">White Titanium</span>
-										</p>
-									</td>
-									<td>$ 1499.00</td>
-									<td>45</td>
-									<td>Smartphones</td>
-									<td>
-										<i class="fa-solid fa-star text-warning"></i> 4.9 <span class="text-muted">out
-											of 60 Reviews</span>
-									</td>
-									<td class="text-end">
-										<button type="button" class="btn btn-light">View</button>
-									</td>
-								</tr>
-								<tr>
-									<td>
-										<div class="form-check fs-4">
-											<input class="form-check-input" type="checkbox">
-											<label class="form-check-label"></label>
-										</div>
-									</td>
-									<td class="d-flex align-items-center">
-										<div
-											class="p-2 rounded bg-body-tertiary d-flex justify-content-center align-items-center me-2 w-50px h-50px">
-											<img src="img/products/product-7.png" class="mw-100 mh-100"
-												alt="Apple MacBook Pro 16\" ">
+        <!-- User/Settings Section -->
+        <div class="mt-auto pt-4 border-top border-secondary-subtle">
+            <a href="settings.php"
+                class="nav-link d-flex align-items-center gap-3 p-3 rounded-3 text-white transition hover-bg-rental-dark mb-2">
+                <i class="bi bi-gear-fill fs-5"></i>
+                <span>Settings</span>
+            </a>
+            <div class="d-flex align-items-center gap-3 p-3 rounded-3 bg-secondary-subtle bg-opacity-10 text-white">
+                <div class="rounded-circle bg-rental-primary d-flex align-items-center justify-content-center text-white fw-bold"
+                    style="width: 40px; height: 40px;">SD</div>
+                <div>
+                    <p class="mb-0 fw-semibold fs-6">Senior Dev</p>
+                    <p class="mb-0 small text-secondary">Admin</p>
+                </div>
             </div>
-            <p class=" d-inline-block mb-0 ">
-              <strong>Apple MacBook Pro 16" </strong><br />
-											<span class="text-muted">Silver</span>
-											</p>
-									</td>
-									<td>$ 2,399.00</td>
-									<td>55</td>
-									<td>Notebooks</td>
-									<td>
-										<i class="fa-solid fa-star text-warning"></i> 4.7 <span class="text-muted">out
-											of 45 Reviews</span>
-									</td>
-									<td class="text-end">
-										<button type="button" class="btn btn-light">View</button>
-									</td>
-								</tr>
-								<tr>
-									<td>
-										<div class="form-check fs-4">
-											<input class="form-check-input" type="checkbox">
-											<label class="form-check-label"></label>
-										</div>
-									</td>
-									<td class="d-flex align-items-center">
-										<div
-											class="p-2 rounded bg-body-tertiary d-flex justify-content-center align-items-center me-2 w-50px h-50px">
-											<img src="img/products/product-6.png" class="mw-100 mh-100"
-												alt="Apple MacBook Pro 16\" ">
+        </div>
+    </aside>
+
+    <!-- Main Content Area -->
+    <main class="main-content flex-grow-1 p-4 p-md-5">
+
+        <!-- Header / Action Button -->
+        <header class="d-flex flex-column flex-md-row justify-content-between align-items-start align-items-md-center mb-5">
+            <div class="mb-3 mb-md-0">
+                <h2 class="fs-2 fw-bold text-dark">Customer Directory</h2>
+                <p class="text-sm text-secondary">Manage all registered clients based on database schema.</p>
             </div>
-            <p class=" d-inline-block mb-0 ">
-              <strong>Apple MacBook Pro 16" </strong><br />
-											<span class="text-muted">Space Black</span>
-											</p>
-									</td>
-									<td>$ 2,399.00</td>
-									<td>50</td>
-									<td>Notebooks</td>
-									<td>
-										<i class="fa-solid fa-star text-warning"></i> 4.4 <span class="text-muted">out
-											of 30 Reviews</span>
-									</td>
-									<td class="text-end">
-										<button type="button" class="btn btn-light">View</button>
-									</td>
-								</tr>
-								<tr>
-									<td>
-										<div class="form-check fs-4">
-											<input class="form-check-input" type="checkbox">
-											<label class="form-check-label"></label>
-										</div>
-									</td>
-									<td class="d-flex align-items-center">
-										<div
-											class="p-2 rounded bg-body-tertiary d-flex justify-content-center align-items-center me-2 w-50px h-50px">
-											<img src="img/products/product-11.png" class="mw-100 mh-100"
-												alt="Apple Watch SE">
-										</div>
-										<p class="d-inline-block mb-0">
-											<strong>Apple Watch SE</strong><br />
-											<span class="text-muted">Midnight</span>
-										</p>
-									</td>
-									<td>$ 299.00</td>
-									<td>49</td>
-									<td>Smartwatches</td>
-									<td>
-										<i class="fa-solid fa-star text-warning"></i> 4.7 <span class="text-muted">out
-											of 40 Reviews</span>
-									</td>
-									<td class="text-end">
-										<button type="button" class="btn btn-light">View</button>
-									</td>
-								</tr>
-								<tr>
-									<td>
-										<div class="form-check fs-4">
-											<input class="form-check-input" type="checkbox">
-											<label class="form-check-label"></label>
-										</div>
-									</td>
-									<td class="d-flex align-items-center">
-										<div
-											class="p-2 rounded bg-body-tertiary d-flex justify-content-center align-items-center me-2 w-50px h-50px">
-											<img src="img/products/product-12.png" class="mw-100 mh-100"
-												alt="Apple Watch SE">
-										</div>
-										<p class="d-inline-block mb-0">
-											<strong>Apple Watch SE</strong><br />
-											<span class="text-muted">Silver</span>
-										</p>
-									</td>
-									<td>$ 299.00</td>
-									<td>30</td>
-									<td>Smartwatches</td>
-									<td>
-										<i class="fa-solid fa-star text-warning"></i> 4.7 <span class="text-muted">out
-											of 40 Reviews</span>
-									</td>
-									<td class="text-end">
-										<button type="button" class="btn btn-light">View</button>
-									</td>
-								</tr>
-								<tr>
-									<td>
-										<div class="form-check fs-4">
-											<input class="form-check-input" type="checkbox">
-											<label class="form-check-label"></label>
-										</div>
-									</td>
-									<td class="d-flex align-items-center">
-										<div
-											class="p-2 rounded bg-body-tertiary d-flex justify-content-center align-items-center me-2 w-50px h-50px">
-											<img src="img/products/product-10.png" class="mw-100 mh-100"
-												alt="Apple Watch SE">
-										</div>
-										<p class="d-inline-block mb-0">
-											<strong>Apple Watch SE</strong><br />
-											<span class="text-muted">Starlight</span>
-										</p>
-									</td>
-									<td>$ 299.00</td>
-									<td>54</td>
-									<td>Smartwatches</td>
-									<td>
-										<i class="fa-solid fa-star text-warning"></i> 4.5 <span class="text-muted">out
-											of 35 Reviews</span>
-									</td>
-									<td class="text-end">
-										<button type="button" class="btn btn-light">View</button>
-									</td>
-								</tr>
-								<tr>
-									<td>
-										<div class="form-check fs-4">
-											<input class="form-check-input" type="checkbox">
-											<label class="form-check-label"></label>
-										</div>
-									</td>
-									<td class="d-flex align-items-center">
-										<div
-											class="p-2 rounded bg-body-tertiary d-flex justify-content-center align-items-center me-2 w-50px h-50px">
-											<img src="img/products/product-1.png" class="mw-100 mh-100"
-												alt="Apple Watch Series 9">
-										</div>
-										<p class="d-inline-block mb-0">
-											<strong>Apple Watch Series 9</strong><br />
-											<span class="text-muted">Midnight</span>
-										</p>
-									</td>
-									<td>$ 349.00</td>
-									<td>42</td>
-									<td>Smartwatches</td>
-									<td>
-										<i class="fa-solid fa-star text-warning"></i> 4.2 <span class="text-muted">out
-											of 20 Reviews</span>
-									</td>
-									<td class="text-end">
-										<button type="button" class="btn btn-light">View</button>
-									</td>
-								</tr>
-								<tr>
-									<td>
-										<div class="form-check fs-4">
-											<input class="form-check-input" type="checkbox">
-											<label class="form-check-label"></label>
-										</div>
-									</td>
-									<td class="d-flex align-items-center">
-										<div
-											class="p-2 rounded bg-body-tertiary d-flex justify-content-center align-items-center me-2 w-50px h-50px">
-											<img src="img/products/product-2.png" class="mw-100 mh-100"
-												alt="Apple Watch Series 9">
-										</div>
-										<p class="d-inline-block mb-0">
-											<strong>Apple Watch Series 9</strong><br />
-											<span class="text-muted">Starlight</span>
-										</p>
-									</td>
-									<td>$ 349.00</td>
-									<td>54</td>
-									<td>Smartwatches</td>
-									<td>
-										<i class="fa-solid fa-star text-warning"></i> 4.5 <span class="text-muted">out
-											of 35 Reviews</span>
-									</td>
-									<td class="text-end">
-										<button type="button" class="btn btn-light">View</button>
-									</td>
-								</tr>
-							</tbody>
-						</table>
-					</div>
-				</div>
-			</div>
-		</main>
+            <button
+                class="btn btn-lg bg-rental-primary text-white hover-bg-rental-dark d-flex align-items-center gap-2 shadow-lg border-0 rounded-3">
+                <i class="bi bi-person-plus-fill fs-5"></i>
+                <span>Add New Customer</span>
+            </button>
+        </header>
 
-		<?php require_once 'footer.php'; ?>
-	</div>
-</div>
+        <!-- Search and Filter Controls -->
+        <section class="mb-4">
+            <div class="row g-3">
+                <div class="col-12 col-md-12">
+                    <div class="input-group rounded-3 shadow-sm bg-white">
+                        <span class="input-group-text bg-white border-0 rounded-start-3"><i class="bi bi-search text-secondary"></i></span>
+                        <input type="text" class="form-control border-0 focus-ring-0" placeholder="Search by name, email, or phone number..."
+                            aria-label="Search customer">
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Customer List Table -->
+        <section class="card p-4 rounded-4 shadow-sm">
+            <h3 class="fs-6 fw-semibold text-dark mb-4">5 Client Records Found (Database Preview)</h3>
+            <div class="table-responsive rounded-3 border border-light">
+                <table class="table table-striped table-hover align-middle mb-0">
+                    <thead class="table-light">
+                        <tr>
+                            <th scope="col" class="px-3 py-3 text-start text-xs text-secondary text-uppercase">ID</th>
+                            <th scope="col" class="px-3 py-3 text-start text-xs text-secondary text-uppercase">Customer Name</th>
+                            <th scope="col" class="px-3 py-3 text-start text-xs text-secondary text-uppercase">Email</th>
+                            <th scope="col" class="px-3 py-3 text-start text-xs text-secondary text-uppercase">Phone</th>
+                            <th scope="col" class="px-3 py-3 text-start text-xs text-secondary text-uppercase">Date of Birth</th>
+                            <th scope="col" class="px-3 py-3 text-start text-xs text-secondary text-uppercase">Action</th>
+                        </tr>
+                    </thead>
+                    <tbody id="customer-table-body">
+                        <!-- Customer 1 -->
+                        <tr>
+                            <td class="px-3 py-3 text-sm fw-medium text-dark">1001</td>
+                            <td class="px-3 py-3 text-sm fw-medium text-dark">Elena Rodriguez</td>
+                            <td class="px-3 py-3 text-sm text-secondary">elena.rod@mail.com</td>
+                            <td class="px-3 py-3 text-sm text-secondary">(555) 123-4567</td>
+                            <td class="px-3 py-3 text-sm text-secondary">1990-04-15</td>
+                            <td class="px-3 py-3">
+                                <button class="btn btn-sm btn-outline-secondary border-0 text-rental-primary edit-btn" title="Edit Profile"
+                                    data-bs-toggle="modal" data-bs-target="#editCustomerModal"
+                                    data-id="1001"
+                                    data-name="Elena Rodriguez"
+                                    data-email="elena.rod@mail.com"
+                                    data-phone="(555) 123-4567"
+                                    data-dob="1990-04-15">
+                                    <i class="bi bi-pencil-square"></i>
+                                </button>
+                                <button class="btn btn-sm btn-outline-danger border-0 text-danger" title="Delete Record"><i class="bi bi-trash"></i></button>
+                            </td>
+                        </tr>
+                        <!-- Customer 2 -->
+                        <tr>
+                            <td class="px-3 py-3 text-sm fw-medium text-dark">1002</td>
+                            <td class="px-3 py-3 text-sm fw-medium text-dark">Marcus Johnson</td>
+                            <td class="px-3 py-3 text-sm text-secondary">marcus.j@corp.net</td>
+                            <td class="px-3 py-3 text-sm text-secondary">(555) 987-6543</td>
+                            <td class="px-3 py-3 text-sm text-secondary">1985-11-20</td>
+                            <td class="px-3 py-3">
+                                <button class="btn btn-sm btn-outline-secondary border-0 text-rental-primary edit-btn" title="Edit Profile"
+                                    data-bs-toggle="modal" data-bs-target="#editCustomerModal"
+                                    data-id="1002"
+                                    data-name="Marcus Johnson"
+                                    data-email="marcus.j@corp.net"
+                                    data-phone="(555) 987-6543"
+                                    data-dob="1985-11-20">
+                                    <i class="bi bi-pencil-square"></i>
+                                </button>
+                                <button class="btn btn-sm btn-outline-danger border-0 text-danger" title="Delete Record"><i class="bi bi-trash"></i></button>
+                            </td>
+                        </tr>
+                        <!-- Customer 3 -->
+                        <tr>
+                            <td class="px-3 py-3 text-sm fw-medium text-dark">1003</td>
+                            <td class="px-3 py-3 text-sm fw-medium text-dark">Sarah Chen</td>
+                            <td class="px-3 py-3 text-sm text-secondary">sarah.chen@email.com</td>
+                            <td class="px-3 py-3 text-sm text-secondary">(555) 345-1234</td>
+                            <td class="px-3 py-3 text-sm text-secondary">2000-08-01</td>
+                            <td class="px-3 py-3">
+                                <button class="btn btn-sm btn-outline-secondary border-0 text-rental-primary edit-btn" title="Edit Profile"
+                                    data-bs-toggle="modal" data-bs-target="#editCustomerModal"
+                                    data-id="1003"
+                                    data-name="Sarah Chen"
+                                    data-email="sarah.chen@email.com"
+                                    data-phone="(555) 345-1234"
+                                    data-dob="2000-08-01">
+                                    <i class="bi bi-pencil-square"></i>
+                                </button>
+                                <button class="btn btn-sm btn-outline-danger border-0 text-danger" title="Delete Record"><i class="bi bi-trash"></i></button>
+                            </td>
+                        </tr>
+                        <!-- Customer 4 -->
+                        <tr>
+                            <td class="px-3 py-3 text-sm fw-medium text-dark">1004</td>
+                            <td class="px-3 py-3 text-sm fw-medium text-dark">David Geller</td>
+                            <td class="px-3 py-3 text-sm text-secondary">dgeller@internet.co</td>
+                            <td class="px-3 py-3 text-sm text-secondary">(555) 678-9012</td>
+                            <td class="px-3 py-3 text-sm text-secondary">1976-02-29</td>
+                            <td class="px-3 py-3">
+                                <button class="btn btn-sm btn-outline-secondary border-0 text-rental-primary edit-btn" title="Edit Profile"
+                                    data-bs-toggle="modal" data-bs-target="#editCustomerModal"
+                                    data-id="1004"
+                                    data-name="David Geller"
+                                    data-email="dgeller@internet.co"
+                                    data-phone="(555) 678-9012"
+                                    data-dob="1976-02-29">
+                                    <i class="bi bi-pencil-square"></i>
+                                </button>
+                                <button class="btn btn-sm btn-outline-danger border-0 text-danger" title="Delete Record"><i class="bi bi-trash"></i></button>
+                            </td>
+                        </tr>
+                        <!-- Customer 5 -->
+                        <tr>
+                            <td class="px-3 py-3 text-sm fw-medium text-dark">1005</td>
+                            <td class="px-3 py-3 text-sm fw-medium text-dark">Maria Santos</td>
+                            <td class="px-3 py-3 text-sm text-secondary">maria.santos@biz.org</td>
+                            <td class="px-3 py-3 text-sm text-secondary">(555) 210-5432</td>
+                            <td class="px-3 py-3 text-sm text-secondary">1995-12-10</td>
+                            <td class="px-3 py-3">
+                                <button class="btn btn-sm btn-outline-secondary border-0 text-rental-primary edit-btn" title="Edit Profile"
+                                    data-bs-toggle="modal" data-bs-target="#editCustomerModal"
+                                    data-id="1005"
+                                    data-name="Maria Santos"
+                                    data-email="maria.santos@biz.org"
+                                    data-phone="(555) 210-5432"
+                                    data-dob="1995-12-10">
+                                    <i class="bi bi-pencil-square"></i>
+                                </button>
+                                <button class="btn btn-sm btn-outline-danger border-0 text-danger" title="Delete Record"><i class="bi bi-trash"></i></button>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+
+            <nav aria-label="Customer list pagination" class="mt-4 d-flex justify-content-center">
+                <ul class="pagination mb-0 rounded-3 shadow-sm">
+                    <li class="page-item disabled"><a class="page-link" href="#" aria-label="Previous"><span aria-hidden="true">&laquo;</span></a></li>
+                    <li class="page-item active" aria-current="page"><a class="page-link bg-rental-primary border-rental-primary" href="#">1</a></li>
+                    <li class="page-item"><a class="page-link text-dark" href="#">2</a></li>
+                    <li class="page-item"><a class="page-link text-dark" href="#">3</a></li>
+                    <li class="page-item"><a class="page-link text-dark" href="#" aria-label="Next"><span aria-hidden="true">&raquo;</span></a></li>
+                </ul>
+            </nav>
+
+        </section>
 
 
-<script src="../src/assets/js/app.js"></script>
+        <!-- Extra content to force scrolling -->
+        <div style="height: 20vh;" class="d-flex align-items-center justify-content-center text-secondary border border-dashed rounded-3 mt-5">
+            [End of Content]
+        </div>
 
-<script>
-	document.addEventListener("DOMContentLoaded", function () {
-		const table = $("#datatables-customers").DataTable({
-			destroy: true,
-			scrollX: true,
-			autoWidth: false,
-			responsive: true,
-			order: [[0, "asc"]],
-			columnDefs: [
-				{ width: "7rem", targets: 0 },
-				{ width: "8rem", targets: 1 },
-				{ width: "8rem", targets: 2 },
-				{ width: "10rem", targets: 3 },
-				{ width: "15rem", targets: 4 },
-				{ width: "8rem", targets: 5 },
-				{ width: "10rem", targets: 6 }
-			],
-			layout: {
-				topStart: null,
-				topEnd: null,
-				bottomStart: 'info',
-				bottomEnd: 'paging'
-			}
-		});
+    </main>
 
-		$("#datatables-customers-search").keyup(function () {
-			table.search($(this).val()).draw();
-		});
+    <!-- Edit Customer Modal -->
+    <div class="modal fade" id="editCustomerModal" tabindex="-1" aria-labelledby="editCustomerModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered">
+            <div class="modal-content rounded-4 shadow-lg">
+                <div class="modal-header bg-light border-bottom rounded-top-4">
+                    <h5 class="modal-title fw-bold text-rental-primary" id="editCustomerModalLabel">
+                        Edit Customer: <span id="modal-customer-name"></span>
+                    </h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body p-4">
+                    <form id="edit-customer-form">
+                        <!-- Hidden ID field -->
+                        <input type="hidden" id="edit-customer-id" name="id">
 
-		const style = document.createElement("style");
-		style.innerHTML = `
-    /* Active page */
-    .page-item.active .page-link {
-      background-color: #E99670 !important;
-      border-color: #E99670 !important;
-      color: #fff !important;
-    }
+                        <div class="mb-3">
+                            <label for="edit-customer-name" class="form-label fw-semibold">Customer Name</label>
+                            <input type="text" class="form-control rounded-3" id="edit-customer-name" name="customer_name" required>
+                        </div>
+                        <div class="mb-3">
+                            <label for="edit-customer-email" class="form-label fw-semibold">Email</label>
+                            <input type="email" class="form-control rounded-3" id="edit-customer-email" name="email" required>
+                        </div>
+                        <div class="mb-3">
+                            <label for="edit-customer-phone" class="form-label fw-semibold">Phone</label>
+                            <input type="text" class="form-control rounded-3" id="edit-customer-phone" name="phone" required>
+                        </div>
+                        <div class="mb-4">
+                            <label for="edit-customer-dob" class="form-label fw-semibold">Date of Birth</label>
+                            <input type="date" class="form-control rounded-3" id="edit-customer-dob" name="date_of_birth" required>
+                        </div>
 
-    /* Hover state */
-    .page-link:hover {
-      background-color: #F6C7B1 !important;
-      color: #fff !important;
-    }
+                        <!-- Save button will be inside the footer -->
+                    </form>
+                </div>
+                <div class="modal-footer d-flex justify-content-between border-top">
+                    <span class="text-sm text-secondary">Customer ID: <span id="modal-customer-id-footer"></span></span>
+                    <div>
+                        <button type="button" class="btn btn-outline-secondary rounded-3" data-bs-dismiss="modal">Cancel</button>
+                        <button type="submit" class="btn bg-rental-primary text-white hover-bg-rental-dark rounded-3" form="edit-customer-form">Save Changes</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
 
-    /* Default (non-active) */
-    .page-link {
-      color: #AB8B7D !important;
-    }
-  `;
-		document.head.appendChild(style);
-	});
-
-</script>
-
-</body>
-
-</html>
+<?php 
+    require_once 'footer.php'
+?>

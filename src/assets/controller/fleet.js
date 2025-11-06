@@ -139,33 +139,7 @@ function renderCars(cars) {
             : '';
 
         const carHtml = `
-                    <div class="col-sm-6 col-lg-4">
-                        <div class="card car-card shadow-sm h-100">
-                            <div class="text-center d-flex align-items-center justify-content-center" 
-                                style="background-image: url('${imageURL}'); background-size: cover; background-position: center; height: 200px;">
-                                ${badgeHtml}
-                            </div>
-                            <div class="card-body p-4">
-                                <h5 class="card-title fw-bold text-haygo-dark mb-1">${car.name}</h5>
-                                <p class="small text-secondary mb-3">${car.description}</p>
-                                
-                                <div class="d-flex justify-content-between small mb-3">
-                                    <span class="text-nowrap"><i class="ri-user-3-line haygo-accent me-1"></i> ${car.seats} Seats</span>
-                                    <span class="text-nowrap"><i class="ri-briefcase-line haygo-accent me-1"></i> ${car.bags} Bags</span>
-                                    <span class="text-nowrap"><i class="ri-gas-station-line haygo-accent me-1"></i> ${car.transmission}</span>
-                                </div>
-                                
-                                <div class="text-center mt-3">
-                                    <p class="small fw-normal text-secondary mb-0">Total Price for ${fixedRentalDays} Days</p>
-                                    <p class="fs-3 fw-bolder text-haygo-blue mb-0">
-                                        ₱ ${new Intl.NumberFormat().format(totalCarPrice)}
-                                    </p>
-                                    <button class="btn fleet-button rounded-pill w-100 mt-2" onclick="openBookingModal(${car.id})" 
-                                        data-bs-toggle="modal" data-bs-target="#bookingModal">Select Car</button>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
+                    
                 `;
         carListingsContainer.insertAdjacentHTML('beforeend', carHtml);
     });

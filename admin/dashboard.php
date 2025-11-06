@@ -1,528 +1,252 @@
-<?php
-require_once 'header.php';
+<?php 
+    require_once 'header.php';
 ?>
+    <!-- Mobile Menu Toggle Button (Visible on Small Screens) -->
+    <button class="d-lg-none position-fixed top-0 end-0 mt-3 me-3 z-3 btn bg-rental-primary text-white shadow-lg p-2 rounded-3"
+        type="button" data-bs-toggle="offcanvas" data-bs-target="#sidebar-offcanvas" aria-controls="sidebar-offcanvas">
+        <i class="bi bi-list fs-4"></i>
+    </button>
 
-<div class="wrapper" style="background: #EBE7E4;">
-    <nav id="sidebar" class="sidebar" style="background: #AB8B7D">
-        <div class="sidebar-content js-simplebar" style="background: #AB8B7D">
+    <!-- Sidebar / Navigation (Bootstrap Offcanvas) -->
+    <aside class="offcanvas offcanvas-start bg-dark text-white p-4 d-flex flex-column shadow-lg" tabindex="-1"
+        id="sidebar-offcanvas" aria-labelledby="offcanvasLabel" data-bs-scroll="true">
 
-            <div class="d-flex justify-content-center align-items-center mt-4">
-                <img src="../src/assets/images/logo.png" style="width: 4.813rem; height: 3.813rem;">
-            </div>
+        <!-- Offcanvas Header (Mobile only) -->
+        <div class="offcanvas-header d-lg-none p-0 pb-3 mb-4 border-bottom border-secondary-subtle">
+            <h5 class="offcanvas-title fs-4 fw-bolder text-rental-primary" id="offcanvasLabel">CAR<span class="text-white">RENT</span></h5>
+            <button type="button" class="btn-close btn-close-white text-reset" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+        </div>
 
-            <ul class="sidebar-nav mt-3">
-                <li class="sidebar-item active">
-                    <a href="dashboard.php" class="sidebar-link">
-                        <i class="align-middle" data-lucide="sliders"></i>
-                        <span class="align-middle" style="color: #FDE9DF;">Dashboards</span>
+        <div class="mb-5 p-2 d-none d-lg-block">
+            <h1 class="fs-4 fw-bolder tracking-tight text-rental-primary">CAR<span class="text-white">RENT</span></h1>
+            <p class="text-sm text-secondary mb-0">Management Suite</p>
+        </div>
+
+        <nav class="flex-grow-1">
+            <ul class="nav flex-column space-y-2">
+                <li class="nav-item mb-2">
+                    <a href="dashboard.php" class="nav-link d-flex align-items-center gap-3 p-3 rounded-3 bg-rental-primary text-white fw-semibold shadow-sm active-nav">
+                        <i class="bi bi-speedometer2 fs-5"></i>
+                        <span>Dashboard</span>
                     </a>
                 </li>
-                <li class="sidebar-item">
-                    <a href="customer.php" class="sidebar-link">
-                        <i class="align-middle" data-lucide="users"></i>
-                        <span class="align-middle" style="color: #FDE9DF;">Customers</span>
+                <li class="nav-item mb-2">
+                    <a href="fleet.php" class="nav-link d-flex align-items-center gap-3 p-3 rounded-3 text-white transition hover-bg-rental-dark">
+                        <i class="bi bi-car-front-fill fs-5"></i>
+                        <span>Vehicle Catalog</span>
                     </a>
                 </li>
-                <li class="sidebar-item">
-                    <a href="fleets.php" class="sidebar-link">
-                        <i class="align-middle" data-lucide="trello"></i>
-                        <span class="align-middle" style="color: #FDE9DF;">Fleets</span>
+                <li class="nav-item mb-2">
+                    <a href="bookings.php" class="nav-link d-flex align-items-center gap-3 p-3 rounded-3 text-white transition hover-bg-rental-dark">
+                        <i class="bi bi-calendar-check fs-5"></i>
+                        <span>Bookings</span>
+                        <span class="ms-auto badge rounded-pill text-bg-success">12 New</span>
                     </a>
                 </li>
-                <li class="sidebar-item">
-                    <a href="booking.php" class="sidebar-link">
-                        <i class="align-middle" data-lucide="trello"></i>
-                        <span class="align-middle" style="color: #FDE9DF;">Bookings</span>
+                <li class="nav-item mb-2">
+                    <a href="customer.php" class="nav-link d-flex align-items-center gap-3 p-3 rounded-3 text-white transition hover-bg-rental-dark">
+                        <i class="bi bi-people-fill fs-5"></i>
+                        <span>Customers</span>
                     </a>
                 </li>
-                <li class="sidebar-item">
-                    <a href="transaction.php" class="sidebar-link">
-                        <i class="align-middle" data-lucide="trello"></i>
-                        <span class="align-middle" style="color: #FDE9DF;">Transactions</span>
-                    </a>
-                </li>
-                <li class="sidebar-item">
-                    <a href="calendar.php" class="sidebar-link">
-                        <i class="align-middle" data-lucide="trello"></i>
-                        <span class="align-middle" style="color: #FDE9DF;">Calendar</span>
-                    </a>
-                </li>
-                <li class="sidebar-item">
-                    <a href="task.php" class="sidebar-link">
-                        <i class="align-middle" data-lucide="trello"></i>
-                        <span class="align-middle" style="color: #FDE9DF;">Task</span>
-                    </a>
-                </li>
-                <li class="sidebar-item">
-                    <a href="invoice.php" class="sidebar-link">
-                        <i class="align-middle" data-lucide="trello"></i>
-                        <span class="align-middle" style="color: #FDE9DF;">Invoice</span>
+                <li class="nav-item mb-2">
+                    <a href="reports.php" class="nav-link d-flex align-items-center gap-3 p-3 rounded-3 text-white transition hover-bg-rental-dark">
+                        <i class="bi bi-graph-up fs-5"></i>
+                        <span>Reports & Analytics</span>
                     </a>
                 </li>
             </ul>
-        </div>
-    </nav>
-    <div class="main">
-        <nav class="navbar navbar-expand navbar-bg" style="height: 4.188rem; backgroud: #FFFEFD;">
-            <a class="sidebar-toggle">
-                <i class="hamburger align-self-center"></i>
-            </a>
-
-            <div class="navbar-collapse collapse">
-                <ul class="navbar-nav navbar-align ">
-                    <li class="nav-item dropdown">
-                        <img src="../src/assets/images/admin_pp.jpg" class="img-fluid rounded-circle me-1 mt-n2 mb-n2"
-                            width="40" height="40" />
-                        <span style="margin-right: 1rem;">Admin Carl</span>
-                    </li>
-                </ul>
-            </div>
-            <div>
-                <button class="border border-none text-white "
-                    style=" margin-bottom: 0.2rem; width: 3.9rem; height: 1.7rem; font-size: 0.725rem; background: #E99670; border-radius: 5px;"><a
-                        href="log_in.php" style="text-decoration: none; color: white;">Sign
-                        Out</a></button>
-            </div>
         </nav>
 
-        <main class="content">
-            <div class="container-fluid p-0">
-                <div class="row mb-2 mb-xl-3">
-                    <div class="col-auto d-none d-sm-block">
-                        <h3>Dashboard</h3>
-                    </div>
+        <!-- User/Settings Section -->
+        <div class="mt-auto pt-4 border-top border-secondary-subtle">
+            <a href="settings.php" class="nav-link d-flex align-items-center gap-3 p-3 rounded-3 text-white transition hover-bg-rental-dark mb-2">
+                <i class="bi bi-gear-fill fs-5"></i>
+                <span>Settings</span>
+            </a>
+            <div class="d-flex align-items-center gap-3 p-3 rounded-3 bg-secondary-subtle bg-opacity-10 text-white">
+                <div class="rounded-circle bg-rental-primary d-flex align-items-center justify-content-center text-white fw-bold" style="width: 40px; height: 40px;">SD</div>
+                <div>
+                    <p class="mb-0 fw-semibold fs-6">Senior Dev</p>
+                    <p class="mb-0 small text-secondary">Admin</p>
                 </div>
-                <div class="row">
-                    <div class="col-12 col-sm-6 col-xxl-3 d-flex">
-                        <div class="card flex-fill" style="background: #FDDDCE;">
-                            <div class="card-body py-4">
-                                <div class="d-flex align-items-start">
-                                    <div class="flex-grow-1">
-                                        <h3 class="mb-2" style="font-size: 1.875rem;">100</h3>
-                                        <p class="mb-2" style="font-size: 1.125rem;">Total Cars</p>
-                                        <div class="mb-0">
-                                            <span class="badge badge-subtle-success me-2">
-                                                +5.35%
-                                            </span>
-                                            <span class="text-muted">Since last week</span>
-                                        </div>
-                                    </div>
-                                    <div class="d-inline-block ms-3">
-                                        <div class="stat" style="background: #FFB08C;">
-                                            <i class="fa-solid fa-car" style="color: #985434;"></i>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-12 col-sm-6 col-xxl-3 d-flex">
-                        <div class="card flex-fill" style="background: #FFF2ED;">
-                            <div class="card-body py-4">
-                                <div class="d-flex align-items-start">
-                                    <div class="flex-grow-1">
-                                        <h3 class="mb-2" style="font-size: 1.875rem;">100</h3>
-                                        <p class="mb-2" style="font-size: 1.125rem;">Rented Cars</p>
-                                        <div class="mb-0">
-                                            <span class="badge badge-subtle-success me-2">
-                                                +5.35%
-                                            </span>
-                                            <span class="text-muted">Since last week</span>
-                                        </div>
-                                    </div>
-                                    <div class="d-inline-block ms-3">
-                                        <div class="stat" style="background: #FFB08C;">
-                                            <i class="fa-solid fa-car" style="color: #985434;"></i>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-12 col-sm-6 col-xxl-3 d-flex">
-                        <div class="card flex-fill" style="background: #FFF2ED;">
-                            <div class="card-body py-4">
-                                <div class="d-flex align-items-start">
-                                    <div class="flex-grow-1">
-                                        <h3 class="mb-2" style="font-size: 1.875rem;">100</h3>
-                                        <p class="mb-2" style="font-size: 1.125rem;">Revenue</p>
-                                        <div class="mb-0">
-                                            <span class="badge badge-subtle-danger me-2">
-                                                +5.35%
-                                            </span>
-                                            <span class="text-muted">Since last week</span>
-                                        </div>
-                                    </div>
-                                    <div class="d-inline-block ms-3">
-                                        <div class="stat" style="background: #FFB08C;">
-                                            <i class="fa-solid fa-car" style="color: #985434;"></i>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-12 col-sm-6 col-xxl-3 d-flex">
-                        <div class="card flex-fill" style="background: #FFF2ED;">
-                            <div class="card-body py-4">
-                                <div class="d-flex align-items-start">
-                                    <div class="flex-grow-1">
-                                        <h3 class="mb-2" style="font-size: 1.875rem;">100</h3>
-                                        <p class="mb-2" style="font-size: 1.125rem;">Total Bookings</p>
-                                        <div class="mb-0">
-                                            <span class="badge badge-subtle-success me-2">
-                                                +5.35%
-                                            </span>
-                                            <span class="text-muted">Since last week</span>
-                                        </div>
-                                    </div>
-                                    <div class="d-inline-block ms-3">
-                                        <div class="stat" style="background: #FFB08C;">
-                                            <i class="fa-solid fa-car" style="color: #985434;"></i>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
+            </div>
+        </div>
+    </aside>
 
-                <div class="row">
-                    <div class="col-12 col-lg-8 d-flex">
-                        <div class="card flex-fill w-100">
-                            <div class="card-header">
-                                <h5 class="card-title mb-0" style="color: #FFC3A8;">Sales / Revenue</h5>
-                            </div>
-                            <div class="card-body d-flex w-100">
-                                <div class="align-self-center chart chart-lg">
-                                    <canvas id="chartjs-dashboard-bar"></canvas>
-                                </div>
-                            </div>
+    <!-- Main Content Area -->
+    <!-- The margin-left is applied via CSS media query to this class. Removed w-100 to prevent layout conflicts. -->
+    <main class="main-content flex-grow-1 p-4 p-md-5">
+
+        <!-- Header / Action Button -->
+        <header class="d-flex flex-column flex-md-row justify-content-between align-items-start align-items-md-center mb-5">
+            <div class="mb-3 mb-md-0">
+                <h2 class="fs-2 fw-bold text-dark">System Dashboard</h2>
+                <p class="text-sm text-secondary">Welcome back, Senior Dev. Here is the operational overview for November 2025.</p>
+            </div>
+        </header>
+
+        <!-- 1. Key Metrics Cards -->
+        <!-- Adding some extra sections to ensure the page scrolls to test the fixed sidebar -->
+        <div style="height: 10vh; visibility: hidden;">Spacer</div>
+        <section class="row g-4 mb-5">
+
+            <!-- Card 1: Total Fleet -->
+            <div class="col-12 col-sm-6 col-lg-3">
+                <div class="card p-4 rounded-4 shadow-sm border-start border-5 border-rental-primary h-100 metric-card">
+                    <div class="d-flex justify-content-between align-items-start">
+                        <div>
+                            <p class="text-sm text-secondary mb-1 fw-medium">Total Fleet Size</p>
+                            <p class="fs-1 fw-bold text-dark mb-0">210</p>
                         </div>
-                    </div>
-                    <div class="col-12 col-lg-4 d-flex">
-                        <div class="card flex-fill w-100">
-                            <div class="card-header">
-                                <h5 class="card-title mb-0" style="color: #FFC3A8;">Activities</h5>
-                            </div>
-                            <div class="card-body">
-                                <div class="d-flex align-items-start">
-                                    <img src="img/avatars/avatar-5.jpg" width="36" height="36"
-                                        class="rounded-circle me-2" />
-                                    <div class="flex-grow-1">
-                                        <small class="float-end">5m ago</small>
-                                        <strong>Chat with Carl</strong> and
-                                        <strong>Jerreh</strong><br />
-                                        <small class="text-muted">Today 7:51 pm</small><br />
-                                    </div>
-                                </div>
-
-                                <hr />
-
-                            </div>
+                        <div class="p-3 rounded-5 bg-rental-primary bg-opacity-10 text-rental-primary">
+                            <i class="bi bi-car-front-fill fs-4"></i>
                         </div>
-                    </div>
-                </div>
-
-                <div class="row">
-                    <div class="col-12 col-lg-6 col-xl-4 d-flex">
-                        <div class="card flex-fill">
-                            <div class="card-header">
-                                <div class="card-actions float-end">
-                                    <div class="dropdown position-relative">
-                                        <a href="#" data-bs-toggle="dropdown" data-bs-display="static">
-                                            <i class="align-middle" data-lucide="more-horizontal"></i>
-                                        </a>
-
-                                        <div class="dropdown-menu dropdown-menu-end">
-                                            <a class="dropdown-item" href="#">Action</a>
-                                            <a class="dropdown-item" href="#">Another action</a>
-                                            <a class="dropdown-item" href="#">Something else here</a>
-                                        </div>
-                                    </div>
-                                </div>
-                                <h5 class="card-title mb-0" style="color: #FFC3A8;">Calendar</h5>
-                            </div>
-                            <div class="card-body d-flex">
-                                <div class="align-self-center w-100">
-                                    <div class="chart">
-                                        <div id="calendar-dashboard"></div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-12 col-xl-4 d-none d-xl-flex">
-                        <div class="card flex-fill w-100">
-                            <div class="card-header">
-                                <div class="card-actions float-end">
-                                    <div class="dropdown position-relative">
-                                        <a href="#" data-bs-toggle="dropdown" data-bs-display="static">
-                                            <i class="align-middle" data-lucide="more-horizontal"></i>
-                                        </a>
-
-                                        <div class="dropdown-menu dropdown-menu-end">
-                                            <a class="dropdown-item" href="#">Action</a>
-                                            <a class="dropdown-item" href="#">Another action</a>
-                                            <a class="dropdown-item" href="#">Something else here</a>
-                                        </div>
-                                    </div>
-                                </div>
-                                <h5 class="card-title mb-0" style="color: #FFC3A8;">Montly sales</h5>
-                            </div>
-                            <div class="card-body d-flex">
-                                <div class="align-self-center w-100">
-                                    <div class="py-3">
-                                        <div class="chart chart-xs">
-                                            <canvas id="chartjs-dashboard-pie"></canvas>
-                                        </div>
-                                    </div>
-
-                                    <table class="table mb-0">
-                                        <thead>
-                                            <tr>
-                                                <th style="color: #FFA77E;">Source</th>
-                                                <th class="text-end" style="color: #FFA77E;">Revenue</th>
-                                                <th class="text-end" style="color: #FFA77E;">Value</th>
-                                            </tr>
-                                        </thead>
-                                        <tbody>
-                                            <tr>
-                                                <td>
-                                                    <i class="fas fa-square-full text-primary"></i>
-                                                    Honda
-                                                </td>
-                                                <td class="text-end">$ 2602</td>
-                                                <td class="text-end text-success">+43%</td>
-                                            </tr>
-                                            <tr>
-                                                <td>
-                                                    <i class="fas fa-square-full text-warning"></i>
-                                                    Toyota
-                                                </td>
-                                                <td class="text-end">$ 1253</td>
-                                                <td class="text-end text-success">+13%</td>
-                                            </tr>
-                                            <tr>
-                                                <td>
-                                                    <i class="fas fa-square-full text-danger"></i>
-                                                    Mitubishi
-                                                </td>
-                                                <td class="text-end">$ 541</td>
-                                                <td class="text-end text-success">+24%</td>
-                                            </tr>
-                                            <tr>
-                                                <td>
-                                                    <i class="fas fa-square-full text-dark"></i> Other
-                                                </td>
-                                                <td class="text-end">$ 1465</td>
-                                                <td class="text-end text-success">+11%</td>
-                                            </tr>
-                                        </tbody>
-                                    </table>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-12 col-lg-6 col-xl-4 d-flex">
-                        <div class="card flex-fill w-100">
-                            <div class="card-header">
-                                <h5 class="card-title mb-0" style="color: #FFC3A8;">Appointments</h5>
-                            </div>
-                            <div class="card-body">
-                                <ul class="timeline">
-                                    <li class="timeline-item">
-                                        <strong>Chat with Carl and Jerreh</strong>
-                                        <span class="float-end text-muted text-sm">30m ago</span>
-                                        <p>
-                                            Nam pretium turpis et arcu. Duis arcu tortor, suscipit
-                                            eget, imperdiet nec, imperdiet iaculis, ipsum. Sed
-                                            aliquam ultrices mauris...
-                                        </p>
-                                    </li>
-                                    <li class="timeline-item">
-                                        <strong>Chat with Carl and Jerreh</strong>
-                                        <span class="float-end text-muted text-sm">2h ago</span>
-                                        <p>
-                                            Sed aliquam ultrices mauris. Integer ante arcu,
-                                            accumsan a, consectetuer eget, posuere ut, mauris.
-                                            Praesent adipiscing. Phasellus ullamcorper ipsum
-                                            rutrum nunc...
-                                        </p>
-                                    </li>
-                                    <li class="timeline-item">
-                                        <strong>Chat with Carl and Jerreh</strong>
-                                        <span class="float-end text-muted text-sm">3h ago</span>
-                                        <p>
-                                            Curabitur ligula sapien, tincidunt non, euismod vitae,
-                                            posuere imperdiet, leo. Maecenas malesuada...
-                                        </p>
-                                    </li>
-                                    <li class="timeline-item">
-                                        <strong>Chat with Carl and Jerreh</strong>
-                                        <span class="float-end text-muted text-sm">30m ago</span>
-                                        <p>
-                                            Nam pretium turpis et arcu. Duis arcu tortor, suscipit
-                                            eget, imperdiet nec, imperdiet iaculis, ipsum...
-                                        </p>
-                                    </li>
-                                </ul>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="card flex-fill">
-                    <div class="card-header">
-                        <h5 class="card-title mb-0" style="color: #FFC3A8;">Ambasador</h5>
-                    </div>
-                    <div style="height: 27.563rem;">
-
                     </div>
                 </div>
             </div>
-        </main>
 
-        <?php require_once 'footer.php'; ?>
-    </div>
-</div>
-<script src="../src/assets/js/admin.js"></script>
-<script>
-    document.addEventListener("DOMContentLoaded", function() {
-        // Bar chart
-        new Chart(document.getElementById("chartjs-dashboard-bar"), {
-            type: "bar",
-            data: {
-                labels: [
-                    "Jan",
-                    "Feb",
-                    "Mar",
-                    "Apr",
-                    "May",
-                    "Jun",
-                    "Jul",
-                    "Aug",
-                    "Sep",
-                    "Oct",
-                    "Nov",
-                    "Dec",
-                ],
-                datasets: [{
-                        label: "Last year",
-                        backgroundColor: "#FD690080",
-                        borderColor: "#FD690080",
-                        hoverBackgroundColor: "#FD690080",
-                        hoverBorderColor: "#FD690080",
-                        data: [54, 67, 41, 55, 62, 45, 55, 73, 60, 76, 48, 79],
-                        barPercentage: 0.325,
-                        categoryPercentage: 0.5,
-                    },
-                    {
-                        label: "This year",
-                        backgroundColor: "#FDB98980",
-                        borderColor: "#FDB98980",
-                        hoverBackgroundColor: "#FDB98980",
-                        hoverBorderColor: "#FDB98980",
-                        data: [69, 66, 24, 48, 52, 51, 44, 53, 62, 79, 51, 68],
-                        barPercentage: 0.325,
-                        categoryPercentage: 0.5,
-                    },
-                ],
-            },
-            options: {
-                maintainAspectRatio: false,
-                cornerRadius: 15,
-                legend: {
-                    display: false,
-                },
-                scales: {
-                    yAxes: [{
-                        gridLines: {
-                            display: false,
-                        },
-                        ticks: {
-                            stepSize: 20,
-                        },
-                        stacked: true,
-                    }, ],
-                    xAxes: [{
-                        gridLines: {
-                            color: "transparent",
-                        },
-                        stacked: true,
-                    }, ],
-                },
-            },
-        });
-    });
-</script>
-<script>
-    // Workaround for theme switch re-initialization issue
-    var isTempusDominusInitialized = false;
-    document.addEventListener("DOMContentLoaded", function() {
-        if (isTempusDominusInitialized) {
-            return;
-        }
-        isTempusDominusInitialized = true;
-        new tempusDominus.TempusDominus(
-            document.getElementById("calendar-dashboard"), {
-                display: {
-                    inline: true,
-                    components: {
-                        clock: false,
-                        hours: false,
-                        minutes: false,
-                    },
-                },
-            }
-        );
-    });
-</script>
-<script>
-    document.addEventListener("DOMContentLoaded", function() {
-        // Pie chart
-        new Chart(document.getElementById("chartjs-dashboard-pie"), {
-            type: "pie",
-            data: {
-                labels: ["Direct", "Affiliate", "E-mail", "Other"],
-                datasets: [{
-                    data: [2602, 1253, 541, 1465],
-                    backgroundColor: [
-                        window.cssVariables.primary,
-                        window.cssVariables.warning,
-                        window.cssVariables.danger,
-                        "#E8EAED",
-                    ],
-                }, ],
-            },
-            options: {
-                responsive: !window.MSInputMethodContext,
-                maintainAspectRatio: false,
-                cutoutPercentage: 70,
-                legend: {
-                    display: false,
-                },
-                elements: {
-                    arc: {
-                        borderWidth: 5,
-                        borderColor: window.cssVariables.secondaryBg,
-                    },
-                },
-            },
-        });
-    });
-</script>
-<script>
-    document.addEventListener("DOMContentLoaded", function() {
-        $("#datatables-dashboard-projects").DataTable({
-            destroy: true,
-            pageLength: 6,
-            lengthChange: false,
-            bFilter: false,
-            autoWidth: false,
-        });
-    });
-</script>
-</body>
+            <!-- Card 2: Currently Rented -->
+            <div class="col-12 col-sm-6 col-lg-3">
+                <div class="card p-4 rounded-4 shadow-sm border-start border-5 border-info h-100 metric-card">
+                    <div class="d-flex justify-content-between align-items-start">
+                        <div>
+                            <p class="text-sm text-secondary mb-1 fw-medium">Currently Rented</p>
+                            <p class="fs-1 fw-bold text-dark mb-0">168</p>
+                            <span class="small text-info fw-semibold mt-1 d-block">+14% last month</span>
+                        </div>
+                        <div class="p-3 rounded-5 bg-info bg-opacity-10 text-info">
+                            <i class="bi bi-arrow-repeat fs-4"></i>
+                        </div>
+                    </div>
+                </div>
+            </div>
 
-</html>
+            <!-- Card 3: Available Cars -->
+            <div class="col-12 col-sm-6 col-lg-3">
+                <div class="card p-4 rounded-4 shadow-sm border-start border-5 border-success h-100 metric-card">
+                    <div class="d-flex justify-content-between align-items-start">
+                        <div>
+                            <p class="text-sm text-secondary mb-1 fw-medium">Available Today</p>
+                            <h3 class="fs-1 fw-bold text-dark mb-0">42</h3>
+                            <span class="small text-secondary mt-2 d-block">Ready for booking</span>
+                        </div>
+                        <div class="p-3 rounded-5 bg-success bg-opacity-10 text-success">
+                            <i class="bi bi-check-circle-fill fs-4"></i>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Card 4: Monthly Revenue Target -->
+            <div class="col-12 col-sm-6 col-lg-3">
+                <div class="card p-4 rounded-4 shadow-sm border-start border-5 border-warning h-100 metric-card">
+                    <div class="d-flex justify-content-between align-items-start">
+                        <div>
+                            <p class="text-sm text-secondary mb-1 fw-medium">Monthly Revenue</p>
+                            <h3 class="fw-bold text-dark mb-0" style="font-size: 1.9rem;">$124,500</h3>
+                            <span class="small text-danger fw-semibold mt-4 d-block">-2.1% from target</span>
+                        </div>
+                        <div class="p-3 rounded-5 bg-warning bg-opacity-10 text-warning">
+                            <i class="bi bi-currency-dollar fs-4"></i>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 2. Charts and Utilization Section -->
+        <section class="row g-4 mb-5">
+            <!-- Utilization Chart (Placeholder) -->
+            <div class="col-12 col-lg-8">
+                <div class="card p-4 rounded-4 shadow-sm h-100">
+                    <h3 class="fs-5 fw-semibold text-dark mb-4">Fleet Utilization Rate (Last 30 Days)</h3>
+                    <div class="d-flex align-items-center justify-content-center text-secondary bg-light border border-dashed rounded-3" style="min-height: 300px;">
+                        [Placeholder for Area Chart showing 80% average utilization]
+                    </div>
+                    <div class="mt-4 d-flex justify-content-between small text-secondary">
+                        <p class="mb-0">Average Rate: <span class="fw-bold text-info">80%</span></p>
+                        <p class="mb-0">Highest Utilization: <span class="fw-bold">95%</span></p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Booking Channel Split (Placeholder) -->
+            <div class="col-12 col-lg-4">
+                <div class="card p-4 rounded-4 shadow-sm h-100">
+                    <h3 class="fs-5 fw-semibold text-dark mb-4">Bookings by Channel</h3>
+                    <div class="d-flex align-items-center justify-content-center text-secondary bg-light border border-dashed rounded-3" style="min-height: 300px;">
+                        [Placeholder for Pie Chart showing Channel Split]
+                    </div>
+                    <ul class="list-unstyled mt-4 small space-y-2">
+                        <li class="d-flex justify-content-between align-items-center text-dark py-1">Online Direct: <span class="fw-semibold text-rental-primary">45%</span></li>
+                        <li class="d-flex justify-content-between align-items-center text-dark py-1">Third-Party Aggregator: <span class="fw-semibold text-info">30%</span></li>
+                        <li class="d-flex justify-content-between align-items-center text-dark py-1">Phone/Walk-in: <span class="fw-semibold text-success">25%</span></li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+        <!-- 3. Recent Bookings Table -->
+        <section class="card p-4 rounded-4 shadow-sm">
+            <h3 class="fs-5 fw-semibold text-dark mb-4">Recent & Upcoming Bookings</h3>
+            <div class="table-responsive rounded-3 border border-light">
+                <table class="table table-striped table-hover align-middle mb-0">
+                    <thead class="table-light">
+                        <tr>
+                            <th scope="col" class="px-3 py-3 text-start text-xs text-secondary text-uppercase">Booking ID</th>
+                            <th scope="col" class="px-3 py-3 text-start text-xs text-secondary text-uppercase">Customer</th>
+                            <th scope="col" class="px-3 py-3 text-start text-xs text-secondary text-uppercase">Vehicle</th>
+                            <th scope="col" class="px-3 py-3 text-start text-xs text-secondary text-uppercase">Status</th>
+                            <th scope="col" class="px-3 py-3 text-start text-xs text-secondary text-uppercase">Pickup/Dropoff</th>
+                            <th scope="col" class="px-3 py-3 text-start text-xs text-secondary text-uppercase">Total</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <!-- Row 1 -->
+                        <tr>
+                            <td class="px-3 py-3 text-sm fw-medium text-dark">#BK9001</td>
+                            <td class="px-3 py-3 text-sm text-secondary">Jane Smith</td>
+                            <td class="px-3 py-3 text-sm text-secondary">BMW 3 Series</td>
+                            <td class="px-3 py-3">
+                                <span class="badge text-bg-warning text-uppercase py-1 px-2 rounded-pill fw-semibold">Upcoming</span>
+                            </td>
+                            <td class="px-3 py-3 text-sm text-secondary">11/7 - 11/10</td>
+                            <td class="px-3 py-3 text-sm fw-semibold text-rental-primary">$450.00</td>
+                        </tr>
+                        <!-- Row 2 -->
+                        <tr>
+                            <td class="px-3 py-3 text-sm fw-medium text-dark">#BK9000</td>
+                            <td class="px-3 py-3 text-sm text-secondary">Michael Lee</td>
+                            <td class="px-3 py-3 text-sm text-secondary">Toyota Corolla</td>
+                            <td class="px-3 py-3">
+                                <span class="badge text-bg-success text-uppercase py-1 px-2 rounded-pill fw-semibold">Completed</span>
+                            </td>
+                            <td class="px-3 py-3 text-sm text-secondary">11/1 - 11/5</td>
+                            <td class="px-3 py-3 text-sm fw-semibold text-rental-primary">$280.00</td>
+                        </tr>
+                        <!-- Row 3 -->
+                        <tr>
+                            <td class="px-3 py-3 text-sm fw-medium text-dark">#BK8999</td>
+                            <td class="px-3 py-3 text-sm text-secondary">Alex Johnson</td>a
+                            <td class="px-3 py-3 text-sm text-secondary">Ford Transit Van</td>
+                            <td class="px-3 py-3">
+                                <span class="badge text-bg-danger text-uppercase py-1 px-2 rounded-pill fw-semibold">Overdue</span>
+                            </td>
+                            <td class="px-3 py-3 text-sm text-secondary">10/25 - 11/6</td>
+                            <td class="px-3 py-3 text-sm fw-semibold text-rental-primary">$920.00</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+            <div class="mt-4 d-flex justify-content-end">
+                <button class="btn btn-link text-decoration-none text-rental-primary fw-medium transition hover-bg-rental-dark p-2 rounded-3">View All Bookings &rarr;</button>
+            </div>
+        </section>
+
+    </main>
+
+    <!-- Load Bootstrap 5 JS Bundle -->
+<?php 
+    require_once 'footer.php';
+?>

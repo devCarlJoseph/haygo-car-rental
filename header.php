@@ -8,22 +8,18 @@
     <link rel="stylesheet" href="src/assets/css/bootstrap.css"
         xintegrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
     <link rel="stylesheet" href="src/assets/css/style.css">
-    <link rel="stylesheet" href="src/assets/css/hero.css" >
-    <link rel="stylesheet" href="src/assets/css/about.css" >
+    <link rel="stylesheet" href="src/assets/css/hero.css">
+    <link rel="stylesheet" href="src/assets/css/about.css">
     <link rel="stylesheet" href="src/assets/css/contact.css">
     <link rel="stylesheet" href="src/assets/css/help.css">
     <link rel="stylesheet" href="src/assets/css/blog.css">
     <link rel="stylesheet" href="src/assets/css/fleet.css">
     <link rel="stylesheet" href="src/assets/css/footer.css">
-    
-    
+    <link rel="stylesheet" href="src/assets/css/remix_icon.css">
+    <link rel="stylesheet" href="src/assets/css/fontawesome.css" />
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
-    <link href="https://cdn.jsdelivr.net/npm/remixicon@4.3.0/fonts/remixicon.css" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css"
-        integrity="sha512-2SwdPD6INVrV/lHTZbO2nodKhrnDdJK9/kg2XD1r9uGqPo1cUbujc+IYdlYdEErWNu69gVcYgdxlmVmzTWnetw=="
-        crossorigin="anonymous" referrerpolicy="no-referrer" />
 
-    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="src/assets/js/jquery.js"></script>
 
 </head>
 
@@ -33,7 +29,7 @@
         <div class="container-fluid px-4 px-lg-5">
             <nav class="navbar navbar-expand-lg navbar-light py-2">
                 <!-- Logo -->
-                 <img src="src/assets/images/logo.png" class="navbar-logo">
+                <img src="src/assets/images/logo.png" class="navbar-logo">
                 <a href="#" class="navbar-brand fs-3 fw-bolder haygo-primary-text">
                     Hay Go
                 </a>

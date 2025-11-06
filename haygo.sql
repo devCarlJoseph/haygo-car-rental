@@ -9,40 +9,33 @@ CREATE TABLE if NOT EXISTS haygo_admins (
 
 CREATE TABLE if NOT EXISTS customers (
     id INT AUTO_INCREMENT PRIMARY KEY,
-    f_name VARCHAR(255) NOT NULL,
-    l_name VARCHAR(255) NOT NULL,
+    customer_name VARCHAR(255) NOT NULL,
     email VARCHAR(255) UNIQUE NOT NULL,
-    phone VARCHAR(20) NOT NULL,
+    phone VARCHAR(20) NOT NULL, 
     date_of_birth DATE NOT NULL
 );
 
 CREATE TABLE if NOT EXISTS vehicles (
     id INT AUTO_INCREMENT PRIMARY KEY,
     car_name VARCHAR(255) NOT NULL,
-    car_model VARCHAR(255) NOT NULL,
-    car_price DECIMAL(10, 2) NOT NULL
+    car_type VARCHAR(255) NOT NULL,
+    car_description VARCHAR(255) NOT NULL,
+    seats INT NOT NULL,
+    bags INT NOT NULL,
+    transmission VARCHAR(50) NOT NULL,
+    car_price VARCHAR(50) NOT NULL,
+    car_image VARCHAR(250) NOT NULL
 );
 
 CREATE TABLE if NOT EXISTS bookings (
     id INT AUTO_INCREMENT PRIMARY KEY,
     customer_name VARCHAR(255) NOT NULL,
-    customer_id INT NOT NULL,
-    vehicle_id INT NOT NULL,
-    booking_date DATE NOT NULL,
-    return_date DATE NOT NULL,
-    FOREIGN KEY (customer_id) REFERENCES customers(id),
-    FOREIGN KEY (vehicle_id) REFERENCES vehicles(id)
+    email VARCHAR(255) NOT NULL,
+    phone_num INT NOT NULL,
+    lic_id VARCHAR(255),
+    vehicle_name VARCHAR(255) NOT NULL,
+    booking_date DATE NOT NULL
 );
-
-CREATE TABLE if NOT EXISTS transactions (
-    id INT AUTO_INCREMENT PRIMARY KEY,
-    booking_id INT NOT NULL,
-    transaction_date DATE NOT NULL,
-    amount DECIMAL(10, 2) NOT NULL,
-    FOREIGN KEY (booking_id) REFERENCES bookings(id)
-);
-
-
 
 -- Sample query to retrieve booking details along with customer and vehicle information
 SELECT
