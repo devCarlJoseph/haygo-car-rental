@@ -19,7 +19,7 @@ require_once 'header.php';
                 <!-- Search Module Container -->
                 <div class="search-module p-4 p-md-5 mx-auto" style="max-width: 1000px;">
                     <h2 class="fs-4 fw-bold mb-4 text-center haygo-primary-text">Find Your Cebu Ride</h2>
-                    <form id="rentalSearchForm" class="row g-3 g-lg-4 align-items-end">
+                    <form action="fleet.php" id="rentalSearchForm" class="row g-3 g-lg-4 align-items-end" method="get">
 
                         <!-- Location Input -->
                         <div class="col-12 col-md-5 col-lg-4">

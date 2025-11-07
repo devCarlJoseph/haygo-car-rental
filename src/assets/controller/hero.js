@@ -143,7 +143,7 @@ function renderCalendar() {
 function handleDateClick(event) {
     // We can use $(this).data('date') if we bound the event with jQuery's .on(),
     // but since the listener is on the native element inside renderMonth, we use the native event.currentTarget
-    const dateString = event.currentTarget.dataset.date; 
+    const dateString = event.currentTarget.dataset.date;
     const newDate = new Date(dateString);
     newDate.setHours(0, 0, 0, 0); // Normalize
 
@@ -286,8 +286,8 @@ $searchForm.on('submit', (e) => { // jQuery form submission
 
     if (!pickupDateValue || !dropoffDateValue) {
         $messageEl.text('Error: Please select both a pick-up and drop-off date using the calendar.')
-                  .removeClass('text-success')
-                  .addClass('text-danger');
+            .removeClass('text-success')
+            .addClass('text-danger');
         return;
     }
 
@@ -297,15 +297,15 @@ $searchForm.on('submit', (e) => { // jQuery form submission
     // Basic validation check
     if (pickupDate >= dropoffDate) {
         $messageEl.text('Error: Drop-off date must be after the Pick-up date.')
-                  .removeClass('text-success')
-                  .addClass('text-danger');
+            .removeClass('text-success')
+            .addClass('text-danger');
         return;
     }
 
     // Mock submission success message
     $messageEl.text('Searching for available vehicles in Cebu...')
-              .removeClass('haygo-error')
-              .addClass('haygo-success');
+        .removeClass('haygo-error')
+        .addClass('haygo-success');
 
     // Simulate navigation/search process
     const pickupLocation = $('#pickupLocation').val();
@@ -342,7 +342,9 @@ function showCustomModal(content) {
                                 ${contentHtml}
                             </div>
                             <div class="modal-footer border-0 pt-0">
-                                <button type="button" class="btn btn-haygo-primary text-haygo-dark rounded-pill w-100" data-bs-dismiss="modal"><a class="text-decoration-none text-black" href="fleet.php">OK</a></button>
+                               <button type="button" onclick="window.location.href='fleet.php'" class="btn btn-haygo-primary text-haygo-dark rounded-pill w-100" data-bs-dismiss="modal">
+                                    OK
+                                </button>
                             </div>
                         </div>
                     </div>

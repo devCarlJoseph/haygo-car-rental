@@ -15,7 +15,7 @@ CREATE TABLE if NOT EXISTS customers (
     date_of_birth DATE NOT NULL
 );
 
-CREATE TABLE if NOT EXISTS vehicles (
+CREATE TABLE IF NOT EXISTS vehicles (
     id INT AUTO_INCREMENT PRIMARY KEY,
     car_name VARCHAR(255) NOT NULL,
     car_type VARCHAR(255) NOT NULL,
@@ -23,19 +23,26 @@ CREATE TABLE if NOT EXISTS vehicles (
     seats INT NOT NULL,
     bags INT NOT NULL,
     transmission VARCHAR(50) NOT NULL,
-    car_price VARCHAR(50) NOT NULL,
-    car_image VARCHAR(250) NOT NULL
+    car_price DECIMAL(10,2) NOT NULL,
+    car_image VARCHAR(250) NOT NULL,
+    status ENUM('available', 'unavailable') NOT NULL DEFAULT 'available'
 );
 
-CREATE TABLE if NOT EXISTS bookings (
+
+CREATE TABLE IF NOT EXISTS bookings (
     id INT AUTO_INCREMENT PRIMARY KEY,
     customer_name VARCHAR(255) NOT NULL,
     email VARCHAR(255) NOT NULL,
-    phone_num INT NOT NULL,
+    phone_num VARCHAR(20) NOT NULL,
     lic_id VARCHAR(255),
-    vehicle_name VARCHAR(255) NOT NULL,
-    booking_date DATE NOT NULL
+    vehicle_id INT NOT NULL,
+    booking_date DATE NOT NULL,
+    return_date DATE NOT NULL,
+    total_price DECIMAL(10,2) NOT NULL,
+    status ENUM('pending', 'confirmed', 'completed', 'cancelled') NOT NULL DEFAULT 'pending',
+    FOREIGN KEY (vehicle_id) REFERENCES vehicles(id)
 );
+
 
 -- Sample query to retrieve booking details along with customer and vehicle information
 SELECT

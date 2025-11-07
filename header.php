@@ -15,8 +15,8 @@
     <link rel="stylesheet" href="src/assets/css/blog.css">
     <link rel="stylesheet" href="src/assets/css/fleet.css">
     <link rel="stylesheet" href="src/assets/css/footer.css">
-    <link rel="stylesheet" href="src/assets/css/remix_icon.css">
-    <link rel="stylesheet" href="src/assets/css/fontawesome.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/remixicon/4.6.0/remixicon.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css" integrity="sha512-2SwdPD6INVrV/lHTZbO2nodKhrnDdJK9/kg2XD1r9uGqPo1cUbujc+IYdlYdEErWNu69gVcYgdxlmVmzTWnetw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
 
     <script src="src/assets/js/jquery.js"></script>

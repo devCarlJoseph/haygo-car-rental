@@ -18,8 +18,7 @@ require_once 'header.php';
     </div>
 
     <div class="mb-5 p-2 d-none d-lg-block">
-        <h1 class="fs-4 fw-bolder tracking-tight text-rental-primary">CAR<span class="text-white">RENT</span></h1>
-        <p class="text-sm text-secondary mb-0">Management Suite</p>
+        <h1 class="fs-4 fw-bolder tracking-tight text-center text-rental-primary">HAYGO</h1>
     </div>
 
     <nav class="flex-grow-1">
@@ -83,11 +82,6 @@ require_once 'header.php';
             <h2 class="fs-2 fw-bold text-dark">Bookings Management</h2>
             <p class="text-sm text-secondary">View, filter, and manage all current and past vehicle reservations.</p>
         </div>
-        <!-- Add New Booking Button -->
-        <button class="btn btn-lg bg-rental-primary text-white hover-bg-rental-dark d-flex align-items-center gap-2 shadow-lg border-0 rounded-3">
-            <i class="bi bi-calendar-plus fs-5"></i>
-            <span>Create New Booking</span>
-        </button>
     </header>
 
     <!-- Search and Filter Bar -->

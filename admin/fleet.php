@@ -1,5 +1,14 @@
-<?php 
-    require_once 'header.php';
+<?php
+require_once 'header.php';
+require_once '../config/config.php';
+
+
+$query = "SELECT * FROM vehicles ORDER BY id DESC";
+$result = $conn->query($query);
+
+
+
+
 ?>
 
 <body class="min-vh-100">
@@ -14,14 +23,8 @@
     <aside class="offcanvas offcanvas-start bg-dark text-white p-4 d-flex flex-column shadow-lg" tabindex="-1"
         id="sidebar-offcanvas" aria-labelledby="offcanvasLabel" data-bs-scroll="true">
 
-        <div class="offcanvas-header d-lg-none p-0 pb-3 mb-4 border-bottom border-secondary-subtle">
-            <h5 class="offcanvas-title fs-4 fw-bolder text-rental-primary" id="offcanvasLabel">CAR<span class="text-white">RENT</span></h5>
-            <button type="button" class="btn-close btn-close-white text-reset" data-bs-dismiss="offcanvas" aria-label="Close"></button>
-        </div>
-
         <div class="mb-5 p-2 d-none d-lg-block">
-            <h1 class="fs-4 fw-bolder tracking-tight text-rental-primary">CAR<span class="text-white">RENT</span></h1>
-            <p class="text-sm text-secondary mb-0">Management Suite</p>
+            <h1 class="fs-4 fw-bolder tracking-tight text-center text-rental-primary">HAYGO</h1>
         </div>
 
         <nav class="flex-grow-1">
@@ -121,7 +124,7 @@
 
         <!-- Vehicle List Table -->
         <section class="card p-4 rounded-4 shadow-sm">
-            <h3 class="fs-5 fw-semibold text-dark mb-4">Current Vehicle Inventory (<span id="vehicle-count">6</span> Total)</h3>
+            <h3 class="fs-5 fw-semibold text-dark mb-4">Current Vehicle Inventory</h3>
             <div class="table-responsive rounded-3 border border-light">
                 <table class="table table-striped table-hover align-middle mb-0">
                     <thead class="table-light">
@@ -129,21 +132,66 @@
                             <th scope="col" class="px-3 py-3 text-start text-xs text-secondary text-uppercase">Image</th>
                             <th scope="col" class="px-3 py-3 text-start text-xs text-secondary text-uppercase">Car Name & Description</th>
                             <th scope="col" class="px-3 py-3 text-start text-xs text-secondary text-uppercase">Type</th>
-                            <th scope="col" class="px-3 py-3 text-start text-xs text-secondary text-uppercase">Specs</th>
+                            <th scope="col" class="px-3 py-3 text-start text-xs text-secondary text-uppercase">Transmission</th>
+                            <th scope="col" class="px-3 py-3 text-center text-xs text-secondary text-uppercase">Specs</th>
                             <th scope="col" class="px-3 py-3 text-start text-xs text-secondary text-uppercase">Daily Price</th>
-                            <th scope="col" class="px-3 py-3 text-start text-xs text-secondary text-uppercase">Action</th>
+                            <th scope="col" class="px-3 py-3 text-center text-xs text-secondary text-uppercase">Action</th>
                         </tr>
                     </thead>
-                    <!-- The table body will be populated dynamically by JavaScript -->
+
                     <tbody id="vehicleTableBody">
-                        <!-- Vehicle rows will be inserted here -->
+                        <?php while ($data = $result->fetch_assoc()): ?>
+                            <tr>
+                                <td>
+                                    <img src="../uploads/vehicles/<?php echo $data['car_image']; ?>"
+                                        alt="Car Image"
+                                        style="width: 70px; height: 50px; object-fit: contain; border-radius: 6px;">
+                                </td>
+
+                                <td>
+                                    <strong><?php echo $data['car_name']; ?></strong><br>
+                                    <span class="text-muted small"><?php echo $data['car_description']; ?></span>
+                                </td>
+
+                                <td><?php echo $data['car_type']; ?></td>
+
+                                <td class="text-center">
+                                    <?php echo $data['transmission']; ?>
+                                </td>
+
+                                <td class="text-center">
+                                    <?php echo $data['seats']; ?> Seats •
+                                    <?php echo $data['bags']; ?> Bags
+                                </td>
+
+                                <td class="text-center">₱<?php echo number_format($data['car_price'], 2); ?></td>
+
+                                <td class="text-center">
+                                    <button class="btn btn-sm btn-outline-primary editBtn"
+                                        data-id="<?php echo $data['id']; ?>"
+                                        data-name="<?php echo $data['car_name']; ?>"
+                                        data-desc="<?php echo $data['car_description']; ?>"
+                                        data-type="<?php echo $data['car_type']; ?>"
+                                        data-trans="<?php echo $data['transmission']; ?>"
+                                        data-seats="<?php echo $data['seats']; ?>"
+                                        data-bags="<?php echo $data['bags']; ?>"
+                                        data-price="<?php echo $data['car_price']; ?>"
+                                        data-bs-toggle="modal"
+                                        data-bs-target="#editVehicleModal">
+                                        Edit
+                                    </button>
+                                    <button class="btn btn-sm btn-outline-danger" onclick="confirmDelete(<?php echo $data['id']; ?>)">Delete</button>
+
+                                </td>
+                            </tr>
+                        <?php endwhile; ?>
                     </tbody>
                 </table>
             </div>
 
             <!-- Pagination/View All Footer -->
             <div class="mt-4 d-flex justify-content-between align-items-center">
-                <span id="showing-count" class="text-sm text-secondary">Showing 6 vehicles</span>
+                <span id="showing-count" class="text-sm text-secondary">Showing vehicles</span>
                 <nav aria-label="Page navigation">
                     <ul class="pagination pagination-sm mb-0">
                         <li class="page-item disabled"><a class="page-link" href="#">Previous</a></li>
@@ -157,6 +205,81 @@
 
     </main>
 
+    <!-- Modal for Edit -->
+
+    <div class="modal fade" id="editVehicleModal" tabindex="-1" aria-hidden="true">
+        <div class="modal-dialog modal-lg">
+            <form action="../actions/update_vehicle.php" method="post">
+                <div class="modal-content">
+
+                    <div class="modal-header">
+                        <h5 class="modal-title fw-semibold">Edit Vehicle</h5>
+                        <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+                    </div>
+
+                    <div class="modal-body row g-3">
+
+                        <input type="hidden" id="edit_id" name="id">
+
+                        <div class="col-md-6">
+                            <label class="form-label fw-semibold">Car Name</label>
+                            <input type="text" id="edit_name" name="car_name" class="form-control" required>
+                        </div>
+
+                        <div class="col-md-6">
+                            <label class="form-label fw-semibold">Vehicle Type</label>
+                            <select id="edit_type" name="car_type" class="form-select" required>
+                                <option value="Sedan">Sedan</option>
+                                <option value="SUV">SUV</option>
+                                <option value="Van">Van</option>
+                                <option value="Luxury">Luxury</option>
+                                <option value="Electric">Electric</option>
+                            </select>
+                        </div>
+
+                        <div class="col-12">
+                            <label class="form-label fw-semibold">Description</label>
+                            <input type="text" id="edit_desc" name="car_description" class="form-control" required>
+                        </div>
+
+                        <div class="col-md-6">
+                            <label class="form-label fw-semibold">Transmission</label>
+                            <select id="edit_trans" name="transmission" class="form-select" required>
+                                <option value="Automatic">Automatic</option>
+                                <option value="Manual">Manual</option>
+                            </select>
+                        </div>
+
+                        <div class="col-md-3">
+                            <label class="form-label fw-semibold">Seats</label>
+                            <input type="number" id="edit_seats" name="seats" class="form-control" required>
+                        </div>
+
+                        <div class="col-md-3">
+                            <label class="form-label fw-semibold">Bags</label>
+                            <input type="number" id="edit_bags" name="bags" class="form-control" required>
+                        </div>
+
+                        <div class="col-md-6">
+                            <label class="form-label fw-semibold">Daily Price</label>
+                            <div class="input-group">
+                                <span class="input-group-text">₱</span>
+                                <input type="number" id="edit_price" name="car_price" class="form-control" required step="0.01">
+                            </div>
+                        </div>
+
+                    </div>
+
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-outline-secondary" data-bs-dismiss="modal">Cancel</button>
+                        <button type="submit" class="btn btn-primary" name="update">Update Vehicle</button>
+                    </div>
+
+                </div>
+            </form>
+        </div>
+    </div>
+
     <!-- Modal for Adding New Vehicle -->
     <div class="modal fade" id="addVehicleModal" tabindex="-1" aria-labelledby="addVehicleModalLabel" aria-hidden="true">
         <div class="modal-dialog modal-lg modal-dialog-centered">
@@ -165,42 +288,41 @@
                     <h5 class="modal-title fw-bold" id="addVehicleModalLabel">Add New Vehicle to Catalog</h5>
                     <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                 </div>
-                <form id="addNewVehicleForm">
+                <form action="../actions/new_vehicle.php" id="addNewVehicleForm" method="post" enctype="multipart/form-data">
                     <div class="modal-body p-4">
                         <div class="row g-3">
-                            <!-- Car Name (Make/Model/Year combined) -->
+
                             <div class="col-12">
                                 <label for="carName" class="form-label fw-semibold">Car Name</label>
-                                <input type="text" class="form-control rounded-3" id="carName" required placeholder="Make, Model, and Year">
+                                <input type="text" class="form-control rounded-3" id="carName" name="car_name" required placeholder="Make, Model, and Year">
                             </div>
 
-                            <!-- Car Description -->
                             <div class="col-12">
                                 <label for="carDescription" class="form-label fw-semibold">Car Description</label>
-                                <input type="text" class="form-control rounded-3" id="carDescription" required placeholder="A short, catchy description for renters.">
+                                <input type="text" class="form-control rounded-3" id="carDescription" name="car_description" required placeholder="A short, catchy description for renters.">
                             </div>
 
-                            <!-- Seats & Bags -->
                             <div class="col-md-6">
                                 <label for="seats" class="form-label fw-semibold">Number of Seats</label>
-                                <input type="number" class="form-control rounded-3" id="seats" required min="1" max="15" value="5">
-                            </div>
-                            <div class="col-md-6">
-                                <label for="bags" class="form-label fw-semibold">Number of Bags</label>
-                                <input type="number" class="form-control rounded-3" id="bags" required min="0" max="10" value="2">
+                                <input type="number" class="form-control rounded-3" id="seats" name="seats" required min="1" max="15" value="5">
                             </div>
 
-                            <!-- Transmission & Type -->
+                            <div class="col-md-6">
+                                <label for="bags" class="form-label fw-semibold">Number of Bags</label>
+                                <input type="number" class="form-control rounded-3" id="bags" name="bags" required min="0" max="10" value="2">
+                            </div>
+
                             <div class="col-md-6">
                                 <label for="transmission" class="form-label fw-semibold">Transmission</label>
-                                <select id="transmission" class="form-select rounded-3" required>
+                                <select id="transmission" class="form-select rounded-3" name="transmission" required>
                                     <option value="Automatic">Automatic</option>
                                     <option value="Manual">Manual</option>
                                 </select>
                             </div>
+
                             <div class="col-md-6">
                                 <label for="carType" class="form-label fw-semibold">Vehicle Type</label>
-                                <select id="carType" class="form-select rounded-3" required>
+                                <select id="carType" class="form-select rounded-3" name="car_type" required>
                                     <option value="">Choose...</option>
                                     <option value="Sedan">Sedan</option>
                                     <option value="SUV">SUV</option>
@@ -210,34 +332,35 @@
                                 </select>
                             </div>
 
-                            <!-- Daily Price -->
                             <div class="col-md-6">
                                 <label for="carPrice" class="form-label fw-semibold">Daily Rental Price</label>
                                 <div class="input-group">
-                                    <span class="input-group-text rounded-start-3">$</span>
-                                    <input type="number" class="form-control rounded-end-3" id="carPrice" required min="1" placeholder="e.g., 85.00">
+                                    <span class="input-group-text rounded-start-3">₱</span>
+                                    <input type="number" class="form-control rounded-end-3" id="carPrice" name="car_price" required min="1" step="0.01" placeholder="e.g., 2500.00">
                                 </div>
                             </div>
 
-                            <!-- Car Image (Placeholder for database path) -->
                             <div class="col-md-6">
                                 <label for="carImage" class="form-label fw-semibold">Car Image</label>
-                                <input type="file" class="form-control rounded-3" id="carImage" placeholder="/img/camry.jpg">
+                                <input type="file" class="form-control rounded-3" id="carImage" name="car_image" required>
                             </div>
+
                         </div>
                     </div>
+
                     <div class="modal-footer d-flex justify-content-between">
                         <button type="button" class="btn btn-outline-secondary rounded-3" data-bs-dismiss="modal">Cancel</button>
-                        <button type="submit" class="btn bg-rental-primary text-white hover-bg-rental-dark rounded-3">
+                        <button type="submit" name="submit" class="btn bg-rental-primary text-white hover-bg-rental-dark rounded-3">
                             <i class="bi bi-save me-2"></i>Save Vehicle
                         </button>
                     </div>
                 </form>
+
             </div>
         </div>
     </div>
 
 
-<?php 
+    <?php
     require_once 'footer.php';
-?>
+    ?>

@@ -1,16 +1,4 @@
 
-// --- 1. Car Data ---
-const carData = [
-    // IMPORTANT: Replace the dummy image path with your actual image path (e.g., '../images/vios.jpg')
-    { id: 1, name: 'Toyota Vios', type: 'Sedan', description: 'Economy Sedan (2023 Model)', seats: 4, bags: 2, transmission: 'Automatic', price: 1500, tag: 'Budget Pick', image: 'src/assets/images/vios.jpg' },
-    { id: 2, name: 'Nissan Almera', type: 'Sedan', description: 'Comfort Sedan (2024 Model)', seats: 5, bags: 3, transmission: 'Automatic', price: 1800, tag: null, image: 'src/assets/images/nissan.avif' },
-    { id: 3, name: 'Toyota Rush', type: 'SUV', description: 'Crossover SUV (7 Seater)', seats: 7, bags: 4, transmission: 'Automatic', price: 2500, tag: 'Popular', image: 'src/assets/images/toyota rush.jpg' },
-    { id: 4, name: 'Montero Sport', type: 'SUV', description: 'Premium SUV (7 Seater)', seats: 7, bags: 5, transmission: 'Automatic', price: 3200, tag: null, image: 'src/assets/images/montero sport.avif' },
-    { id: 5, name: 'Hyundai Starex', type: 'Van', description: 'Family/Tour Van (10 Seater)', seats: 10, bags: 6, transmission: 'Manual', price: 4500, tag: 'High Capacity', image: 'src/assets/images/hyundai starex.jpeg' },
-    { id: 6, name: 'Honda City', type: 'Sedan', description: 'Standard Sedan (2022 Model)', seats: 5, bags: 3, transmission: 'Automatic', price: 1900, tag: null, image: 'src/assets/images/honda city.avif' },
-    { id: 7, name: 'Suzuki Swift', type: 'Hatchback', description: 'City Hatchback (2023 Model)', seats: 4, bags: 1, transmission: 'Manual', price: 1200, tag: 'Eco Friendly', image: 'src/assets/images/suzuki swift.jpg' },
-];
-
 // --- 2. Global State (Dates are now assumed/fixed) ---
 
 // UPDATED: Total steps is now 3
@@ -126,23 +114,6 @@ function renderCars(cars) {
         noResultsMessage.style.display = 'none';
     }
 
-    cars.forEach(car => {
-        const totalCarPrice = car.price;
-
-        // 🚗 UPDATED: Use the car.image property directly.
-        // Fallback to a default if the image property is somehow missing
-        const imageURL = car.image ? car.image : 'src/assets/images/vios.jpg';
-
-        // Build the badge HTML if a tag exists
-        const badgeHtml = car.tag
-            ? `<span class="badge ${car.tag === 'Popular' ? 'bg-haygo-blue text-white' : 'bg-haygo-lime text-haygo-dark'} fw-bold position-absolute top-0 ${car.id % 2 === 0 ? 'end-0' : 'start-0'} m-2">${car.tag}</span>`
-            : '';
-
-        const carHtml = `
-                    
-                `;
-        carListingsContainer.insertAdjacentHTML('beforeend', carHtml);
-    });
 }
 
 /**

@@ -1,9 +1,13 @@
 <?php
 require_once 'header.php';
+require_once 'config/config.php';
+
+$query = "SELECT * FROM vehicles";
+$result = $conn->query($query);
+
 ?>
 
 <main>
-    <!-- Fleet Hero Section -->
     <section class="hero-fleet">
         <div class="container text-center">
             <h1 class="display-4 fw-bolder mb-3 haygo-primary-text pt-5">Our Modern & Reliable Fleet</h1>
@@ -13,42 +17,32 @@ require_once 'header.php';
         </div>
     </section>
 
-    <!-- Main Content: Filters and Car Listings -->
     <section class="py-5">
         <div class="container">
             <div class="row g-4">
-
-                <!-- Sidebar Column (Refine Filters only) -->
                 <div class="col-lg-3 col-md-4">
 
-                    <!-- Refine Search Filters -->
                     <div class="filter-options card shadow-sm p-4 bg-white">
                         <h3 class="fs-5 fw-bold text-haygo-dark mb-3 border-bottom pb-2">Refine Search</h3>
 
-                        <!-- Search Bar -->
                         <div class="mb-4">
                             <label for="searchName" class="form-label small fw-semibold">Search by Name</label>
                             <input type="text" class="form-control form-control-sm rounded-pill" placeholder="e.g., Vios, Rush" id="searchName">
                         </div>
 
-                        <!-- Price Range Slider -->
                         <div class="mb-4">
                             <h4 class="fs-6 fw-semibold text-haygo-dark mb-3">Max Price (per day)</h4>
                             <input type="range" class="form-range" min="1000" max="5000" step="100" value="5000" id="priceRange">
                             <div class="small text-center"><span class="fw-bold text-haygo-blue" id="maxPriceDisplay">₱ 5,000</span></div>
                         </div>
-
-                        <!-- Reset Button -->
                         <button class="btn btn-sm f-button rounded-pill mt-2" onclick="resetFilters()">Reset Filters</button>
                     </div>
                 </div>
 
-                <!-- Car Listings Grid -->
+                <!-- Car Listings -->
                 <div class="col-lg-9 col-md-8">
 
-                    <!-- Quick Filter Row (Primary way to filter by type) -->
                     <div class="d-flex flex-wrap gap-2 mb-4">
-                        <!-- Note: 'active' class is added/removed by JS -->
                         <button class="btn f-button btn-sm filter-quick-btn" data-type="All" onclick="quickFilter('All')">All Types</button>
                         <button class="btn f-button btn-sm filter-quick-btn" data-type="Sedan" onclick="quickFilter('Sedan')">Sedan</button>
                         <button class="btn f-button btn-sm filter-quick-btn" data-type="SUV" onclick="quickFilter('SUV')">SUV / Crossover</button>
@@ -57,39 +51,40 @@ require_once 'header.php';
                     </div>
 
                     <!-- Car count display -->
-                    <h2 class="fs-4 fw-bold text-haygo-dark mb-4">Showing <span id="carCountDisplay">0</span> Available Vehicles</h2>
+                    <h2 class="fs-4 fw-bold text-haygo-dark mb-4">Showing Available Vehicles</h2>
 
-                    <!-- Listing container where cars will be injected -->
+
                     <div class="row g-4">
-                        <div class="col-sm-6 col-lg-4">
-                            <div class="card car-card shadow-sm h-100">
-                                <div class="text-center d-flex align-items-center justify-content-center"
-                                    style="background-image: <?php echo "test123"; ?>; background-size: cover; background-position: center; height: 200px;">
-                                </div>
-                                <div class="card-body p-4">
-                                    <h5 class="card-title fw-bold text-haygo-dark mb-1">Car Name</h5>
-                                    <p class="small text-secondary mb-3">Car Description</p>
-
-                                    <div class="d-flex justify-content-between small mb-3">
-                                        <span class="text-nowrap"><i class="ri-user-3-line haygo-accent me-1"></i> Car Seats</span>
-                                        <span class="text-nowrap"><i class="ri-briefcase-line haygo-accent me-1"></i> Car Bags</span>
-                                        <span class="text-nowrap"><i class="ri-gas-station-line haygo-accent me-1"></i> Car Transmission</span>
+                        <?php while ($data = $result->fetch_assoc()): ?>
+                            <div class="col-sm-6 col-lg-4">
+                                <div class="card car-card shadow-sm h-100">
+                                    <div class="text-center d-flex align-items-center justify-content-center"
+                                        style="background-image: url('uploads/vehicles/<?php echo $data['car_image']; ?>'); background-size: cover; background-position: center; height: 200px; background-repeat: no-repeat;">
                                     </div>
+                                    <div class="card-body p-4">
+                                        <h5 class="card-title fw-bold text-haygo-dark mb-1"><?php echo $data['car_name']; ?></h5>
+                                        <p class="small text-secondary mb-3"><?php echo $data['car_description']; ?></p>
 
-                                    <div class="text-center mt-3">
-                                        <p class="small fw-normal text-secondary mb-0">Total Price for  Days</p>
-                                        <p class="fs-3 fw-bolder text-haygo-blue mb-0">
-                                            Total Car Price
-                                        </p>
-                                        <button class="btn fleet-button rounded-pill w-100 mt-2" onclick="openBookingModal(${car.id})"
-                                            data-bs-toggle="modal" data-bs-target="#bookingModal">Select Car</button>
+                                        <div class="d-flex justify-content-evenly small mb-3">
+                                            <span class="text-nowrap"><i class="ri-user-3-line haygo-accent me-1"></i> <?php echo $data['seats']; ?></span>
+                                            <span class="text-nowrap"><i class="ri-briefcase-line haygo-accent me-1"></i><?php echo $data['bags']; ?></span>
+                                            <span class="text-nowrap"><i class="ri-gas-station-line haygo-accent me-1"></i><?php echo $data['transmission']; ?></span>
+                                        </div>
+
+                                        <div class="text-center mt-3">
+                                            <p class="small fw-normal text-secondary mb-0">Total Price for Days</p>
+                                            <p class="fs-3 fw-bolder text-haygo-blue mb-0">
+                                                ₱<?php echo number_format($data['car_price'], 2); ?>
+                                            </p>
+                                            <button class="btn fleet-button rounded-pill w-100 mt-2" onclick="openBookingModal()"
+                                                data-bs-toggle="modal" data-bs-target="#bookingModal">Select Car</button>
+                                        </div>
                                     </div>
                                 </div>
                             </div>
-                        </div>
+                        <?php endwhile; ?>
                     </div>
 
-                    <!-- No results message -->
                     <div id="no-results-message" class="text-center py-5" style="display: none;">
                         <i class="ri-alert-line display-4 text-secondary mb-3"></i>
                         <p class="lead text-secondary">No vehicles match your current filter criteria.</p>
