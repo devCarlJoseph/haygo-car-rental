@@ -36,6 +36,7 @@ CREATE TABLE IF NOT EXISTS bookings (
     phone_num VARCHAR(20) NOT NULL,
     lic_id VARCHAR(255),
     vehicle_id INT NOT NULL,
+    date_of_birth DATE NOT NULL,
     booking_date DATE NOT NULL,
     return_date DATE NOT NULL,
     total_price DECIMAL(10,2) NOT NULL,

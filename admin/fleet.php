@@ -135,6 +135,7 @@ if (!isset($_SESSION['admin_id'])) {
                 <table class="table table-striped table-hover align-middle mb-0">
                     <thead class="table-light">
                         <tr>
+                            <th scope="col" class="px-3 py-3 text-start text-xs text-secondary text-uppercase">Vechile Id</th>
                             <th scope="col" class="px-3 py-3 text-start text-xs text-secondary text-uppercase">Image</th>
                             <th scope="col" class="px-3 py-3 text-start text-xs text-secondary text-uppercase">Car Name & Description</th>
                             <th scope="col" class="px-3 py-3 text-center text-xs text-secondary text-uppercase">Type</th>
@@ -148,6 +149,7 @@ if (!isset($_SESSION['admin_id'])) {
                     <tbody id="vehicleTableBody">
                         <?php while ($data = $result->fetch_assoc()): ?>
                             <tr>
+                                <td class="text-center"><?php echo $data['id']; ?></td>
                                 <td>
                                     <img src="../uploads/vehicles/<?php echo $data['car_image']; ?>"
                                         alt="Car Image"

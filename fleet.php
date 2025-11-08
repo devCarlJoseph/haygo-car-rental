@@ -98,7 +98,7 @@ if ($pickup_date && $dropoff_date) {
                                         </div>
 
                                         <div class="text-center mt-3">
-                                            <p class="small fw-normal text-secondary mb-0">Car Price Per Day </p>
+                                            <h3 class="small fw-normal text-secondary mb-0">Car Price Per Day </h3>
                                             <p class="fs-3 fw-bolder text-haygo-blue mb-0">
                                                 ₱<?php echo number_format($data['car_price'], 2); ?>
                                             </p>
@@ -141,26 +141,26 @@ if ($pickup_date && $dropoff_date) {
 <div class="modal fade" id="bookingModal" tabindex="-1" aria-labelledby="bookingModalLabel" aria-hidden="true">
     <div class="modal-dialog modal-dialog-centered modal-lg">
         <div class="modal-content rounded-xl">
-            <div class="modal-header bg-haygo-blue text-white rounded-top-xl">
-                <h5 class="modal-title fw-bold" id="bookingModalLabel">Step 1 of 3: Booking Summary</h5>
-                <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal" aria-label="Close"></button>
-            </div>
-
-
-            <div class="modal-body p-4 text-haygo-dark">
-                <div class="progress mb-4" role="progressbar" aria-label="Booking Progress" aria-valuenow="33" aria-valuemin="0" aria-valuemax="100">
-                    <div class="progress-bar" id="bookingProgressBar" style="width: 33%"></div>
+            <form id="bookingForm" action="actions/bookings.php" method="post">
+                <div class="modal-header bg-haygo-blue text-white rounded-top-xl">
+                    <h5 class="modal-title fw-bold" id="bookingModalLabel">Step 1 of 3: Booking Summary</h5>
+                    <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal" aria-label="Close"></button>
                 </div>
 
-                <div id="booking-steps">
-                    <form id="bookingForm" action="actions/bookings.php" method="post">
+
+                <div class="modal-body p-4 text-haygo-dark">
+                    <div class="progress mb-4" role="progressbar" aria-label="Booking Progress" aria-valuenow="33" aria-valuemin="0" aria-valuemax="100">
+                        <div class="progress-bar" id="bookingProgressBar" style="width: 33%"></div>
+                    </div>
+
+                    <div id="booking-steps">
                         <!-- Step 1: Summary -->
                         <div class="booking-step" data-step="1">
                             <h4 class="fw-bold mb-3 text-haygo-blue">1. Rental Overview</h4>
                             <p class="lead fw-medium mb-3">You are about to book:</p>
 
                             <p id="selectedCarName" class="fw-bold fs-5 mb-1"></p>
-                            <p>Total Price: ₱ <span id="totalPrice">0.00</span></p>
+                            <p id="selectedCarDescription" class="text-secondary mb-2"></p>
 
                             <input type="hidden" name="vehicle_id">
                             <input type="hidden" name="daily_price">
@@ -168,10 +168,15 @@ if ($pickup_date && $dropoff_date) {
                             <hr>
                             <dl class="row small mb-0">
                                 <dt class="col-sm-5 fw-bold">Pick-up Date:</dt>
-                                <dd class="col-sm-7"><?php echo htmlspecialchars($pickup_date); ?></dd>
+                                <dd class="col-sm-7">
+                                    <input style="border: none;" type="text" name="pick_up" value="<?php echo htmlspecialchars($pickup_date); ?>" readonly>
+                                </dd>
+
 
                                 <dt class="col-sm-5 fw-bold">Return Date:</dt>
-                                <dd class="col-sm-7"><?php echo htmlspecialchars($dropoff_date); ?></dd>
+                                <dd class="col-sm-7">
+                                    <input style="border: none;" type="text" name="drop_off" value="<?php echo htmlspecialchars($dropoff_date); ?>" readonly>
+                                </dd>
 
                                 <dt class="col-sm-5 fw-bold">Rental Duration:</dt>
                                 <dd class="col-sm-7"><span>
@@ -189,7 +194,8 @@ if ($pickup_date && $dropoff_date) {
                             <hr class="mt-3">
                             <div class="d-flex justify-content-between align-items-center mt-3">
                                 <span class="fs-5 fw-bold text-haygo-blue">TOTAL PRICE:</span>
-                                <p class="fs-4 fw-bolder text-haygo-dark">₱<span id="totalPriceFooter"> 0.00</span></p>
+                                <p class="fs-4 fw-bolder text-haygo-dark">₱<span id="totalPriceFooter"> </span></p>
+                                <input type="hidden" name="total_price" id="totalPriceInput">
                             </div>
                         </div>
 
@@ -199,6 +205,8 @@ if ($pickup_date && $dropoff_date) {
                             <p class="text-secondary mb-4">Provide your information and upload a clear image of your valid Driver's License or Government ID.</p>
 
                             <hr class="my-4">
+
+                            <input type="hidden" name="vehicle_id" id="vehicleIdInput">
 
                             <h5 class="fw-bold mb-3 text-haygo-dark">Contact & ID Information</h5>
                             <div class="row g-3">
@@ -233,10 +241,11 @@ if ($pickup_date && $dropoff_date) {
                             <hr class="my-4">
 
                             <!-- Document Upload Section -->
+                            <!-- 
                             <h5 class="fw-bold mb-3 text-haygo-dark">Driver's License Image Upload</h5>
                             <div class="mb-3">
                                 <label for="licenseImageFile" class="form-label small fw-semibold">Upload License Image *</label>
-                                <input class="form-control rounded" type="file" name="lic_img" accept="image/png, image/jpeg">
+                                <input class="form-control rounded" type="file" name="lic_image" accept="image/png, image/jpeg">
                                 <div class="invalid-feedback">A license image is required for verification.</div>
                             </div>
 
@@ -249,56 +258,59 @@ if ($pickup_date && $dropoff_date) {
                                     No image selected.
                                 </p>
                             </div>
-                        </div>
-                    </form>
-
-                    <!-- Step 3: Confirmation & Payment -->
-                    <div class="booking-step" data-step="3" style="display:none;">
-                        <h4 class="fw-bold mb-3 text-haygo-blue">3. Final Review & Complete</h4>
-                        <p class="text-secondary mb-4">Review your details and acknowledge the payment instruction to complete.</p>
-
-                        <div class="card p-3 mb-4 bg-light">
-                            <h5 class="fw-bold border-bottom pb-2 mb-2">Booking Summary</h5>
-                            <dl class="row small mb-0">
-                                <dt class="col-sm-4">Car:</dt>
-                                <dd class="col-sm-8 fw-bold text-haygo-dark"></dd>
-                                <dt class="col-sm-4">Dates:</dt>
-                                <dd class="col-sm-8"></dd>
-                                <dt class="col-sm-4">Renter:</dt>
-                                <dd class="col-sm-8"></dd>
-                                <dt class="col-sm-4">Contact:</dt>
-                                <dd class="col-sm-8"><span></span> / <span></span></dd>
-                                <dt class="col-sm-4 text-success fw-bold">FINAL TOTAL:</dt>
-                                <dd class="col-sm-8 fs-5 fw-bolder text-success"></dd>
-                            </dl>
+                                    -->
                         </div>
 
-                        <h5 class="fw-bold mb-3 text-haygo-dark">Payment Instruction</h5>
-                        <div class="alert alert-warning small">
-                            <i class="ri-alert-line me-2"></i>
-                            You will pay the full amount upon pick-up. By clicking 'Complete Booking', you confirm this reservation.
+                        <!-- Step 3: Confirmation & Payment -->
+                        <div class="booking-step" data-step="3" style="display:none;">
+                            <h4 class="fw-bold mb-3 text-haygo-blue">3. Final Review & Complete</h4>
+                            <p class="text-secondary mb-4">Review your details and acknowledge the payment instruction to complete.</p>
+
+                            <div class="card p-3 mb-4 bg-light">
+                                <h5 class="fw-bold border-bottom pb-2 mb-2">Booking Summary</h5>
+                                <dl class="row small mb-0">
+                                    <dt class="col-sm-4">Car:</dt>
+                                    <dd class="col-sm-8 fw-bold text-haygo-dark"></dd>
+                                    <dt class="col-sm-4">Dates:</dt>
+                                    <dd class="col-sm-8"></dd>
+                                    <dt class="col-sm-4">Renter:</dt>
+                                    <dd class="col-sm-8"></dd>
+                                    <dt class="col-sm-4">Contact:</dt>
+                                    <dd class="col-sm-8"><span></span> / <span></span></dd>
+                                    <dt class="col-sm-4 text-success fw-bold">FINAL TOTAL:</dt>
+                                    <dd class="col-sm-8 fs-5 fw-bolder text-success"></dd>
+                                </dl>
+                            </div>
+
+                            <h5 class="fw-bold mb-3 text-haygo-dark">Payment Instruction</h5>
+                            <div class="alert alert-warning small">
+                                <i class="ri-alert-line me-2"></i>
+                                You will pay the full amount upon pick-up. By clicking 'Complete Booking', you confirm this reservation.
+                            </div>
+                            <div class="form-check">
+                                <input class="form-check-input" type="checkbox" value="acknowledged" required>
+                                <label class="form-check-label small" for="paymentInstruction">
+                                    I acknowledge that the ₱<span></span> will be settled at the time of vehicle collection.
+                                </label>
+                            </div>
                         </div>
-                        <div class="form-check">
-                            <input class="form-check-input" type="checkbox" value="acknowledged" required>
-                            <label class="form-check-label small" for="paymentInstruction">
-                                I acknowledge that the ₱<span></span> will be settled at the time of vehicle collection.
-                            </label>
-                        </div>
+
                     </div>
-
                 </div>
-            </div>
 
-            <!-- Footer and Navigation Buttons -->
-            <div class="modal-footer justify-content-between">
-                <button type="button" class="btn p-btn rounded-pill" id="prevStepBtn" style="display:none;">
-                    <i class="ri-arrow-left-line me-1"></i> Previous
-                </button>
-                <button type="button" class="btn c-btn rounded-pill" data-bs-dismiss="modal" id="cancelBtn">Cancel</button>
-                <button type="submit" class="btn pro-btn" id="nextStepBtn" name="stepBtn" value="step1">
-                    Proceed to Details & Upload <i class="ri-arrow-right-line ms-1"></i>
-                </button>
-            </div>
+                <input type="hidden" name="booking_id" id="bookingIdInput">
+
+                <!-- Footer and Navigation Buttons -->
+                <div class="modal-footer justify-content-between">
+                    <button type="button" class="btn p-btn rounded-pill" id="prevStepBtn" style="display:none;">
+                        <i class="ri-arrow-left-line me-1"></i> Previous
+                    </button>
+                    <button type="button" class="btn c-btn rounded-pill" id="cancelBtn">Cancel</button>
+                    <button type="button" class="btn pro-btn" id="nextStepBtn">
+                        Proceed to Details & Upload <i class="ri-arrow-right-line ms-1"></i>
+                    </button>
+                </div>
+            </form>
         </div>
 
     </div>

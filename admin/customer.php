@@ -1,5 +1,9 @@
 <?php
 require_once 'header.php';
+require_once '../config/config.php';
+
+$query = "SELECT * FROM customers ORDER BY id DESC";
+$customers = $conn->query($query);
 
 session_start();
 
@@ -127,110 +131,29 @@ if (!isset($_SESSION['admin_id'])) {
                         <th scope="col" class="px-3 py-3 text-start text-xs text-secondary text-uppercase">Email</th>
                         <th scope="col" class="px-3 py-3 text-start text-xs text-secondary text-uppercase">Phone</th>
                         <th scope="col" class="px-3 py-3 text-start text-xs text-secondary text-uppercase">Date of Birth</th>
-                        <th scope="col" class="px-3 py-3 text-start text-xs text-secondary text-uppercase">Action</th>
+                        <th scope="col" class="px-3 py-3 text-center text-xs text-secondary text-uppercase">Action</th>
                     </tr>
                 </thead>
                 <tbody id="customer-table-body">
-                    <!-- Customer 1 -->
-                    <tr>
-                        <td class="px-3 py-3 text-sm fw-medium text-dark">1001</td>
-                        <td class="px-3 py-3 text-sm fw-medium text-dark">Elena Rodriguez</td>
-                        <td class="px-3 py-3 text-sm text-secondary">elena.rod@mail.com</td>
-                        <td class="px-3 py-3 text-sm text-secondary">(555) 123-4567</td>
-                        <td class="px-3 py-3 text-sm text-secondary">1990-04-15</td>
-                        <td class="px-3 py-3">
-                            <button class="btn btn-sm btn-outline-secondary border-0 text-rental-primary edit-btn" title="Edit Profile"
-                                data-bs-toggle="modal" data-bs-target="#editCustomerModal"
-                                data-id="1001"
-                                data-name="Elena Rodriguez"
-                                data-email="elena.rod@mail.com"
-                                data-phone="(555) 123-4567"
-                                data-dob="1990-04-15">
-                                <i class="bi bi-pencil-square"></i>
-                            </button>
-                            <button class="btn btn-sm btn-outline-danger border-0 text-danger" title="Delete Record"><i class="bi bi-trash"></i></button>
-                        </td>
-                    </tr>
-                    <!-- Customer 2 -->
-                    <tr>
-                        <td class="px-3 py-3 text-sm fw-medium text-dark">1002</td>
-                        <td class="px-3 py-3 text-sm fw-medium text-dark">Marcus Johnson</td>
-                        <td class="px-3 py-3 text-sm text-secondary">marcus.j@corp.net</td>
-                        <td class="px-3 py-3 text-sm text-secondary">(555) 987-6543</td>
-                        <td class="px-3 py-3 text-sm text-secondary">1985-11-20</td>
-                        <td class="px-3 py-3">
-                            <button class="btn btn-sm btn-outline-secondary border-0 text-rental-primary edit-btn" title="Edit Profile"
-                                data-bs-toggle="modal" data-bs-target="#editCustomerModal"
-                                data-id="1002"
-                                data-name="Marcus Johnson"
-                                data-email="marcus.j@corp.net"
-                                data-phone="(555) 987-6543"
-                                data-dob="1985-11-20">
-                                <i class="bi bi-pencil-square"></i>
-                            </button>
-                            <button class="btn btn-sm btn-outline-danger border-0 text-danger" title="Delete Record"><i class="bi bi-trash"></i></button>
-                        </td>
-                    </tr>
-                    <!-- Customer 3 -->
-                    <tr>
-                        <td class="px-3 py-3 text-sm fw-medium text-dark">1003</td>
-                        <td class="px-3 py-3 text-sm fw-medium text-dark">Sarah Chen</td>
-                        <td class="px-3 py-3 text-sm text-secondary">sarah.chen@email.com</td>
-                        <td class="px-3 py-3 text-sm text-secondary">(555) 345-1234</td>
-                        <td class="px-3 py-3 text-sm text-secondary">2000-08-01</td>
-                        <td class="px-3 py-3">
-                            <button class="btn btn-sm btn-outline-secondary border-0 text-rental-primary edit-btn" title="Edit Profile"
-                                data-bs-toggle="modal" data-bs-target="#editCustomerModal"
-                                data-id="1003"
-                                data-name="Sarah Chen"
-                                data-email="sarah.chen@email.com"
-                                data-phone="(555) 345-1234"
-                                data-dob="2000-08-01">
-                                <i class="bi bi-pencil-square"></i>
-                            </button>
-                            <button class="btn btn-sm btn-outline-danger border-0 text-danger" title="Delete Record"><i class="bi bi-trash"></i></button>
-                        </td>
-                    </tr>
-                    <!-- Customer 4 -->
-                    <tr>
-                        <td class="px-3 py-3 text-sm fw-medium text-dark">1004</td>
-                        <td class="px-3 py-3 text-sm fw-medium text-dark">David Geller</td>
-                        <td class="px-3 py-3 text-sm text-secondary">dgeller@internet.co</td>
-                        <td class="px-3 py-3 text-sm text-secondary">(555) 678-9012</td>
-                        <td class="px-3 py-3 text-sm text-secondary">1976-02-29</td>
-                        <td class="px-3 py-3">
-                            <button class="btn btn-sm btn-outline-secondary border-0 text-rental-primary edit-btn" title="Edit Profile"
-                                data-bs-toggle="modal" data-bs-target="#editCustomerModal"
-                                data-id="1004"
-                                data-name="David Geller"
-                                data-email="dgeller@internet.co"
-                                data-phone="(555) 678-9012"
-                                data-dob="1976-02-29">
-                                <i class="bi bi-pencil-square"></i>
-                            </button>
-                            <button class="btn btn-sm btn-outline-danger border-0 text-danger" title="Delete Record"><i class="bi bi-trash"></i></button>
-                        </td>
-                    </tr>
-                    <!-- Customer 5 -->
-                    <tr>
-                        <td class="px-3 py-3 text-sm fw-medium text-dark">1005</td>
-                        <td class="px-3 py-3 text-sm fw-medium text-dark">Maria Santos</td>
-                        <td class="px-3 py-3 text-sm text-secondary">maria.santos@biz.org</td>
-                        <td class="px-3 py-3 text-sm text-secondary">(555) 210-5432</td>
-                        <td class="px-3 py-3 text-sm text-secondary">1995-12-10</td>
-                        <td class="px-3 py-3">
-                            <button class="btn btn-sm btn-outline-secondary border-0 text-rental-primary edit-btn" title="Edit Profile"
-                                data-bs-toggle="modal" data-bs-target="#editCustomerModal"
-                                data-id="1005"
-                                data-name="Maria Santos"
-                                data-email="maria.santos@biz.org"
-                                data-phone="(555) 210-5432"
-                                data-dob="1995-12-10">
-                                <i class="bi bi-pencil-square"></i>
-                            </button>
-                            <button class="btn btn-sm btn-outline-danger border-0 text-danger" title="Delete Record"><i class="bi bi-trash"></i></button>
-                        </td>
-                    </tr>
+                    <?php while ($c_data = $customers->fetch_assoc()): ?>
+                        <tr>
+                            <td class="px-3 py-3 text-sm fw-medium text-dark"><?php echo $c_data['id']; ?></td>
+                            <td class="px-3 py-3 text-sm fw-medium text-dark"><?php echo $c_data['customer_name']; ?></td>
+                            <td class="px-3 py-3 text-sm text-secondary"><?php echo $c_data['email']; ?></td>
+                            <td class="px-3 py-3 text-sm text-secondary"><?php echo $c_data['phone']; ?></td>
+                            <td class="px-3 py-3 text-sm text-secondary"><?php echo $c_data['date_of_birth']; ?></td>
+                            <td class="text-center">
+                                <button class="btn btn-sm btn-outline-primary me-1 editBtn"
+                                    data-bs-toggle="modal"
+                                    data-bs-target="#editVehicleModal">
+                                    <i class="ri-edit-line me-1"></i>Edit
+                                </button>
+                                <button class="btn btn-sm btn-outline-danger deleteBtn">
+                                    <i class="ri-delete-bin-line me-1"></i>Delete
+                                </button>
+                            </td>
+                        </tr>
+                    <?php endwhile; ?>
                 </tbody>
             </table>
         </div>

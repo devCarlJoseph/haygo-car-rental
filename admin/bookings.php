@@ -1,7 +1,12 @@
 <?php
 require_once 'header.php';
+require_once '../config/config.php';
 
 session_start();
+
+$query = "SELECT * FROM bookings ORDER BY id DESC";
+$bookings = $conn->query($query);
+
 
 if (!isset($_SESSION['admin_id'])) {
     header('Location: log_in.php');
@@ -119,25 +124,63 @@ if (!isset($_SESSION['admin_id'])) {
     <!-- Booking List Table -->
     <section class="card p-4 rounded-4 shadow-sm">
         <h3 class="fs-5 fw-semibold text-dark mb-4">Recent Reservations</h3>
-        <div class="table-responsive rounded-3 border border-light">
-            <table class="table table-striped table-hover align-middle mb-0">
+        <div class="table-responsive rounded-4 border border-light shadow-sm">
+            <table class="table table-hover align-middle mb-0">
                 <thead class="table-light">
                     <tr>
-                        <th scope="col" class="px-3 py-3 text-start text-xs text-secondary text-uppercase">Booking ID</th>
-                        <th scope="col" class="px-3 py-3 text-start text-xs text-secondary text-uppercase">Customer Name</th>
-                        <th scope="col" class="px-3 py-3 text-start text-xs text-secondary text-uppercase">Email</th>
-                        <th scope="col" class="px-3 py-3 text-start text-xs text-secondary text-uppercase">Vehicle Name</th>
-                        <th scope="col" class="px-3 py-3 text-start text-xs text-secondary text-uppercase">Booking Date</th>
-                        <th scope="col" class="px-3 py-3 text-start text-xs text-secondary text-uppercase">Status</th>
-                        <th scope="col" class="px-3 py-3 text-start text-xs text-secondary text-uppercase">Action</th>
+                        <th scope="col" class="text-uppercase text-secondary small fw-semibold">Booking ID</th>
+                        <th scope="col" class="text-uppercase text-secondary small fw-semibold">Customer Name</th>
+                        <th scope="col" class="text-uppercase text-secondary small fw-semibold">Email</th>
+                        <th scope="col" class="text-uppercase text-secondary small fw-semibold">Vehicle Id</th>
+                        <th scope="col" class="text-center text-uppercase text-secondary small fw-semibold" style="width: 13rem;">Booking Dates</th>
+                        <th scope="col" class="text-center text-uppercase text-secondary small fw-semibold" style="width: 10rem;">Total Price</th>
+                        <th scope="col" class="text-center text-uppercase text-secondary small fw-semibold">Status</th>
+                        <th scope="col" class="text-uppercase text-secondary small fw-semibold text-center">Actions</th>
                     </tr>
                 </thead>
-                <!-- The table body will be populated dynamically by JavaScript -->
-                <tbody id="bookingTableBody">
-                    <!-- Booking rows will be inserted here -->
+                <tbody>
+                    <?php while ($b_data = $bookings->fetch_assoc()): ?>
+                        <tr class="align-middle">
+                            <td class="fw-bold text-rental-primary"><?php echo $b_data['id']; ?></td>
+                            <td class="text-dark"><?php echo htmlspecialchars($b_data['customer_name']); ?></td>
+                            <td class="text-secondary small"><?php echo htmlspecialchars($b_data['email']); ?></td>
+                            <td class="text-center text-dark"><?php echo htmlspecialchars($b_data['vehicle_id']); ?></td>
+                            <td class="text-dark small">
+                                <?php
+                                echo date("M d, Y", strtotime($b_data['booking_date']))
+                                    . ' - ' .
+                                    date("M d, Y", strtotime($b_data['return_date']));
+                                ?>
+                            </td>
+                            <td class="text-center text-dark fw-semibold">₱ <?php echo number_format($b_data['total_price'], 2); ?></td>
+                            <td class="text-center">
+                                <?php
+                                $statusClass = match ($b_data['status']) {
+                                    'pending' => 'badge bg-warning text-dark',
+                                    'confirmed' => 'badge bg-success',
+                                    'cancelled' => 'badge bg-danger',
+                                    default => 'badge bg-secondary',
+                                };
+                                ?>
+                                <span class="<?php echo $statusClass; ?> px-2 py-1 rounded-pill"><?php echo ucfirst($b_data['status']); ?></span>
+                            </td>
+                            <td class="text-center">
+                                <button class="btn btn-sm btn-outline-primary me-1 editBtn"
+                                    data-bs-toggle="modal"
+                                    data-bs-target="#editVehicleModal">
+                                    <i class="ri-edit-line me-1"></i>Edit
+                                </button>
+                                <button class="btn btn-sm btn-outline-danger deleteBtn">
+                                    <i class="ri-delete-bin-line me-1"></i>Delete
+                                </button>
+                            </td>
+                        </tr>
+                    <?php endwhile; ?>
                 </tbody>
+
             </table>
         </div>
+
 
         <!-- Pagination/View All Footer -->
         <div class="mt-4 d-flex justify-content-between align-items-center">
