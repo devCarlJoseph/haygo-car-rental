@@ -3,6 +3,7 @@
     <script src="../src/assets/controller/bookings.js"></script>
     <script src="../src/assets/controller/customer.js"></script>
     <script src="../src/assets/controller/reports.js"></script>
+    <script src="../src/assets/controller/dashboard.js"></script>
 
     </body>
 

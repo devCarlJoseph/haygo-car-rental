@@ -1,6 +1,16 @@
 <?php
 require_once 'header.php';
+
+session_start();
+
+if (!isset($_SESSION['admin_id'])) {
+    header('Location: log_in.php');
+    exit();
+}
+
 ?>
+
+
 <!-- Mobile Menu Toggle Button (Visible on Small Screens) -->
 <button class="d-lg-none position-fixed top-0 end-0 mt-3 me-3 z-3 btn bg-rental-primary text-white shadow-lg p-2 rounded-3"
     type="button" data-bs-toggle="offcanvas" data-bs-target="#sidebar-offcanvas" aria-controls="sidebar-offcanvas">
@@ -63,10 +73,10 @@ require_once 'header.php';
             <i class="bi bi-gear-fill fs-5"></i>
             <span>Settings</span>
         </a>
-        <div class="d-flex align-items-center gap-3 p-3 rounded-3 bg-secondary-subtle bg-opacity-10 text-white">
-            <div class="rounded-circle bg-rental-primary d-flex align-items-center justify-content-center text-white fw-bold" style="width: 40px; height: 40px;">SD</div>
+        <div class="d-flex align-items-center gap-3 p-3 rounded-3 bg-secondary bg-opacity-10 text-white">
+            <img src="../uploads/admin/<?= $_SESSION['admin_profile'] ?>" style="width: 40px; height: 40px; object-fit: cover" class="rounded-circle">
             <div>
-                <p class="mb-0 fw-semibold fs-6">Senior Dev</p>
+                <p class="mb-0 fw-semibold fs-6"><?= $_SESSION['admin_username']; ?></p>
                 <p class="mb-0 small text-secondary">Admin</p>
             </div>
         </div>
@@ -92,11 +102,11 @@ require_once 'header.php';
 
         <!-- Card 1: Total Fleet -->
         <div class="col-12 col-sm-6 col-lg-3">
-            <div class="card p-4 rounded-4 shadow-sm border-start border-5 border-rental-primary h-100 metric-card">
+            <div class="card p-4 rounded-4 shadow-sm border-start h-100 metric-card">
                 <div class="d-flex justify-content-between align-items-start">
                     <div>
                         <p class="text-sm text-secondary mb-1 fw-medium">Total Fleet Size</p>
-                        <p class="fs-1 fw-bold text-dark mb-0">210</p>
+                        <p class="fs-1 fw-bold text-dark mb-0">TEST</p>
                     </div>
                     <div class="p-3 rounded-5 bg-rental-primary bg-opacity-10 text-rental-primary">
                         <i class="bi bi-car-front-fill fs-4"></i>
@@ -107,7 +117,7 @@ require_once 'header.php';
 
         <!-- Card 2: Currently Rented -->
         <div class="col-12 col-sm-6 col-lg-3">
-            <div class="card p-4 rounded-4 shadow-sm border-start border-5 border-info h-100 metric-card">
+            <div class="card p-4 rounded-4 shadow-sm h-100 metric-card">
                 <div class="d-flex justify-content-between align-items-start">
                     <div>
                         <p class="text-sm text-secondary mb-1 fw-medium">Currently Rented</p>
@@ -123,7 +133,7 @@ require_once 'header.php';
 
         <!-- Card 3: Available Cars -->
         <div class="col-12 col-sm-6 col-lg-3">
-            <div class="card p-4 rounded-4 shadow-sm border-start border-5 border-success h-100 metric-card">
+            <div class="card p-4 rounded-4 shadow-sm h-100 metric-card">
                 <div class="d-flex justify-content-between align-items-start">
                     <div>
                         <p class="text-sm text-secondary mb-1 fw-medium">Available Today</p>
@@ -139,7 +149,7 @@ require_once 'header.php';
 
         <!-- Card 4: Monthly Revenue Target -->
         <div class="col-12 col-sm-6 col-lg-3">
-            <div class="card p-4 rounded-4 shadow-sm border-start border-5 border-warning h-100 metric-card">
+            <div class="card p-4 rounded-4 shadow-sm h-100 metric-card">
                 <div class="d-flex justify-content-between align-items-start">
                     <div>
                         <p class="text-sm text-secondary mb-1 fw-medium">Monthly Revenue</p>
@@ -160,9 +170,10 @@ require_once 'header.php';
         <div class="col-12 col-lg-8">
             <div class="card p-4 rounded-4 shadow-sm h-100">
                 <h3 class="fs-5 fw-semibold text-dark mb-4">Fleet Utilization Rate (Last 30 Days)</h3>
-                <div class="d-flex align-items-center justify-content-center text-secondary bg-light border border-dashed rounded-3" style="min-height: 300px;">
-                    [Placeholder for Area Chart showing 80% average utilization]
-                </div>
+
+                <!-- Chart Container -->
+                <canvas id="fleetUtilizationChart" style="min-height: 300px;"></canvas>
+
                 <div class="mt-4 d-flex justify-content-between small text-secondary">
                     <p class="mb-0">Average Rate: <span class="fw-bold text-info">80%</span></p>
                     <p class="mb-0">Highest Utilization: <span class="fw-bold">95%</span></p>
@@ -170,13 +181,15 @@ require_once 'header.php';
             </div>
         </div>
 
+
         <!-- Booking Channel Split (Placeholder) -->
         <div class="col-12 col-lg-4">
             <div class="card p-4 rounded-4 shadow-sm h-100">
                 <h3 class="fs-5 fw-semibold text-dark mb-4">Bookings by Channel</h3>
-                <div class="d-flex align-items-center justify-content-center text-secondary bg-light border border-dashed rounded-3" style="min-height: 300px;">
-                    [Placeholder for Pie Chart showing Channel Split]
-                </div>
+
+                <!-- Chart Canvas -->
+                <canvas id="bookingsChannelChart" style="min-height: 300px;"></canvas>
+
                 <ul class="list-unstyled mt-4 small space-y-2">
                     <li class="d-flex justify-content-between align-items-center text-dark py-1">Online Direct: <span class="fw-semibold text-rental-primary">45%</span></li>
                     <li class="d-flex justify-content-between align-items-center text-dark py-1">Third-Party Aggregator: <span class="fw-semibold text-info">30%</span></li>
@@ -184,6 +197,7 @@ require_once 'header.php';
                 </ul>
             </div>
         </div>
+
     </section>
 
     <!-- 3. Recent Bookings Table -->
@@ -227,7 +241,7 @@ require_once 'header.php';
                     <!-- Row 3 -->
                     <tr>
                         <td class="px-3 py-3 text-sm fw-medium text-dark">#BK8999</td>
-                        <td class="px-3 py-3 text-sm text-secondary">Alex Johnson</td>a
+                        <td class="px-3 py-3 text-sm text-secondary">Alex Johnson</td>
                         <td class="px-3 py-3 text-sm text-secondary">Ford Transit Van</td>
                         <td class="px-3 py-3">
                             <span class="badge text-bg-danger text-uppercase py-1 px-2 rounded-pill fw-semibold">Overdue</span>

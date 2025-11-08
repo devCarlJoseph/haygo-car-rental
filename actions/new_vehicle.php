@@ -18,7 +18,6 @@ if (isset($_POST['submit'])) {
 
     $destination = $car_image_dir . $car_image;
 
-    // Correct move
     move_uploaded_file($tmp_name, $destination);
 
     $query = "INSERT INTO vehicles (car_name, car_type, car_description, seats, bags, transmission, car_price, car_image, status)

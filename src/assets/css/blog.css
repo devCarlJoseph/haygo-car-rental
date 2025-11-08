@@ -1,30 +1,3 @@
-
-/* Overriding Bootstrap Primary and Accent colors */
-.btn-primary,
-.bg-primary,
-.text-primary {
-    --bs-btn-bg: var(--bs-blue);
-    --bs-btn-border-color: var(--bs-blue);
-    --bs-btn-hover-bg: #176575;
-    --bs-btn-hover-border-color: #176575;
-    --bs-btn-active-bg: #10505a;
-    --bs-btn-active-border-color: #10505a;
-}
-
-.bg-accent {
-    background-color: var(--bs-green);
-}
-
-.text-accent {
-    color: var(--bs-green) !important;
-}
-
-body {
-    font-family: 'Inter', sans-serif;
-    background-color: #f8f8f8;
-    color: var(--bs-body-color);
-}
-
 .post-card {
     transition: all 0.3s ease;
     border: 1px solid #e5e7eb;
@@ -71,4 +44,15 @@ body {
     transform: translateX(-50%);
     width: fit-content;
     max-width: 90%;
+}
+
+
+.contribution:hover {
+     background-color: var(--haygo-hover);
+}
+
+.filter-btn.active {
+    background-color: #3B2F2F !important;
+    color: #fff !important;
+    border-color: #3B2F2F !important;
 }

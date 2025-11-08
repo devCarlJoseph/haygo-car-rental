@@ -1,5 +1,14 @@
 <?php
 require_once 'header.php';
+
+session_start();
+
+if (!isset($_SESSION['admin_id'])) {
+    header('Location: log_in.php');
+    exit();
+}
+
+
 ?>
 
 <!-- Mobile Menu Toggle Button (Visible on Small Screens) -->
@@ -72,11 +81,10 @@ require_once 'header.php';
             <i class="bi bi-gear-fill fs-5"></i>
             <span>Settings</span>
         </a>
-        <div class="d-flex align-items-center gap-3 p-3 rounded-3 bg-secondary-subtle bg-opacity-10 text-white">
-            <div class="rounded-circle bg-rental-primary d-flex align-items-center justify-content-center text-white fw-bold"
-                style="width: 40px; height: 40px;">SD</div>
+        <div class="d-flex align-items-center gap-3 p-3 rounded-3 bg-secondary bg-opacity-10 text-white">
+            <img src="../uploads/admin/<?= $_SESSION['admin_profile'] ?>" style="width: 40px; height: 40px; object-fit: cover" class="rounded-circle">
             <div>
-                <p class="mb-0 fw-semibold fs-6">Senior Dev</p>
+                <p class="mb-0 fw-semibold fs-6"><?= $_SESSION['admin_username']; ?></p>
                 <p class="mb-0 small text-secondary">Admin</p>
             </div>
         </div>
@@ -109,7 +117,7 @@ require_once 'header.php';
 
     <!-- Customer List Table -->
     <section class="card p-4 rounded-4 shadow-sm">
-        <h3 class="fs-6 fw-semibold text-dark mb-4">5 Client Records Found (Database Preview)</h3>
+        <h3 class="fs-6 fw-semibold text-dark mb-4">5 Client Records Found</h3>
         <div class="table-responsive rounded-3 border border-light">
             <table class="table table-striped table-hover align-middle mb-0">
                 <thead class="table-light">

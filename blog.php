@@ -1,5 +1,5 @@
-<?php 
-    require_once 'header.php';
+<?php
+require_once 'header.php';
 ?>
 
 <!-- Blog Hero Section: Carousel -->
@@ -10,42 +10,51 @@
         <button type="button" data-bs-target="#heroCarousel" data-bs-slide-to="1" aria-label="Slide 2"></button>
         <button type="button" data-bs-target="#heroCarousel" data-bs-slide-to="2" aria-label="Slide 3"></button>
         <button type="button" data-bs-target="#heroCarousel" data-bs-slide-to="3" aria-label="Slide 4"></button>
+        <button type="button" data-bs-target="#heroCarousel" data-bs-slide-to="4" aria-label="Slide 5"></button>
     </div>
     <div class="carousel-inner">
 
         <!-- Slide 1: Coastal Drive -->
         <div class="carousel-item active carousel-item-custom"
-            style="background-image: url('https://placehold.co/1200x600/1F7A8C/FFFFFF?text=Coastal+Road+Trip');">
-            <div class="carousel-caption d-none d-md-block text-center">
-                <h5 class="fw-bold fs-2">Coastal Drives & Sunset Views</h5>
+            style="background-image: url('src/assets/images/kawasan.jpg'); background-size: cover; ">
+            <div class="carousel-caption d-none d-md-block text-center" style="width: 50rem;">
+                <h1 class="fw-bold" style="font-size: 5rem">Kawasan Falls</h1>
                 <p class="lead">Discover the scenic routes our clients love.</p>
             </div>
         </div>
 
         <!-- Slide 2: Mountain Trail -->
         <div class="carousel-item carousel-item-custom"
-            style="background-image: url('https://placehold.co/1200x600/2C3E50/A9F044?text=Mountain+Road+Adventure');">
-            <div class="carousel-caption d-none d-md-block text-center">
-                <h5 class="fw-bold fs-2">Highland Trails and Mountain Passes</h5>
-                <p class="lead">The best vehicles for off-road exploration.</p>
+            style="background-image: url('src/assets/images/osmena.jpg'); background-size: cover; ">
+            <div class="carousel-caption d-none d-md-block text-center" style="width: 50rem;">
+                <h1 class="fw-bold" style="font-size: 5rem">Osmeña Peak</h1>
+                <p class="lead">Discover the scenic routes our clients love.</p>
             </div>
         </div>
 
         <!-- Slide 3: City Drive -->
         <div class="carousel-item carousel-item-custom"
-            style="background-image: url('https://placehold.co/1200x600/A9F044/2C3E50?text=Urban+City+Exploration');">
-            <div class="carousel-caption d-none d-md-block text-center text-dark">
-                <h5 class="fw-bold fs-2">Urban Adventures Await</h5>
-                <p class="lead">Find parking tips and city guides.</p>
+            style="background-image: url('src/assets/images/safari.jpeg'); background-size: cover; ">
+            <div class="carousel-caption d-none d-md-block text-center" style="width: 50rem;">
+                <h1 class="fw-bold" style="font-size: 5rem">Cebu Safari</h1>
+                <p class="lead">Discover the scenic routes our clients love.</p>
             </div>
         </div>
 
         <!-- Slide 4: Desert -->
         <div class="carousel-item carousel-item-custom"
-            style="background-image: url('https://placehold.co/1200x600/94A3B8/1F7A8C?text=Desert+Open+Road');">
-            <div class="carousel-caption d-none d-md-block text-center">
-                <h5 class="fw-bold fs-2">Desert Trails & Open Skies</h5>
-                <p class="lead">Plan your remote escape with our top rental picks.</p>
+            style="background-image: url('src/assets/images/simala.webp'); background-size: cover; ">
+            <div class="carousel-caption d-none d-md-block text-center" style="width: 50rem;">
+                <h1 class="fw-bold" style="font-size: 5rem">Simala Shrine Sibonga</h1>
+                <p class="lead">Discover the scenic routes our clients love.</p>
+            </div>
+        </div>
+
+        <div class="carousel-item carousel-item-custom"
+            style="background-image: url('src/assets/images/ocean\ park.jpg'); background-size: cover; ">
+            <div class="carousel-caption d-none d-md-block text-center" style="width: 50rem;">
+                <h1 class="fw-bold" style="font-size: 5rem">Cebu Ocean Park</h1>
+                <p class="lead">Discover the scenic routes our clients love.</p>
             </div>
         </div>
 
@@ -67,7 +76,7 @@
             Contribute to the Hay Go Community
         </h2>
         <!-- New Post Button -->
-        <button id="new-post-btn" type="button" class="btn bg-accent text-dark fw-bold py-3 px-5 rounded-pill shadow"
+        <button id="new-post-btn" type="button" class="contribution haygo-secondary-bg haygo-hover border border-none text-dark fw-bold py-3 px-5 rounded-pill shadow"
             data-bs-toggle="modal" data-bs-target="#postModal">
             <i class="ri-quill-pen-line me-2"></i> Submit a Contribution
         </button>
@@ -80,22 +89,39 @@
     <!-- Filter Bar -->
     <div id="filter-bar"
         class="d-flex flex-wrap gap-2 mb-5 pb-3 border-bottom border-2 justify-content-center justify-content-md-start">
-        <button class="btn btn-outline-secondary filter-btn filter-btn-active rounded-pill" data-category="all">All
+        <button class="f-btn btn btn-outline-secondary filter-btn rounded-pill" data-category="all">All
             Posts</button>
-        <button class="btn btn-outline-secondary filter-btn rounded-pill" data-category="guides">Travel Guides</button>
-        <button class="btn btn-outline-secondary filter-btn rounded-pill" data-category="tips">Rental Tips</button>
-        <button class="btn btn-outline-secondary filter-btn rounded-pill" data-category="vehicles">Vehicle
+        <button class="f-btn btn btn-outline-secondary filter-btn rounded-pill" data-category="guides">Travel Guides</button>
+        <button class="f-btn btn btn-outline-secondary filter-btn rounded-pill" data-category="tips">Rental Tips</button>
+        <button class="f-btn btn btn-outline-secondary filter-btn rounded-pill" data-category="vehicles">Vehicle
             Reviews</button>
-        <button class="btn btn-outline-secondary filter-btn rounded-pill" data-category="news">Company News</button>
-        <button class="btn btn-outline-secondary filter-btn rounded-pill" data-category="community">Community
+        <button class="f-btn btn btn-outline-secondary filter-btn rounded-pill" data-category="news">Company News</button>
+        <button class="f-btn btn btn-outline-secondary filter-btn rounded-pill" data-category="community">Community
             Posts</button>
     </div>
 
     <!-- Post Grid Container -->
     <div id="post-grid" class="row row-cols-1 row-cols-md-2 row-cols-lg-3 g-4">
-        <!-- Posts will be injected here by JavaScript -->
-        <div id="loading-indicator" class="col-12 text-center py-5 fs-5 text-muted">
-            <i class="ri-loader-4-line ri-spin fs-3 me-2 text-primary"></i> Loading posts...
+        <div class="col post-card-item" data-category="${post.category}">
+            <article class="card h-100 rounded-4 post-card">
+                <div class="ratio ratio-4x3 bg-light rounded-top-4 overflow-hidden">
+                    <img src="${post.imageUrl}" class="card-img-top object-fit-cover opacity-75" alt="BLOG IMAGE">
+                </div>
+                <div class=" card-body p-4">
+                    <small class="${primaryColorClass} fw-bold text-uppercase d-block mb-2">Category</small>
+                    <h3 class="card-title fs-4 fw-bold mb-3 lh-sm">
+                        <a href="#" class="text-decoration-none text-reset">Post Title</a>
+                    </h3>
+                    <p class="card-text text-muted mb-4" style="--bs-line-clamp: 3; display: -webkit-box; -webkit-line-clamp: 3; -webkit-box-orient: vertical; overflow: hidden;">
+                        Content Snippet
+                    </p>
+                    <div class="card-footer bg-white border-0 p-0">
+                        <span class="small text-secondary">
+                            Created Date | By Author Name
+                        </span>
+                    </div>
+                </div>
+            </article>
         </div>
     </div>
 </main>
@@ -151,6 +177,12 @@
                             </div>
                 </div>
 
+                <div class="mb-3">
+                    <label for="post-title" class="form-label fw-bold">Author Name</label>
+                    <input type="text" id="post-title" required class="form-control form-control-lg rounded-3 border-2"
+                        placeholder="Juan Dela Cruz">
+                </div>
+
                 <!-- Submit Button -->
                 <button type="submit" id="submit-btn" class="btn btn-primary btn-lg w-100 fw-bold rounded-3 shadow-lg">
                     <i class="ri-send-plane-line me-2"></i> Publish Contribution
@@ -161,6 +193,6 @@
     </div>
 </div>
 
-<?php 
+<?php
 require_once 'footer.php';
 ?>

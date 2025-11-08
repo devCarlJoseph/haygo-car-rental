@@ -104,8 +104,10 @@
 
                     <div class="col-12">
                         <label for="signup-image" class="form-label mb-1 text-secondary">Choose Image</label>
-                        <input type="file" name="adminProfile" id="signup-image" class="form-control form-control-lg">
+                        <input type="file" name="admin_profile" id="signup-image" class="form-control form-control-lg">
                     </div>
+
+                    <input type="hidden" id="edit_id" name="id">
 
                     <div class="col-12">
                         <button type="submit" name="sign_btn" class="btn sign-btn w-100 fw-bold fs-5">

@@ -6,8 +6,7 @@ if (isset($_POST['sign_btn'])) {
     $username = $_POST['username'];
     $password = $_POST['password'];
     $adminkey = $_POST['adminkey'];
-    $adminProfile = $_FILES['adminProfile'];
-    $passHashed = password_hash($password, PASSWORD_DEFAULT);
+    $pass_has = password_hash($password, PASSWORD_DEFAULT);
 
     $key = "T0NY0_4DM1N_K3Y";
 
@@ -16,31 +15,28 @@ if (isset($_POST['sign_btn'])) {
         exit();
     }
 
+    $admin_profile = $_FILES['admin_profile']['name'];
+    $tmp_pp = $_FILES['admin_profile']['tmp_name'];
 
-    $checkQuery = "SELECT * FROM haygo_admins WHERE admin_username = ?";
-    $checkStmt = mysqli_prepare($conn, $checkQuery);
+    $pp_image_dir = "../uploads/admin/";
+    $pp_destin = $pp_image_dir . $admin_profile;
 
-    if (!$checkStmt) {
+    move_uploaded_file($tmp_pp, $pp_destin);
+
+
+    $query = "SELECT * FROM haygo_admins WHERE admin_username = ?";
+    $stmt = mysqli_prepare($conn, $query);
+
+    if (!$stmt) {
         die("Prepare failed: " . mysqli_error($conn));
     }
 
-    if (isset($_FILES['adminProfile']) && $_FILES['adminProfile']['error'] === 0) {
-        $targetDir = "../uploads/";
-        $fileName = basename($_FILES["adminProfile"]["name"]);
-        $targetFilePath = $targetDir . $fileName;
+    $stmt->bind_param("s", $username);
+    mysqli_stmt_execute($stmt);
+    mysqli_stmt_store_result($stmt);
 
-        if (move_uploaded_file($_FILES["adminProfile"]["tmp_name"], $targetFilePath)) {
-        } else {
-            echo "File upload failed.";
-        }
-    }
-
-    $checkStmt->bind_param("s", $username);
-    mysqli_stmt_execute($checkStmt);
-    mysqli_stmt_store_result($checkStmt);
-
-    if (mysqli_stmt_num_rows($checkStmt) > 0) {
-        mysqli_stmt_close($checkStmt);
+    if (mysqli_stmt_num_rows($stmt) > 0) {
+        mysqli_stmt_close($stmt);
         mysqli_close($conn);
         echo "<script>
             alert('Username already in use');
@@ -49,16 +45,16 @@ if (isset($_POST['sign_btn'])) {
         exit();
     }
 
-    mysqli_stmt_close($checkStmt);
+    mysqli_stmt_close($stmt);
 
-    $query = "INSERT INTO haygo_admins (admin_username, admin_pwd) VALUES (?, ?)";
+    $query = "INSERT INTO haygo_admins (admin_username, admin_pwd, admin_profile) VALUES (?, ?, ?)";
     $stmt = mysqli_prepare($conn, $query);
 
     if (!$stmt) {
         die("Prepare failed: " . mysqli_error($conn));
     }
 
-    $stmt->bind_param("ss", $username, $passHashed);
+    $stmt->bind_param("sss", $username, $pass_has, $admin_profile);
 
     if (mysqli_stmt_execute($stmt)) {
         mysqli_stmt_close($stmt);

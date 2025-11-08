@@ -5,6 +5,20 @@ require_once 'config/config.php';
 $query = "SELECT * FROM vehicles";
 $result = $conn->query($query);
 
+session_start();
+
+$pickup_date = $_SESSION['pickupDate'] ?? '';
+$dropoff_date = $_SESSION['dropoffDate'] ?? '';
+$rental_days = 0;
+
+if ($pickup_date && $dropoff_date) {
+    $startDate = new DateTime($pickup_date);
+    $endDate = new DateTime($dropoff_date);
+    $interval = $startDate->diff($endDate);
+    $rental_days = $interval->days;
+    if ($rental_days < 1) $rental_days = 1;
+}
+
 ?>
 
 <main>
@@ -50,7 +64,6 @@ $result = $conn->query($query);
                         <button class="btn f-button btn-sm filter-quick-btn" data-type="Hatchback" onclick="quickFilter('Hatchback')">Hatchback</button>
                     </div>
 
-                    <!-- Car count display -->
                     <h2 class="fs-4 fw-bold text-haygo-dark mb-4">Showing Available Vehicles</h2>
 
 
@@ -59,31 +72,53 @@ $result = $conn->query($query);
                             <div class="col-sm-6 col-lg-4">
                                 <div class="card car-card shadow-sm h-100">
                                     <div class="text-center d-flex align-items-center justify-content-center"
-                                        style="background-image: url('uploads/vehicles/<?php echo $data['car_image']; ?>'); background-size: cover; background-position: center; height: 200px; background-repeat: no-repeat;">
+                                        style="background-image: url('uploads/vehicles/<?php echo $data['car_image']; ?>'); 
+                   background-size: cover; 
+                   background-position: center; 
+                   height: 200px; 
+                   background-repeat: no-repeat;">
                                     </div>
                                     <div class="card-body p-4">
                                         <h5 class="card-title fw-bold text-haygo-dark mb-1"><?php echo $data['car_name']; ?></h5>
                                         <p class="small text-secondary mb-3"><?php echo $data['car_description']; ?></p>
 
                                         <div class="d-flex justify-content-evenly small mb-3">
-                                            <span class="text-nowrap"><i class="ri-user-3-line haygo-accent me-1"></i> <?php echo $data['seats']; ?></span>
-                                            <span class="text-nowrap"><i class="ri-briefcase-line haygo-accent me-1"></i><?php echo $data['bags']; ?></span>
-                                            <span class="text-nowrap"><i class="ri-gas-station-line haygo-accent me-1"></i><?php echo $data['transmission']; ?></span>
+                                            <span class="text-nowrap" style="font-size: 1rem; font-weight: 600">
+                                                <i class="ri-user-3-line haygo-accent me-1" style="font-size: 1.5rem"></i>
+                                                <?php echo $data['seats']; ?>
+                                            </span>
+                                            <span class="text-nowrap" style="font-size: 1rem; font-weight: 600">
+                                                <i class="ri-briefcase-line haygo-accent me-1" style="font-size: 1.5rem"></i>
+                                                <?php echo $data['bags']; ?>
+                                            </span>
+                                            <span class="text-nowrap" style="font-size: 1rem; font-weight: 600">
+                                                <i class="ri-gas-station-line haygo-accent me-1" style="font-size: 1.5rem"></i>
+                                                <?php echo $data['transmission']; ?>
+                                            </span>
                                         </div>
 
                                         <div class="text-center mt-3">
-                                            <p class="small fw-normal text-secondary mb-0">Total Price for Days</p>
+                                            <p class="small fw-normal text-secondary mb-0">Car Price Per Day </p>
                                             <p class="fs-3 fw-bolder text-haygo-blue mb-0">
                                                 ₱<?php echo number_format($data['car_price'], 2); ?>
                                             </p>
-                                            <button class="btn fleet-button rounded-pill w-100 mt-2" onclick="openBookingModal()"
-                                                data-bs-toggle="modal" data-bs-target="#bookingModal">Select Car</button>
+
+                                            <button class="btn fleet-button rounded-pill w-100 mt-2 selectCarBtn"
+                                                data-id="<?php echo $data['id']; ?>"
+                                                data-name="<?php echo htmlspecialchars($data['car_name'], ENT_QUOTES); ?>"
+                                                data-price="<?php echo $data['car_price']; ?>"
+                                                data-pickup="<?php echo htmlspecialchars($_POST['pickupDate'] ?? '', ENT_QUOTES); ?>"
+                                                data-dropoff="<?php echo htmlspecialchars($_POST['dropoffDate'] ?? '', ENT_QUOTES); ?>">
+                                                Select Car
+                                            </button>
                                         </div>
                                     </div>
                                 </div>
                             </div>
                         <?php endwhile; ?>
+
                     </div>
+
 
                     <div id="no-results-message" class="text-center py-5" style="display: none;">
                         <i class="ri-alert-line display-4 text-secondary mb-3"></i>
@@ -95,7 +130,12 @@ $result = $conn->query($query);
         </div>
     </section>
 
+    <!-- Hidden rental days for JS -->
+    <span id="rentalDays" data-days="<?php echo $rental_days; ?>" style="display:none;"></span>
+
+
 </main>
+
 
 <!-- Booking Confirmation Modal (Multi-Step) -->
 <div class="modal fade" id="bookingModal" tabindex="-1" aria-labelledby="bookingModalLabel" aria-hidden="true">
@@ -106,74 +146,85 @@ $result = $conn->query($query);
                 <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal" aria-label="Close"></button>
             </div>
 
-            <form id="bookingForm" action="actions/bookings.php" method="post">
 
-                <div class="modal-body p-4 text-haygo-dark">
-                    <!-- Step Indicator -->
-                    <div class="progress mb-4" role="progressbar" aria-label="Booking Progress" aria-valuenow="33" aria-valuemin="0" aria-valuemax="100">
-                        <div class="progress-bar" id="bookingProgressBar" style="width: 33%"></div>
-                    </div>
+            <div class="modal-body p-4 text-haygo-dark">
+                <div class="progress mb-4" role="progressbar" aria-label="Booking Progress" aria-valuenow="33" aria-valuemin="0" aria-valuemax="100">
+                    <div class="progress-bar" id="bookingProgressBar" style="width: 33%"></div>
+                </div>
 
-                    <div id="booking-steps">
-
+                <div id="booking-steps">
+                    <form id="bookingForm" action="actions/bookings.php" method="post">
                         <!-- Step 1: Summary -->
                         <div class="booking-step" data-step="1">
                             <h4 class="fw-bold mb-3 text-haygo-blue">1. Rental Overview</h4>
                             <p class="lead fw-medium mb-3">You are about to book:</p>
-                            <h4 class="fw-bolder text-haygo-dark" id="modalCarName"></h4>
+
+                            <p id="selectedCarName" class="fw-bold fs-5 mb-1"></p>
+                            <p>Total Price: ₱ <span id="totalPrice">0.00</span></p>
+
+                            <input type="hidden" name="vehicle_id">
+                            <input type="hidden" name="daily_price">
 
                             <hr>
-
                             <dl class="row small mb-0">
                                 <dt class="col-sm-5 fw-bold">Pick-up Date:</dt>
-                                <dd class="col-sm-7" id="modalStartDate"></dd>
+                                <dd class="col-sm-7"><?php echo htmlspecialchars($pickup_date); ?></dd>
 
                                 <dt class="col-sm-5 fw-bold">Return Date:</dt>
-                                <dd class="col-sm-7" id="modalEndDate"></dd>
+                                <dd class="col-sm-7"><?php echo htmlspecialchars($dropoff_date); ?></dd>
 
                                 <dt class="col-sm-5 fw-bold">Rental Duration:</dt>
-                                <dd class="col-sm-7"><span id="modalRentalDays"></span> Days</dd>
+                                <dd class="col-sm-7"><span>
+                                        <?php
+                                        if ($rental_days == 1) {
+                                            echo $rental_days . ' Day';
+                                        } else {
+                                            echo $rental_days . ' Days';
+                                        }
+                                        ?>
+                                    </span></dd>
                             </dl>
+
 
                             <hr class="mt-3">
                             <div class="d-flex justify-content-between align-items-center mt-3">
                                 <span class="fs-5 fw-bold text-haygo-blue">TOTAL PRICE:</span>
-                                <span class="fs-4 fw-bolder text-haygo-dark" id="modalTotalPrice"></span>
+                                <p class="fs-4 fw-bolder text-haygo-dark">₱<span id="totalPriceFooter"> 0.00</span></p>
                             </div>
                         </div>
-                        <!-- Step 2: Customer Details & Document Upload (COMBINED STEP) -->
+
+                        <!-- Step 2: Customer Details & Document Upload -->
                         <div class="booking-step" data-step="2" style="display:none;">
                             <h4 class="fw-bold mb-3 text-haygo-blue">2. Enter Details & Upload License</h4>
                             <p class="text-secondary mb-4">Provide your information and upload a clear image of your valid Driver's License or Government ID.</p>
 
                             <hr class="my-4">
 
-                            <!-- Contact Information Section -->
                             <h5 class="fw-bold mb-3 text-haygo-dark">Contact & ID Information</h5>
                             <div class="row g-3">
                                 <div class="col-md-6">
                                     <label for="fullName" class="form-label small fw-semibold">Full Name *</label>
-                                    <input type="text" name="fullname" class="form-control rounded" id="fullName" placeholder="Juan Dela Cruz">
+                                    <input type="text" name="fullname" class="form-control rounded" placeholder="Juan Dela Cruz">
                                     <div class="invalid-feedback">Full name is required.</div>
                                 </div>
                                 <div class="col-md-6">
                                     <label for="email" class="form-label small fw-semibold">Email Address *</label>
-                                    <input type="email" name="email" class="form-control rounded" id="email" placeholder="example@mail.com">
+                                    <input type="email" name="email" class="form-control rounded" placeholder="example@mail.com">
                                     <div class="invalid-feedback">A valid email is required.</div>
                                 </div>
                                 <div class="col-md-6">
                                     <label for="phone" class="form-label small fw-semibold">Phone Number *</label>
-                                    <input type="tel" name="phone_num" class="form-control rounded" id="phone" placeholder="09XX-XXX-XXXX">
+                                    <input type="tel" name="phone_num" class="form-control rounded" placeholder="09XX-XXX-XXXX">
                                     <div class="invalid-feedback">Phone number is required.</div>
                                 </div>
                                 <div class="col-md-6">
                                     <label for="licenseNumber" class="form-label small fw-semibold">Driver's License / ID Number *</label>
-                                    <input type="text" name="lic_id" class="form-control rounded" id="licenseNumber" placeholder="DL-XXX-XXX">
+                                    <input type="text" name="lic_id" class="form-control rounded" placeholder="DL-XXX-XXX">
                                     <div class="invalid-feedback">License/ID number is required.</div>
                                 </div>
                                 <div class="col-md-6">
                                     <label for="date" class="form-label small fw-semibold">Date of Birth *</label>
-                                    <input type="date" name="birth" class="form-control rounded" id="dateOfBirth">
+                                    <input type="date" name="birth" class="form-control rounded">
                                     <div class="invalid-feedback">Date of Birth is required.</div>
                                 </div>
                             </div>
@@ -185,7 +236,7 @@ $result = $conn->query($query);
                             <h5 class="fw-bold mb-3 text-haygo-dark">Driver's License Image Upload</h5>
                             <div class="mb-3">
                                 <label for="licenseImageFile" class="form-label small fw-semibold">Upload License Image *</label>
-                                <input class="form-control rounded" type="file" name="lic_img" id="licenseImageFile" accept="image/png, image/jpeg">
+                                <input class="form-control rounded" type="file" name="lic_img" accept="image/png, image/jpeg">
                                 <div class="invalid-feedback">A license image is required for verification.</div>
                             </div>
 
@@ -199,53 +250,55 @@ $result = $conn->query($query);
                                 </p>
                             </div>
                         </div>
+                    </form>
 
-                        <!-- Step 3: Confirmation & Payment (Moved from Step 4) -->
-                        <div class="booking-step" data-step="3" style="display:none;">
-                            <h4 class="fw-bold mb-3 text-haygo-blue">3. Final Review & Complete</h4>
-                            <p class="text-secondary mb-4">Review your details and acknowledge the payment instruction to complete.</p>
+                    <!-- Step 3: Confirmation & Payment -->
+                    <div class="booking-step" data-step="3" style="display:none;">
+                        <h4 class="fw-bold mb-3 text-haygo-blue">3. Final Review & Complete</h4>
+                        <p class="text-secondary mb-4">Review your details and acknowledge the payment instruction to complete.</p>
 
-                            <div class="card p-3 mb-4 bg-light">
-                                <h5 class="fw-bold border-bottom pb-2 mb-2">Booking Summary</h5>
-                                <dl class="row small mb-0">
-                                    <dt class="col-sm-4">Car:</dt>
-                                    <dd class="col-sm-8 fw-bold text-haygo-dark" id="reviewCarName"></dd>
-                                    <dt class="col-sm-4">Dates:</dt>
-                                    <dd class="col-sm-8" id="reviewDates"></dd>
-                                    <dt class="col-sm-4">Renter:</dt>
-                                    <dd class="col-sm-8" id="reviewFullName"></dd>
-                                    <dt class="col-sm-4">Contact:</dt>
-                                    <dd class="col-sm-8"><span id="reviewEmail"></span> / <span id="reviewPhone"></span></dd>
-                                    <dt class="col-sm-4 text-success fw-bold">FINAL TOTAL:</dt>
-                                    <dd class="col-sm-8 fs-5 fw-bolder text-success" id="reviewTotal"></dd>
-                                </dl>
-                            </div>
-
-                            <h5 class="fw-bold mb-3 text-haygo-dark">Payment Instruction</h5>
-                            <div class="alert alert-warning small">
-                                <i class="ri-alert-line me-2"></i>
-                                You will pay the full amount upon pick-up. By clicking 'Complete Booking', you confirm this reservation.
-                            </div>
-                            <div class="form-check">
-                                <input class="form-check-input" type="checkbox" value="acknowledged" id="paymentInstruction" required>
-                                <label class="form-check-label small" for="paymentInstruction">
-                                    I acknowledge that the ₱<span id="reviewTotalSmall"></span> will be settled at the time of vehicle collection.
-                                </label>
-                            </div>
+                        <div class="card p-3 mb-4 bg-light">
+                            <h5 class="fw-bold border-bottom pb-2 mb-2">Booking Summary</h5>
+                            <dl class="row small mb-0">
+                                <dt class="col-sm-4">Car:</dt>
+                                <dd class="col-sm-8 fw-bold text-haygo-dark"></dd>
+                                <dt class="col-sm-4">Dates:</dt>
+                                <dd class="col-sm-8"></dd>
+                                <dt class="col-sm-4">Renter:</dt>
+                                <dd class="col-sm-8"></dd>
+                                <dt class="col-sm-4">Contact:</dt>
+                                <dd class="col-sm-8"><span></span> / <span></span></dd>
+                                <dt class="col-sm-4 text-success fw-bold">FINAL TOTAL:</dt>
+                                <dd class="col-sm-8 fs-5 fw-bolder text-success"></dd>
+                            </dl>
                         </div>
 
+                        <h5 class="fw-bold mb-3 text-haygo-dark">Payment Instruction</h5>
+                        <div class="alert alert-warning small">
+                            <i class="ri-alert-line me-2"></i>
+                            You will pay the full amount upon pick-up. By clicking 'Complete Booking', you confirm this reservation.
+                        </div>
+                        <div class="form-check">
+                            <input class="form-check-input" type="checkbox" value="acknowledged" required>
+                            <label class="form-check-label small" for="paymentInstruction">
+                                I acknowledge that the ₱<span></span> will be settled at the time of vehicle collection.
+                            </label>
+                        </div>
                     </div>
-                </div>
 
-                <!-- Footer and Navigation Buttons -->
-                <div class="modal-footer justify-content-between">
-                    <button type="button" class="btn p-btn rounded-pill" id="prevStepBtn" style="display:none;" onclick="prevStep()">
-                        <i class="ri-arrow-left-line me-1"></i> Previous
-                    </button>
-                    <button type="button" class="btn c-btn rounded-pill" data-bs-dismiss="modal" id="cancelBtn">Cancel</button>
-                    <button type="button" class="btn pro-btn" id="nextStepBtn" onclick="nextStep()">Proceed to Details & Upload <i class="ri-arrow-right-line ms-1"></i></button>
                 </div>
-            </form>
+            </div>
+
+            <!-- Footer and Navigation Buttons -->
+            <div class="modal-footer justify-content-between">
+                <button type="button" class="btn p-btn rounded-pill" id="prevStepBtn" style="display:none;">
+                    <i class="ri-arrow-left-line me-1"></i> Previous
+                </button>
+                <button type="button" class="btn c-btn rounded-pill" data-bs-dismiss="modal" id="cancelBtn">Cancel</button>
+                <button type="submit" class="btn pro-btn" id="nextStepBtn" name="stepBtn" value="step1">
+                    Proceed to Details & Upload <i class="ri-arrow-right-line ms-1"></i>
+                </button>
+            </div>
         </div>
 
     </div>

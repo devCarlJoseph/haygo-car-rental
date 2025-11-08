@@ -19,7 +19,7 @@ require_once 'header.php';
                 <!-- Search Module Container -->
                 <div class="search-module p-4 p-md-5 mx-auto" style="max-width: 1000px;">
                     <h2 class="fs-4 fw-bold mb-4 text-center haygo-primary-text">Find Your Cebu Ride</h2>
-                    <form action="fleet.php" id="rentalSearchForm" class="row g-3 g-lg-4 align-items-end" method="get">
+                    <form action="actions/search_fleet.php" id="rentalSearchForm" class="row g-3 g-lg-4 align-items-end" method="post">
 
                         <!-- Location Input -->
                         <div class="col-12 col-md-5 col-lg-4">
@@ -27,9 +27,9 @@ require_once 'header.php';
                                 <i class="bi bi-geo-alt text-haygo-accent me-1"></i> Location
                             </label>
 
-                            <input type="text" id="pickupLocation" name="pickupLocation"
+                            <input type="text" id="pickupLocation"
                                 value="Poblacion Cordova Cebu" readonly
-                                class="form-control form-control-lg rounded-3" placeholder="City, airport, or address">
+                                class="form-control form-control-lg rounded-3">
                         </div>
 
                         <!-- Pick-up Date Input (Trigger for Calendar Modal) -->
@@ -54,9 +54,9 @@ require_once 'header.php';
                             <input type="hidden" id="dropoffDate" name="dropoffDate">
                         </div>
 
-                        <!-- Search Button (Primary Lime) -->
+                        <!-- Search Button -->
                         <div class="col-12 col-lg-2">
-                            <button type="submit"
+                            <button type="submit" name="search"
                                 class="btn btn-haygo-primary btn-lg w-100 fw-semibold rounded-3 shadow-sm">
                                 Search
                             </button>

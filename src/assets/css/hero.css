@@ -261,7 +261,6 @@
     }
 }
 
-
 #pickupDateDisplay:focus {
     border-color: #fbd7b0;
     box-shadow: 0 0 0 0.25rem #fbd7b0;
@@ -270,4 +269,8 @@
 .form-control:focus {
     border-color: #fbd7b0 !important;
     box-shadow: 0 0 0 0.25rem #fbd7b0 !important;
+}
+
+.form-control {
+    background-color: #ffffff !important;
 }

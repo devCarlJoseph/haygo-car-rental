@@ -4,7 +4,7 @@ CREATE TABLE if NOT EXISTS haygo_admins (
     id INT AUTO_INCREMENT PRIMARY KEY,
     admin_username VARCHAR(255) UNIQUE NOT NULL,
     admin_pwd VARCHAR(255) NOT NULL,
-    adminProfile VARCHAR(255) NOT NULL
+    admin_profile VARCHAR(255) NOT NULL
 );
 
 CREATE TABLE if NOT EXISTS customers (
@@ -41,6 +41,16 @@ CREATE TABLE IF NOT EXISTS bookings (
     total_price DECIMAL(10,2) NOT NULL,
     status ENUM('pending', 'confirmed', 'completed', 'cancelled') NOT NULL DEFAULT 'pending',
     FOREIGN KEY (vehicle_id) REFERENCES vehicles(id)
+);
+
+CREATE TABLE IF NOT EXISTS blog (
+    id INT AUTO_INCREMENT PRIMARY KEY,
+    blog_title VARCHAR(255) NOT NULL,
+    blog_category VARCHAR(255) NOT NULL,
+    content_snipp VARCHAR(255) NOT NULL,
+    blog_image VARCHAR(255) NOT NULL.
+    craeted_date TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
+    author_name VARCHAR(255) NOT NULL
 );
 
 

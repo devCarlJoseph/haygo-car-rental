@@ -24,4 +24,6 @@ if (isset($_POST['update'])) {
 
     $stmt->close();
     $conn->close();
+
+    
 }

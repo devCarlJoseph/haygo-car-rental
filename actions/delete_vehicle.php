@@ -4,7 +4,7 @@ require_once '../config/config.php';
 
 if (isset($_GET['id'])) {
     $vehicle_id = $_GET['id'];
-
+    
     $imgQuery = "SELECT car_image FROM vehicles WHERE id = ?";
     $imgStmt = $conn->prepare($imgQuery);
     $imgStmt->bind_param("i", $vehicle_id);

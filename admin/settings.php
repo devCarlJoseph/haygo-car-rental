@@ -1,5 +1,13 @@
 <?php
 require_once 'header.php';
+
+session_start();
+
+if (!isset($_SESSION['admin_id'])) {
+    header('Location: log_in.php');
+    exit();
+}
+
 ?>
 
 <button class="d-lg-none position-fixed top-0 end-0 mt-3 me-3 z-3 btn bg-rental-primary text-white shadow-lg p-2 rounded-3"
@@ -56,10 +64,10 @@ require_once 'header.php';
             <i class="bi bi-gear-fill fs-5"></i>
             <span>Settings</span>
         </a>
-        <div class="d-flex align-items-center gap-3 p-3 rounded-3 bg-secondary-subtle bg-opacity-10 text-white">
-            <div class="rounded-circle bg-rental-primary d-flex align-items-center justify-content-center text-white fw-bold" style="width: 40px; height: 40px;">SD</div>
+        <div class="d-flex align-items-center gap-3 p-3 rounded-3 bg-secondary bg-opacity-10 text-white">
+            <img src="../uploads/admin/<?= $_SESSION['admin_profile'] ?>" style="width: 40px; height: 40px; object-fit: cover" class="rounded-circle">
             <div>
-                <p class="mb-0 fw-semibold fs-6">Senior Dev</p>
+                <p class="mb-0 fw-semibold fs-6"><?= $_SESSION['admin_username']; ?></p>
                 <p class="mb-0 small text-secondary">Admin</p>
             </div>
         </div>
@@ -107,7 +115,7 @@ require_once 'header.php';
                 <h5 class="fw-semibold text-dark mb-1">Sign Out</h5>
                 <p class="text-secondary small mb-0">You will be logged out of the dashboard.</p>
             </div>
-            <a href="log_in.php" class="btn btn-danger px-4 py-2 rounded-3">
+            <a href="../actions/log_out.php" class="btn btn-danger px-4 py-2 rounded-3">
                 <i class="bi bi-box-arrow-right me-2"></i> Logout
             </a>
         </div>

@@ -2,9 +2,15 @@
 require_once 'header.php';
 require_once '../config/config.php';
 
+session_start();
 
 $query = "SELECT * FROM vehicles ORDER BY id DESC";
 $result = $conn->query($query);
+
+if (!isset($_SESSION['admin_id'])) {
+    header('Location: log_in.php');
+    exit();
+}
 
 
 
@@ -70,10 +76,10 @@ $result = $conn->query($query);
                 <i class="bi bi-gear-fill fs-5"></i>
                 <span>Settings</span>
             </a>
-            <div class="d-flex align-items-center gap-3 p-3 rounded-3 bg-secondary-subtle bg-opacity-10 text-white">
-                <div class="rounded-circle bg-rental-primary d-flex align-items-center justify-content-center text-white fw-bold" style="width: 40px; height: 40px;">SD</div>
+            <div class="d-flex align-items-center gap-3 p-3 rounded-3 bg-secondary bg-opacity-10 text-white">
+                <img src="../uploads/admin/<?= $_SESSION['admin_profile'] ?>" style="width: 40px; height: 40px; object-fit: cover" class="rounded-circle">
                 <div>
-                    <p class="mb-0 fw-semibold fs-6">Senior Dev</p>
+                    <p class="mb-0 fw-semibold fs-6"><?= $_SESSION['admin_username']; ?></p>
                     <p class="mb-0 small text-secondary">Admin</p>
                 </div>
             </div>
@@ -131,8 +137,8 @@ $result = $conn->query($query);
                         <tr>
                             <th scope="col" class="px-3 py-3 text-start text-xs text-secondary text-uppercase">Image</th>
                             <th scope="col" class="px-3 py-3 text-start text-xs text-secondary text-uppercase">Car Name & Description</th>
-                            <th scope="col" class="px-3 py-3 text-start text-xs text-secondary text-uppercase">Type</th>
-                            <th scope="col" class="px-3 py-3 text-start text-xs text-secondary text-uppercase">Transmission</th>
+                            <th scope="col" class="px-3 py-3 text-center text-xs text-secondary text-uppercase">Type</th>
+                            <th scope="col" class="px-3 py-3 text-center text-xs text-secondary text-uppercase">Transmission</th>
                             <th scope="col" class="px-3 py-3 text-center text-xs text-secondary text-uppercase">Specs</th>
                             <th scope="col" class="px-3 py-3 text-start text-xs text-secondary text-uppercase">Daily Price</th>
                             <th scope="col" class="px-3 py-3 text-center text-xs text-secondary text-uppercase">Action</th>
@@ -153,7 +159,7 @@ $result = $conn->query($query);
                                     <span class="text-muted small"><?php echo $data['car_description']; ?></span>
                                 </td>
 
-                                <td><?php echo $data['car_type']; ?></td>
+                                <td class="text-center"><?php echo $data['car_type']; ?></td>
 
                                 <td class="text-center">
                                     <?php echo $data['transmission']; ?>
@@ -229,11 +235,11 @@ $result = $conn->query($query);
                         <div class="col-md-6">
                             <label class="form-label fw-semibold">Vehicle Type</label>
                             <select id="edit_type" name="car_type" class="form-select" required>
+                                <option value="">Choose Type</option>
                                 <option value="Sedan">Sedan</option>
-                                <option value="SUV">SUV</option>
-                                <option value="Van">Van</option>
-                                <option value="Luxury">Luxury</option>
-                                <option value="Electric">Electric</option>
+                                <option value="SUV">SUV/Crossover</option>
+                                <option value="Van">Van/MPV</option>
+                                <option value="Hatchback">Hatchback</option>
                             </select>
                         </div>
 
@@ -323,12 +329,11 @@ $result = $conn->query($query);
                             <div class="col-md-6">
                                 <label for="carType" class="form-label fw-semibold">Vehicle Type</label>
                                 <select id="carType" class="form-select rounded-3" name="car_type" required>
-                                    <option value="">Choose...</option>
+                                    <option value="">Choose Type</option>
                                     <option value="Sedan">Sedan</option>
-                                    <option value="SUV">SUV</option>
-                                    <option value="Van">Van</option>
-                                    <option value="Luxury">Luxury</option>
-                                    <option value="Electric">Electric</option>
+                                    <option value="SUV">SUV/Crossover</option>
+                                    <option value="Van">Van/MPV</option>
+                                    <option value="Hatchback">Hatchback</option>
                                 </select>
                             </div>
 
