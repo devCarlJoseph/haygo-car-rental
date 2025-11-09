@@ -49,8 +49,8 @@ CREATE TABLE IF NOT EXISTS blog (
     blog_title VARCHAR(255) NOT NULL,
     blog_category VARCHAR(255) NOT NULL,
     content_snipp VARCHAR(255) NOT NULL,
-    blog_image VARCHAR(255) NOT NULL.
-    craeted_date TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
+    blog_image VARCHAR(255) NOT NULL,
+    created_date DATE DEFAULT (CURRENT_DATE),
     author_name VARCHAR(255) NOT NULL
 );
 

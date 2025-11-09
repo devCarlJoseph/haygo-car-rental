@@ -1,5 +1,10 @@
 <?php
 require_once 'header.php';
+require_once "config/config.php";
+
+$query = "SELECT * FROM blog";
+$blogs = $conn->query($query);
+
 ?>
 
 <!-- Blog Hero Section: Carousel -->
@@ -102,27 +107,29 @@ require_once 'header.php';
 
     <!-- Post Grid Container -->
     <div id="post-grid" class="row row-cols-1 row-cols-md-2 row-cols-lg-3 g-4">
-        <div class="col post-card-item" data-category="${post.category}">
-            <article class="card h-100 rounded-4 post-card">
-                <div class="ratio ratio-4x3 bg-light rounded-top-4 overflow-hidden">
-                    <img src="${post.imageUrl}" class="card-img-top object-fit-cover opacity-75" alt="BLOG IMAGE">
-                </div>
-                <div class=" card-body p-4">
-                    <small class="${primaryColorClass} fw-bold text-uppercase d-block mb-2">Category</small>
-                    <h3 class="card-title fs-4 fw-bold mb-3 lh-sm">
-                        <a href="#" class="text-decoration-none text-reset">Post Title</a>
-                    </h3>
-                    <p class="card-text text-muted mb-4" style="--bs-line-clamp: 3; display: -webkit-box; -webkit-line-clamp: 3; -webkit-box-orient: vertical; overflow: hidden;">
-                        Content Snippet
-                    </p>
-                    <div class="card-footer bg-white border-0 p-0">
-                        <span class="small text-secondary">
-                            Created Date | By Author Name
-                        </span>
+        <?php while ($blog_data = $blogs->fetch_assoc()): ?>
+            <div class="col post-card-item" data-category="${post.category}">
+                <article class="card h-100 rounded-4 post-card">
+                    <div class="ratio ratio-4x3 bg-light rounded-top-4 overflow-hidden">
+                        <img src="uploads/blogs/<?php echo $blog_data['blog_image']; ?>" class="card-img-top object-fit-cover opacity-75" alt="BLOG IMAGE">
                     </div>
-                </div>
-            </article>
-        </div>
+                    <div class=" card-body p-4">
+                        <small class="${primaryColorClass} fw-bold text-uppercase d-block mb-2"><?php echo $blog_data['blog_category']; ?></small>
+                        <h3 class="card-title fs-4 fw-bold mb-3 lh-sm">
+                            <a href="#" class="text-decoration-none text-reset"><?php echo $blog_data['blog_title']; ?></a>
+                        </h3>
+                        <p class="card-text text-muted mb-4" style="--bs-line-clamp: 3; display: -webkit-box; -webkit-line-clamp: 3; -webkit-box-orient: vertical; overflow: hidden;">
+                            <?php echo $blog_data['content_snipp']; ?>
+                        </p>
+                        <div class="card-footer bg-white border-0 p-0">
+                            <span class="small text-secondary">
+                                <?php echo $blog_data['created_date'] . " | " . $blog_data['author_name']; ?>
+                            </span>
+                        </div>
+                    </div>
+                </article>
+            </div>
+        <?php endwhile; ?>
     </div>
 </main>
 
@@ -137,18 +144,18 @@ require_once 'header.php';
             </div>
 
             <!-- Modal Body (Form) -->
-            <form id="new-post-form" class="p-4">
+            <form action="actions/add_blog.php" id="new-post-form" class="p-4" method="post" enctype="multipart/form-data">
                 <!-- Title -->
                 <div class="mb-3">
                     <label for="post-title" class="form-label fw-bold">Post Title</label>
                     <input type="text" id="post-title" required class="form-control form-control-lg rounded-3 border-2"
-                        placeholder="A descriptive title">
+                        placeholder="A descriptive title" name="blog_title">
                 </div>
 
                 <!-- Category -->
                 <div class="mb-3">
                     <label for="post-category" class="form-label fw-bold">Category</label>
-                    <select id="post-category" required class="form-select form-select-lg rounded-3 border-2">
+                    <select name="category" id="post-category" required class="form-select form-select-lg rounded-3 border-2">
                         <option value="" disabled selected>Select a category</option>
                         <option value="guides">Travel Guides</option>
                         <option value="tips">Rental Tips</option>
@@ -161,7 +168,7 @@ require_once 'header.php';
                 <!-- Content Snippet -->
                 <div class="mb-3">
                     <label for="post-snippet" class="form-label fw-bold">Content Snippet (Max 150 chars)</label>
-                    <textarea id="post-snippet" rows="3" maxlength="150" required
+                    <textarea name="content" id="post-snippet" rows="3" maxlength="150" required
                         class="form-control rounded-3 border-2"
                         placeholder="A short summary for the card view"></textarea>
                 </div>
@@ -169,22 +176,17 @@ require_once 'header.php';
                 <!-- Image File Input -->
                 <div class="mb-4">
                     <label for="post-file" class="form-label fw-bold">Upload Image File (Optional, < 1MB)</label>
-                            <input type="file" id="post-file" accept="image/*" class="form-control rounded-3">
-                            <div id="image-preview" class="mt-3 d-none">
-                                <p class="text-muted small mb-1">Preview:</p>
-                                <img id="preview-img" src="" class="img-thumbnail rounded-3" style="max-height: 100px;"
-                                    alt="Image Preview">
-                            </div>
+                            <input type="file" id="post-file" name="blog_img" class="form-control rounded-3">
                 </div>
 
                 <div class="mb-3">
                     <label for="post-title" class="form-label fw-bold">Author Name</label>
-                    <input type="text" id="post-title" required class="form-control form-control-lg rounded-3 border-2"
+                    <input type="text" id="post-title" name="author" required class="form-control form-control-lg rounded-3 border-2"
                         placeholder="Juan Dela Cruz">
                 </div>
 
                 <!-- Submit Button -->
-                <button type="submit" id="submit-btn" class="btn btn-primary btn-lg w-100 fw-bold rounded-3 shadow-lg">
+                <button type="submit" id="submit-btn" name="add_blog" class="btn btn-haygo-primary btn-lg w-100 fw-bold rounded-3 shadow-lg">
                     <i class="ri-send-plane-line me-2"></i> Publish Contribution
                 </button>
                 <p id="form-message" class="text-center small mt-2 text-danger"></p>

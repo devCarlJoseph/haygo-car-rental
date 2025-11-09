@@ -5,7 +5,6 @@ $booking_id = isset($_POST['booking_id']) ? $_POST['booking_id'] : null;
 $submit_status = isset($_POST['submit_status']) ? $_POST['submit_status'] : null;
 
 if (!isset($_POST['booking_id']) || empty($_POST['booking_id'])) {
-    // New booking
     if (isset($_POST['fullname'], $_POST['email'], $_POST['phone_num'], $_POST['lic_id'], $_POST['birth'], $_POST['pick_up'], $_POST['drop_off'], $_POST['vehicle_id'], $_POST['total_price'])) {
 
         $customer     = $_POST['fullname'];
