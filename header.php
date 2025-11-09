@@ -48,8 +48,6 @@
                                 class="h-color nav-link text-secondary fw-semibold mx-2">Home</a></li>
                         <li class="nav-item"><a href="about.php"
                                 class="h-color nav-link text-secondary fw-semibold mx-2">About Us</a></li>
-                        <li class="nav-item"><a href="fleet.php"
-                                class="h-color nav-link text-secondary fw-semibold mx-2">Fleet</a></li>
                         <li class="nav-item"><a href="contact.php"
                                 class="h-color nav-link text-secondary fw-semibold mx-2">Contact Us</a></li>
                         <li class="nav-item"><a href="help.php" class="h-color nav-link text-secondary fw-semibold mx-2">Help</a>

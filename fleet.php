@@ -169,13 +169,13 @@ if ($pickup_date && $dropoff_date) {
                             <dl class="row small mb-0">
                                 <dt class="col-sm-5 fw-bold">Pick-up Date:</dt>
                                 <dd class="col-sm-7">
-                                    <input style="border: none;" type="text" name="pick_up" value="<?php echo htmlspecialchars($pickup_date); ?>" readonly>
+                                    <input style="border: none;" type="text" name="pick_up" id="pick_up" value="<?php echo htmlspecialchars($pickup_date); ?>" readonly>
                                 </dd>
 
 
                                 <dt class="col-sm-5 fw-bold">Return Date:</dt>
                                 <dd class="col-sm-7">
-                                    <input style="border: none;" type="text" name="drop_off" value="<?php echo htmlspecialchars($dropoff_date); ?>" readonly>
+                                    <input style="border: none;" type="text" name="drop_off" id="drop_off" value="<?php echo htmlspecialchars($dropoff_date); ?>" readonly>
                                 </dd>
 
                                 <dt class="col-sm-5 fw-bold">Rental Duration:</dt>
@@ -212,28 +212,23 @@ if ($pickup_date && $dropoff_date) {
                             <div class="row g-3">
                                 <div class="col-md-6">
                                     <label for="fullName" class="form-label small fw-semibold">Full Name *</label>
-                                    <input type="text" name="fullname" class="form-control rounded" placeholder="Juan Dela Cruz">
-                                    <div class="invalid-feedback">Full name is required.</div>
+                                    <input type="text" name="fullname" id="fullname" class="form-control rounded" placeholder="Juan Dela Cruz">
                                 </div>
                                 <div class="col-md-6">
                                     <label for="email" class="form-label small fw-semibold">Email Address *</label>
-                                    <input type="email" name="email" class="form-control rounded" placeholder="example@mail.com">
-                                    <div class="invalid-feedback">A valid email is required.</div>
+                                    <input type="email" name="email" id="email" class="form-control rounded" placeholder="example@mail.com">
                                 </div>
                                 <div class="col-md-6">
                                     <label for="phone" class="form-label small fw-semibold">Phone Number *</label>
-                                    <input type="tel" name="phone_num" class="form-control rounded" placeholder="09XX-XXX-XXXX">
-                                    <div class="invalid-feedback">Phone number is required.</div>
+                                    <input type="tel" name="phone_num" id="phone_num" class="form-control rounded" placeholder="09XX-XXX-XXXX">
                                 </div>
                                 <div class="col-md-6">
                                     <label for="licenseNumber" class="form-label small fw-semibold">Driver's License / ID Number *</label>
-                                    <input type="text" name="lic_id" class="form-control rounded" placeholder="DL-XXX-XXX">
-                                    <div class="invalid-feedback">License/ID number is required.</div>
+                                    <input type="text" name="lic_id" id="lic_id" class="form-control rounded" placeholder="DL-XXX-XXX">
                                 </div>
                                 <div class="col-md-6">
                                     <label for="date" class="form-label small fw-semibold">Date of Birth *</label>
-                                    <input type="date" name="birth" class="form-control rounded">
-                                    <div class="invalid-feedback">Date of Birth is required.</div>
+                                    <input type="date" name="birth" id="birth" class="form-control rounded">
                                 </div>
                             </div>
 
@@ -270,28 +265,29 @@ if ($pickup_date && $dropoff_date) {
                                 <h5 class="fw-bold border-bottom pb-2 mb-2">Booking Summary</h5>
                                 <dl class="row small mb-0">
                                     <dt class="col-sm-4">Car:</dt>
-                                    <dd class="col-sm-8 fw-bold text-haygo-dark"></dd>
+                                    <dd class="col-sm-8 fw-bold text-haygo-dark" id="summaryCar"></dd>
+
                                     <dt class="col-sm-4">Dates:</dt>
-                                    <dd class="col-sm-8"></dd>
+                                    <dd class="col-sm-8" id="summaryDates"></dd>
+
                                     <dt class="col-sm-4">Renter:</dt>
-                                    <dd class="col-sm-8"></dd>
+                                    <dd class="col-sm-8" id="summaryRenter"></dd>
+
                                     <dt class="col-sm-4">Contact:</dt>
-                                    <dd class="col-sm-8"><span></span> / <span></span></dd>
+                                    <dd class="col-sm-8">
+                                        <span id="summaryEmail"></span> / <span id="summaryPhone"></span>
+                                    </dd>
+
                                     <dt class="col-sm-4 text-success fw-bold">FINAL TOTAL:</dt>
-                                    <dd class="col-sm-8 fs-5 fw-bolder text-success"></dd>
+                                    <dd class="col-sm-8 fs-5 fw-bolder text-success" id="summaryTotal"></dd>
                                 </dl>
                             </div>
+
 
                             <h5 class="fw-bold mb-3 text-haygo-dark">Payment Instruction</h5>
                             <div class="alert alert-warning small">
                                 <i class="ri-alert-line me-2"></i>
-                                You will pay the full amount upon pick-up. By clicking 'Complete Booking', you confirm this reservation.
-                            </div>
-                            <div class="form-check">
-                                <input class="form-check-input" type="checkbox" value="acknowledged" required>
-                                <label class="form-check-label small" for="paymentInstruction">
-                                    I acknowledge that the ₱<span></span> will be settled at the time of vehicle collection.
-                                </label>
+                                You will pay the full amount upon pick-up. By clicking 'Complete Booking', you confirm this reservation. And when you click the 'Cancel', you're booking will be cancelled.
                             </div>
                         </div>
 
@@ -317,7 +313,7 @@ if ($pickup_date && $dropoff_date) {
 </div>
 
 <!-- Generic Message Modal -->
-<div class="modal fade" id="messageModal" tabindex="-1" aria-labelledby="messageModalLabel" aria-hidden="true">
+<div class="modal fade" id="messageModal" tabisndex="-1" aria-labelledby="messageModalLabel" aria-hidden="true">
     <div class="modal-dialog modal-dialog-centered">
         <div class="modal-content rounded-xl">
             <div class="modal-header">

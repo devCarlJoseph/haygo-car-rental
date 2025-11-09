@@ -22,35 +22,53 @@ $(document).ready(function () {
         $('#selectedCarDescription').text(carDescription);
         $('#totalPriceFooter').text(totalPrice.toFixed(2));
         $('#totalPriceInput').val(totalPrice.toFixed(2));
+        $('#s_total').val(totalPrice.toFixed(2));
         $('input[name="vehicle_id"]').val(vehicleId);
 
         showStep(1);
         $('#bookingModal').modal('show');
     });
 
-    // Proceed / Complete Booking button
     $('#nextStepBtn').click(function () {
         if ($('[data-step="1"]').is(':visible')) {
+
             showStep(2);
         } else if ($('[data-step="2"]').is(':visible')) {
-            // Step 2: Submit form to create pending booking
+            let fullname = $('#fullname').val().trim();
+            let email = $('#email').val().trim();
+            let phone = $('#phone_num').val().trim();
+            let lic = $('#lic_id').val().trim();
+            let birth = $('#birth').val().trim();
+
+            if (fullname === "" || email === "" || phone === "" || lic === "" || birth === "") {
+                showMessage("Please fill out all required fields before continuing.");
+                return;
+            }
+
             $.post('actions/bookings.php', $('#bookingForm').serialize(), function (response) {
-                $('#bookingIdInput').val(response); // Save booking_id
+                $('#bookingIdInput').val(response);
+
+                $('#summaryCar').text($('#selectedCarName').text());
+                $('#summaryDates').text($('#pick_up').val() + " → " + $('#drop_off').val());
+                $('#summaryRenter').text($('#fullname').val());
+                $('#summaryEmail').text($('#email').val());
+                $('#summaryPhone').text($('#phone_num').val());
+                $('#summaryTotal').text("₱" + parseFloat($('#totalPriceInput').val()).toFixed(2));
+
                 showStep(3);
             });
         } else if ($('[data-step="3"]').is(':visible')) {
-            // Step 3: Confirm booking
             $.post('actions/bookings.php', {
                 booking_id: $('#bookingIdInput').val(),
                 submit_status: 'confirmed'
             }, function () {
                 alert('Booking confirmed!');
                 $('#bookingModal').modal('hide');
+                window.location.href = 'index.php';
             });
         }
     });
 
-    // Cancel button
     $('#cancelBtn').click(function () {
         var bookingId = $('#bookingIdInput').val();
         if (bookingId) {
