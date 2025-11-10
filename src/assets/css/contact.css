@@ -7,6 +7,14 @@
     border-bottom-left-radius: 40px;
     border-bottom-right-radius: 40px;
     box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+    position: relative;
+    overflow: hidden;
+}
+
+.header-overlay{
+    position: absolute;
+    inset: 0;
+    background-color: #0000003d;
 }
 
 .contact-card {

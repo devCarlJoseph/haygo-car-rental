@@ -32,6 +32,10 @@ if (!isset($_POST['booking_id']) || empty($_POST['booking_id'])) {
 
         $booking_id_inserted = $conn->insert_id;
 
+        $updateVehicle = $conn->prepare("UPDATE vehicles SET status='unavailable' WHERE id=?");
+        $updateVehicle->bind_param("i", $vehicle_id);
+        $updateVehicle->execute();
+
         $customerQuery = "INSERT INTO customers (customer_name, email, phone, date_of_birth) 
                           VALUES (?, ?, ?, ?) 
                           ON DUPLICATE KEY UPDATE customer_name = VALUES(customer_name), phone = VALUES(phone), date_of_birth = VALUES(date_of_birth)";
@@ -51,6 +55,14 @@ if (isset($_POST['submit_status'], $_POST['booking_id'])) {
     $stmt = $conn->prepare("UPDATE bookings SET status=? WHERE id=?");
     $stmt->bind_param("si", $submit_status, $booking_id);
     $stmt->execute();
+
+    if ($submit_status == 'cancelled' || $submit_status == 'completed') {
+        $restore = $conn->prepare("UPDATE vehicles 
+            SET status='available' 
+            WHERE id=(SELECT vehicle_id FROM bookings WHERE id=?)");
+        $restore->bind_param("i", $booking_id);
+        $restore->execute();
+    }
 
     unset($_SESSION['pickupDate'], $_SESSION['dropoffDate']);
 

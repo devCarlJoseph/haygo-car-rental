@@ -4,18 +4,26 @@ require_once '../config/config.php';
 
 session_start();
 
-$query = "SELECT * FROM vehicles ORDER BY id DESC";
-$result = $conn->query($query);
-
 if (!isset($_SESSION['admin_id'])) {
     header('Location: log_in.php');
     exit();
 }
 
 
+$limit = 10; 
+$page = isset($_GET['page']) && is_numeric($_GET['page']) ? (int) $_GET['page'] : 1;
+$offset = ($page - 1) * $limit;
 
+$totalQuery = "SELECT COUNT(*) AS total FROM vehicles";
+$totalResult = $conn->query($totalQuery);
+$totalRow = $totalResult->fetch_assoc();
+$totalVehicles = $totalRow['total'];
+$totalPages = ceil($totalVehicles / $limit);
 
+$query = "SELECT * FROM vehicles ORDER BY id DESC LIMIT $limit OFFSET $offset";
+$result = $conn->query($query);
 ?>
+
 
 <body class="min-vh-100">
 
@@ -59,12 +67,6 @@ if (!isset($_SESSION['admin_id'])) {
                     <a href="customer.php" class="nav-link d-flex align-items-center gap-3 p-3 rounded-3 text-white transition hover-bg-rental-dark">
                         <i class="bi bi-people-fill fs-5"></i>
                         <span>Customers</span>
-                    </a>
-                </li>
-                <li class="nav-item mb-2">
-                    <a href="reports.php" class="nav-link d-flex align-items-center gap-3 p-3 rounded-3 text-white transition hover-bg-rental-dark">
-                        <i class="bi bi-graph-up fs-5"></i>
-                        <span>Reports & Analytics</span>
                     </a>
                 </li>
             </ul>
@@ -199,16 +201,28 @@ if (!isset($_SESSION['admin_id'])) {
 
             <!-- Pagination/View All Footer -->
             <div class="mt-4 d-flex justify-content-between align-items-center">
-                <span id="showing-count" class="text-sm text-secondary">Showing vehicles</span>
+                <span id="showing-count" class="text-sm text-secondary">
+                    Showing <?= min($limit, $totalVehicles - $offset) ?> of <?= $totalVehicles ?> vehicles
+                </span>
                 <nav aria-label="Page navigation">
                     <ul class="pagination pagination-sm mb-0">
-                        <li class="page-item disabled"><a class="page-link" href="#">Previous</a></li>
-                        <li class="page-item active"><a class="page-link bg-rental-primary border-rental-primary" href="#">1</a></li>
-                        <li class="page-item"><a class="page-link text-rental-primary" href="#">2</a></li>
-                        <li class="page-item"><a class="page-link text-rental-primary" href="#">Next</a></li>
+                        <li class="page-item <?= ($page <= 1) ? 'disabled' : '' ?>">
+                            <a class="page-link" href="?page=<?= $page - 1 ?>">Previous</a>
+                        </li>
+
+                        <?php for ($i = 1; $i <= $totalPages; $i++): ?>
+                            <li class="page-item <?= ($i == $page) ? 'active' : '' ?>">
+                                <a class="page-link <?= ($i == $page) ? 'bg-rental-primary border-rental-primary text-white' : 'text-rental-primary' ?>" href="?page=<?= $i ?>"><?= $i ?></a>
+                            </li>
+                        <?php endfor; ?>
+
+                        <li class="page-item <?= ($page >= $totalPages) ? 'disabled' : '' ?>">
+                            <a class="page-link" href="?page=<?= $page + 1 ?>">Next</a>
+                        </li>
                     </ul>
                 </nav>
             </div>
+
         </section>
 
     </main>

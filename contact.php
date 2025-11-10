@@ -6,11 +6,14 @@
 
     <!-- Header Section -->
     <div class="header-bg">
-        <div class="container text-center">
-            <h1 class="display-4 fw-bold haygo-primary-text">Contact Hay Go Car Rental</h1>
-            <p class="lead haygo-normal-text">
-                We're ready to help you with your booking, query, or feedback. Your journey is our priority!
-            </p>
+        <div class="header-overlay"></div>
+        <div class="position-relative">
+            <div class="container text-center">
+                <h1 class="display-4 fw-bold haygo-accent">Contact Hay Go Car Rental</h1>
+                <p class="lead haygo-normal-text text-light">
+                    We're ready to help you with your booking, query, or feedback. Your journey is our priority!
+                </p>
+            </div>
         </div>
     </div>
 

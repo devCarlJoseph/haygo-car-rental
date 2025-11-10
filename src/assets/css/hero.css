@@ -31,8 +31,8 @@
     border: none;
 }
 .l-button:hover {
-    background-color: var(--haygo-hover);
-    color: white;
+    background-color: var(--haygo-secondary);
+    color: var(--haygo-light);
     box-shadow: 0 5px 15px rgba(31, 122, 140, 0.4);
 }
 /* Floating Search Card */

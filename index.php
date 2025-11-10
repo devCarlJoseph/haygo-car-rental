@@ -97,10 +97,9 @@ unset($_SESSION['pickupDate'], $_SESSION['dropoffDate']);
         </div>
 
         <div class="row g-5 text-center">
-
             <!-- Commitment Pillar 1: Local Expertise -->
             <div class="col-md-4">
-                <div class="c-round icon-box rounded-circle mx-auto mb-4 d-flex align-items-center justify-content-center haygo-accent shadow-lg"
+                <div class="c-round icon-box rounded-circle mx-auto mb-4 d-flex align-items-center justify-content-center haygo-accent shadow"
                     style="width: 80px; height: 80px;">
                     <i class="fas fa-map-marked-alt fs-3"></i>
                 </div>
@@ -113,7 +112,7 @@ unset($_SESSION['pickupDate'], $_SESSION['dropoffDate']);
 
             <!-- Commitment Pillar 2: Reliability & Safety -->
             <div class="col-md-4">
-                <div class="c-round icon-box rounded-circle mx-auto mb-4 d-flex align-items-center justify-content-center haygo-accent shadow-lg"
+                <div class="c-round icon-box rounded-circle mx-auto mb-4 d-flex align-items-center justify-content-center haygo-accent shadow"
                     style="width: 80px; height: 80px;">
                     <i class="fas fa-shield-alt fs-3"></i>
                 </div>
@@ -126,7 +125,7 @@ unset($_SESSION['pickupDate'], $_SESSION['dropoffDate']);
 
             <!-- Commitment Pillar 3: Transparent Pricing -->
             <div class="col-md-4">
-                <div class="c-round icon-box rounded-circle mx-auto mb-4 d-flex align-items-center justify-content-center haygo-accent shadow-lg"
+                <div class="c-round icon-box rounded-circle mx-auto mb-4 d-flex align-items-center justify-content-center haygo-accent shadow"
                     style="width: 80px; height: 80px;">
                     <i class="fas fa-tags fs-3"></i>
                 </div>
@@ -149,37 +148,37 @@ unset($_SESSION['pickupDate'], $_SESSION['dropoffDate']);
 <!-- NEW: HOW IT WORKS SECTION -->
 <section id="how-it-works" class="py-5 bg-white pt-5">
     <div class="container container-xl py-5 text-center">
-        <h2 class="fs-2 fw-bold mb-3 haygo-secondary">Your Journey Simplified</h2>
-        <p class="fs-5 mb-5">From booking to driving, we make it effortless.</p>
+        <h2 class="fs-1 fw-bold mb-3 haygo-secondary">Your Journey Simplified</h2>
+        <p class="fs-5 fw-light mb-5">From booking to driving, we make it effortless.</p>
 
         <div class="row g-5 justify-content-center">
             <!-- Step 1 (Search) -->
             <div class="col-12 col-md-4">
-                <div class="icon-box rounded-circle d-inline-flex align-items-center justify-content-center bg-haygo-light text-haygo-accent fw-bold mb-4"
-                    style="width: 80px; height: 80px;">
+                <div class="icon-box rounded-circle d-inline-flex align-items-center justify-content-center bg-haygo-light text-haygo-accent fw-bold mb-3"
+                    style="width: 70px; height: 70px; border: solid 1px;">
                     <i class="bi bi-search fs-3"></i>
                 </div>
-                <h3 class="fs-5 fw-semibold haygo-primary-text mb-2">1. Find Your Vehicle</h3>
+                <h3 class="fs-3 fw-bold haygo-primary-text mb-2">1. Find Your Vehicle</h3>
                 <p class="text-secondary">Explore thousands of options tailored to your needs and location.</p>
             </div>
 
             <!-- Step 2 (Secure Booking) -->
             <div class="col-12 col-md-4">
-                <div class="icon-box rounded-circle d-inline-flex align-items-center justify-content-center bg-haygo-light text-haygo-accent fw-bold mb-4"
-                    style="width: 80px; height: 80px;">
+                <div class="icon-box rounded-circle d-inline-flex align-items-center justify-content-center bg-haygo-light text-haygo-accent fw-bold mb-3"
+                    style="width: 70px; height: 70px; border: solid 1px;">
                     <i class="bi bi-credit-card-2-back fs-3"></i>
                 </div>
-                <h3 class="fs-5 fw-semibold haygo-primary-text mb-2">2. Secure Your Booking</h3>
+                <h3 class="fs-3 fw-bold haygo-primary-text mb-2">2. Secure Your Booking</h3>
                 <p class="text-secondary">Confirm with our secure payment gateway for immediate confirmation.</p>
             </div>
 
             <!-- Step 3 (Pick Up Keys) -->
             <div class="col-12 col-md-4">
-                <div class="icon-box rounded-circle d-inline-flex align-items-center justify-content-center bg-haygo-light text-haygo-accent fw-bold mb-4"
-                    style="width: 80px; height: 80px;">
+                <div class="icon-box rounded-circle d-inline-flex align-items-center justify-content-center bg-haygo-light text-haygo-accent fw-bold mb-3"
+                    style="width: 70px; height: 70px; border: solid 1px;">
                     <i class="bi bi-key fs-3"></i>
                 </div>
-                <h3 class="fs-5 fw-semibold haygo-primary-text mb-2">3. Grab the Keys</h3>
+                <h3 class="fs-3 fw-bold haygo-primary-text mb-2">3. Grab the Keys</h3>
                 <p class="text-secondary">Pick up your sanitized car and enjoy your journey worry-free.</p>
             </div>
         </div>
@@ -240,19 +239,16 @@ unset($_SESSION['pickupDate'], $_SESSION['dropoffDate']);
 
 <section id="categories" class="py-5 about haygo-light-bg">
     <div class="container container-xl py-5">
-        <h2 class="fs-2 fw-bold haygo-primary-text mb-3 text-center">Our Cebu Fleet: Designed for Island Exploration
-        </h2>
-        <p class="fs-5 text-secondary mb-5 text-center">Navigate Cebu City and the provinces with the perfect
-            vehicle for every road.</p>
-
-        <div class="row g-4">
+        <h2 class="fs-1 fw-bold haygo-primary-text mb-3 text-center">Our Cebu Fleet: Designed for Island Exploration</h2>
+        <p class="fs-5 text-secondary mb-5 text-center">Navigate Cebu City and the provinces with the perfect vehicle for every road.</p>
+        <div class="row g-5 mt-3">
             <!-- Category 1: The Metro Commuter (Small/Hatchback) -->
             <div class="col-12 col-sm-6 col-lg-3">
                 <div class="card shadow-sm border-0 category-card h-100 rounded-3">
                     <div class="card-body p-4 text-center">
                         <!-- Icon: Car Front (Lime Accent) -->
-                        <div class="icon-box rounded-circle mx-auto mb-3 bg-haygo-light text-haygo-accent"
-                            style="width: 70px; height: 70px; line-height: 70px;">
+                        <div class="icon-box rounded-3 mx-auto mb-3 bg-haygo-light text-haygo-accent"
+                            style="width: 60px; height: 60px; line-height: 60px; border: solid 1px;">
                             <i class="bi bi-car-front-fill fs-3"></i>
                         </div>
                         <h3 class="fs-5 fw-bold mb-1 text-haygo-dark">The Metro Commuter</h3>
@@ -269,8 +265,8 @@ unset($_SESSION['pickupDate'], $_SESSION['dropoffDate']);
                 <div class="card shadow-sm border-0 category-card h-100 rounded-3">
                     <div class="card-body p-4 text-center">
                         <!-- Icon: SUV/Jeep (Lime Accent) -->
-                        <div class="icon-box rounded-circle mx-auto mb-3 bg-haygo-light text-haygo-accent"
-                            style="width: 70px; height: 70px; line-height: 70px;">
+                        <div class="icon-box rounded-3 mx-auto mb-3 bg-haygo-light text-haygo-accent"
+                            style="width: 60px; height: 60px; line-height: 60px; border: solid 1px;">
                             <i class="bi bi-truck-flatbed fs-3"></i>
                         </div>
                         <h3 class="fs-5 fw-bold mb-1 text-haygo-dark">The Island Voyager</h3>
@@ -287,8 +283,8 @@ unset($_SESSION['pickupDate'], $_SESSION['dropoffDate']);
                 <div class="card shadow-sm border-0 category-card h-100 rounded-3">
                     <div class="card-body p-4 text-center">
                         <!-- Icon: Van (Lime Accent) -->
-                        <div class="icon-box rounded-circle mx-auto mb-3 bg-haygo-light text-haygo-accent"
-                            style="width: 70px; height: 70px; line-height: 70px;">
+                        <div class="icon-box rounded-3 mx-auto mb-3 bg-haygo-light text-haygo-accent"
+                            style="width: 60px; height: 60px; line-height: 60px; border: solid 1px;">
                             <i class="bi bi-bus-front fs-3"></i>
                         </div>
                         <h3 class="fs-5 fw-bold mb-1 text-haygo-dark">The Barkada Hauler</h3>
@@ -305,8 +301,8 @@ unset($_SESSION['pickupDate'], $_SESSION['dropoffDate']);
                 <div class="card shadow-sm border-0 category-card h-100 rounded-3">
                     <div class="card-body p-4 text-center">
                         <!-- Icon: VIP (Lime Accent) -->
-                        <div class="icon-box rounded-circle mx-auto mb-3 bg-haygo-light text-haygo-accent"
-                            style="width: 70px; height: 70px; line-height: 70px;">
+                        <div class="icon-box rounded-3 mx-auto mb-3 bg-haygo-light text-haygo-accent"
+                            style="width: 60px; height: 60px; line-height: 60px; border: solid 1px; ">
                             <i class="bi bi-person-workspace fs-3"></i>
                         </div>
                         <h3 class="fs-5 fw-bold mb-1 text-haygo-dark">The Executive Ride</h3>
@@ -329,10 +325,10 @@ unset($_SESSION['pickupDate'], $_SESSION['dropoffDate']);
 
             <!-- Left Column: Trust Metrics & Header -->
             <div class="col-lg-6 mb-5 mb-lg-0">
-                <h2 class="display-5 fw-bolder text-haygo-dark mb-4">Our 4.9/5 Trust Score</h2>
-                <p class="fs-5 text-secondary mb-5">We prioritize your experience. See why thousands choose Hay Go.</p>
+                <h2 class="display-5 fs-1 fw-bolder text-haygo-dark mb-2">Our 4.9/5 Trust Score</h2>
+                <p class="fs-5 text-secondary mb-3">We prioritize your experience. See why thousands choose Hay Go.</p>
 
-                <div class="d-flex flex-wrap gap-4 justify-content-start">
+                <div class="d-flex flex-wrap gap-5 justify-content-start">
                     <!-- Trust Metric 1 (Lime accent) -->
                     <div class="text-center">
                         <span class="metric-value fw-bold text-haygo-accent d-block">99%</span>
@@ -559,8 +555,8 @@ unset($_SESSION['pickupDate'], $_SESSION['dropoffDate']);
                 <div class="col-lg-6 d-none d-lg-block">
                     <!-- Image uses the primary brand color for consistency -->
                     <img src="src/assets/images/hero-suv.jpg"
-                        alt="Image of a mid-size SUV on special offer" class="img-fluid mr-5"
-                        style="object-fit: cover; width: 100%; height: 100%;">
+                        alt="Image of a mid-size SUV on special offer" class=" "
+                        style="object-fit: cover;">
                 </div>
             </div>
         </div>

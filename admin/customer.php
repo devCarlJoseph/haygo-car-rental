@@ -68,13 +68,6 @@ if (!isset($_SESSION['admin_id'])) {
                     <span>Customers</span>
                 </a>
             </li>
-            <li class="nav-item mb-2">
-                <a href="reports.php"
-                    class="nav-link d-flex align-items-center gap-3 p-3 rounded-3 text-white transition hover-bg-rental-dark">
-                    <i class="bi bi-graph-up fs-5"></i>
-                    <span>Reports & Analytics</span>
-                </a>
-            </li>
         </ul>
     </nav>
 

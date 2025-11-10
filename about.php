@@ -3,7 +3,8 @@ require_once 'header.php';
 ?>
 <main>
     <!-- About Us Hero Section -->
-    <section class="hero-about">
+    <section class="hero-about position-relative">
+        <div class="hero-overlay"></div>
         <div class="container position-relative">
             <div class="row justify-content-center text-center">
                 <div class="col-lg-10">
@@ -23,11 +24,11 @@ require_once 'header.php';
         <div class="container py-5">
             <div class="row align-items-center g-5">
                 <div class="col-lg-6">
-                    <h2 class="display-6 fw-bolder text-haygo-dark mb-4">Our Story: Frustration Fueled Our Innovation</h2>
-                    <p class="fs-5 text-secondary">
+                    <h2 class="display-6 fw-bolder haygo-primary-text mb-4">Our Story: Frustration Fueled Our Innovation</h2>
+                    <p class="fs-5">
                         We’ve been in your shoes frustrated by the paperwork, hidden charges, and long waits that come with traditional car rentals. We knew there had to be a better way. That’s why we created Hay Go founded by tech-savvy locals and travel pros who believe your trip should begin with excitement, not stress.
                     </p>
-                    <p class="fs-6 text-secondary mb-4">
+                    <p class="fs-6 text-secondary fw-light mb-4">
                         With digital contracts, instant confirmations, and a seamless, mobile-first experience, we put you in control from the start. And because we’re focused on Cebu and the Visayas, we truly understand the roads, the culture, and the unique needs of travelers here.
                     </p>
                 </div>
@@ -85,7 +86,7 @@ require_once 'header.php';
     <!-- NEW SECTION: Testimonials Carousel -->
     <section class="haygo-primary-bg py-5 text-white">
         <div class="container py-5">
-            <h2 class="display-6 fw-bolder haygo-normal-text mb-5 text-center">What Our Customers Say</h2>
+            <h2 class="display-6 fw-bolder haygo-normal-text mb-5 text-center ">What Our Customers Say</h2>
             <div id="testimonialCarousel" class="carousel slide" data-bs-ride="carousel">
 
                 <!-- Carousel Content (UPDATED CONTENT) -->
@@ -99,7 +100,7 @@ require_once 'header.php';
                                     "The efficiency of Hay Go is unmatched. I signed the contract digitally before I even left the airport. The entire process, from booking to key collection, took less than five minutes. No more lines!"
                                 </p>
                                 <p class="fw-bold fs-5 haygo-accent mb-0">- Ryan G., Travel Blogger</p>
-                                <p class="small text-light" style="opacity: 0.8;">Rented a Crossover SUV in Mactan.</p>
+                                <p class="small text-dark" style="opacity: 0.8">Rented a Crossover SUV in Mactan.</p>
                             </div>
                         </div>
                     </div>
@@ -113,7 +114,7 @@ require_once 'header.php';
                                     "We drove to Malapascua, and the Hay Go team gave us excellent advice on road conditions and local stops. Their local focus made all the difference—it felt like renting from a friend."
                                 </p>
                                 <p class="fw-bold fs-5 haygo-accent mb-0">- The Perez Family, California</p>
-                                <p class="small text-light" style="opacity: 0.8;">Rented a Family Van for a week-long tour.</p>
+                                <p class="small text-dark" style="opacity: 0.8;">Rented a Family Van for a week-long tour.</p>
                             </div>
                         </div>
                     </div>
@@ -127,7 +128,7 @@ require_once 'header.php';
                                     "The car was spotless, new, and ran flawlessly. I needed support late one evening, and their 24/7 line answered immediately. True reliability when you need it most. Five stars."
                                 </p>
                                 <p class="fw-bold fs-5 haygo-accent mb-0">- Marcus D., Business Traveler</p>
-                                <p class="small text-light" style="opacity: 0.8;">Rented a Premium Sedan for a work trip.</p>
+                                <p class="small text-dark" style="opacity: 0.8;">Rented a Premium Sedan for a work trip.</p>
                             </div>
                         </div>
                     </div>
@@ -149,7 +150,7 @@ require_once 'header.php';
     <!-- NEW SECTION: Why Choose Us (USPs) -->
     <section class="py-5 haygo-light-bg">
         <div class="container py-5">
-            <h2 class="display-6 fw-bolder text-haygo-dark mb-5 text-center">Why Choose Hay Go?</h2>
+            <h2 class="display-6 fw-bolder mb-5 text-center haygo-primary-text">Why Choose Hay Go?</h2>
             <div class="row g-4 text-center">
 
                 <!-- USP 1: Speed -->
@@ -185,7 +186,7 @@ require_once 'header.php';
     <!-- Meet Our Team -->
     <section class="py-5 bg-white">
         <div class="container py-5">
-            <h2 class="display-6 fw-bolder text-haygo-dark mb-5 text-center">Meet The Faces Behind the System</h2>
+            <h2 class="display-6 fw-bolder mb-5 text-center haygo-primary-text">Meet The Faces Behind the System</h2>
             <div class="row g-4 justify-content-center">
 
                 

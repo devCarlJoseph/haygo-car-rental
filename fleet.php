@@ -97,7 +97,10 @@ if ($pickup_date && $dropoff_date) {
 
                     <div class="row g-4">
                         <?php while ($data = $result->fetch_assoc()): ?>
-                            <div class="col-sm-6 col-lg-4">
+                            <div class="col-sm-6 col-lg-4 car-item"
+                                data-name="<?php echo strtolower($data['car_name']); ?>"
+                                data-type="<?php echo $data['car_type']; ?>"
+                                data-price="<?php echo $data['car_price']; ?>">
                                 <div class="card car-card shadow-sm h-100">
                                     <div class="text-center d-flex align-items-center justify-content-center"
                                         style="background-image: url('uploads/vehicles/<?php echo $data['car_image']; ?>'); 

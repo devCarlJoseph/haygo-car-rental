@@ -92,4 +92,61 @@ $(document).ready(function () {
         else if ($('[data-step="3"]').is(':visible')) showStep(2);
     });
 
+    function filterCars() {
+        let searchName = $('#searchName').val().toLowerCase();
+        let maxPrice = parseFloat($('#priceRange').val());
+        let selectedType = $('.filter-quick-btn.active').data('type') || 'All';
+
+        let anyVisible = false;
+
+        $('.car-item').each(function () {
+            let name = $(this).data('name');
+            let type = $(this).data('type');
+            let price = parseFloat($(this).data('price'));
+
+            let matchName = name.includes(searchName);
+            let matchPrice = price <= maxPrice;
+            let matchType = (selectedType === 'All') || (type === selectedType);
+
+            if (matchName && matchPrice && matchType) {
+                $(this).show();
+                anyVisible = true;
+            } else {
+                $(this).hide();
+            }
+        });
+
+        if (!anyVisible) {
+            $('#no-results-message').show();
+        } else {
+            $('#no-results-message').hide();
+        }
+
+
+        $('#maxPriceDisplay').text('₱ ' + maxPrice.toLocaleString());
+    }
+
+
+    function quickFilter(type) {
+        $('.filter-quick-btn').removeClass('active');
+        $('.filter-quick-btn[data-type="' + type + '"]').addClass('active');
+        filterCars();
+    }
+
+    function resetFilters() {
+        $('#searchName').val('');
+        $('#priceRange').val(5000);
+        $('.filter-quick-btn').removeClass('active').filter('[data-type="All"]').addClass('active');
+        filterCars();
+    }
+
+    $('#searchName').on('input', filterCars);
+    $('#priceRange').on('input', filterCars);
+    $('.filter-quick-btn').on('click', function () {
+        quickFilter($(this).data('type'));
+    });
+
+    resetFilters();
+
+
 });
