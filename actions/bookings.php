@@ -1,4 +1,7 @@
 <?php
+
+session_start();
+
 require_once '../config/config.php';
 
 $booking_id = isset($_POST['booking_id']) ? $_POST['booking_id'] : null;
@@ -37,15 +40,19 @@ if (!isset($_POST['booking_id']) || empty($_POST['booking_id'])) {
         $custStmt->bind_param("ssss", $customer, $c_email, $p_num, $birthdate);
         $custStmt->execute();
 
+
         echo $booking_id_inserted;
         exit;
     }
 }
 
-// If booking_id exists and submit_status is provided, update status
+
 if (isset($_POST['submit_status'], $_POST['booking_id'])) {
     $stmt = $conn->prepare("UPDATE bookings SET status=? WHERE id=?");
     $stmt->bind_param("si", $submit_status, $booking_id);
     $stmt->execute();
+
+    unset($_SESSION['pickupDate'], $_SESSION['dropoffDate']);
+
     exit;
 }

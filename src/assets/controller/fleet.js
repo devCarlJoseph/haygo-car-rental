@@ -78,11 +78,14 @@ $(document).ready(function () {
             }, function () {
                 alert('Booking cancelled.');
                 $('#bookingModal').modal('hide');
+                window.location.href = 'index.php';
             });
         } else {
             $('#bookingModal').modal('hide');
+            window.location.href = 'index.php';
         }
     });
+
 
     $('#prevStepBtn').click(function () {
         if ($('[data-step="2"]').is(':visible')) showStep(1);

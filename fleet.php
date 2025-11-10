@@ -1,22 +1,50 @@
 <?php
+session_start();
+
 require_once 'header.php';
 require_once 'config/config.php';
 
-$query = "SELECT * FROM vehicles";
-$result = $conn->query($query);
-
-session_start();
-
 $pickup_date = $_SESSION['pickupDate'] ?? '';
 $dropoff_date = $_SESSION['dropoffDate'] ?? '';
-$rental_days = 0;
 
+$canBook = false;
 if ($pickup_date && $dropoff_date) {
+    $canBook = true;
+
     $startDate = new DateTime($pickup_date);
     $endDate = new DateTime($dropoff_date);
     $interval = $startDate->diff($endDate);
     $rental_days = $interval->days;
     if ($rental_days < 1) $rental_days = 1;
+
+    $query = "
+        SELECT * FROM vehicles v
+        WHERE v.id NOT IN (
+            SELECT vehicle_id 
+            FROM bookings 
+            WHERE status IN ('pending','confirmed')
+            AND (
+                (booking_date <= ? AND return_date >= ?) OR
+                (booking_date <= ? AND return_date >= ?) OR
+                (booking_date >= ? AND return_date <= ?)
+            )
+        )
+    ";
+    $stmt = $conn->prepare($query);
+    $stmt->bind_param(
+        "ssssss",
+        $pickup_date,
+        $pickup_date,
+        $dropoff_date,
+        $dropoff_date,
+        $pickup_date,
+        $dropoff_date
+    );
+    $stmt->execute();
+    $result = $stmt->get_result();
+} else {
+    $rental_days = 0;
+    $result = $conn->query("SELECT * FROM vehicles");
 }
 
 ?>
@@ -107,8 +135,7 @@ if ($pickup_date && $dropoff_date) {
                                                 data-id="<?php echo $data['id']; ?>"
                                                 data-name="<?php echo htmlspecialchars($data['car_name'], ENT_QUOTES); ?>"
                                                 data-price="<?php echo $data['car_price']; ?>"
-                                                data-pickup="<?php echo htmlspecialchars($_POST['pickupDate'] ?? '', ENT_QUOTES); ?>"
-                                                data-dropoff="<?php echo htmlspecialchars($_POST['dropoffDate'] ?? '', ENT_QUOTES); ?>">
+                                                <?php if (!$canBook) echo 'disabled title="Select your dates first"'; ?>>
                                                 Select Car
                                             </button>
                                         </div>

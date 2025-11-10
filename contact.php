@@ -1,5 +1,7 @@
 <?php 
+
     require_once 'header.php'
+
 ?>
 
     <!-- Header Section -->
@@ -19,8 +21,8 @@
             <!-- Contact Form Card -->
             <div class="col-lg-8 c-card">
                 <div class="card contact-card">
-                    <div class="card-body">
-                        <h2 class="card-title h3 mb-4 fw-bold text-center">Send Us a Message</h2>
+                    <div class="card-body ">
+                        <h2 class="send card-title h3 mb-4 fw-bold text-center">Send Us a Message</h2>
                         
                         <form id="contactForm" class="needs-validation" novalidate>
                             

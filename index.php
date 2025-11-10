@@ -1,5 +1,10 @@
 <?php
 require_once 'header.php';
+
+session_start();
+
+unset($_SESSION['pickupDate'], $_SESSION['dropoffDate']);
+
 ?>
 
 <!-- Hero Section (Clean Banner) -->
