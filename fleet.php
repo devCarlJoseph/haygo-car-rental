@@ -53,8 +53,8 @@ if ($pickup_date && $dropoff_date) {
     <section class="hero-fleet">
         <div class="container text-center">
             <h1 class="display-4 fw-bolder mb-3 haygo-primary-text pt-5">Our Modern & Reliable Fleet</h1>
-            <p class="lead haygo-primary-text">
-                Showing cars available from <span id="displayStartDate"></span> to <span id="displayEndDate"></span>.
+            <p class="lead text-black fw-medium">
+                Showing cars available from <span id="displayStartDate"><?php echo htmlspecialchars($pickup_date); ?></span> to <span id="displayEndDate"><?php echo htmlspecialchars($pickup_date); ?></span>.
             </p>
         </div>
     </section>
@@ -68,8 +68,8 @@ if ($pickup_date && $dropoff_date) {
                         <h3 class="fs-5 fw-bold text-haygo-dark mb-3 border-bottom pb-2">Refine Search</h3>
 
                         <div class="mb-4">
-                            <label for="searchName" class="form-label small fw-semibold">Search by Name</label>
-                            <input type="text" class="form-control form-control-sm rounded-pill" placeholder="e.g., Vios, Rush" id="searchName">
+                            <label for="searchName" class="form-label small fw-semibold">Search by Car Name</label>
+                            <input type="text" class="form-control form-control-sm rounded-pill" id="searchName">
                         </div>
 
                         <div class="mb-4">

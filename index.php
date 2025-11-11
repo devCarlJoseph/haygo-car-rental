@@ -254,9 +254,6 @@ unset($_SESSION['pickupDate'], $_SESSION['dropoffDate']);
                         <h3 class="fs-5 fw-bold mb-1 text-haygo-dark">The Metro Commuter</h3>
                         <p class="text-secondary small">Fuel-efficient hatchbacks, ideal for tight Mandaue and Cebu
                             City traffic.</p>
-                        <a href="#"
-                            class="l-button btn text-haygo-primary border-haygo-primary mt-2">View
-                            Economy Fleet</a>
                     </div>
                 </div>
             </div>
@@ -272,9 +269,6 @@ unset($_SESSION['pickupDate'], $_SESSION['dropoffDate']);
                         <h3 class="fs-5 fw-bold mb-1 text-haygo-dark">The Island Voyager</h3>
                         <p class="text-secondary small">Comfortable, sturdy mid-size SUVs for exploring Moalboal,
                             Oslob, and the mountains.</p>
-                        <a href="#"
-                            class="l-button btn text-haygo-primary border-haygo-primary mt-2">View
-                            SUV Fleet</a>
                     </div>
                 </div>
             </div>
@@ -290,9 +284,6 @@ unset($_SESSION['pickupDate'], $_SESSION['dropoffDate']);
                         <h3 class="fs-5 fw-bold mb-1 text-haygo-dark">The Barkada Hauler</h3>
                         <p class="text-secondary small">7-seater AUVs and vans perfect for family outings, airport
                             transfers, and group tours (barkada).</p>
-                        <a href="#"
-                            class="l-button btn text-haygo-primary border-haygo-primary mt-2">View
-                            Family Vans</a>
                     </div>
                 </div>
             </div>
@@ -308,14 +299,15 @@ unset($_SESSION['pickupDate'], $_SESSION['dropoffDate']);
                         <h3 class="fs-5 fw-bold mb-1 text-haygo-dark">The Executive Ride</h3>
                         <p class="text-secondary small">High-end sedans and premium SUVs for business travel and
                             luxury resort hopping.</p>
-                        <a href="#"
-                            class="l-button btn text-haygo-primary border-haygo-primary mt-2">View
-                            Premium Models</a>
                     </div>
                 </div>
             </div>
+            <div class="d-flex justify-content-center align-items-center">
+                <a href="">
+                    <button class="btn btn-haygo-primary btn-lg fw-semibold rounded-3 shadow-sm" style="width: 15rem;">View Fleet</button>
+                </a>
+            </div>
         </div>
-    </div>
 </section>
 
 <section id="reviews" class="py-5 py-md-5 bg-white">

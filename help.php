@@ -163,12 +163,12 @@
 
             <!-- Contact Section -->
             <div class="text-center mt-5 p-4 p-md-5 rounded-4 shadow-lg"
-                style="background: linear-gradient(135deg, #EBF8FF 0%, #FFFFFF 100%); border: 1px solid #D1E8F4;">
+                style="background: linear-gradient(135deg, #d7c0a7ff 0%, #eed9c6ff 100%); border: 1px solid #D1E8F4;">
                 <h3 class="h2 fw-bolder mb-3 text-hg-blue">Need Immediate Help?</h3>
-                <p class="lead text-secondary mb-4 max-w-lg mx-auto">
+                <p class="lead faq-text mb-4 max-w-lg mx-auto">
                     If our FAQs didn't cover it, our 24/7 Hay Go support team is standing by. Start a live chat now!
                 </p>
-                <button type="button" class="btn btn-lg btn-hg-lime" data-bs-toggle="modal" data-bs-target="#chatModal">
+                <button type="button" class="btn btn-lg chatbot" data-bs-toggle="modal" data-bs-target="#chatModal">
                     <i class="ri-chat-3-line me-2 haygo-accent"></i> Chat with a Support Bot
                 </button>
             </div>

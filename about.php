@@ -84,7 +84,7 @@ require_once 'header.php';
     </section>
 
     <!-- NEW SECTION: Testimonials Carousel -->
-    <section class="haygo-primary-bg py-5 text-white">
+    <section class="haygo-accent py-5 text-white">
         <div class="container py-5">
             <h2 class="display-6 fw-bolder haygo-normal-text mb-5 text-center ">What Our Customers Say</h2>
             <div id="testimonialCarousel" class="carousel slide" data-bs-ride="carousel">
