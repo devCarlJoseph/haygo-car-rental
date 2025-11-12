@@ -26,7 +26,7 @@
         <!-- Copyright -->
         <div class="border-top border-secondary border-opacity-25 py-3">
             <p class="mb-0 small haygo-primarys">
-                &copy; 2024 Haygo Car Rentals. All rights reserved.
+                &copy; 2025 Haygo Car Rentals. All rights reserved.
             </p>
         </div>
     </div>

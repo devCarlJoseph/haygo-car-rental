@@ -8,6 +8,13 @@
     border-bottom-right-radius: 30px;
 }
 
+
+.header-overlay {
+    position: absolute;
+    inset: 0;
+    background-color: #0000003d;
+}
+
 .car-card {
     transition: transform 0.3s ease, box-shadow 0.3s ease;
     border-radius: 1rem;

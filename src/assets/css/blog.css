@@ -16,14 +16,6 @@
     border-color: var(--bs-blue) !important;
 }
 
-.btn-primary.shadow-lg {
-    box-shadow: 0 0.5rem 1rem rgba(31, 122, 140, 0.4) !important;
-}
-
-.btn-primary.shadow-lg:hover {
-    box-shadow: 0 0.8rem 1.2rem rgba(31, 122, 140, 0.6) !important;
-}
-
 /* Custom styles for the Carousel */
 .carousel-item-custom {
     height: 65vh;

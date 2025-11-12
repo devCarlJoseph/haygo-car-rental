@@ -9,8 +9,8 @@
         <div class="header-overlay"></div>
         <div class="position-relative">
             <div class="container text-center">
-                <h1 class="display-4 fw-bold haygo-accent">Contact Hay Go Car Rental</h1>
-                <p class="lead haygo-normal-text text-light">
+                <h1 class="display-4 fw-bold haygo-about">Contact Hay Go Car Rental</h1>
+                <p class="lead haygo-primary fw-medium">
                     We're ready to help you with your booking, query, or feedback. Your journey is our priority!
                 </p>
             </div>
@@ -25,7 +25,7 @@
             <div class="col-lg-8 c-card">
                 <div class="card contact-card">
                     <div class="card-body ">
-                        <h2 class="send card-title h3 mb-4 fw-bold text-center">Send Us a Message</h2>
+                        <h2 class="send card-title haygo-accent h3 mb-4 fw-bold text-center">Send Us a Message</h2>
                         
                         <form id="contactForm" class="needs-validation" novalidate>
                             
@@ -64,7 +64,7 @@
             <div class="col-lg-4 mt-4 mt-lg-4">
                 <div class="card border-0 shadow-sm h-100">
                     <div class="card-body">
-                        <h3 class="card-title h5 mb-4 fw-bold">Quick Contact Info</h3>
+                        <h3 class="card-title haygo-secondary h5 mb-4 fw-bold">Quick Contact Info</h3>
                         
                         <ul class="list-unstyled space-y-3">
                             <li class="d-flex align-items-start mb-3">

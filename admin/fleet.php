@@ -10,7 +10,7 @@ if (!isset($_SESSION['admin_id'])) {
 }
 
 
-$limit = 10; 
+$limit = 10;
 $page = isset($_GET['page']) && is_numeric($_GET['page']) ? (int) $_GET['page'] : 1;
 $offset = ($page - 1) * $limit;
 
@@ -34,11 +34,11 @@ $result = $conn->query($query);
     </button>
 
     <!-- Sidebar / Navigation -->
-    <aside class="offcanvas offcanvas-start bg-dark text-white p-4 d-flex flex-column shadow-lg" tabindex="-1"
+    <aside class="offcanvas offcanvas-start p-4 d-flex flex-column shadow-lg" style="background-color: #84635B; color: #F8E1DA" tabindex="-1"
         id="sidebar-offcanvas" aria-labelledby="offcanvasLabel" data-bs-scroll="true">
 
         <div class="mb-5 p-2 d-none d-lg-block">
-            <h1 class="fs-4 fw-bolder tracking-tight text-center text-rental-primary">HAYGO</h1>
+            <h1 class="fs-4 fw-bolder tracking-tight text-center">HAYGO</h1>
         </div>
 
         <nav class="flex-grow-1">
@@ -50,8 +50,7 @@ $result = $conn->query($query);
                     </a>
                 </li>
                 <li class="nav-item mb-2">
-                    <!-- Fleet Management is the active page -->
-                    <a href="fleet.php" class="nav-link d-flex align-items-center gap-3 p-3 rounded-3 bg-rental-primary text-white fw-semibold shadow-sm active-nav">
+                    <a href="fleet.php" class="nav-link d-flex align-items-center gap-3 p-3 rounded-3 text-white transition hover-bg-rental-dark" style="background-color: #F8E1DA !important; color: #84635B !important">
                         <i class="bi bi-car-front-fill fs-5"></i>
                         <span>Vehicle Catalog</span>
                     </a>
@@ -60,13 +59,18 @@ $result = $conn->query($query);
                     <a href="bookings.php" class="nav-link d-flex align-items-center gap-3 p-3 rounded-3 text-white transition hover-bg-rental-dark">
                         <i class="bi bi-calendar-check fs-5"></i>
                         <span>Bookings</span>
-                        <span class="ms-auto badge rounded-pill text-bg-success">12 New</span>
                     </a>
                 </li>
                 <li class="nav-item mb-2">
                     <a href="customer.php" class="nav-link d-flex align-items-center gap-3 p-3 rounded-3 text-white transition hover-bg-rental-dark">
                         <i class="bi bi-people-fill fs-5"></i>
                         <span>Customers</span>
+                    </a>
+                </li>
+                <li class="nav-item mb-2">
+                    <a href="messages.php" class="nav-link d-flex align-items-center gap-3 p-3 rounded-3 text-white transition hover-bg-rental-dark">
+                        <i class="bi bi-chat-dots-fill fs-5"></i>
+                        <span>Messages</span>
                     </a>
                 </li>
             </ul>
@@ -78,10 +82,10 @@ $result = $conn->query($query);
                 <i class="bi bi-gear-fill fs-5"></i>
                 <span>Settings</span>
             </a>
-            <div class="d-flex align-items-center gap-3 p-3 rounded-3 bg-secondary bg-opacity-10 text-white">
-                <img src="../uploads/admin/<?= $_SESSION['admin_profile'] ?>" style="width: 40px; height: 40px; object-fit: cover" class="rounded-circle">
+            <div class="d-flex align-items-center gap-3 p-3 rounded-3 text-white" style="background-color: #F8E1DA !important;">
+                <img src="../uploads/admin/<?= $_SESSION['admin_profile'] ?>" style="width: 45px; height: 45px; object-fit: cover" class="rounded-circle">
                 <div>
-                    <p class="mb-0 fw-semibold fs-6"><?= $_SESSION['admin_username']; ?></p>
+                    <p class="mb-0 fw-semibold fs-6" style="color: #84635B"><?= $_SESSION['admin_username']; ?></p>
                     <p class="mb-0 small text-secondary">Admin</p>
                 </div>
             </div>
@@ -98,7 +102,7 @@ $result = $conn->query($query);
                 <p class="text-sm text-secondary">Manage rental specifications, pricing, and details for all available vehicles.</p>
             </div>
             <!-- Add New Vehicle Button (Updated to trigger modal) -->
-            <button class="btn btn-lg bg-rental-primary text-white hover-bg-rental-dark d-flex align-items-center gap-2 shadow-lg border-0 rounded-3"
+            <button class="btn btn-lg hover-bg-rental-dark d-flex align-items-center gap-2 shadow-lg border-0 rounded-3" style="background-color: #84635B; color: #fef7f4ff !important"
                 data-bs-toggle="modal" data-bs-target="#addVehicleModal">
                 <i class="bi bi-plus fs-5"></i>
                 <span>Add New Vehicle</span>
@@ -177,7 +181,7 @@ $result = $conn->query($query);
                                 <td class="text-center">₱<?php echo number_format($data['car_price'], 2); ?></td>
 
                                 <td class="text-center">
-                                    <button class="btn btn-sm btn-outline-primary editBtn"
+                                    <button class="btn btn-sm editBtn"
                                         data-id="<?php echo $data['id']; ?>"
                                         data-name="<?php echo $data['car_name']; ?>"
                                         data-desc="<?php echo $data['car_description']; ?>"
@@ -207,7 +211,7 @@ $result = $conn->query($query);
                 <nav aria-label="Page navigation">
                     <ul class="pagination pagination-sm mb-0">
                         <li class="page-item <?= ($page <= 1) ? 'disabled' : '' ?>">
-                            <a class="page-link" href="?page=<?= $page - 1 ?>">Previous</a>
+                            <a class="page-link" style="color: #84635B;" href="?page=<?= $page - 1 ?>">Previous</a>
                         </li>
 
                         <?php for ($i = 1; $i <= $totalPages; $i++): ?>
@@ -217,7 +221,7 @@ $result = $conn->query($query);
                         <?php endfor; ?>
 
                         <li class="page-item <?= ($page >= $totalPages) ? 'disabled' : '' ?>">
-                            <a class="page-link" href="?page=<?= $page + 1 ?>">Next</a>
+                            <a class="page-link" style="color: #84635B;" href="?page=<?= $page + 1 ?>">Next</a>
                         </li>
                     </ul>
                 </nav>
@@ -234,8 +238,8 @@ $result = $conn->query($query);
             <form action="../actions/update_vehicle.php" method="post">
                 <div class="modal-content">
 
-                    <div class="modal-header">
-                        <h5 class="modal-title fw-semibold">Edit Vehicle</h5>
+                    <div class="modal-header" style="background-color: #84635B;">
+                        <h5 class="modal-title fw-semibold" style="color: #F8E1DA;">Edit Vehicle</h5>
                         <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
                     </div>
 
@@ -294,7 +298,7 @@ $result = $conn->query($query);
 
                     <div class="modal-footer">
                         <button type="button" class="btn btn-outline-secondary" data-bs-dismiss="modal">Cancel</button>
-                        <button type="submit" class="btn btn-primary" name="update">Update Vehicle</button>
+                        <button type="submit" class="btn" name="update" style="background-color: #84635B; color: #F8E1DA">Update Vehicle</button>
                     </div>
 
                 </div>

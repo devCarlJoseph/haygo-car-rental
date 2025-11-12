@@ -11,7 +11,7 @@ require_once 'header.php';
                     <h1 class="display-3 fw-bolder mb-3 haygo-about">
                         The Future of Car Rental in Cebu
                     </h1>
-                    <p class="lead haygo-about mb-0" style="opacity: 0.9;">
+                    <p class="fw-medium lead haygo-about mb-0" style="opacity: 0.9;">
                         We started Hay Go with one goal: to eliminate the paperwork, the queues, and the confusion of traditional car rental. We are building the most seamless, transparent, and digitally native rental experience in the Philippines.
                     </p>
                 </div>

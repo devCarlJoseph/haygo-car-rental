@@ -28,6 +28,10 @@
 
 }
 
+.haygo-secondary {
+    color: var(--haygo-secondary);
+}
+
 body {
     font-family: 'Inter', sans-serif;
     background-color: #f7f6f4;
@@ -49,8 +53,8 @@ body {
 
 .nav-link.auth-tab.active {
     font-weight: 700;
+    border: 2px solid var(--haygo-primary-text);
     background-color: transparent;
-    border-color: var(--haygo-primary);
 }
 
 .auth-content {
@@ -64,7 +68,6 @@ body {
 .auth-card {
     border-radius: 1.5rem !important;
     max-width: 450px;
-    background-color: var(--haygo-light-bg) !important;
 }
 
 .nav-tabs {

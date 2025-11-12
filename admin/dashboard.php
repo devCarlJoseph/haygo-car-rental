@@ -16,17 +16,17 @@ if (!isset($_SESSION['admin_id'])) {
 </button>
 
 <!-- Sidebar / Navigation -->
-<aside class="offcanvas offcanvas-start bg-dark text-white p-4 d-flex flex-column shadow-lg" tabindex="-1"
+<aside class="offcanvas offcanvas-start p-4 d-flex flex-column shadow-lg" style="background-color: #84635B; color: #F8E1DA" tabindex="-1"
     id="sidebar-offcanvas" aria-labelledby="offcanvasLabel" data-bs-scroll="true">
 
     <div class="mb-5 p-2 d-none d-lg-block">
-        <h1 class="fs-4 fw-bolder tracking-tight text-center text-rental-primary">HAYGO</h1>
+        <h1 class="fs-4 fw-bolder tracking-tight text-center">HAYGO</h1>
     </div>
 
     <nav class="flex-grow-1">
         <ul class="nav flex-column space-y-2">
             <li class="nav-item mb-2">
-                <a href="dashboard.php" class="nav-link d-flex align-items-center gap-3 p-3 rounded-3 bg-rental-primary text-white fw-semibold shadow-sm active-nav">
+                <a href="dashboard.php" class="nav-link d-flex align-items-center gap-3 p-3 rounded-3 fw-semibold shadow-sm active-nav" style="background-color: #F8E1DA !important; color: #84635B !important">
                     <i class="bi bi-speedometer2 fs-5"></i>
                     <span>Dashboard</span>
                 </a>
@@ -49,6 +49,12 @@ if (!isset($_SESSION['admin_id'])) {
                     <span>Customers</span>
                 </a>
             </li>
+            <li class="nav-item mb-2">
+                <a href="messages.php" class="nav-link d-flex align-items-center gap-3 p-3 rounded-3 text-white transition hover-bg-rental-dark">
+                    <i class="bi bi-chat-dots-fill fs-5"></i>
+                    <span>Messages</span>
+                </a>
+            </li>
         </ul>
     </nav>
 
@@ -58,10 +64,10 @@ if (!isset($_SESSION['admin_id'])) {
             <i class="bi bi-gear-fill fs-5"></i>
             <span>Settings</span>
         </a>
-        <div class="d-flex align-items-center gap-3 p-3 rounded-3 bg-secondary bg-opacity-10 text-white">
-            <img src="../uploads/admin/<?= $_SESSION['admin_profile'] ?>" style="width: 40px; height: 40px; object-fit: cover" class="rounded-circle">
+        <div class="d-flex align-items-center gap-3 p-3 rounded-3 text-white" style="background-color: #F8E1DA !important;">
+            <img src="../uploads/admin/<?= $_SESSION['admin_profile'] ?>" style="width: 45px; height: 45px; object-fit: cover" class="rounded-circle">
             <div>
-                <p class="mb-0 fw-semibold fs-6"><?= $_SESSION['admin_username']; ?></p>
+                <p class="mb-0 fw-semibold fs-6" style="color: #84635B"><?= $_SESSION['admin_username']; ?></p>
                 <p class="mb-0 small text-secondary">Admin</p>
             </div>
         </div>

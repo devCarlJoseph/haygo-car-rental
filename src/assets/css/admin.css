@@ -159,3 +159,13 @@
      color: #fff;
      background-color: var(--bs-rental-primary);
  }
+
+ .editBtn {
+     border: 1px solid #84635B;
+     color: #84635B;
+ }
+
+ .editBtn:hover {
+     background-color: #84635B;
+     color: white !important;
+ }

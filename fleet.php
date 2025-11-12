@@ -50,14 +50,17 @@ if ($pickup_date && $dropoff_date) {
 ?>
 
 <main>
-    <section class="hero-fleet">
-        <div class="container text-center">
-            <h1 class="display-4 fw-bolder mb-3 haygo-primary-text pt-5">Our Modern & Reliable Fleet</h1>
-            <p class="lead text-black fw-medium">
-                Showing cars available from <span id="displayStartDate"><?php echo htmlspecialchars($pickup_date); ?></span> to <span id="displayEndDate"><?php echo htmlspecialchars($pickup_date); ?></span>.
-            </p>
+    <div class="hero-fleet position-relative">
+        <div class="header-overlay"></div>
+        <div class="position-relative">
+            <div class="container text-center">
+                 <h1 class="display-4 fw-bolder mb-3 haygo-about" style="padding-top: 5rem;">Our Modern & Reliable Fleet</h1>
+                <p class="lead haygo-primary fw-medium">
+                    Showing cars available from <span id="displayStartDate"><?php echo htmlspecialchars($pickup_date); ?></span> to <span id="displayEndDate"><?php echo htmlspecialchars($pickup_date); ?></span>.
+                </p>
+            </div>
         </div>
-    </section>
+    </div>
 
     <section class="py-5">
         <div class="container">

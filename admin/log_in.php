@@ -52,7 +52,7 @@
         <div class="card-body p-4 p-md-5">
 
             <div id="content-signin" class="auth-content active">
-                <h2 class="h4 fw-bold mb-4 text-center" style="color: var(--dark-text);">Welcome Back!</h2>
+                <h2 class="h4 fw-bold mb-4 text-center haygo-secondary">Welcome Back!</h2>
 
                 <form action="../actions/log_in.php" id="signInForm" class="row g-4" method="post">
                     <div class="col-12">
@@ -81,7 +81,7 @@
             </div>
 
             <div id="content-signup" class="auth-content">
-                <h2 class="h4 fw-bold mb-4 text-center" style="color: var(--dark-text);">Create Your Account</h2>
+                <h2 class="h4 fw-bold mb-4 text-center haygo-secondary">Create Your Account</h2>
 
                 <form action="../actions/sign_up.php" class="row g-4" method="post" enctype="multipart/form-data">
                     <div class="col-12">
@@ -119,22 +119,21 @@
             </div>
 
             <div id="content-forgot" class="auth-content">
-                <h2 class="h4 fw-bold mb-4 text-center" style="color: var(--dark-text);">Reset Password</h2>
+                <h2 class="h4 fw-bold mb-4 text-center haygo-secondary">Reset Password</h2>
                 <p class="small text-muted mb-4 text-center">
                     Enter your username and a new password to reset your account.
                 </p>
 
                 <form action="../actions/forgot_pass.php" id="forgotForm" class="row g-4" method="post">
                     <div class="col-12">
-                        <label for="forgot-username" class="form-label mb-1 text-secondary">Username / Account
-                            ID</label>
-                        <input type="text" name="forgot_username" placeholder="e.g., haygo_user123"
+                        <label for="forgot-username" class="form-label mb-1 text-secondary">Username</label>
+                        <input type="text" name="forgot_username" placeholder="Admin Username"
                             class="form-control form-control-lg">
                     </div>
 
                     <div class="col-12">
                         <label for="forgot-password" class="form-label mb-1 text-secondary">New Password</label>
-                        <input type="password" name="forgot_password" placeholder="Enter new strong password"
+                        <input type="password" name="forgot_password" placeholder="Enter New Password"
                             class="form-control form-control-lg">
                     </div>
 

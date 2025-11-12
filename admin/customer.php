@@ -22,50 +22,43 @@ if (!isset($_SESSION['admin_id'])) {
 </button>
 
 <!-- Sidebar / Navigation (Bootstrap Offcanvas) -->
-<aside class="offcanvas offcanvas-start bg-dark text-white p-4 d-flex flex-column shadow-lg" tabindex="-1"
+<aside class="offcanvas offcanvas-start p-4 d-flex flex-column shadow-lg" style="background-color: #84635B; color: #F8E1DA" tabindex="-1"
     id="sidebar-offcanvas" aria-labelledby="offcanvasLabel" data-bs-scroll="true">
 
-    <!-- Offcanvas Header (Mobile only) -->
-    <div class="offcanvas-header d-lg-none p-0 pb-3 mb-4 border-bottom border-secondary-subtle">
-        <h5 class="offcanvas-title fs-4 fw-bolder text-rental-primary" id="offcanvasLabel">CAR<span
-                class="text-white">RENT</span></h5>
-        <button type="button" class="btn-close btn-close-white text-reset" data-bs-dismiss="offcanvas"
-            aria-label="Close"></button>
-    </div>
-
     <div class="mb-5 p-2 d-none d-lg-block">
-        <h1 class="fs-4 fw-bolder tracking-tight text-center text-rental-primary">HAYGO</h1>
+        <h1 class="fs-4 fw-bolder tracking-tight text-center">HAYGO</h1>
     </div>
 
     <nav class="flex-grow-1">
         <ul class="nav flex-column space-y-2">
             <li class="nav-item mb-2">
-                <a href="dashboard.php"
-                    class="nav-link d-flex align-items-center gap-3 p-3 rounded-3 text-white transition hover-bg-rental-dark">
+                <a href="dashboard.php" class="nav-link d-flex align-items-center gap-3 p-3 rounded-3 text-white transition hover-bg-rental-dark">
                     <i class="bi bi-speedometer2 fs-5"></i>
                     <span>Dashboard</span>
                 </a>
             </li>
             <li class="nav-item mb-2">
-                <a href="fleet.php"
-                    class="nav-link d-flex align-items-center gap-3 p-3 rounded-3 text-white transition hover-bg-rental-dark">
+                <a href="fleet.php" class="nav-link d-flex align-items-center gap-3 p-3 rounded-3 text-white transition hover-bg-rental-dark">
                     <i class="bi bi-car-front-fill fs-5"></i>
                     <span>Vehicle Catalog</span>
                 </a>
             </li>
             <li class="nav-item mb-2">
-                <a href="bookings.php"
-                    class="nav-link d-flex align-items-center gap-3 p-3 rounded-3 text-white transition hover-bg-rental-dark">
+                <a href="bookings.php" class="nav-link d-flex align-items-center gap-3 p-3 rounded-3 text-white transition hover-bg-rental-dark">
                     <i class="bi bi-calendar-check fs-5"></i>
                     <span>Bookings</span>
-                    <span class="ms-auto badge rounded-pill text-bg-success">12 New</span>
                 </a>
             </li>
             <li class="nav-item mb-2">
-                <a href="customer.php"
-                    class="nav-link d-flex align-items-center gap-3 p-3 rounded-3 bg-rental-primary text-white fw-semibold shadow-sm active-nav">
+                <a href="customer.php" class="nav-link d-flex align-items-center gap-3 p-3 rounded-3 text-white transition hover-bg-rental-dark" style="background-color: #F8E1DA !important; color: #84635B !important">
                     <i class="bi bi-people-fill fs-5"></i>
                     <span>Customers</span>
+                </a>
+            </li>
+            <li class="nav-item mb-2">
+                <a href="messages.php" class="nav-link d-flex align-items-center gap-3 p-3 rounded-3 text-white transition hover-bg-rental-dark">
+                    <i class="bi bi-chat-dots-fill fs-5"></i>
+                    <span>Messages</span>
                 </a>
             </li>
         </ul>
@@ -73,15 +66,14 @@ if (!isset($_SESSION['admin_id'])) {
 
     <!-- User/Settings Section -->
     <div class="mt-auto pt-4 border-top border-secondary-subtle">
-        <a href="settings.php"
-            class="nav-link d-flex align-items-center gap-3 p-3 rounded-3 text-white transition hover-bg-rental-dark mb-2">
+        <a href="settings.php" class="nav-link d-flex align-items-center gap-3 p-3 rounded-3 text-white transition hover-bg-rental-dark mb-2">
             <i class="bi bi-gear-fill fs-5"></i>
             <span>Settings</span>
         </a>
-        <div class="d-flex align-items-center gap-3 p-3 rounded-3 bg-secondary bg-opacity-10 text-white">
-            <img src="../uploads/admin/<?= $_SESSION['admin_profile'] ?>" style="width: 40px; height: 40px; object-fit: cover" class="rounded-circle">
+        <div class="d-flex align-items-center gap-3 p-3 rounded-3 text-white" style="background-color: #F8E1DA !important;">
+            <img src="../uploads/admin/<?= $_SESSION['admin_profile'] ?>" style="width: 45px; height: 45px; object-fit: cover" class="rounded-circle">
             <div>
-                <p class="mb-0 fw-semibold fs-6"><?= $_SESSION['admin_username']; ?></p>
+                <p class="mb-0 fw-semibold fs-6" style="color: #84635B"><?= $_SESSION['admin_username']; ?></p>
                 <p class="mb-0 small text-secondary">Admin</p>
             </div>
         </div>
@@ -114,7 +106,6 @@ if (!isset($_SESSION['admin_id'])) {
 
     <!-- Customer List Table -->
     <section class="card p-4 rounded-4 shadow-sm">
-        <h3 class="fs-6 fw-semibold text-dark mb-4">5 Client Records Found</h3>
         <div class="table-responsive rounded-3 border border-light">
             <table class="table table-striped table-hover align-middle mb-0">
                 <thead class="table-light">
@@ -136,12 +127,18 @@ if (!isset($_SESSION['admin_id'])) {
                             <td class="px-3 py-3 text-sm text-secondary"><?php echo $c_data['phone']; ?></td>
                             <td class="px-3 py-3 text-sm text-secondary"><?php echo $c_data['date_of_birth']; ?></td>
                             <td class="text-center">
-                                <button class="btn btn-sm btn-outline-primary me-1 editBtn"
+                                <button class="btn btn-sm me-1 editBtn"
                                     data-bs-toggle="modal"
-                                    data-bs-target="#editVehicleModal">
+                                    data-bs-target="#editCustomerModal"
+                                    data-id="<?= $c_data['id']; ?>"
+                                    data-name="<?= $c_data['customer_name']; ?>"
+                                    data-email="<?= $c_data['email']; ?>"
+                                    data-phone="<?= $c_data['phone']; ?>"
+                                    data-dob="<?= $c_data['date_of_birth']; ?>">
                                     <i class="ri-edit-line me-1"></i>Edit
                                 </button>
-                                <button class="btn btn-sm btn-outline-danger deleteBtn">
+
+                                <button class="btn btn-sm btn-outline-danger deleteBtn" onclick="confirmDelete(<?php echo $c_data['id']; ?>)">
                                     <i class="ri-delete-bin-line me-1"></i>Delete
                                 </button>
                             </td>
@@ -163,26 +160,20 @@ if (!isset($_SESSION['admin_id'])) {
 
     </section>
 
-
-    <!-- Extra content to force scrolling -->
-    <div style="height: 20vh;" class="d-flex align-items-center justify-content-center text-secondary border border-dashed rounded-3 mt-5">
-        [End of Content]
-    </div>
-
 </main>
 
 <!-- Edit Customer Modal -->
 <div class="modal fade" id="editCustomerModal" tabindex="-1" aria-labelledby="editCustomerModalLabel" aria-hidden="true">
     <div class="modal-dialog modal-dialog-centered">
         <div class="modal-content rounded-4 shadow-lg">
-            <div class="modal-header bg-light border-bottom rounded-top-4">
-                <h5 class="modal-title fw-bold text-rental-primary" id="editCustomerModalLabel">
-                    Edit Customer: <span id="modal-customer-name"></span>
-                </h5>
-                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-            </div>
-            <div class="modal-body p-4">
-                <form id="edit-customer-form">
+            <form id="edit-customer-form" action="../actions/update_customer.php" method="post">
+                <div class="modal-header border-bottom rounded-top-4" style="background-color: #84635B;">
+                    <h5 class="modal-title fw-bold text-white" id="editCustomerModalLabel">
+                        Edit Customer: <span id="modal-customer-name"></span>
+                    </h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body p-4">
                     <!-- Hidden ID field -->
                     <input type="hidden" id="edit-customer-id" name="id">
 
@@ -204,17 +195,18 @@ if (!isset($_SESSION['admin_id'])) {
                     </div>
 
                     <!-- Save button will be inside the footer -->
-                </form>
-            </div>
-            <div class="modal-footer d-flex justify-content-between border-top">
-                <span class="text-sm text-secondary">Customer ID: <span id="modal-customer-id-footer"></span></span>
-                <div>
-                    <button type="button" class="btn btn-outline-secondary rounded-3" data-bs-dismiss="modal">Cancel</button>
-                    <button type="submit" class="btn bg-rental-primary text-white hover-bg-rental-dark rounded-3" form="edit-customer-form">Save Changes</button>
                 </div>
-            </div>
+                <div class="modal-footer d-flex justify-content-between border-top">
+                    <span class="text-sm text-secondary">Customer ID: <span id="modal-customer-id-footer"></span></span>
+                    <div>
+                        <button type="button" class="btn btn-outline-secondary rounded-3" data-bs-dismiss="modal">Cancel</button>
+                        <button type="submit" class="btn bg-rental-primary text-white hover-bg-rental-dark rounded-3" name="save">Save Changes</button>
+                    </div>
+                </div>
+            </form>
         </div>
     </div>
+</div>
 </div>
 
 <?php

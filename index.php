@@ -10,10 +10,10 @@ unset($_SESSION['pickupDate'], $_SESSION['dropoffDate']);
 <!-- Hero Section (Clean Banner) -->
 <section id="hero-section">
     <div class="container text-center">
-        <h2 class="display-5 fw-bolder mb-3 haygo-accent">
+        <h2 class="display-5 fw-bolder mb-3 haygo-about">
             Your Road Trip Starts in Cebu.
         </h2>
-        <p class="lead mb-0 fs-5 haygo-primary">
+        <p class="fw-medium lead mb-0 fs-5 haygo-primary">
             Search, book, and drive away with confidence across the Visayas.
         </p>
     </div>
@@ -304,7 +304,7 @@ unset($_SESSION['pickupDate'], $_SESSION['dropoffDate']);
             </div>
             <div class="d-flex justify-content-center align-items-center">
                 <a href="">
-                    <button class="btn btn-haygo-primary btn-lg fw-semibold rounded-3 shadow-sm" style="width: 15rem;">View Fleet</button>
+                    <button class="btn l-button btn-lg fw-semibold rounded-3 shadow-sm" style="width: 15rem;">View Fleet</button>
                 </a>
             </div>
         </div>
@@ -538,7 +538,7 @@ unset($_SESSION['pickupDate'], $_SESSION['dropoffDate']);
                             comfortably with baggage</li>
                     </ul>
                     <!-- Button is Lime Accent, contrasting with the dark card content -->
-                    <button class="btn btn-haygo-primary btn-lg fw-bold px-5 rounded-3 shadow-md">
+                    <button class="l-button btn btn-lg fw-bold px-5 rounded-3 shadow-md">
                         See Deal & Reserve
                     </button>
                 </div>
