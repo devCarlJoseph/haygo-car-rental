@@ -148,7 +148,7 @@ $result = $conn->query($query);
                             <th scope="col" class="px-3 py-3 text-center text-xs text-secondary text-uppercase">Transmission</th>
                             <th scope="col" class="px-3 py-3 text-center text-xs text-secondary text-uppercase">Specs</th>
                             <th scope="col" class="px-3 py-3 text-start text-xs text-secondary text-uppercase">Daily Price</th>
-                            <th scope="col" class="px-3 py-3 text-center text-xs text-secondary text-uppercase">Action</th>
+                            <th scope="col" class="px-3 py-3 text-center text-xs text-secondary text-uppercase" style="width: 10rem;">Action</th>
                         </tr>
                     </thead>
 
@@ -181,21 +181,23 @@ $result = $conn->query($query);
                                 <td class="text-center">₱<?php echo number_format($data['car_price'], 2); ?></td>
 
                                 <td class="text-center">
-                                    <button class="btn btn-sm editBtn"
-                                        data-id="<?php echo $data['id']; ?>"
-                                        data-name="<?php echo $data['car_name']; ?>"
-                                        data-desc="<?php echo $data['car_description']; ?>"
-                                        data-type="<?php echo $data['car_type']; ?>"
-                                        data-trans="<?php echo $data['transmission']; ?>"
-                                        data-seats="<?php echo $data['seats']; ?>"
-                                        data-bags="<?php echo $data['bags']; ?>"
-                                        data-price="<?php echo $data['car_price']; ?>"
-                                        data-bs-toggle="modal"
-                                        data-bs-target="#editVehicleModal">
-                                        Edit
-                                    </button>
-                                    <button class="btn btn-sm btn-outline-danger" onclick="confirmDelete(<?php echo $data['id']; ?>)">Delete</button>
+                                    <div class="d-flex justify-content-center gap-1">
+                                        <button class="btn btn-sm editBtn"
+                                            data-id="<?php echo $data['id']; ?>"
+                                            data-name="<?php echo $data['car_name']; ?>"
+                                            data-desc="<?php echo $data['car_description']; ?>"
+                                            data-type="<?php echo $data['car_type']; ?>"
+                                            data-trans="<?php echo $data['transmission']; ?>"
+                                            data-seats="<?php echo $data['seats']; ?>"
+                                            data-bags="<?php echo $data['bags']; ?>"
+                                            data-price="<?php echo $data['car_price']; ?>"
+                                            data-bs-toggle="modal"
+                                            data-bs-target="#editVehicleModal">
+                                            Edit
+                                        </button>
+                                        <button class="btn btn-sm btn-outline-danger" onclick="confirmDelete(<?php echo $data['id']; ?>)">Delete</button>
 
+                                    </div>
                                 </td>
                             </tr>
                         <?php endwhile; ?>

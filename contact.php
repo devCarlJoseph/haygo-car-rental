@@ -27,31 +27,31 @@
                     <div class="card-body ">
                         <h2 class="send card-title haygo-accent h3 mb-4 fw-bold text-center">Send Us a Message</h2>
                         
-                        <form id="contactForm" class="needs-validation" novalidate>
+                        <form action="actions/messages.php" id="contactForm" class="needs-validation" method="post">
                             
                             <!-- Name Field -->
                             <div class="mb-3">
                                 <label for="contactName" class="form-label fw-semibold haygo-primary-text">Your Full Name</label>
-                                <input type="text" class="form-control" id="contactName" placeholder="e.g., Alex Johnson" required>
+                                <input type="text" name="fullname" class="form-control" id="contactName" placeholder="e.g., Alex Johnson" required>
                                 <div class="invalid-feedback">Please enter your name.</div>
                             </div>
 
                             <!-- Phone Number Field -->
                             <div class="mb-3">
                                 <label for="contactPhone" class="form-label fw-semibold haygo-primary-text">Phone Number</label>
-                                <input type="tel" class="form-control" id="contactPhone" placeholder="e.g., (123) 456-7890" required pattern="^[\d\s\-\(\)]+$">
+                                <input type="tel" name="phone_num" class="form-control" id="contactPhone" placeholder="e.g., (123) 456-7890" required pattern="^[\d\s\-\(\)]+$">
                                 <div class="invalid-feedback">Please enter a valid phone number.</div>
                             </div>
 
                             <!-- Message Field -->
                             <div class="mb-4">
                                 <label for="contactMessage" class="form-label fw-semibold haygo-primary-text">Message / Inquiry Details</label>
-                                <textarea class="form-control" id="contactMessage" rows="5" placeholder="Tell us about your booking needs or concern..." required></textarea>
+                                <textarea class="form-control" name="message" id="contactMessage" rows="5" placeholder="Tell us about your booking needs or concern..." required></textarea>
                                 <div class="invalid-feedback">A message is required.</div>
                             </div>
                             
                             <div class="d-grid">
-                                <button id="submitButton" type="submit" class="btn btn-submit btn-lg">
+                                <button id="submitButton" name="send" type="submit" class="btn btn-submit btn-lg">
                                     Send Message </i>
                                 </button>
                             </div>

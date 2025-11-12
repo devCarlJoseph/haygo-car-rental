@@ -108,21 +108,21 @@ $blogs = $conn->query($query);
     <!-- Post Grid Container -->
     <div id="post-grid" class="row row-cols-1 row-cols-md-2 row-cols-lg-3 g-4">
         <?php while ($blog_data = $blogs->fetch_assoc()): ?>
-            <div class="col post-card-item" data-category="${post.category}">
+            <div class="col post-card-item" data-category="<?php echo $blog_data['blog_category']; ?>">
                 <article class="card h-100 rounded-4 post-card">
                     <div class="ratio ratio-4x3 bg-light rounded-top-4 overflow-hidden">
                         <img src="uploads/blogs/<?php echo $blog_data['blog_image']; ?>" class="card-img-top object-fit-cover opacity-75" alt="BLOG IMAGE">
                     </div>
                     <div class=" card-body p-4">
-                        <small class="${primaryColorClass} fw-bold text-uppercase d-block mb-2"><?php echo $blog_data['blog_category']; ?></small>
-                        <h3 class="card-title fs-4 fw-bold mb-3 lh-sm">
+                        <small class="haygo-primary-text fw-bold text-uppercase d-block mb-2"><?php echo $blog_data['blog_category']; ?></small>
+                        <h3 class="card-title fs-4 fw-bold mb-3 lh-sm haygo-secondary">
                             <a href="#" class="text-decoration-none text-reset"><?php echo $blog_data['blog_title']; ?></a>
                         </h3>
                         <p class="card-text text-muted mb-4" style="--bs-line-clamp: 3; display: -webkit-box; -webkit-line-clamp: 3; -webkit-box-orient: vertical; overflow: hidden;">
                             <?php echo $blog_data['content_snipp']; ?>
                         </p>
                         <div class="card-footer bg-white border-0 p-0">
-                            <span class="small text-secondary">
+                            <span class="small haygo-secondary">
                                 <?php echo $blog_data['created_date'] . " | " . $blog_data['author_name']; ?>
                             </span>
                         </div>

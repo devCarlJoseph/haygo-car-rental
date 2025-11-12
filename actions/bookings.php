@@ -1,5 +1,8 @@
 <?php
 
+error_reporting(E_ALL);
+ini_set('display_errors', 1);
+
 session_start();
 
 require_once '../config/config.php';
@@ -53,18 +56,47 @@ if (!isset($_POST['booking_id']) || empty($_POST['booking_id'])) {
 
 if (isset($_POST['submit_status'], $_POST['booking_id'])) {
     $stmt = $conn->prepare("UPDATE bookings SET status=? WHERE id=?");
-    $stmt->bind_param("si", $submit_status, $booking_id);
-    $stmt->execute();
+    if (!$stmt) {
+        die("Prepare failed: " . $conn->error);
+    }
 
-    if ($submit_status == 'cancelled' || $submit_status == 'completed') {
-        $restore = $conn->prepare("UPDATE vehicles 
-            SET status='available' 
-            WHERE id=(SELECT vehicle_id FROM bookings WHERE id=?)");
-        $restore->bind_param("i", $booking_id);
-        $restore->execute();
+    $stmt->bind_param("si", $submit_status, $booking_id);
+    if (!$stmt->execute()) {
+        die("Booking update failed: " . $stmt->error);
+    }
+
+    // Fetch the vehicle_id for this booking
+    $getVehicle = $conn->prepare("SELECT vehicle_id FROM bookings WHERE id=?");
+    if (!$getVehicle) {
+        die("Prepare failed (getVehicle): " . $conn->error);
+    }
+
+    $getVehicle->bind_param("i", $booking_id);
+    if (!$getVehicle->execute()) {
+        die("Vehicle ID query failed: " . $getVehicle->error);
+    }
+
+    $getVehicle->bind_result($vehicle_id);
+    $getVehicle->fetch();
+    $getVehicle->close();
+
+    if (!empty($vehicle_id)) {
+        $restore = $conn->prepare("UPDATE vehicles SET status='available' WHERE id=?");
+        if (!$restore) {
+            die("Prepare failed (restore): " . $conn->error);
+        }
+
+        $restore->bind_param("i", $vehicle_id);
+        if (!$restore->execute()) {
+            die("Vehicle status update failed: " . $restore->error);
+        }
+
+        $restore->close();
+    } else {
+        die("No vehicle_id found for booking ID: $booking_id");
     }
 
     unset($_SESSION['pickupDate'], $_SESSION['dropoffDate']);
-
+    echo "success";
     exit;
 }

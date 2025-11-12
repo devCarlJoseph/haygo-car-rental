@@ -54,6 +54,14 @@ CREATE TABLE IF NOT EXISTS blog (
     author_name VARCHAR(255) NOT NULL
 );
 
+CREATE TABLE IF NOT EXISTS messages (
+    id INT AUTO_INCREMENT PRIMARY KEY,
+    fullname VARCHAR(255) NOT NULL,
+    contact_num VARCHAR(30) NOT NULL,
+    inquiry TEXT,
+    created_date DATE DEFAULT (CURRENT_DATE)
+);
+
 
 -- Sample query to retrieve booking details along with customer and vehicle information
 SELECT

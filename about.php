@@ -192,7 +192,7 @@ require_once 'header.php';
                 
                 <div class="col-12 col-md-6 col-lg-4">
                     <div class="card border-0 rounded-4 p-4 text-center shadow-sm h-100">
-                        <img src="src/assets/images/back.jpg"
+                        <img src="src/assets/images/carl.jpg"
                             alt="Team member profile photo"
                             class="rounded-circle mx-auto mb-3" style="width: 120px; height: 120px; object-fit: cover; border: 4px solid var(--haygo-secondary);">
                         <h4 class="fs-5 fw-bold text-haygo-dark mb-1">Carl Joseph Sumagang</h4>
@@ -203,7 +203,7 @@ require_once 'header.php';
 
                 <div class="col-12 col-md-6 col-lg-4">
                     <div class="card border-0 rounded-4 p-4 text-center shadow-sm h-100">
-                        <img src="src/assets/images/front.jpg"
+                        <img src="src/assets/images/jerreh.jpg"
                             alt="Team member profile photo"
                             class="rounded-circle mx-auto mb-3" style="width: 120px; height: 120px; object-fit: cover; border: 4px solid var(--haygo-primary);">
                         <h4 class="fs-5 fw-bold text-haygo-dark mb-1">Jerreh Romer Salera</h4>
@@ -214,7 +214,7 @@ require_once 'header.php';
 
                 <div class="col-12 col-md-6 col-lg-4">
                     <div class="card border-0 rounded-4 p-4 text-center shadow-sm h-100">
-                        <img src="src/assets/images/lead.jpg"
+                        <img src="src/assets/images/ian.jpg"
                             alt="Team member profile photo"
                             class="rounded-circle mx-auto mb-3" style="width: 120px; height: 120px; object-fit: cover; border: 4px solid var(--haygo-secondary);">
                         <h4 class="fs-5 fw-bold text-haygo-dark mb-1">James Ian Escabas</h4>

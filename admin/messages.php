@@ -4,8 +4,8 @@ require_once '../config/config.php';
 
 session_start();
 
-$query = "SELECT * FROM bookings ORDER BY id DESC";
-$bookings = $conn->query($query);
+$query = "SELECT * FROM messages";
+$messages = $conn->query($query);
 
 
 if (!isset($_SESSION['admin_id'])) {
@@ -100,48 +100,44 @@ if (!isset($_SESSION['admin_id'])) {
 
                 <!-- --- Message Card Template (Alice Johnson) --- -->
                 <div class="col">
-                    <div class="card archive-card">
-                        <div class="card-header bg-white border-bottom-0 pb-2">
-                            <h5 class="card-title fw-bold text-body-emphasis mb-1">
-                                <i class="bi bi-person-circle me-2 text-rental-primary"></i>Alice Johnson
-                            </h5>
-                        </div>
-                        <div class="card-body pt-2">
-                            <!-- Contact Details & Date -->
-                            <ul class="list-unstyled small mb-4 row gx-2">
-                                <li class="col-12 d-flex align-items-center mb-1 text-dark">
-                                    <i class="bi bi-telephone-fill me-2" style="color: #84635B;"></i>
-                                    <span class="contact-detail">+1 (55) 123-4567</span>
-                                </li>
-                                <li class="col-12 d-flex align-items-center text-muted">
-                                    <i class="bi bi-calendar-event-fill me-2" style="color: #84635B;"></i>
-                                    <span class="fw-medium">Received: 2025-10-25 10:30:00</span>
-                                </li>
-                            </ul>
-
-                            <!-- Message Content -->
-                            <p class="fw-bold mb-2 text-rental-primary" style="border-top: 1px solid #dee2e6; padding-top: 1rem;">Inquiry Message:</p>
-                            <div class="message-content">
-                                Dear Admin Team,
-
-                                I am very interested in booking the Sedan Model X for a week starting next month, specifically from November 10th to November 17th. Could you please confirm its availability for those exact dates and provide the total cost, including all taxes and fees?
-
-                                Thank you for your quick assistance.
-
-                                Best regards,
-                                Alice Johnson
+                    <?php while ($m_data = $messages->fetch_assoc()) : ?>
+                        <div class="card archive-card">
+                            <div class="card-header bg-white border-bottom-0 pb-2">
+                                <h5 class="card-title fw-bold text-body-emphasis mb-1">
+                                    <i class="bi bi-person-circle me-2 text-rental-primary"></i><?php echo $m_data['fullname']; ?>
+                                </h5>
                             </div>
+                            <div class="card-body pt-2">
+                                <!-- Contact Details & Date -->
+                                <ul class="list-unstyled small mb-4 row gx-2">
+                                    <li class="col-12 d-flex align-items-center mb-1 text-dark">
+                                        <i class="bi bi-telephone-fill me-2" style="color: #84635B;"></i>
+                                        <span class="contact-detail"><?php echo $m_data['contact_num'] ?></span>
+                                    </li>
+                                    <li class="col-12 d-flex align-items-center text-muted">
+                                        <i class="bi bi-calendar-event-fill me-2" style="color: #84635B;"></i>
+                                        <span class="fw-medium"><?php echo $m_data['created_date']; ?></span>
+                                    </li>
+                                </ul>
 
-                            <!-- Actions Section -->
-                            <div class="mt-4 pt-3 border-top d-flex justify-content-end">
-                                <button
-                                    class="btn btn-sm shadow-sm" style="background-color: #84635B; color: #F8E1DA"
-                                    onclick="deleteInquiry(this)">
-                                    <i class="bi bi-trash me-1"></i> Delete Inquiry
-                                </button>
+                                <!-- Message Content -->
+                                <p class="fw-bold mb-2 text-rental-primary" style="border-top: 1px solid #dee2e6; padding-top: 1rem;">Inquiry Message:</p>
+                                <div class="message-content">
+                                    <?php echo $m_data['inquiry']; ?>
+                                </div>
+
+                                <!-- Actions Section -->
+                                <div class="mt-4 pt-3 border-top d-flex justify-content-end">
+                                    <a href="../actions/delete_messages.php?id=<?php echo $m_data['id']; ?>"
+                                        class="btn btn-sm shadow-sm"
+                                        style="background-color: #84635B; color: #F8E1DA"
+                                        onclick="return confirm('Are you sure you want to delete this inquiry?');">
+                                        <i class="bi bi-trash me-1"></i> Delete Inquiry
+                                    </a>
+                                </div>
                             </div>
                         </div>
-                    </div>
+                    <?php endwhile; ?>
                 </div>
             </div>
             <!-- End Messages Grid -->
@@ -149,6 +145,6 @@ if (!isset($_SESSION['admin_id'])) {
     </div>
 </div>
 
-<?php 
-    require_once 'footer.php';
+<?php
+require_once 'footer.php';
 ?>

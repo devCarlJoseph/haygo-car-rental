@@ -125,11 +125,11 @@ if (!isset($_SESSION['admin_id'])) {
                         <th scope="col" class="text-uppercase text-secondary small fw-semibold">Booking ID</th>
                         <th scope="col" class="text-uppercase text-secondary small fw-semibold">Customer Name</th>
                         <th scope="col" class="text-uppercase text-secondary small fw-semibold">Email</th>
-                        <th scope="col" class="text-uppercase text-secondary small fw-semibold">Vehicle Id</th>
-                        <th scope="col" class="text-center text-uppercase text-secondary small fw-semibold" style="width: 13rem;">Booking Dates</th>
+                        <th scope="col" class="text-center text-uppercase text-secondary small fw-semibold" style="width: 10rem;">Vehicle Id</th>
+                        <th scope="col" class="text-center text-uppercase text-secondary small fw-semibold" style="width: 15rem;">Booking Dates</th>
                         <th scope="col" class="text-center text-uppercase text-secondary small fw-semibold" style="width: 10rem;">Total Price</th>
                         <th scope="col" class="text-center text-uppercase text-secondary small fw-semibold">Status</th>
-                        <th scope="col" class="text-uppercase text-secondary small fw-semibold text-center">Actions</th>
+                        <th scope="col" class="text-uppercase text-secondary small fw-semibold text-center" style="width: 15rem;">Actions</th>
                     </tr>
                 </thead>
                 <tbody>
@@ -159,15 +159,27 @@ if (!isset($_SESSION['admin_id'])) {
                                 <span class="<?php echo $statusClass; ?> px-2 py-1 rounded-pill"><?php echo ucfirst($b_data['status']); ?></span>
                             </td>
                             <td class="text-center">
-                                <button class="btn btn-sm btn-outline-primary me-1 editBtn"
-                                    data-bs-toggle="modal"
-                                    data-bs-target="#editVehicleModal">
-                                    <i class="ri-edit-line me-1"></i>Edit
-                                </button>
-                                <button class="btn btn-sm btn-outline-danger deleteBtn">
-                                    <i class="ri-delete-bin-line me-1"></i>Delete
-                                </button>
+                                <div class="d-flex justify-content-center gap-1">
+                                    <button class="btn btn-sm btn-outline-danger" onclick="deleteBooking(<?php echo $b_data['id']; ?>)">
+                                        <i class="ri-delete-bin-line me-1"></i>Delete
+                                    </button>
+                                    <button class="btn btn-sm btn-outline-primary"
+                                        data-bs-toggle="modal"
+                                        data-bs-target="#viewDetailsModal"
+                                        data-id="<?= $b_data['id']; ?>"
+                                        data-customer="<?= htmlspecialchars($b_data['customer_name']); ?>"
+                                        data-email="<?= htmlspecialchars($b_data['email']); ?>"
+                                        data-phone="<?= htmlspecialchars($b_data['phone_num']); ?>"
+                                        data-license="<?= htmlspecialchars($b_data['lic_id']); ?>"
+                                        data-vehicle="<?= htmlspecialchars($b_data['vehicle_id']); ?>"
+                                        data-booking-date="<?= date('M d, Y', strtotime($b_data['booking_date'])) . ' - ' . date('M d, Y', strtotime($b_data['return_date'])); ?>"
+                                        data-status="<?= ucfirst($b_data['status']); ?>"
+                                        data-total="₱ <?= number_format($b_data['total_price'], 2); ?>">
+                                        View
+                                    </button>
+                                </div>
                             </td>
+
                         </tr>
                     <?php endwhile; ?>
                 </tbody>
@@ -245,6 +257,8 @@ if (!isset($_SESSION['admin_id'])) {
         </div>
     </div>
 </div>
+
+
 
 <?php
 require_once 'footer.php';
