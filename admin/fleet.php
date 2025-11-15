@@ -99,7 +99,6 @@ $result = $conn->query($query);
         <header class="d-flex flex-column flex-md-row justify-content-between align-items-start align-items-md-center mb-5">
             <div class="mb-3 mb-md-0">
                 <h2 class="fs-2 fw-bold text-dark">Vehicle Inventory Catalog</h2>
-                <p class="text-sm text-secondary">Manage rental specifications, pricing, and details for all available vehicles.</p>
             </div>
             <!-- Add New Vehicle Button (Updated to trigger modal) -->
             <button class="btn btn-lg hover-bg-rental-dark d-flex align-items-center gap-2 shadow-lg border-0 rounded-3" style="background-color: #84635B; color: #fef7f4ff !important"

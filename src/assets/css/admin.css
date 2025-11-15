@@ -7,6 +7,9 @@
      /* Slightly darker for hover */
      --bs-body-bg: #f5f6f8;
      /* Light, clean background */
+     --haygo-primary: #84635B;
+     /* Dark Taupe/Brown */
+     --haygo-secondary: #F8E1DA;
  }
 
  body {
@@ -168,4 +171,23 @@
  .editBtn:hover {
      background-color: #84635B;
      color: white !important;
+ }
+
+ .hover-bg-rental-dark:hover {
+     background-color: rgba(0, 0, 0, 0.1);
+     transition: all 0.2s ease-in-out;
+ }
+
+ /* Custom style for static chart simulation */
+ .bar-chart-month {
+     height: 150px;
+     /* Max height for bars */
+     background-color: #f8f9fa;
+     border-radius: 0.25rem;
+ }
+
+ .bar-chart-bar {
+     transition: none;
+     /* Disable transition for static demo */
+     border-radius: 0.25rem 0.25rem 0 0;
  }

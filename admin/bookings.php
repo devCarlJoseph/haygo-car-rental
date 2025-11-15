@@ -87,7 +87,6 @@ if (!isset($_SESSION['admin_id'])) {
     <header class="d-flex flex-column flex-md-row justify-content-between align-items-start align-items-md-center mb-5">
         <div class="mb-3 mb-md-0">
             <h2 class="fs-2 fw-bold text-dark">Bookings Management</h2>
-            <p class="text-sm text-secondary">View, filter, and manage all current and past vehicle reservations.</p>
         </div>
     </header>
 
