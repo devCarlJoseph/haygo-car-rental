@@ -18,7 +18,6 @@ if (isset($_GET['id'])) {
         exit();
     }
 
-    // Get the image file if it exists
     $imgQuery = $conn->prepare("SELECT car_image FROM vehicles WHERE id = ?");
     $imgQuery->bind_param("i", $vehicle_id);
     $imgQuery->execute();
@@ -32,7 +31,6 @@ if (isset($_GET['id'])) {
         }
     }
 
-    // Delete vehicle record
     $deleteStmt = $conn->prepare("DELETE FROM vehicles WHERE id = ?");
     $deleteStmt->bind_param("i", $vehicle_id);
 

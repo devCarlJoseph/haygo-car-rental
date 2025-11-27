@@ -89,15 +89,15 @@ if (!isset($_SESSION['admin_id'])) {
                 <input type="text" name="admin_name" class="form-control p-3 rounded-3" value="<?= $_SESSION['admin_username'] ?>">
             </div>
             <div class="col-md-6">
-                <label class="form-label fw-medium text-secondary">Email Address</label>
-                <input type="email" name="admin_email" class="form-control p-3 rounded-3" value="<?= $_SESSION['admin_email'] ?? '' ?>">
+                <label class="form-label fw-medium text-secondary">New Password</label>
+                <input type="password" name="admin_pwd" class="form-control p-3 rounded-3" placeholder="Enter New Password">
             </div>
             <div class="col-md-6">
-                <label class="form-label fw-medium text-secondary">Profile Picture</label>
-                <input type="file" name="admin_profile" class="form-control p-2 rounded-3">
+                <label class="form-label fw-medium text-secondary">Confirm Password</label>
+                <input type="password" name="confirm_pass" class="form-control p-3 rounded-3" placeholder="Confirm Password">
             </div>
             <div class="col-12 text-end">
-                <button class="btn px-4 py-2 rounded-3" style="background-color: #84635B; color: #F8E1DA">Update Profile</button>
+                <button class="btn px-4 py-2 rounded-3" name="update" style="background-color: #84635B; color: #F8E1DA">Update Profile</button>
             </div>
         </form>
     </section>

@@ -137,7 +137,7 @@ if (!isset($_SESSION['admin_id'])) {
                                     <i class="ri-edit-line me-1"></i>Edit
                                 </button>
 
-                                <button class="btn btn-sm btn-outline-danger deleteBtn" onclick="confirmDelete(<?php echo $c_data['id']; ?>)">
+                                <button class="btn btn-sm btn-outline-danger deleteBtn" onclick="confirmDeleteCust(<?php echo $c_data['id']; ?>)">
                                     <i class="ri-delete-bin-line me-1"></i>Delete
                                 </button>
                             </td>

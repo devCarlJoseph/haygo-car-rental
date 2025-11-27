@@ -163,12 +163,12 @@
      background-color: var(--bs-rental-primary);
  }
 
- .editBtn {
+ .editBtn, .veditBtn {
      border: 1px solid #84635B;
      color: #84635B;
  }
 
- .editBtn:hover {
+ .editBtn:hover, .veditBtn:hover {
      background-color: #84635B;
      color: white !important;
  }

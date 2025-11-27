@@ -138,7 +138,7 @@ unset($_SESSION['pickupDate'], $_SESSION['dropoffDate']);
         </div>
 
         <div class="text-center mt-5 pt-4">
-            <a href="#" class="l-button btn btn-lg fw-bold px-5 py-3 rounded-3">Learn More About Our
+            <a href="about.php" class="l-button btn btn-lg fw-bold px-5 py-3 rounded-3">Learn More About Our
                 Team</a>
         </div>
 
@@ -303,7 +303,7 @@ unset($_SESSION['pickupDate'], $_SESSION['dropoffDate']);
                 </div>
             </div>
             <div class="d-flex justify-content-center align-items-center">
-                <a href="">
+                <a href="fleet.php">
                     <button class="btn l-button btn-lg fw-semibold rounded-3 shadow-sm" style="width: 15rem;">View Fleet</button>
                 </a>
             </div>
@@ -538,9 +538,11 @@ unset($_SESSION['pickupDate'], $_SESSION['dropoffDate']);
                             comfortably with baggage</li>
                     </ul>
                     <!-- Button is Lime Accent, contrasting with the dark card content -->
-                    <button class="l-button btn btn-lg fw-bold px-5 rounded-3 shadow-md">
-                        See Deal & Reserve
-                    </button>
+                    <a href="fleet.php">
+                        <button class="l-button btn btn-lg fw-bold px-5 rounded-3 shadow-md">
+                            See Deal & Reserve
+                        </button>
+                    </a>
                 </div>
 
                 <!-- Image Placeholder (Deep Blue for contrast) -->

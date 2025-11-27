@@ -31,7 +31,7 @@ document.addEventListener('DOMContentLoaded', function () {
 
 });
 
-function confirmDelete(id) {
+function confirmDeleteCust(id) {
     if (confirm("Are you sure you want to delete this customer?")) {
         // Redirect to PHP delete script
         window.location.href = `../actions/delete_customer.php?id=${id}`;

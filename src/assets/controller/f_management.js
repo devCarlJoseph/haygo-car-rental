@@ -1,5 +1,5 @@
 document.addEventListener('click', function (e) {
-    if (e.target && e.target.classList.contains('editBtn')) {
+    if (e.target && e.target.classList.contains('veditBtn')) {
         const button = e.target;
 
         const id = button.dataset.id;
@@ -22,11 +22,17 @@ document.addEventListener('click', function (e) {
         modal.querySelector('#edit_bags').value = bags;
         modal.querySelector('#edit_price').value = price;
 
-        const bsModal = new bootstrap.Modal(modal);
+        let bsModal = bootstrap.Modal.getInstance(modal);
+        if (!bsModal) {
+            bsModal = new bootstrap.Modal(modal);
+        }
+
         bsModal.show();
     }
 });
 
-
-
-
+function confirmDeleteVehicle(id) {
+    if (confirm("Are you sure you want to delete this vehicle?")) {
+        window.location.href = `../actions/delete_vehicle.php?id=${id}`;
+    }
+}   

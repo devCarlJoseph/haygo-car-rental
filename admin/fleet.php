@@ -181,7 +181,7 @@ $result = $conn->query($query);
 
                                 <td class="text-center">
                                     <div class="d-flex justify-content-center gap-1">
-                                        <button class="btn btn-sm editBtn"
+                                        <button class="btn btn-sm veditBtn"
                                             data-id="<?php echo $data['id']; ?>"
                                             data-name="<?php echo $data['car_name']; ?>"
                                             data-desc="<?php echo $data['car_description']; ?>"
@@ -194,7 +194,7 @@ $result = $conn->query($query);
                                             data-bs-target="#editVehicleModal">
                                             Edit
                                         </button>
-                                        <button class="btn btn-sm btn-outline-danger" onclick="confirmDelete(<?php echo $data['id']; ?>)">Delete</button>
+                                        <button class="btn btn-sm btn-outline-danger" onclick="confirmDeleteVehicle(<?php echo $data['id']; ?>)">Delete</button>
 
                                     </div>
                                 </td>

@@ -194,7 +194,7 @@ require_once 'header.php';
             </div>
 
             <!-- Messages Display -->
-            <div class="modal-body p-0 d-flex flex-column" style="height: 100%;">
+            <div class="modal-body p-0 d-flex flex-column overflow-hidden" style="height: 100%;">
                 <div id="chatMessages" class="chat-messages">
                     <!-- Initial message will be added by JS on modal show -->
                 </div>
