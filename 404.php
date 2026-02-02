@@ -13,7 +13,7 @@ http_response_code(404);
         </h1>
 
         <h2 class="display-5 fw-bold haygo-primary-text mb-4">
-            Oops! Dead End Ahead.
+            Oops! Dead End Ahead!!.
         </h2>
 
         <p class="lead mb-5 fs-5 text-secondary mx-auto" style="max-width: 600px;">
