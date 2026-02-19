@@ -16,7 +16,15 @@
     <link rel="stylesheet" href="src/assets/css/fleet.css">
     <link rel="stylesheet" href="src/assets/css/footer.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/remixicon/4.6.0/remixicon.min.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css" integrity="sha512-2SwdPD6INVrV/lHTZbO2nodKhrnDdJK9/kg2XD1r9uGqPo1cUbujc+IYdlYdEErWNu69gVcYgdxlmVmzTWnetw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css"
+        integrity="sha512-2SwdPD6INVrV/lHTZbO2nodKhrnDdJK9/kg2XD1r9uGqPo1cUbujc+IYdlYdEErWNu69gVcYgdxlmVmzTWnetw=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@100..900&display=swap" rel="stylesheet">
+
+
+
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
 
     <script src="src/assets/js/jquery.js"></script>
@@ -25,7 +33,7 @@
 
 <body>
     <!-- Header / Navigation Bar -->
-    <header class="bg-white shadow sticky-top z-5">
+    <header class="haygo-glass sticky-top z-5 transition-all">
         <div class="container-fluid px-4 px-lg-5">
             <nav class="navbar navbar-expand-lg navbar-light py-2">
                 <!-- Logo -->
@@ -52,13 +60,16 @@
                                 class="h-color nav-link text-secondary fw-semibold mx-2">Fleet</a></li>
                         <li class="nav-item"><a href="contact.php"
                                 class="h-color nav-link text-secondary fw-semibold mx-2">Contact Us</a></li>
-                        <li class="nav-item"><a href="help.php" class="h-color nav-link text-secondary fw-semibold mx-2">Help</a>
+                        <li class="nav-item"><a href="help.php"
+                                class="h-color nav-link text-secondary fw-semibold mx-2">Help</a>
                         </li>
+                        <li class="nav-item"><a href="user/log_in.php"
+                                class="h-color nav-link text-secondary fw-semibold mx-2">My Trips</a></li>
 
                         <!-- Login/Signup Buttons -->
                         <li class="nav-item ms-lg-4 mt-2 mt-lg-0">
-                            <a href="admin/log_in.php" class="h-button btn fw-bold px-3 py-1 rounded-pill me-2">
-                                Log In
+                            <a href="login.php" class="h-button btn fw-bold px-3 py-1 rounded-pill me-2">
+                                Portal
                             </a>
                         </li>
                     </ul>

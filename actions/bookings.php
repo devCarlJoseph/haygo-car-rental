@@ -81,12 +81,14 @@ if (isset($_POST['submit_status'], $_POST['booking_id'])) {
     $getVehicle->close();
 
     if (!empty($vehicle_id)) {
-        $restore = $conn->prepare("UPDATE vehicles SET status='available' WHERE id=?");
+        $vehicle_status = in_array($submit_status, ['cancelled', 'completed'], true) ? 'available' : 'unavailable';
+
+        $restore = $conn->prepare("UPDATE vehicles SET status=? WHERE id=?");
         if (!$restore) {
             die("Prepare failed (restore): " . $conn->error);
         }
 
-        $restore->bind_param("i", $vehicle_id);
+        $restore->bind_param("si", $vehicle_status, $vehicle_id);
         if (!$restore->execute()) {
             die("Vehicle status update failed: " . $restore->error);
         }
