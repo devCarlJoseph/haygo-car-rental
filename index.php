@@ -16,6 +16,10 @@ unset($_SESSION['pickupDate'], $_SESSION['dropoffDate']);
         <p class="fw-medium lead mb-0 fs-5 haygo-primary">
             Search, book, and drive away with confidence across the Visayas.
         </p>
+        <div class="d-flex justify-content-center flex-wrap gap-2 mt-4">
+            <a href="login.php" class="btn btn-haygo-primary rounded-pill px-4">Open Access Portal</a>
+            <a href="fleet.php" class="btn btn-outline-light rounded-pill px-4">Browse Fleet</a>
+        </div>
     </div>
 
     <div class="container mb-5">
@@ -24,7 +28,8 @@ unset($_SESSION['pickupDate'], $_SESSION['dropoffDate']);
                 <!-- Search Module Container -->
                 <div class="search-module p-4 p-md-5 mx-auto" style="max-width: 1000px;">
                     <h2 class="fs-4 fw-bold mb-4 text-center haygo-primary-text">Find Your Cebu Ride</h2>
-                    <form action="actions/search_fleet.php" id="rentalSearchForm" class="row g-3 g-lg-4 align-items-end" method="post">
+                    <form action="actions/search_fleet.php" id="rentalSearchForm" class="row g-3 g-lg-4 align-items-end"
+                        method="post">
 
                         <!-- Location Input -->
                         <div class="col-12 col-md-5 col-lg-4">
@@ -32,8 +37,7 @@ unset($_SESSION['pickupDate'], $_SESSION['dropoffDate']);
                                 <i class="bi bi-geo-alt text-haygo-accent me-1"></i> Location
                             </label>
 
-                            <input type="text" id="pickupLocation"
-                                value="Poblacion Cordova Cebu" readonly
+                            <input type="text" id="pickupLocation" value="Poblacion Cordova Cebu" readonly
                                 class="form-control form-control-lg rounded-3">
                         </div>
 
@@ -84,7 +88,8 @@ unset($_SESSION['pickupDate'], $_SESSION['dropoffDate']);
     <div class="container py-5">
         <div class="row justify-content-center text-center mb-5">
             <div class="col-lg-8">
-                <h3 class="haygo-primary-text text-uppercase fs-6 fw-bold mb-2 letter-spacing-wide">Why Choose Hay go?</h3>
+                <h3 class="haygo-primary-text text-uppercase fs-6 fw-bold mb-2 letter-spacing-wide">Why Choose Hay go?
+                </h3>
                 <h2 class="display-6 fw-bolder haygo-secondary mb-4">
                     Your Cebu Adventure Starts with Our <span class="testing">Commitment</span>
                 </h2>
@@ -99,41 +104,47 @@ unset($_SESSION['pickupDate'], $_SESSION['dropoffDate']);
         <div class="row g-5 text-center">
             <!-- Commitment Pillar 1: Local Expertise -->
             <div class="col-md-4">
-                <div class="c-round icon-box rounded-circle mx-auto mb-4 d-flex align-items-center justify-content-center haygo-accent shadow"
-                    style="width: 80px; height: 80px;">
-                    <i class="fas fa-map-marked-alt fs-3"></i>
+                <div class="card border-0 shadow-sm h-100 p-4 hover-card text-center rounded-4">
+                    <div class="c-round icon-box rounded-circle mx-auto mb-4 d-flex align-items-center justify-content-center haygo-accent shadow"
+                        style="width: 80px; height: 80px;">
+                        <i class="fas fa-map-marked-alt fs-3"></i>
+                    </div>
+                    <h4 class="fs-5 fw-bold haygo-primary-text mb-2">Deep Local Expertise</h4>
+                    <p class="haygo-normal-text">
+                        We're based in the Visayas, so we know the best routes, the local roads, and the hidden gems.
+                        Your trip planner and navigator, all in one.
+                    </p>
                 </div>
-                <h4 class="fs-5 fw-bold haygo-primary-text mb-2">Deep Local Expertise</h4>
-                <p class="haygo-normal-text">
-                    We're based in the Visayas, so we know the best routes, the local roads, and the hidden gems.
-                    Your trip planner and navigator, all in one.
-                </p>
             </div>
 
             <!-- Commitment Pillar 2: Reliability & Safety -->
             <div class="col-md-4">
-                <div class="c-round icon-box rounded-circle mx-auto mb-4 d-flex align-items-center justify-content-center haygo-accent shadow"
-                    style="width: 80px; height: 80px;">
-                    <i class="fas fa-shield-alt fs-3"></i>
+                <div class="card border-0 shadow-sm h-100 p-4 hover-card text-center rounded-4">
+                    <div class="c-round icon-box rounded-circle mx-auto mb-4 d-flex align-items-center justify-content-center haygo-accent shadow"
+                        style="width: 80px; height: 80px;">
+                        <i class="fas fa-shield-alt fs-3"></i>
+                    </div>
+                    <h4 class="fs-5 fw-bold haygo-primary-text mb-2">Guaranteed Reliability</h4>
+                    <p class="haygo-normal-text">
+                        Our entire fleet is regularly inspected and maintained above industry standards to ensure
+                        maximum safety and zero breakdowns on your adventure.
+                    </p>
                 </div>
-                <h4 class="fs-5 fw-bold haygo-primary-text mb-2">Guaranteed Reliability</h4>
-                <p class="haygo-normal-text">
-                    Our entire fleet is regularly inspected and maintained above industry standards to ensure
-                    maximum safety and zero breakdowns on your adventure.
-                </p>
             </div>
 
             <!-- Commitment Pillar 3: Transparent Pricing -->
             <div class="col-md-4">
-                <div class="c-round icon-box rounded-circle mx-auto mb-4 d-flex align-items-center justify-content-center haygo-accent shadow"
-                    style="width: 80px; height: 80px;">
-                    <i class="fas fa-tags fs-3"></i>
+                <div class="card border-0 shadow-sm h-100 p-4 hover-card text-center rounded-4">
+                    <div class="c-round icon-box rounded-circle mx-auto mb-4 d-flex align-items-center justify-content-center haygo-accent shadow"
+                        style="width: 80px; height: 80px;">
+                        <i class="fas fa-tags fs-3"></i>
+                    </div>
+                    <h4 class="fs-5 fw-bold haygo-primary-text mb-2">Transparent Pricing</h4>
+                    <p class="haygo-normal-text">
+                        What you see is what you pay. We offer straightforward, competitive rates with no hidden fees or
+                        surprise charges upon return.
+                    </p>
                 </div>
-                <h4 class="fs-5 fw-bold haygo-primary-text mb-2">Transparent Pricing</h4>
-                <p class="haygo-normal-text">
-                    What you see is what you pay. We offer straightforward, competitive rates with no hidden fees or
-                    surprise charges upon return.
-                </p>
             </div>
         </div>
 
@@ -154,32 +165,38 @@ unset($_SESSION['pickupDate'], $_SESSION['dropoffDate']);
         <div class="row g-5 justify-content-center">
             <!-- Step 1 (Search) -->
             <div class="col-12 col-md-4">
-                <div class="icon-box rounded-circle d-inline-flex align-items-center justify-content-center bg-haygo-light text-haygo-accent fw-bold mb-3"
-                    style="width: 70px; height: 70px; border: solid 1px;">
-                    <i class="bi bi-search fs-3"></i>
+                <div class="card border-0 shadow-sm h-100 p-4 hover-card rounded-4">
+                    <div class="icon-box rounded-circle d-inline-flex align-items-center justify-content-center bg-haygo-light text-haygo-accent fw-bold mb-3"
+                        style="width: 70px; height: 70px; border: solid 1px;">
+                        <i class="bi bi-search fs-3"></i>
+                    </div>
+                    <h3 class="fs-3 fw-bold haygo-primary-text mb-2">1. Find Your Vehicle</h3>
+                    <p class="text-secondary">Explore thousands of options tailored to your needs and location.</p>
                 </div>
-                <h3 class="fs-3 fw-bold haygo-primary-text mb-2">1. Find Your Vehicle</h3>
-                <p class="text-secondary">Explore thousands of options tailored to your needs and location.</p>
             </div>
 
             <!-- Step 2 (Secure Booking) -->
             <div class="col-12 col-md-4">
-                <div class="icon-box rounded-circle d-inline-flex align-items-center justify-content-center bg-haygo-light text-haygo-accent fw-bold mb-3"
-                    style="width: 70px; height: 70px; border: solid 1px;">
-                    <i class="bi bi-credit-card-2-back fs-3"></i>
+                <div class="card border-0 shadow-sm h-100 p-4 hover-card rounded-4">
+                    <div class="icon-box rounded-circle d-inline-flex align-items-center justify-content-center bg-haygo-light text-haygo-accent fw-bold mb-3"
+                        style="width: 70px; height: 70px; border: solid 1px;">
+                        <i class="bi bi-credit-card-2-back fs-3"></i>
+                    </div>
+                    <h3 class="fs-3 fw-bold haygo-primary-text mb-2">2. Secure Your Booking</h3>
+                    <p class="text-secondary">Confirm with our secure payment gateway for immediate confirmation.</p>
                 </div>
-                <h3 class="fs-3 fw-bold haygo-primary-text mb-2">2. Secure Your Booking</h3>
-                <p class="text-secondary">Confirm with our secure payment gateway for immediate confirmation.</p>
             </div>
 
             <!-- Step 3 (Pick Up Keys) -->
             <div class="col-12 col-md-4">
-                <div class="icon-box rounded-circle d-inline-flex align-items-center justify-content-center bg-haygo-light text-haygo-accent fw-bold mb-3"
-                    style="width: 70px; height: 70px; border: solid 1px;">
-                    <i class="bi bi-key fs-3"></i>
+                <div class="card border-0 shadow-sm h-100 p-4 hover-card rounded-4">
+                    <div class="icon-box rounded-circle d-inline-flex align-items-center justify-content-center bg-haygo-light text-haygo-accent fw-bold mb-3"
+                        style="width: 70px; height: 70px; border: solid 1px;">
+                        <i class="bi bi-key fs-3"></i>
+                    </div>
+                    <h3 class="fs-3 fw-bold haygo-primary-text mb-2">3. Grab the Keys</h3>
+                    <p class="text-secondary">Pick up your sanitized car and enjoy your journey worry-free.</p>
                 </div>
-                <h3 class="fs-3 fw-bold haygo-primary-text mb-2">3. Grab the Keys</h3>
-                <p class="text-secondary">Pick up your sanitized car and enjoy your journey worry-free.</p>
             </div>
         </div>
     </div>
@@ -227,8 +244,8 @@ unset($_SESSION['pickupDate'], $_SESSION['dropoffDate']);
             </div>
 
             <div class="modal-footer border-0 pt-0">
-                <button id="confirmDatesButton" type="button"
-                    class="btn btn-haygo-primary btn-lg rounded-pill w-100" disabled data-bs-dismiss="modal">
+                <button id="confirmDatesButton" type="button" class="btn btn-haygo-primary btn-lg rounded-pill w-100"
+                    disabled data-bs-dismiss="modal">
                     Confirm Dates
                 </button>
             </div>
@@ -239,12 +256,14 @@ unset($_SESSION['pickupDate'], $_SESSION['dropoffDate']);
 
 <section id="categories" class="py-5 about haygo-light-bg">
     <div class="container container-xl py-5">
-        <h2 class="fs-1 fw-bold haygo-primary-text mb-3 text-center">Our Cebu Fleet: Designed for Island Exploration</h2>
-        <p class="fs-5 text-secondary mb-5 text-center">Navigate Cebu City and the provinces with the perfect vehicle for every road.</p>
+        <h2 class="fs-1 fw-bold haygo-primary-text mb-3 text-center">Our Cebu Fleet: Designed for Island Exploration
+        </h2>
+        <p class="fs-5 text-secondary mb-5 text-center">Navigate Cebu City and the provinces with the perfect vehicle
+            for every road.</p>
         <div class="row g-5 mt-3">
             <!-- Category 1: The Metro Commuter (Small/Hatchback) -->
             <div class="col-12 col-sm-6 col-lg-3">
-                <div class="card shadow-sm border-0 category-card h-100 rounded-3">
+                <div class="card shadow-sm border-0 category-card h-100 rounded-3 hover-card">
                     <div class="card-body p-4 text-center">
                         <!-- Icon: Car Front (Lime Accent) -->
                         <div class="icon-box rounded-3 mx-auto mb-3 bg-haygo-light text-haygo-accent"
@@ -259,7 +278,7 @@ unset($_SESSION['pickupDate'], $_SESSION['dropoffDate']);
             </div>
             <!-- Category 2: The Island Voyager (Mid-size SUV) -->
             <div class="col-12 col-sm-6 col-lg-3">
-                <div class="card shadow-sm border-0 category-card h-100 rounded-3">
+                <div class="card shadow-sm border-0 category-card h-100 rounded-3 hover-card">
                     <div class="card-body p-4 text-center">
                         <!-- Icon: SUV/Jeep (Lime Accent) -->
                         <div class="icon-box rounded-3 mx-auto mb-3 bg-haygo-light text-haygo-accent"
@@ -274,7 +293,7 @@ unset($_SESSION['pickupDate'], $_SESSION['dropoffDate']);
             </div>
             <!-- Category 3: The Barkada Hauler (AUVs/Vans) -->
             <div class="col-12 col-sm-6 col-lg-3">
-                <div class="card shadow-sm border-0 category-card h-100 rounded-3">
+                <div class="card shadow-sm border-0 category-card h-100 rounded-3 hover-card">
                     <div class="card-body p-4 text-center">
                         <!-- Icon: Van (Lime Accent) -->
                         <div class="icon-box rounded-3 mx-auto mb-3 bg-haygo-light text-haygo-accent"
@@ -289,7 +308,7 @@ unset($_SESSION['pickupDate'], $_SESSION['dropoffDate']);
             </div>
             <!-- Category 4: The Executive Ride (Premium/Luxury) -->
             <div class="col-12 col-sm-6 col-lg-3">
-                <div class="card shadow-sm border-0 category-card h-100 rounded-3">
+                <div class="card shadow-sm border-0 category-card h-100 rounded-3 hover-card">
                     <div class="card-body p-4 text-center">
                         <!-- Icon: VIP (Lime Accent) -->
                         <div class="icon-box rounded-3 mx-auto mb-3 bg-haygo-light text-haygo-accent"
@@ -304,7 +323,8 @@ unset($_SESSION['pickupDate'], $_SESSION['dropoffDate']);
             </div>
             <div class="d-flex justify-content-center align-items-center">
                 <a href="fleet.php">
-                    <button class="btn l-button btn-lg fw-semibold rounded-3 shadow-sm" style="width: 15rem;">View Fleet</button>
+                    <button class="btn l-button btn-lg fw-semibold rounded-3 shadow-sm" style="width: 15rem;">View
+                        Fleet</button>
                 </a>
             </div>
         </div>
@@ -343,14 +363,19 @@ unset($_SESSION['pickupDate'], $_SESSION['dropoffDate']);
             <div class="col-lg-6">
                 <!-- Bootstrap Carousel Structure -->
                 <!-- Use 'data-bs-ride="carousel"' for auto-cycling -->
-                <div id="testimonialCarousel" class="carousel slide shadow-lg rounded-4 overflow-hidden" data-bs-ride="carousel" data-bs-interval="6000">
+                <div id="testimonialCarousel" class="carousel slide shadow-lg rounded-4 overflow-hidden"
+                    data-bs-ride="carousel" data-bs-interval="6000">
 
                     <!-- Carousel Indicators -->
                     <div class="carousel-indicators mb-3">
-                        <button type="button" data-bs-target="#testimonialCarousel" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
-                        <button type="button" data-bs-target="#testimonialCarousel" data-bs-slide-to="1" aria-label="Slide 2"></button>
-                        <button type="button" data-bs-target="#testimonialCarousel" data-bs-slide-to="2" aria-label="Slide 3"></button>
-                        <button type="button" data-bs-target="#testimonialCarousel" data-bs-slide-to="3" aria-label="Slide 4"></button>
+                        <button type="button" data-bs-target="#testimonialCarousel" data-bs-slide-to="0" class="active"
+                            aria-current="true" aria-label="Slide 1"></button>
+                        <button type="button" data-bs-target="#testimonialCarousel" data-bs-slide-to="1"
+                            aria-label="Slide 2"></button>
+                        <button type="button" data-bs-target="#testimonialCarousel" data-bs-slide-to="2"
+                            aria-label="Slide 3"></button>
+                        <button type="button" data-bs-target="#testimonialCarousel" data-bs-slide-to="3"
+                            aria-label="Slide 4"></button>
                     </div>
 
                     <div class="carousel-inner">
@@ -360,12 +385,16 @@ unset($_SESSION['pickupDate'], $_SESSION['dropoffDate']);
                             <div class="card card-testimonial border-0 shadow-sm">
                                 <div class="card-body p-4 p-md-5">
                                     <p class="fs-5 fst-italic text-haygo-dark">
-                                        "Fast, reliable, and straightforward. The app made check-in a breeze. I had the keys in
-                                        hand within minutes, ready to start my vacation. This is how renting a car should be."
+                                        "Fast, reliable, and straightforward. The app made check-in a breeze. I had the
+                                        keys in
+                                        hand within minutes, ready to start my vacation. This is how renting a car
+                                        should be."
                                     </p>
                                     <div class="mt-4">
                                         <div class="text-warning mb-1">
-                                            <i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-half"></i>
+                                            <i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i
+                                                class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i
+                                                class="bi bi-star-half"></i>
                                         </div>
                                         <p class="fw-bold mb-0 text-haygo-dark">Jessica M., Frequent Traveler</p>
                                     </div>
@@ -378,11 +407,15 @@ unset($_SESSION['pickupDate'], $_SESSION['dropoffDate']);
                             <div class="card card-testimonial border-0 shadow-sm">
                                 <div class="card-body p-4 p-md-5">
                                     <p class="fs-5 fst-italic text-haygo-dark">
-                                        "The vehicle was spotless and exactly as described online. Pickup was smooth, and the drop-off process was even faster. Hay Go has earned a loyal customer in me!"
+                                        "The vehicle was spotless and exactly as described online. Pickup was smooth,
+                                        and the drop-off process was even faster. Hay Go has earned a loyal customer in
+                                        me!"
                                     </p>
                                     <div class="mt-4">
                                         <div class="text-warning mb-1">
-                                            <i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i>
+                                            <i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i
+                                                class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i
+                                                class="bi bi-star-fill"></i>
                                         </div>
                                         <p class="fw-bold mb-0 text-haygo-dark">Robert P., Business Trip</p>
                                     </div>
@@ -395,11 +428,15 @@ unset($_SESSION['pickupDate'], $_SESSION['dropoffDate']);
                             <div class="card card-testimonial border-0 shadow-sm">
                                 <div class="card-body p-4 p-md-5">
                                     <p class="fs-5 fst-italic text-haygo-dark">
-                                        "I needed a last-minute rental at the airport, and Hay Go's pricing beat everyone else. No hidden fees and excellent customer support when I called to extend my booking."
+                                        "I needed a last-minute rental at the airport, and Hay Go's pricing beat
+                                        everyone else. No hidden fees and excellent customer support when I called to
+                                        extend my booking."
                                     </p>
                                     <div class="mt-4">
                                         <div class="text-warning mb-1">
-                                            <i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-half"></i>
+                                            <i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i
+                                                class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i
+                                                class="bi bi-star-half"></i>
                                         </div>
                                         <p class="fw-bold mb-0 text-haygo-dark">Sarah K., Last-Minute Booker</p>
                                     </div>
@@ -412,11 +449,15 @@ unset($_SESSION['pickupDate'], $_SESSION['dropoffDate']);
                             <div class="card card-testimonial border-0 shadow-sm">
                                 <div class="card-body p-4 p-md-5">
                                     <p class="fs-5 fst-italic text-haygo-dark">
-                                        "I've used many rental companies, but the 24/7 roadside assistance gave me great peace of mind on my cross-country drive. Truly the most worry-free rental experience yet."
+                                        "I've used many rental companies, but the 24/7 roadside assistance gave me great
+                                        peace of mind on my cross-country drive. Truly the most worry-free rental
+                                        experience yet."
                                     </p>
                                     <div class="mt-4">
                                         <div class="text-warning mb-1">
-                                            <i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i>
+                                            <i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i
+                                                class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i
+                                                class="bi bi-star-fill"></i>
                                         </div>
                                         <p class="fw-bold mb-0 text-haygo-dark">David L., Road Tripper</p>
                                     </div>
@@ -427,11 +468,13 @@ unset($_SESSION['pickupDate'], $_SESSION['dropoffDate']);
                     </div>
 
                     <!-- Carousel Controls -->
-                    <button class="carousel-control-prev" type="button" data-bs-target="#testimonialCarousel" data-bs-slide="prev">
+                    <button class="carousel-control-prev" type="button" data-bs-target="#testimonialCarousel"
+                        data-bs-slide="prev">
                         <span class="carousel-control-prev-icon" aria-hidden="true"></span>
                         <span class="visually-hidden">Previous</span>
                     </button>
-                    <button class="carousel-control-next" type="button" data-bs-target="#testimonialCarousel" data-bs-slide="next">
+                    <button class="carousel-control-next" type="button" data-bs-target="#testimonialCarousel"
+                        data-bs-slide="next">
                         <span class="carousel-control-next-icon" aria-hidden="true"></span>
                         <span class="visually-hidden">Next</span>
                     </button>
@@ -548,8 +591,7 @@ unset($_SESSION['pickupDate'], $_SESSION['dropoffDate']);
                 <!-- Image Placeholder (Deep Blue for contrast) -->
                 <div class="col-lg-6 d-none d-lg-block">
                     <!-- Image uses the primary brand color for consistency -->
-                    <img src="src/assets/images/hero-suv.jpg"
-                        alt="Image of a mid-size SUV on special offer" class=" "
+                    <img src="src/assets/images/hero-suv.jpg" alt="Image of a mid-size SUV on special offer" class=" "
                         style="object-fit: cover;">
                 </div>
             </div>

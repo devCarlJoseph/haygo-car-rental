@@ -1,4 +1,4 @@
-<footer class="text-white pt-5" style="background: #3B2F2F">
+<footer class="text-white pt-5" style="background: var(--haygo-secondary)">
     <div class="container text-center">
 
         <!-- Logo -->
@@ -7,13 +7,15 @@
         </h5>
 
         <!-- Navigation Links -->
-        <ul class="list-unstyled d-flex flex-column flex-sm-row flex-wrap justify-content-center gap-2 gap-md-4 mb-4 pb-3">
+        <ul
+            class="list-unstyled d-flex flex-column flex-sm-row flex-wrap justify-content-center gap-2 gap-md-4 mb-4 pb-3">
             <li><a href="index.php" class="footer-link text-decoration-none text-white">Home</a></li>
             <li><a href="about.php" class="footer-link text-decoration-none text-white">About Us</a></li>
             <li><a href="fleet.php" class="footer-link text-decoration-none text-white">Fleet</a></li>
             <li><a href="contact.php" class="footer-link text-decoration-none text-white">Contact Us</a></li>
             <li><a href="help.php" class="footer-link text-decoration-none text-white">Help</a></li>
             <li><a href="blog.php" class="footer-link text-decoration-none text-white">Our Blog</a></li>
+            <li><a href="login.php" class="footer-link text-decoration-none text-white">Access Portal</a></li>
         </ul>
 
         <!-- Social Media Icons -->

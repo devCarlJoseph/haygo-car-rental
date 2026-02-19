@@ -20,7 +20,7 @@
 
     <div class="w-100 auth-card bg-white shadow-lg overflow-hidden position-relative">
 
-        <button onclick="window.location.href='../index.php'" class="btn position-absolute top-0 end-0 m-3 text-secondary"
+        <button onclick="window.location.href='../login.php'" class="btn position-absolute top-0 end-0 m-3 text-secondary"
             aria-label="Close">
             <i class="ri-close-line fs-4" style="color: white"></i>
         </button>
@@ -151,6 +151,12 @@
             </div>
 
             <div id="messageArea" class="mt-4 p-3 rounded small d-none" role="alert"></div>
+
+            <div class="text-center pt-3">
+                <a href="../user/log_in.php" class="small text-decoration-none fw-semibold" style="color: var(--haygo-primary-text);">
+                    Looking for customer access? Open Customer Portal
+                </a>
+            </div>
 
         </div>
     </div>

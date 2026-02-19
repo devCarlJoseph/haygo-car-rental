@@ -6,8 +6,11 @@ require_once 'config/config.php';
 
 $pickup_date = $_SESSION['pickupDate'] ?? '';
 $dropoff_date = $_SESSION['dropoffDate'] ?? '';
+$loggedCustomer = $_SESSION['user_customer'] ?? null;
 
 $canBook = false;
+$rental_days = 0;
+
 if ($pickup_date && $dropoff_date) {
     $canBook = true;
 
@@ -16,36 +19,10 @@ if ($pickup_date && $dropoff_date) {
     $interval = $startDate->diff($endDate);
     $rental_days = $interval->days;
     if ($rental_days < 1) $rental_days = 1;
-
-    $query = "
-        SELECT * FROM vehicles v
-        WHERE v.id NOT IN (
-            SELECT vehicle_id 
-            FROM bookings 
-            WHERE status IN ('pending','confirmed')
-            AND (
-                (booking_date <= ? AND return_date >= ?) OR
-                (booking_date <= ? AND return_date >= ?) OR
-                (booking_date >= ? AND return_date <= ?)
-            )
-        )
-    ";
-    $stmt = $conn->prepare($query);
-    $stmt->bind_param(
-        "ssssss",
-        $pickup_date,
-        $pickup_date,
-        $dropoff_date,
-        $dropoff_date,
-        $pickup_date,
-        $dropoff_date
-    );
-    $stmt->execute();
-    $result = $stmt->get_result();
-} else {
-    $rental_days = 0;
-    $result = $conn->query("SELECT * FROM vehicles");
 }
+
+$vehicleModel = new Vehicle();
+$vehicles = $vehicleModel->getAvailable($pickup_date ?: null, $dropoff_date ?: null);
 
 ?>
 
@@ -54,9 +31,9 @@ if ($pickup_date && $dropoff_date) {
         <div class="header-overlay"></div>
         <div class="position-relative">
             <div class="container text-center">
-                 <h1 class="display-4 fw-bolder mb-3 haygo-about" style="padding-top: 5rem;">Our Modern & Reliable Fleet</h1>
+                <h1 class="display-4 fw-bolder mb-3 haygo-about" style="padding-top: 5rem;">Our Modern & Reliable Fleet</h1>
                 <p class="lead haygo-primary fw-medium">
-                    Showing cars available from <span id="displayStartDate"><?php echo htmlspecialchars($pickup_date); ?></span> to <span id="displayEndDate"><?php echo htmlspecialchars($pickup_date); ?></span>.
+                    Showing cars available from <span id="displayStartDate"><?php echo htmlspecialchars($pickup_date); ?></span> to <span id="displayEndDate"><?php echo htmlspecialchars($dropoff_date); ?></span>.
                 </p>
             </div>
         </div>
@@ -64,6 +41,20 @@ if ($pickup_date && $dropoff_date) {
 
     <section class="py-5">
         <div class="container">
+            <?php if ($loggedCustomer): ?>
+                <div class="alert alert-info rounded-3 mb-4 d-flex justify-content-between align-items-center flex-wrap gap-2">
+                    <div>
+                        Logged in as <strong><?php echo htmlspecialchars($loggedCustomer['name']); ?></strong>.
+                        Your contact details are pre-filled for faster checkout.
+                    </div>
+                    <a href="user/dashboard.php" class="btn btn-sm btn-outline-primary rounded-pill">View My Trips</a>
+                </div>
+            <?php else: ?>
+                <div class="alert alert-light border rounded-3 mb-4 d-flex justify-content-between align-items-center flex-wrap gap-2">
+                    <div>Want to manage bookings after checkout? Use Customer Portal first.</div>
+                    <a href="user/log_in.php" class="btn btn-sm btn-outline-dark rounded-pill">Customer Login</a>
+                </div>
+            <?php endif; ?>
             <div class="row g-4">
                 <div class="col-lg-3 col-md-4">
 
@@ -99,7 +90,7 @@ if ($pickup_date && $dropoff_date) {
 
 
                     <div class="row g-4">
-                        <?php while ($data = $result->fetch_assoc()): ?>
+                        <?php foreach ($vehicles as $data): ?>
                             <div class="col-sm-6 col-lg-4 car-item"
                                 data-name="<?php echo strtolower($data['car_name']); ?>"
                                 data-type="<?php echo $data['car_type']; ?>"
@@ -148,7 +139,7 @@ if ($pickup_date && $dropoff_date) {
                                     </div>
                                 </div>
                             </div>
-                        <?php endwhile; ?>
+                        <?php endforeach; ?>
 
                     </div>
 
@@ -245,15 +236,21 @@ if ($pickup_date && $dropoff_date) {
                             <div class="row g-3">
                                 <div class="col-md-6">
                                     <label for="fullName" class="form-label small fw-semibold">Full Name *</label>
-                                    <input type="text" name="fullname" id="fullname" class="form-control rounded" placeholder="Juan Dela Cruz">
+                                    <input type="text" name="fullname" id="fullname" class="form-control rounded"
+                                        value="<?php echo htmlspecialchars($loggedCustomer['name'] ?? ''); ?>"
+                                        placeholder="Juan Dela Cruz">
                                 </div>
                                 <div class="col-md-6">
                                     <label for="email" class="form-label small fw-semibold">Email Address *</label>
-                                    <input type="email" name="email" id="email" class="form-control rounded" placeholder="example@mail.com">
+                                    <input type="email" name="email" id="email" class="form-control rounded"
+                                        value="<?php echo htmlspecialchars($loggedCustomer['email'] ?? ''); ?>"
+                                        placeholder="example@mail.com">
                                 </div>
                                 <div class="col-md-6">
                                     <label for="phone" class="form-label small fw-semibold">Phone Number *</label>
-                                    <input type="tel" name="phone_num" id="phone_num" class="form-control rounded" placeholder="09XX-XXX-XXXX">
+                                    <input type="tel" name="phone_num" id="phone_num" class="form-control rounded"
+                                        value="<?php echo htmlspecialchars($loggedCustomer['phone'] ?? ''); ?>"
+                                        placeholder="09XX-XXX-XXXX">
                                 </div>
                                 <div class="col-md-6">
                                     <label for="licenseNumber" class="form-label small fw-semibold">Driver's License / ID Number *</label>
