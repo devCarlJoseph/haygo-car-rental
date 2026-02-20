@@ -1,55 +1,50 @@
-.navbar-logo {
-    width: 4em;
-    /* Or whatever fixed size you prefer */
-    height: auto;
-    /* To maintain the aspect ratio */
-    margin-right: 0.5em;
-    /* Space between logo and brand name */
-}
-
 :root {
-    /* Primary: A rich, vibrant orange/coral for energy */
-    --haygo-primary: #FF8c42; 
-    /* Secondary: A deep, trustworthy blue/slate for grounding */
-    --haygo-secondary: #2C3E50;
-    /* Light Background: Very soft, warm white */
+    /* Primary: A more sophisticated, deeper coral/orange */
+    --haygo-primary: #FF7043; 
+    /* Secondary: A very dark, elegant navy for depth */
+    --haygo-secondary: #101828;
+    /* Light Background: Pure, clean off-white */
     --haygo-light-bg: #F9FAFB;
-    /* Dark Text: Almost black for readability */
-    --haygo-dark: #1F2937;
+    /* Dark Text: High-contrast slate for readability */
+    --haygo-dark: #111827;
     /* Light Text: Pure white */
     --haygo-light: #FFFFFF;
-    /* Primary Text: Matches the dark shade */
-    --haygo-primary-text: #1F2937;
-    /* Normal Text: A soft grey for paragraphs */
+    /* Normal Text: Professional gray for body copy */
     --haygo-normal-text: #4B5563;
-    /* Accent: A bright, electric lime or teal for highlighting CTAs */
-    --haygo-accent: #0D9488; 
-    /* Success/Warning/Error */
-    --haygo-success: #10B981;
-    --haygo-warning: #F59E0B;
-    --haygo-error: #EF4444;
-    /* Hover state for primary */
-    --haygo-hover: #E5722E;
+    /* Accent: A refined teal for trust and call-to-actions */
+    --haygo-accent: #0F766E; 
+    /* Success/Warning/Error with modern shades */
+    --haygo-success: #059669;
+    --haygo-warning: #D97706;
+    --haygo-error: #DC2626;
+    /* Hover state for primary: slightly deeper */
+    --haygo-hover: #E64A19;
     
-    --haygo-about: #1F2937;
     --font-main: 'Outfit', sans-serif;
+    
+    /* Shadows - Added for a premium feel */
+    --shadow-sm: 0 1px 2px 0 rgba(0, 0, 0, 0.05);
+    --shadow-md: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+    --shadow-lg: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+    --shadow-xl: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
 }
 
 body {
     font-family: var(--font-main);
     color: var(--haygo-normal-text);
     background-color: var(--haygo-light-bg);
+    line-height: 1.6;
 }
 
 .haygo-glass {
-    background: rgba(255, 255, 255, 0.85);
-    backdrop-filter: blur(12px);
-    -webkit-backdrop-filter: blur(12px);
-    border-bottom: 1px solid rgba(255, 255, 255, 0.3);
+    background: rgba(255, 255, 255, 0.8);
+    backdrop-filter: blur(16px);
+    -webkit-backdrop-filter: blur(16px);
+    border-bottom: 1px solid rgba(0, 0, 0, 0.05);
 }
 
 .transition-all {
-    transition: all 0.3s ease-in-out;
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 /* Typography Enhancements */
@@ -57,103 +52,69 @@ h1, h2, h3, h4, h5, h6 {
     font-family: var(--font-main);
     color: var(--haygo-dark);
     font-weight: 700;
-    letter-spacing: -0.025em;
+    letter-spacing: -0.02em;
 }
 
-.haygo-about {
-    color: var(--haygo-about);
-}
-
-.haygo-primary-bg {
-    background-color: var(--haygo-primary);
-}
-
-.haygo-secondary-bg {
-    background-color: var(--haygo-secondary);
-}
-
-.haygo-primary {
-    color: var(--haygo-primary);
-}
-
-.haygo-secondary {
-    color: var(--haygo-secondary);
-}
-
-.haygo-accent {
-    color: var(--haygo-accent);
-}
-
-.haygo-dark-text {
-    color: var(--haygo-dark);
-}
-
-.haygo-light {
-    color: var(--haygo-light);
-}
-
-.haygo-light-bg {
-    background-color: var(--haygo-light-bg);
-}
-
-.haygo-primary-text {
-    color: var(--haygo-primary-text);
-}
-
-.haygo-normal-text {
-    color: var(--haygo-normal-text);
-}
-
-.haygo-warning {
-    color: var(--haygo-warning);
-}
-
-.haygo-error {
-    color: var(--haygo-error);
-}
-
-.haygo-hover {
-    color: var(--haygo-hover);
-}
-
-.haygo-success {
-    color: var(--haygo-success);
-}
+.haygo-primary-bg { background-color: var(--haygo-primary); }
+.haygo-secondary-bg { background-color: var(--haygo-secondary); }
+.haygo-primary { color: var(--haygo-primary); }
+.haygo-secondary { color: var(--haygo-secondary); }
+.haygo-accent { color: var(--haygo-accent); }
+.haygo-dark-text { color: var(--haygo-dark); }
+.haygo-light { color: var(--haygo-light); }
+.haygo-light-bg { background-color: var(--haygo-light-bg); }
+.haygo-primary-text { color: var(--haygo-dark); } /* Changed to match dark for better contrast */
+.haygo-normal-text { color: var(--haygo-normal-text); }
 
 .h-button {
     background-color: var(--haygo-primary);
-    color: var(--haygo-dark);
-    border: 2px solid var(--haygo-secondary);
-    transition: background-color 0.3s ease, color 0.3s ease;
+    color: white;
+    border: none;
+    font-weight: 600;
+    padding: 0.75rem 1.5rem;
+    border-radius: 9999px;
+    transition: all 0.3s ease;
 }
 
 .h-button:hover {
     background-color: var(--haygo-hover);
-    color: var(--haygo-light);
-    border: 2px solid var(--haygo-secondary);
+    transform: translateY(-1px);
+    box-shadow: var(--shadow-md);
+    color: white;
 }
 
 .h-color:hover {
-    color: var(--haygo-accent) !important;
+    color: var(--haygo-primary) !important;
 }
 
-/* Hover Card Effect */
+/* Hover Card Effect - More sophisticated */
 .hover-card {
-    transition: all 0.3s ease;
-    border: 1px solid transparent;
+    transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+    border: 1px solid rgba(0, 0, 0, 0.05) !important;
+    background: white;
 }
 
 .hover-card:hover {
-    transform: translateY(-10px);
-    box-shadow: 0 1rem 3rem rgba(0, 0, 0, 0.175) !important;
-    border-color: var(--haygo-primary);
+    transform: translateY(-8px);
+    box-shadow: var(--shadow-xl) !important;
+    border-color: transparent !important;
 }
 
 .icon-box {
-    transition: all 0.3s ease;
+    transition: all 0.4s ease;
+    background: #F3F4F6;
+    color: var(--haygo-accent);
 }
 
 .hover-card:hover .icon-box {
     background-color: var(--haygo-primary) !important;
     color: white !important;
+    transform: scale(1.1);
+}
+
+/* Navbar Logo Fix */
+.navbar-logo {
+    width: 3.5rem;
+    height: auto;
+    margin-right: 0.75rem;
 }

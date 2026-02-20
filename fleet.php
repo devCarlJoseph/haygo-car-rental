@@ -26,131 +26,161 @@ $vehicles = $vehicleModel->getAvailable($pickup_date ?: null, $dropoff_date ?: n
 
 ?>
 
-<main>
+<main class="bg-white">
+    <!-- Slim Hero -->
     <div class="hero-fleet position-relative">
-        <div class="header-overlay"></div>
-        <div class="position-relative">
-            <div class="container text-center">
-                <h1 class="display-4 fw-bolder mb-3 haygo-about" style="padding-top: 5rem;">Our Modern & Reliable Fleet</h1>
-                <p class="lead haygo-primary fw-medium">
-                    Showing cars available from <span id="displayStartDate"><?php echo htmlspecialchars($pickup_date); ?></span> to <span id="displayEndDate"><?php echo htmlspecialchars($dropoff_date); ?></span>.
-                </p>
-            </div>
+        <div class="container text-center py-5">
         </div>
     </div>
 
-    <section class="py-5">
+    <!-- Dark Search Bar -->
+    <div class="container">
+        <div class="fleet-search-bar px-4 py-3">
+            <form action="actions/search_fleet.php" method="post" class="row g-2 align-items-center">
+                <div class="col-md-2">
+                    <select class="form-select" name="condition">
+                        <option selected>Condition</option>
+                        <option value="economy">Economy</option>
+                        <option value="premium">Premium</option>
+                    </select>
+                </div>
+                <div class="col-md-2">
+                    <select class="form-select" name="make">
+                        <option selected>Select Makes</option>
+                        <option value="toyota">Toyota</option>
+                        <option value="hyundai">Hyundai</option>
+                        <option value="mitsubishi">Mitsubishi</option>
+                        <option value="mg">MG</option>
+                    </select>
+                </div>
+                <div class="col-md-2">
+                    <select class="form-select" name="model">
+                        <option selected>Select Models</option>
+                        <option value="accent">Accent</option>
+                        <option value="montero">Montero</option>
+                        <option value="raize">Raize</option>
+                    </select>
+                </div>
+                <div class="col-md-2">
+                    <select class="form-select" name="type">
+                        <option selected>Select Types</option>
+                        <option value="sedan">Sedan</option>
+                        <option value="suv">SUV</option>
+                        <option value="van">Van</option>
+                    </select>
+                </div>
+                <div class="col-md-2 d-flex align-items-center">
+                    <a href="#" class="advanced-toggle ms-2"><i class="ri-settings-4-line"></i> Advanced</a>
+                </div>
+                <div class="col-md-2">
+                    <button type="submit" name="search" class="btn btn-search w-100">
+                        <i class="ri-search-line"></i> Search
+                    </button>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <!-- Content Section -->
+    <section class="fleet-header">
         <div class="container">
-            <?php if ($loggedCustomer): ?>
-                <div class="alert alert-info rounded-3 mb-4 d-flex justify-content-between align-items-center flex-wrap gap-2">
-                    <div>
-                        Logged in as <strong><?php echo htmlspecialchars($loggedCustomer['name']); ?></strong>.
-                        Your contact details are pre-filled for faster checkout.
-                    </div>
-                    <a href="user/dashboard.php" class="btn btn-sm btn-outline-primary rounded-pill">View My Trips</a>
+            <div class="d-flex justify-content-between align-items-center mb-4">
+                <div>
+                    <h1 class="h2 fw-bold haygo-dark mb-1">Cars List</h1>
+                    <nav aria-label="breadcrumb">
+                        <ol class="breadcrumb fleet-breadcrumb mb-0">
+                            <li class="breadcrumb-item"><a href="index.php">Home</a></li>
+                            <li class="breadcrumb-item active" aria-current="page">Cars List</li>
+                        </ol>
+                    </nav>
                 </div>
-            <?php else: ?>
-                <div class="alert alert-light border rounded-3 mb-4 d-flex justify-content-between align-items-center flex-wrap gap-2">
-                    <div>Want to manage bookings after checkout? Use Customer Portal first.</div>
-                    <a href="user/log_in.php" class="btn btn-sm btn-outline-dark rounded-pill">Customer Login</a>
+            </div>
+
+            <!-- Results Bar -->
+            <div class="fleet-results-bar d-flex justify-content-between align-items-center">
+                <div class="small text-muted">
+                    Showing 1 – <?php echo count($vehicles); ?> of <?php echo count($vehicles); ?> results
                 </div>
-            <?php endif; ?>
-            <div class="row g-4">
-                <div class="col-lg-3 col-md-4">
-
-                    <div class="filter-options card shadow-sm p-4 bg-white">
-                        <h3 class="fs-5 fw-bold text-haygo-dark mb-3 border-bottom pb-2">Refine Search</h3>
-
-                        <div class="mb-4">
-                            <label for="searchName" class="form-label small fw-semibold">Search by Car Name</label>
-                            <input type="text" class="form-control form-control-sm rounded-pill" id="searchName">
-                        </div>
-
-                        <div class="mb-4">
-                            <h4 class="fs-6 fw-semibold text-haygo-dark mb-3">Max Price (per day)</h4>
-                            <input type="range" class="form-range" min="1000" max="5000" step="100" value="5000" id="priceRange">
-                            <div class="small text-center"><span class="fw-bold text-haygo-blue" id="maxPriceDisplay">₱ 5,000</span></div>
-                        </div>
-                        <button class="btn btn-sm f-button rounded-pill mt-2" onclick="resetFilters()">Reset Filters</button>
+                <div class="d-flex align-items-center gap-3">
+                    <div class="d-flex align-items-center gap-2">
+                        <span class="small text-muted">Sort by:</span>
+                        <select class="form-select form-select-sm border-0 bg-light" style="width: auto;">
+                            <option selected>Default</option>
+                            <option>Price: Low to High</option>
+                            <option>Price: High to Low</option>
+                        </select>
                     </div>
-                </div>
-
-                <!-- Car Listings -->
-                <div class="col-lg-9 col-md-8">
-
-                    <div class="d-flex flex-wrap gap-2 mb-4">
-                        <button class="btn f-button btn-sm filter-quick-btn" data-type="All" onclick="quickFilter('All')">All Types</button>
-                        <button class="btn f-button btn-sm filter-quick-btn" data-type="Sedan" onclick="quickFilter('Sedan')">Sedan</button>
-                        <button class="btn f-button btn-sm filter-quick-btn" data-type="SUV" onclick="quickFilter('SUV')">SUV / Crossover</button>
-                        <button class="btn f-button btn-sm filter-quick-btn" data-type="Van" onclick="quickFilter('Van')">Van / MPV</button>
-                        <button class="btn f-button btn-sm filter-quick-btn" data-type="Hatchback" onclick="quickFilter('Hatchback')">Hatchback</button>
-                    </div>
-
-                    <h2 class="fs-4 fw-bold text-haygo-dark mb-4">Showing Available Vehicles</h2>
-
-
-                    <div class="row g-4">
-                        <?php foreach ($vehicles as $data): ?>
-                            <div class="col-sm-6 col-lg-4 car-item"
-                                data-name="<?php echo strtolower($data['car_name']); ?>"
-                                data-type="<?php echo $data['car_type']; ?>"
-                                data-price="<?php echo $data['car_price']; ?>">
-                                <div class="card car-card shadow-sm h-100">
-                                    <div class="text-center d-flex align-items-center justify-content-center"
-                                        style="background-image: url('uploads/vehicles/<?php echo $data['car_image']; ?>'); 
-                   background-size: cover; 
-                   background-position: center; 
-                   height: 200px; 
-                   background-repeat: no-repeat;">
-                                    </div>
-                                    <div class="card-body p-4">
-                                        <h5 class="card-title fw-bold text-haygo-dark mb-1"><?php echo $data['car_name']; ?></h5>
-                                        <p class="small text-secondary mb-3"><?php echo $data['car_description']; ?></p>
-
-                                        <div class="d-flex justify-content-evenly small mb-3">
-                                            <span class="text-nowrap" style="font-size: 1rem; font-weight: 600">
-                                                <i class="ri-user-3-line haygo-accent me-1" style="font-size: 1.5rem"></i>
-                                                <?php echo $data['seats']; ?>
-                                            </span>
-                                            <span class="text-nowrap" style="font-size: 1rem; font-weight: 600">
-                                                <i class="ri-briefcase-line haygo-accent me-1" style="font-size: 1.5rem"></i>
-                                                <?php echo $data['bags']; ?>
-                                            </span>
-                                            <span class="text-nowrap" style="font-size: 1rem; font-weight: 600">
-                                                <i class="ri-gas-station-line haygo-accent me-1" style="font-size: 1.5rem"></i>
-                                                <?php echo $data['transmission']; ?>
-                                            </span>
-                                        </div>
-
-                                        <div class="text-center mt-3">
-                                            <h3 class="small fw-normal text-secondary mb-0">Car Price Per Day </h3>
-                                            <p class="fs-3 fw-bolder text-haygo-blue mb-0">
-                                                ₱<?php echo number_format($data['car_price'], 2); ?>
-                                            </p>
-
-                                            <button class="btn fleet-button rounded-pill w-100 mt-2 selectCarBtn"
-                                                data-id="<?php echo $data['id']; ?>"
-                                                data-name="<?php echo htmlspecialchars($data['car_name'], ENT_QUOTES); ?>"
-                                                data-price="<?php echo $data['car_price']; ?>"
-                                                <?php if (!$canBook) echo 'disabled title="Select your dates first"'; ?>>
-                                                Select Car
-                                            </button>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        <?php endforeach; ?>
-
-                    </div>
-
-
-                    <div id="no-results-message" class="text-center py-5" style="display: none;">
-                        <i class="ri-alert-line display-4 text-secondary mb-3"></i>
-                        <p class="lead text-secondary">No vehicles match your current filter criteria.</p>
-                        <button class="btn btn-sm f-button rounded-pill" onclick="resetFilters()">Clear Filters</button>
+                    <div class="btn-group btn-group-sm">
+                        <button class="btn btn-light"><i class="ri-grid-fill"></i></button>
+                        <button class="btn btn-light"><i class="ri-list-check"></i></button>
                     </div>
                 </div>
             </div>
+
+            <!-- Car Grid -->
+            <div class="row g-4 mb-5">
+                <?php foreach ($vehicles as $data): ?>
+                    <div class="col-sm-6 col-lg-4 col-xl-3 car-item" 
+                         data-name="<?php echo strtolower($data['car_name']); ?>"
+                         data-type="<?php echo $data['car_type']; ?>"
+                         data-price="<?php echo $data['car_price']; ?>">
+                        <div class="card car-card h-100">
+                            <div class="car-image-container" style="background-image: url('uploads/vehicles/<?php echo $data['car_image']; ?>'); background-size: cover; background-position: center; height: 180px;">
+                            </div>
+                            <div class="card-body p-4">
+                                <h5 class="fw-bold haygo-dark mb-3"><?php echo $data['car_name']; ?></h5>
+                                
+                                <!-- Price List -->
+                                <div class="price-list mb-4">
+                                    <div class="car-price-item">
+                                        <span class="price-label"><?php echo number_format($data['car_price'], 0); ?> OMR</span>
+                                        <span class="price-value">/ Day</span>
+                                    </div>
+                                    <div class="car-price-item">
+                                        <span class="price-label"><?php echo number_format($data['car_price'] * 6, 0); ?> OMR</span>
+                                        <span class="price-value">/ Week</span>
+                                    </div>
+                                    <div class="car-price-item">
+                                        <span class="price-label"><?php echo number_format($data['car_price'] * 20, 0); ?> OMR</span>
+                                        <span class="price-value">/ Month</span>
+                                    </div>
+                                </div>
+
+                                <!-- Features List -->
+                                <div class="d-flex gap-3 small text-muted mb-0 pt-2 border-top">
+                                    <div class="d-flex align-items-center">
+                                        <i class="ri-gas-station-line me-1"></i> Petrol
+                                    </div>
+                                    <div class="d-flex align-items-center">
+                                        <i class="ri-settings-3-line me-1"></i> Automatic
+                                    </div>
+                                </div>
+                            </div>
+                            <!-- Rent Button (Hidden or styled as overlay in ref, but we keep accessible) -->
+                             <button class="btn btn-primary w-100 rounded-0 border-0 py-2 selectCarBtn" 
+                                     data-id="<?php echo $data['id']; ?>"
+                                     data-name="<?php echo htmlspecialchars($data['car_name'], ENT_QUOTES); ?>"
+                                     data-price="<?php echo $data['car_price']; ?>"
+                                     <?php if (!$canBook) echo 'disabled style="background: #ccc;"'; else echo 'style="background: var(--haygo-primary);"'; ?>>
+                                     <?php echo $canBook ? 'Select Car' : 'Select Dates First'; ?>
+                             </button>
+                        </div>
+                    </div>
+                <?php endforeach; ?>
+            </div>
+
+            <!-- Pagination -->
+            <nav aria-label="Page navigation">
+                <ul class="pagination pagination-custom justify-content-center">
+                    <li class="page-item active"><a class="page-link" href="#">1</a></li>
+                    <li class="page-item"><a class="page-link" href="#">2</a></li>
+                    <li class="page-item">
+                        <a class="page-link" href="#" aria-label="Next">
+                            <i class="ri-arrow-right-s-line"></i>
+                        </a>
+                    </li>
+                </ul>
+            </nav>
         </div>
     </section>
 

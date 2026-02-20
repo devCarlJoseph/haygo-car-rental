@@ -1,150 +1,144 @@
 .hero-fleet {
-    background-image: url('../images/test\ fleet.avif');
+    background: linear-gradient(rgba(16, 24, 40, 0.7), rgba(16, 24, 40, 0.4)), url('../images/test\ fleet.avif');
     background-size: cover;
     background-position: center;
-    height: 18rem;
-    color: white;
-    border-bottom-left-radius: 30px;
-    border-bottom-right-radius: 30px;
+    min-height: 250px;
+    display: flex;
+    align-items: center;
+    border-bottom-left-radius: 0;
+    border-bottom-right-radius: 0;
 }
 
-
-.header-overlay {
-    position: absolute;
-    inset: 0;
-    background-color: #0000003d;
+/* Horizontal Dark Search Bar */
+.fleet-search-bar {
+    background: #101828;
+    padding: 1rem 0;
+    margin-top: -2.5rem;
+    z-index: 20;
+    position: relative;
+    border-radius: 8px;
+    box-shadow: var(--shadow-xl);
 }
 
+.fleet-search-bar .form-select,
+.fleet-search-bar .btn {
+    height: 48px;
+    border-radius: 6px;
+    font-size: 0.9rem;
+}
+
+.fleet-search-bar .form-select {
+    background-color: rgba(255, 255, 255, 0.05);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    color: #fff;
+    cursor: pointer;
+}
+
+.fleet-search-bar .form-select:focus {
+    background-color: rgba(255, 255, 255, 0.1);
+    border-color: var(--haygo-primary);
+    box-shadow: none;
+}
+
+.fleet-search-bar .btn-search {
+    background: var(--haygo-primary);
+    color: #fff;
+    font-weight: 600;
+    border: none;
+}
+
+.fleet-search-bar .advanced-toggle {
+    color: #98A2B3;
+    text-decoration: none;
+    font-size: 0.85rem;
+}
+
+/* Breadcrumbs & Header */
+.fleet-header {
+    margin-top: 3rem;
+    margin-bottom: 2rem;
+}
+
+.fleet-breadcrumb {
+    font-size: 0.85rem;
+    color: #667085;
+}
+
+.fleet-breadcrumb a {
+    color: #667085;
+    text-decoration: none;
+}
+
+/* Sorting & View Options */
+.fleet-results-bar {
+    border-bottom: 1px solid #EAECF0;
+    padding-bottom: 1rem;
+    margin-bottom: 2rem;
+}
+
+/* Refined Car Card */
 .car-card {
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
-    border-radius: 1rem;
+    border: 1px solid #EAECF0;
+    border-radius: 12px;
     overflow: hidden;
-    border: 1px solid rgba(0, 0, 0, 0.05);
-    height: 100%;
+    transition: all 0.3s ease;
 }
 
 .car-card:hover {
-    transform: translateY(-5px);
-    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+    box-shadow: var(--shadow-lg);
+    border-color: var(--haygo-primary);
 }
 
-.car-image-placeholder {
-    height: 200px;
-    background-size: cover;
-    background-position: center;
+.car-price-item {
+    padding: 0.5rem 0;
+    border-bottom: 1px solid #F2F4F7;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
 }
 
-.filter-options {
-    position: sticky;
-    top: 100px;
-    align-self: flex-start;
+.car-price-item:last-child {
+    border-bottom: none;
 }
 
-/* Progress bar color */
-.progress-bar {
-    background-color: var(--haygo-accent) !important;
+.price-label {
+    font-size: 0.85rem;
+    font-weight: 600;
+    color: #101828;
 }
 
-.f-button {
-    border: 2px solid var(--haygo-accent);
-    color: var(--haygo-normal-text);
-    font-weight: bold;
-    transition: all 0.3s ease;
+.price-value {
+    font-size: 0.85rem;
+    font-weight: 600;
+    color: #667085;
 }
 
-.f-button:hover {
-    background-color: var(--haygo-accent);
-    color: white;
-    border: 2px solid var(--haygo-accent);
+.price-value span {
+    font-weight: 400;
 }
 
-.f-button.active {
-    background-color: var(--haygo-secondary);
-    color: white;
-    border: 2px solid var(--haygo-normal-text);
+/* Pagination */
+.pagination-custom .page-link {
+    width: 40px;
+    height: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50% !important;
+    margin: 0 4px;
+    border: none;
+    color: #667085;
+    font-weight: 600;
 }
 
-.fleet-button {
+.pagination-custom .page-item.active .page-link {
     background-color: var(--haygo-primary);
-    color: var(--haygo-dark);
-    font-weight: bold;
-    border: none;
-    transition: all 0.3s ease;
+    color: #fff;
 }
 
-.fleet-button:hover {
-    background-color: var(--haygo-hover);
-    color: white;
-}
-
-.pro-btn {
-    background-color: var(--haygo-accent);
-    color: white;
-    font-weight: bold;
-    border: none;
-    transition: all 0.3s ease;
-}
-
-.pro-btn:hover {
-    background-color: var(--haygo-hover);
-    color: white;
-}
-
-.c-btn {
-    background-color: var(--haygo-secondary);
-    color: var(--haygo-normal-text);
-    font-weight: bold;
-    border: none;
-    transition: all 0.3s ease;
-}
-
-.c-btn:hover {
-    background-color: var(--haygo-dark);
-    color: white;
-}
-
-/* 1. Change the Thumb (the slider handle/circle) color */
-#priceRange::-webkit-slider-thumb {
-    -webkit-appearance: none;
-    /* Required for WebKit/Blink browsers */
-    appearance: none;
-    background: #f5b97e;
-    /* Tomato Red - Change this color */
-    border: 1px solid #f5b97e;
-    height: 20px;
-    width: 20px;
-    border-radius: 50%;
-    cursor: pointer;
-    margin-top: -8px;
-    /* Adjust if needed to center vertically */
-}
-
-#priceRange::-moz-range-thumb {
-    background: #f5b97e;
-    /* Tomato Red - Change this color */
-    border: none;
-    /* Firefox requires border: none */
-    height: 20px;
-    width: 20px;
-    border-radius: 50%;
-    cursor: pointer;
-}
-
-/* 2. Change the Track (the background bar) color */
-#priceRange::-webkit-slider-runnable-track {
-    width: 100%;
-    height: 8px;
-    cursor: pointer;
-    background: #ddd;
-    /* Light Gray for the full track */
-    border-radius: 4px;
-}
-
-#priceRange::-moz-range-track {
-    width: 100%;
-    height: 8px;
-    cursor: pointer;
-    background: #ddd;
-    /* Light Gray for the full track */
-    border-radius: 4px;
+/* Icons Footer */
+.car-card-footer {
+    background: #F9FAFB;
+    padding: 0.75rem 1rem;
+    border-top: 1px solid #EAECF0;
 }

@@ -1,30 +1,27 @@
 /* Custom Button Styling */
 .btn-haygo-primary {
     background-color: var(--haygo-primary);
-    border-color: var(--haygo-primary);
-    color: var(--haygo-dark) !important;
-    transition: all 0.2s ease;
+    border: none;
+    color: white !important;
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    font-weight: 600;
 }
 
 .btn-haygo-primary:hover {
     background-color: var(--haygo-hover) !important;
-    /* Darker Lime */
-    border-color: var(--haygo-hover) !important;
+    transform: translateY(-2px);
+    box-shadow: var(--shadow-lg);
     color: #ffffff !important;
 }
 
-/* Hero Section Styling - Adjusted for new colors */
+/* Hero Section Styling */
 #hero-section {
-    background: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.1)), url('../images/hero.jpg');
+    background: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)), url('../images/hero.jpg');
     background-size: cover;
     background-position: center;
-    background-attachment: fixed; /* Parallax effect */
-    height: 85vh; /* Taller hero */
-    min-height: 600px;
+    min-height: 70vh;
     display: flex;
     align-items: center;
-    padding-top: 0;
-    padding-bottom: 0;
     position: relative;
 }
 
@@ -32,55 +29,195 @@
 #hero-section h2.haygo-about {
     color: #ffffff;
     font-weight: 800;
-    font-size: 3.5rem;
-    text-shadow: 0 4px 12px rgba(0,0,0,0.3);
-    margin-bottom: 1rem;
+    font-size: clamp(2.5rem, 5vw, 4.5rem);
+    line-height: 1.1;
+    letter-spacing: -0.03em;
+    margin-bottom: 1.5rem;
 }
 
 #hero-section p.haygo-primary {
-    color: #f0f0f0;
-    font-size: 1.25rem;
+    color: rgba(255, 255, 255, 0.9);
+    font-size: clamp(1.1rem, 2vw, 1.4rem);
     font-weight: 400;
-    text-shadow: 0 2px 4px rgba(0,0,0,0.5);
+    max-width: 700px;
 }
 
 .l-button {
-    background: linear-gradient(135deg, var(--haygo-primary) 0%, #FF6B6B 100%);
+    background: var(--haygo-primary);
     color: white;
     font-weight: 600;
     border: none;
-    padding: 0.8rem 2rem;
-    border-radius: 50px;
-    box-shadow: 0 10px 20px rgba(255, 140, 66, 0.3);
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    padding: 1rem 2.5rem;
+    border-radius: 9999px;
+    box-shadow: var(--shadow-lg);
+    transition: all 0.3s ease;
 }
 
 .l-button:hover {
-    transform: translateY(-3px);
-    box-shadow: 0 15px 30px rgba(255, 140, 66, 0.5);
+    background: var(--haygo-hover);
+    transform: translateY(-2px);
+    box-shadow: 0 15px 30px rgba(255, 112, 67, 0.3);
     color: white;
 }
-/* Floating Search Card */
-.search-module {
-    background: rgba(255, 255, 255, 0.85); /* Semi-transparent */
-    backdrop-filter: blur(16px); /* Strong blur */
-    -webkit-backdrop-filter: blur(16px);
-    border: 1px solid rgba(255, 255, 255, 0.6);
-    border-radius: 1.5rem;
-    box-shadow: 0 20px 60px rgba(0, 0, 0, 0.1);
+
+/* Tabbed Search Module */
+.search-tabs-container {
+    margin-top: -60px;
+    z-index: 100;
     position: relative;
-    margin-top: 4rem;
-    z-index: 10;
+}
+
+.search-nav-tabs {
+    border: none;
+    margin-bottom: -1px;
+}
+
+.search-nav-tabs .nav-link {
+    background: #e9ecef;
+    border: none;
+    border-radius: 8px 8px 0 0;
+    padding: 0.75rem 2rem;
+    color: #495057;
+    font-weight: 600;
+    margin-right: 5px;
+    transition: all 0.3s ease;
+}
+
+.search-nav-tabs .nav-link.active {
+    background: #fff;
+    color: var(--haygo-primary);
+    box-shadow: 0 -5px 15px rgba(0, 0, 0, 0.05);
+}
+
+.search-module-card {
+    background: #fff;
+    border-radius: 0 8px 8px 8px;
+    padding: 2.5rem;
+    box-shadow: var(--shadow-xl);
+    border: none;
+}
+
+/* Category Grid (Browse By Type) */
+.type-grid-item {
+    position: relative;
+    border-radius: 12px;
+    overflow: hidden;
+    height: 250px;
+    display: block;
+    cursor: pointer;
+}
+
+.type-grid-item img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.5s ease;
+}
+
+.type-grid-item:hover img {
+    transform: scale(1.05);
+}
+
+.type-overlay {
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(transparent, rgba(0, 0, 0, 0.7));
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    padding: 1.5rem;
+    color: #fff;
+}
+
+.type-overlay h4 {
+    font-weight: 700;
+    margin-bottom: 0.25rem;
+}
+
+.type-overlay span {
+    font-size: 0.85rem;
+    opacity: 0.8;
+}
+
+/* Horizontal Car Card (Featured) */
+.featured-car-card {
+    display: flex;
+    background: #fff;
+    border: 1px solid #EAECF0;
+    border-radius: 12px;
+    overflow: hidden;
+    margin-bottom: 1.5rem;
+    transition: all 0.3s ease;
+}
+
+.featured-car-card:hover {
+    box-shadow: var(--shadow-lg);
+    border-color: var(--haygo-primary);
+}
+
+.featured-car-img {
+    width: 35%;
+    background-size: cover;
+    background-position: center;
+    min-height: 180px;
+}
+
+.featured-car-body {
+    padding: 1.5rem;
+    flex: 1;
+}
+
+/* CTA Banners */
+.cta-banner-two {
+    border-radius: 15px;
+    overflow: hidden;
+    color: #fff;
+}
+
+.cta-promo {
+    padding: 3rem;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.cta-promo-gold {
+    background: #f5b97e;
+    color: #101828;
+}
+
+.cta-promo-blue {
+    background: #2563eb;
+}
+
+/* General Layout Fixes */
+.letter-spacing-wide {
+    letter-spacing: 2px;
+}
+
+.line-clamp-2 {
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
 }
 
 /* Large Form Control Styling */
-.form-control-lg,
-.form-select-lg {
-    padding: 0.8rem 1.2rem;
-    font-size: 1.1rem;
+.form-control-lg {
+    padding: 0.75rem 1.25rem;
+    font-size: 1rem;
+    border-color: #E5E7EB;
+    border-radius: 0.75rem !important;
+    transition: all 0.2s ease;
 }
 
-/* Feature Box Styling - Adjusted for new palette */
+.form-control-lg:focus {
+    border-color: var(--haygo-primary) !important;
+    box-shadow: 0 0 0 4px rgba(255, 112, 67, 0.1) !important;
+}
+
+/* Feature Box Styling */
 .step-icon-v3 {
     font-size: 2.5rem;
     color: var(--haygo-dark);
@@ -92,15 +229,17 @@
 }
 
 .feature-box {
-    border: 1px solid #eee;
-    transition: all 0.3s ease;
+    border: 1px solid #E5E7EB;
+    border-radius: 1.25rem;
+    padding: 2.5rem;
+    transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .feature-box:hover {
-    border-color: var(--haygo-accent);
-    background-color: #fcfcfc;
-    transform: translateY(-3px);
-    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+    border-color: transparent;
+    background-color: white;
+    transform: translateY(-5px);
+    box-shadow: var(--shadow-xl);
 }
 
 /* --- CALENDAR STYLES START --- */

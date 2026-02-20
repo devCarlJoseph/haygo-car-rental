@@ -32,18 +32,35 @@
 </head>
 
 <body>
-    <!-- Header / Navigation Bar -->
-    <header class="haygo-glass sticky-top z-5 transition-all">
+    <!-- Top Bar (Inspired by tzrent.com) -->
+    <div class="haygo-top-bar bg-dark py-2 text-white small d-none d-lg-block">
         <div class="container-fluid px-4 px-lg-5">
-            <nav class="navbar navbar-expand-lg navbar-light py-2">
+            <div class="row align-items-center">
+                <div class="col-6">
+                    <span class="me-4"><i class="ri-phone-fill haygo-primary me-1"></i> +63 912 345 6789</span>
+                    <span><i class="ri-mail-fill haygo-primary me-1"></i> hello@haygo.rentals</span>
+                </div>
+                <div class="col-6 text-end">
+                    <span><i class="ri-time-fill haygo-primary me-1"></i> Mon - Sun: 8:00 AM - 8:00 PM</span>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Header / Navigation Bar -->
+    <header class="haygo-glass sticky-top z-5 transition-all w-100">
+        <div class="container-fluid px-4 px-lg-5">
+            <nav class="navbar navbar-expand-lg py-3">
                 <!-- Logo -->
-                <img src="src/assets/images/logo.png" class="navbar-logo">
-                <a href="#" class="navbar-brand fs-3 fw-bolder haygo-primary-text">
-                    Hay Go
-                </a>
+                <div class="d-flex align-items-center">
+                    <img src="src/assets/images/logo.png" class="navbar-logo" alt="HayGo Logo">
+                    <a href="index.php" class="navbar-brand fs-3 fw-bold haygo-dark text-decoration-none">
+                        Hay<span class="haygo-primary">Go</span>
+                    </a>
+                </div>
 
                 <!-- Toggler for Mobile -->
-                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#haygoNavbar"
+                <button class="navbar-toggler border-0 shadow-none" type="button" data-bs-toggle="collapse" data-bs-target="#haygoNavbar"
                     aria-controls="haygoNavbar" aria-expanded="false" aria-label="Toggle navigation">
                     <span class="navbar-toggler-icon"></span>
                 </button>
@@ -51,25 +68,17 @@
                 <!-- Nav Items (Collapsible) -->
                 <div class="collapse navbar-collapse" id="haygoNavbar">
                     <ul class="navbar-nav ms-auto mb-2 mb-lg-0 align-items-lg-center">
-                        <!-- Navigation Links -->
-                        <li class="nav-item"><a href="index.php"
-                                class="h-color nav-link text-secondary fw-semibold mx-2">Home</a></li>
-                        <li class="nav-item"><a href="about.php"
-                                class="h-color nav-link text-secondary fw-semibold mx-2">About Us</a></li>
-                        <li class="nav-item"><a href="fleet.php"
-                                class="h-color nav-link text-secondary fw-semibold mx-2">Fleet</a></li>
-                        <li class="nav-item"><a href="contact.php"
-                                class="h-color nav-link text-secondary fw-semibold mx-2">Contact Us</a></li>
-                        <li class="nav-item"><a href="help.php"
-                                class="h-color nav-link text-secondary fw-semibold mx-2">Help</a>
-                        </li>
-                        <li class="nav-item"><a href="user/log_in.php"
-                                class="h-color nav-link text-secondary fw-semibold mx-2">My Trips</a></li>
+                        <li class="nav-item"><a href="index.php" class="nav-link px-3 fw-semibold h-color">Home</a></li>
+                        <li class="nav-item"><a href="about.php" class="nav-link px-3 fw-semibold h-color">About Us</a></li>
+                        <li class="nav-item"><a href="fleet.php" class="nav-link px-3 fw-semibold h-color">Fleet</a></li>
+                        <li class="nav-item"><a href="contact.php" class="nav-link px-3 fw-semibold h-color">Contact Us</a></li>
+                        <li class="nav-item"><a href="help.php" class="nav-link px-3 fw-semibold h-color">Help</a></li>
+                        <li class="nav-item"><a href="user/log_in.php" class="nav-link px-3 fw-semibold h-color">My Trips</a></li>
 
-                        <!-- Login/Signup Buttons -->
-                        <li class="nav-item ms-lg-4 mt-2 mt-lg-0">
-                            <a href="login.php" class="h-button btn fw-bold px-3 py-1 rounded-pill me-2">
-                                Portal
+                        <!-- Portal Button -->
+                        <li class="nav-item ms-lg-3 mt-3 mt-lg-0">
+                            <a href="login.php" class="h-button text-decoration-none d-inline-block">
+                                Portal Access
                             </a>
                         </li>
                     </ul>
